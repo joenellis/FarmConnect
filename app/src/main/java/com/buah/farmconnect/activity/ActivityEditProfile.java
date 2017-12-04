@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.design.widget.TextInputEditText;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -49,10 +50,13 @@ public class ActivityEditProfile extends AppCompatActivity {
         editTextContact = findViewById(R.id.editProfile_txtNumber);
 
         String userid = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getUser_id();
-        String FirstName = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getFullname();
+        String[] FullName = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getFullname().split(" ");
+        String FirstName = FullName[0];
+        String LastName = FullName[1];
         String Email = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getEmail();
         String Contact = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getContact();
         editTextFirstName.setText(FirstName);
+        editTextLastName.setText(LastName);
         editTextEmail.setText(Email);
         editTextContact.setText(Contact);
 
@@ -148,6 +152,14 @@ public class ActivityEditProfile extends AppCompatActivity {
         });
     }
 
-//        editTextPassword = findViewById(R.id.editProfile_)
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.edit_account_menu, menu);
+        return true;
+    }
+
+    
+
+    //        editTextPassword = findViewById(R.id.editProfile_)
 
 }

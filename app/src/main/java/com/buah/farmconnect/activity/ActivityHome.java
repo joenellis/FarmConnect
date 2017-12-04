@@ -126,6 +126,12 @@ public class ActivityHome extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         displaySelectedScreen(item.getItemId());
         return true;
@@ -136,12 +142,6 @@ public class ActivityHome extends AppCompatActivity {
         if (mCurrentFragment == getSupportFragmentManager().findFragmentById(R.id.fragmentHome_rootLayout)){
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.home_menu, menu);
-        return true;
     }
 
     public void setHomeFragment(Fragment fragment) {

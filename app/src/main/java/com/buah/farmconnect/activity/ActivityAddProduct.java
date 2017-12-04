@@ -49,6 +49,9 @@ public class ActivityAddProduct extends AppCompatActivity {
         mPager.setCurrentItem(mPager.getCurrentItem() + 1);
     }
 
+    public void onAddProductClick(View view) {
+    }
+
     private class AddProductPagerAdapter extends FragmentStatePagerAdapter {
 
         ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
