@@ -1,0 +1,199 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+MERGED from [com.android.support:design:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/design-27.0.1.aar/86d4ac3c3e0cf66bdaaed5b3dc5cfb41/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.1.aar/7067942c38461e2ac503f51d8bd4a7ce/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.1.aar/ee50828f1d4cdeab8d7de1e4cf7ff5f3/AndroidManifest.xml:17:1-22:12
+MERGED from [de.hdodenhof:circleimageview:2.2.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/5dca0366956c94cf56336b305baa9547/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/807acb12a9f4769532d0fbd1208792d1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.1.aar/e2c87924a65940fdcb6222a4841799b8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.1.aar/90104e5730990ae947061678b67dbe72/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.1.aar/665234871a8eae488ff26c52ac1d88c9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.1.aar/89e1c178b4b231f3885fefc686cb1d50/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.1.aar/0b054a4b987c1236abdcca2b17883c95/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.1.aar/5cdd0fde91454a0df9e1c47b04bb943d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.1.aar/1bcc469c4e4a3cdf5e11bc520378c98e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/transition-27.0.1.aar/0e9a8f26846013853b291b300f24e658/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/3765f8957ac384f2587ca9ecc170adac/AndroidManifest.xml:17:1-30:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+	package
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:3:5-35
+		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:6:5-71
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:6:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:7:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:8:5-72
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:8:22-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:9:5-67
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:9:22-64
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:10:5-98
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:10:22-95
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:11:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:12:22-76
+application
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:14:5-71:19
+MERGED from [de.hdodenhof:circleimageview:2.2.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/5dca0366956c94cf56336b305baa9547/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.2.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/5dca0366956c94cf56336b305baa9547/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/807acb12a9f4769532d0fbd1208792d1/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/807acb12a9f4769532d0fbd1208792d1/AndroidManifest.xml:9:5-20
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/3765f8957ac384f2587ca9ecc170adac/AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/3765f8957ac384f2587ca9ecc170adac/AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:19:9-35
+	android:label
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:17:9-41
+	android:roundIcon
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:18:9-54
+	android:icon
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:16:9-43
+	android:allowBackup
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:15:9-35
+	android:theme
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:20:9-40
+activity#com.buah.farmconnect.activity.ActivityHome
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:21:9-27:20
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:21:19-56
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:22:13-26:29
+action#android.intent.action.MAIN
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:23:17-69
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:23:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:25:17-77
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:25:27-74
+activity#com.buah.farmconnect.activity.ActivityViewProduct
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:28:9-34:20
+	android:parentActivityName
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:30:13-64
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:29:13-57
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:31:13-33:58
+	android:value
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:33:17-55
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:32:17-63
+activity#com.buah.farmconnect.activity.ActivityAddProduct
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:35:9-41:20
+	android:parentActivityName
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:37:13-64
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:36:13-56
+activity#com.buah.farmconnect.activity.ActivityLogin
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:42:9-48:20
+	android:parentActivityName
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:44:13-64
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:43:13-51
+activity#com.buah.farmconnect.activity.ActivityMyAccount
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:49:9-55:20
+	android:parentActivityName
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:51:13-64
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:50:13-55
+activity#com.buah.farmconnect.activity.ActivitySignUp
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:56:9-62:20
+	android:parentActivityName
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:58:13-64
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:57:13-52
+activity#com.buah.farmconnect.activity.ActivityEditProfile
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:63:9-69:20
+	android:parentActivityName
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:65:13-64
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:64:13-57
+activity#com.buah.farmconnect.activity.ActivityEditProduct
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:70:9-75
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:70:19-63
+uses-sdk
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/design-27.0.1.aar/86d4ac3c3e0cf66bdaaed5b3dc5cfb41/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/design-27.0.1.aar/86d4ac3c3e0cf66bdaaed5b3dc5cfb41/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.1.aar/7067942c38461e2ac503f51d8bd4a7ce/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.1.aar/7067942c38461e2ac503f51d8bd4a7ce/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.1.aar/ee50828f1d4cdeab8d7de1e4cf7ff5f3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.1.aar/ee50828f1d4cdeab8d7de1e4cf7ff5f3/AndroidManifest.xml:20:5-44
+MERGED from [de.hdodenhof:circleimageview:2.2.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/5dca0366956c94cf56336b305baa9547/AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.2.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/5dca0366956c94cf56336b305baa9547/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/807acb12a9f4769532d0fbd1208792d1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/807acb12a9f4769532d0fbd1208792d1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.1.aar/e2c87924a65940fdcb6222a4841799b8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.1.aar/e2c87924a65940fdcb6222a4841799b8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.1.aar/90104e5730990ae947061678b67dbe72/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.1.aar/90104e5730990ae947061678b67dbe72/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.1.aar/665234871a8eae488ff26c52ac1d88c9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.1.aar/665234871a8eae488ff26c52ac1d88c9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.1.aar/89e1c178b4b231f3885fefc686cb1d50/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.1.aar/89e1c178b4b231f3885fefc686cb1d50/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.1.aar/0b054a4b987c1236abdcca2b17883c95/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.1.aar/0b054a4b987c1236abdcca2b17883c95/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.1.aar/5cdd0fde91454a0df9e1c47b04bb943d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.1.aar/5cdd0fde91454a0df9e1c47b04bb943d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.1.aar/1bcc469c4e4a3cdf5e11bc520378c98e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.1.aar/1bcc469c4e4a3cdf5e11bc520378c98e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/transition-27.0.1.aar/0e9a8f26846013853b291b300f24e658/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/transition-27.0.1.aar/0e9a8f26846013853b291b300f24e658/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/3765f8957ac384f2587ca9ecc170adac/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/3765f8957ac384f2587ca9ecc170adac/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/3765f8957ac384f2587ca9ecc170adac/AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/3765f8957ac384f2587ca9ecc170adac/AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/3765f8957ac384f2587ca9ecc170adac/AndroidManifest.xml:26:13-58

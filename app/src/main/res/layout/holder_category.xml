@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/holderCategory_txtCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="5dp"
+            android:layout_toLeftOf="@+id/holderCategory_btnMore"
+            android:layout_toStartOf="@+id/holderCategory_btnMore"
+            android:text="@string/homeNewHeading"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/holderCategory_btnMore"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/holderCategory_txtCategory"
+            android:layout_marginBottom="5dp"
+            android:gravity="top|end"
+            android:onClick="onNewMoreClick"
+            android:text="@string/homeNewMore"
+            android:textColor="#09f" />
+
+        <TextView
+            android:id="@+id/holderCategory_txtSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/holderCategory_txtCategory"
+            android:layout_marginBottom="5dp"
+            android:text="@string/homeBrowseNew" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/holderCategory_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/holderCategory_txtSubtitle">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
