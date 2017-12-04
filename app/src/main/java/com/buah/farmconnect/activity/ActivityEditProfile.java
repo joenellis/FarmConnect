@@ -7,6 +7,7 @@ import android.support.design.widget.TextInputEditText;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -86,7 +87,7 @@ public class ActivityEditProfile extends AppCompatActivity {
 
     }
 
-    public boolean onUpdateClick(View view) {
+    public void updateChanges() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Updating...");
         progressDialog.show();
@@ -122,8 +123,6 @@ public class ActivityEditProfile extends AppCompatActivity {
                 progressDialog.dismiss();
             }
         });
-    return false;
-
     }
 
     public void onLoginBackground() {
@@ -158,7 +157,17 @@ public class ActivityEditProfile extends AppCompatActivity {
         return true;
     }
 
-    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.action_saveEditAccount:
+                updateChanges();
+                break;
+        }
+
+        return true;
+    }
 
     //        editTextPassword = findViewById(R.id.editProfile_)
 

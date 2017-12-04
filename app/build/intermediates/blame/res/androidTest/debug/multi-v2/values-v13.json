@@ -1,21 +1,6 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v13\\values-v13.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-v13\\values-v13.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "58",
-                        "endOffsets": "109"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v13\\values-v13.xml",
             "map": [
                 {

@@ -87,7 +87,7 @@ public class ActivitySignUp extends AppCompatActivity {
         if (TextUtils.isEmpty(number.getText().toString())) {
             number.setError("Enter Number!");
         } else {
-            SignUp.setFirstName(number.getText().toString().trim());
+            SignUp.setNumber(number.getText().toString().trim());
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
         }
     }
@@ -98,7 +98,7 @@ public class ActivitySignUp extends AppCompatActivity {
         if (TextUtils.isEmpty(email.getText().toString())) {
             email.setError("Enter Number!");
         } else {
-            SignUp.setFirstName(email.getText().toString().trim());
+            SignUp.setEmail(email.getText().toString().trim());
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
         }
     }
@@ -109,7 +109,7 @@ public class ActivitySignUp extends AppCompatActivity {
         if (TextUtils.isEmpty(password.getText().toString())) {
             password.setError("Enter Number!");
         } else {
-            SignUp.setFirstName(password.getText().toString().trim());
+            SignUp.setPassword(password.getText().toString().trim());
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
         }
     }
