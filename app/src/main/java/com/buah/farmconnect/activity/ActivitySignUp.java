@@ -45,14 +45,10 @@ public class ActivitySignUp extends AppCompatActivity {
     TextInputEditText password;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
-        initialize();
 
         mToolbar = findViewById(R.id.toolbar);
         mToolbar.setTitle("Sign Up");
@@ -68,34 +64,56 @@ public class ActivitySignUp extends AppCompatActivity {
         mPager.setAdapter(mPagerAdapter);
     }
 
-    private void initialize() {
+    public void onNextClick1(View view) {
+
         firstName = findViewById(R.id.signUp1_txtFirstName);
         lastName = findViewById(R.id.signUp1_txtLastName);
-        number = findViewById(R.id.signUp2_txtNumber);
-        email = findViewById(R.id.signUp3_txtEmail);
-        password = findViewById(R.id.signUp4_txtPassword);
-    }
 
-    public void onNextClick(View view) {
-
-        initialize();
-
-
-        if (TextUtils.isEmpty(firstName.getText().toString() ))
-        {
-
+        if (TextUtils.isEmpty(firstName.getText().toString())) {
             firstName.setError("Enter First name");
-
-        }else if (TextUtils.isEmpty(lastName.getText().toString())) {
-
+        } else if (TextUtils.isEmpty(lastName.getText().toString())) {
             lastName.setError("Enter Last name");
-
         } else {
-            SignUp.setFirstName(firstName.getText().toString());
-            SignUp.setLastName(lastName.getText().toString());
+            SignUp.setFirstName(firstName.getText().toString().trim());
+            SignUp.setLastName(lastName.getText().toString().trim());
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
         }
     }
+
+    public void onNextClick2(View view) {
+
+        number = findViewById(R.id.signUp2_txtNumber);
+
+        if (TextUtils.isEmpty(number.getText().toString())) {
+            number.setError("Enter Number!");
+        } else {
+            SignUp.setFirstName(number.getText().toString().trim());
+            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+        }
+    }
+
+    public void onNextClick3(View view) {
+        email = findViewById(R.id.signUp3_txtEmail);
+
+        if (TextUtils.isEmpty(email.getText().toString())) {
+            email.setError("Enter Number!");
+        } else {
+            SignUp.setFirstName(email.getText().toString().trim());
+            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+        }
+    }
+
+    public void onNextClick4(View view) {
+        password = findViewById(R.id.signUp4_txtPassword);
+
+        if (TextUtils.isEmpty(password.getText().toString())) {
+            password.setError("Enter Number!");
+        } else {
+            SignUp.setFirstName(password.getText().toString().trim());
+            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+        }
+    }
+
     public void onPreviousClick(View view) {
         mPager.setCurrentItem(mPager.getCurrentItem() - 1);
     }
