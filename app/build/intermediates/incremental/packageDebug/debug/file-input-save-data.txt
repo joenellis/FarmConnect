@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Dec 04 20:36:42 GMT 2017
+#Mon Dec 04 22:35:11 GMT 2017
 2.base=C\:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
 5.set=DEX
 0.path=classes.dex

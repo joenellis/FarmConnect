@@ -4,15 +4,16 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.buah.farmconnect.R;
@@ -25,6 +26,7 @@ import com.buah.farmconnect.fragment.FragmentSignUp2;
 import com.buah.farmconnect.fragment.FragmentSignUp3;
 import com.buah.farmconnect.fragment.FragmentSignUp4;
 import com.buah.farmconnect.fragment.FragmentSignUp5;
+import com.buah.farmconnect.view.CustomViewPager;
 
 import java.util.ArrayList;
 
@@ -34,7 +36,7 @@ import retrofit2.Response;
 
 public class ActivitySignUp extends AppCompatActivity {
 
-    ViewPager mPager;
+    CustomViewPager mPager;
     PagerAdapter mPagerAdapter;
     Toolbar mToolbar;
 
@@ -60,15 +62,14 @@ public class ActivitySignUp extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         mPager = findViewById(R.id.sign_Up_viewPager);
+        mPager.setPagingEnabled(false);
         mPagerAdapter = new SignUpPagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
     }
 
     public void onNextClick1(View view) {
-
         firstName = findViewById(R.id.signUp1_txtFirstName);
         lastName = findViewById(R.id.signUp1_txtLastName);
-
         if (TextUtils.isEmpty(firstName.getText().toString())) {
             firstName.setError("Enter First name");
         } else if (TextUtils.isEmpty(lastName.getText().toString())) {
@@ -81,9 +82,7 @@ public class ActivitySignUp extends AppCompatActivity {
     }
 
     public void onNextClick2(View view) {
-
         number = findViewById(R.id.signUp2_txtNumber);
-
         if (TextUtils.isEmpty(number.getText().toString())) {
             number.setError("Enter Number!");
         } else {
@@ -94,9 +93,8 @@ public class ActivitySignUp extends AppCompatActivity {
 
     public void onNextClick3(View view) {
         email = findViewById(R.id.signUp3_txtEmail);
-
         if (TextUtils.isEmpty(email.getText().toString())) {
-            email.setError("Enter Number!");
+            email.setError("Enter Email!");
         } else {
             SignUp.setEmail(email.getText().toString().trim());
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
@@ -105,9 +103,10 @@ public class ActivitySignUp extends AppCompatActivity {
 
     public void onNextClick4(View view) {
         password = findViewById(R.id.signUp4_txtPassword);
-
         if (TextUtils.isEmpty(password.getText().toString())) {
-            password.setError("Enter Number!");
+            TextInputLayout x = findViewById(R.id.signUp4_txtPasswordLay);
+            x.setPasswordVisibilityToggleEnabled(false);
+            password.setError("Enter Password!");
         } else {
             SignUp.setPassword(password.getText().toString().trim());
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
@@ -115,10 +114,22 @@ public class ActivitySignUp extends AppCompatActivity {
     }
 
     public void onPreviousClick(View view) {
+        ViewGroup layPrevious = findViewById(R.id.signUp_layPrevious);
+        layPrevious.setVisibility(View.VISIBLE);
         mPager.setCurrentItem(mPager.getCurrentItem() - 1);
     }
 
-    public boolean onSignUpClick(View view) {
+    public void onPasswordEditTextClick(View view) {
+        TextInputLayout x = findViewById(R.id.signUp4_txtPasswordLay);
+        TextInputEditText x1 = (TextInputEditText) view;
+        if (!x.isPasswordVisibilityToggleEnabled()){
+            x.setPasswordVisibilityToggleEnabled(true);
+        }
+
+    }
+
+
+    public void onSignUpClick(View view) {
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Signing Up...");
@@ -156,7 +167,6 @@ public class ActivitySignUp extends AppCompatActivity {
         Intent intent = new Intent(this, ActivityLogin.class);
         startActivity(intent);
         finish();
-        return false;
     }
 
     @Override

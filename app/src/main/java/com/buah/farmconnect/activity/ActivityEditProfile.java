@@ -140,6 +140,7 @@ public class ActivityEditProfile extends AppCompatActivity {
                 if (!response.body().getError()) {
                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
                     SharedPrefManager.getInstance(getApplicationContext()).userLogin(response.body().getObjectUser());
+                    startActivity(new Intent(getBaseContext(), ActivityMyAccount.class));
                 } else {
                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
                 }

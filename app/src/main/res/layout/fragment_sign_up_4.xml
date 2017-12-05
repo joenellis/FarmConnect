@@ -46,6 +46,7 @@
             android:padding="5dp">
 
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/signUp4_txtPasswordLay"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -56,6 +57,7 @@
                     android:id="@+id/signUp4_txtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="onPasswordEditTextClick"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
@@ -70,6 +72,31 @@
             android:text="Next"
             android:textColor="#fff"
             android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/signUp_layPrevious"
+            style="?attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/Sign_Up_3_btnPrevious"
+                style="?attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="start|center_vertical"
+                android:onClick="onPreviousClick"
+                android:text="Previous"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

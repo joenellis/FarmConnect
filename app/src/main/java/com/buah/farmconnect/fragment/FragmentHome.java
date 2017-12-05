@@ -1,6 +1,7 @@
 package com.buah.farmconnect.fragment;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -32,33 +33,10 @@ public class FragmentHome extends Fragment {
 
     final private String KEY = "GET";
 
-    ArrayList productNames = new ArrayList<>(Arrays.asList("Tomatoes", "Cabbage", "Banana ", "Chicken", "Cow", "Person 6", "Person 7", "Person 8", "Person 9", "Person 10", "Person 11", "Person 12", "Person 13", "Person 14"));
-    ArrayList price = new ArrayList<>(Arrays.asList("GhC 1.00", "GhC 2.00", "GhC 3.00", "GhC 4.00", "GhC 5.00", "GhC 6.00", "GhC 7.00", "GhC 8.00", "GhC 9.00", "GhC 10.00", "GhC 11.00", "GhC 12.00", "GhC 13.00", "GhC 14.00"));
-    ArrayList quantity = new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"));
-//    ArrayList image = new ArrayList<>(Arrays.asList(
-//            R.drawable.tomato,
-//            R.drawable.cabbage,
-//            R.drawable.banana,
-//            R.drawable.chicken,
-//            R.drawable.cow,
-//            R.drawable.tomato,
-//            R.drawable.cabbage,
-//            R.drawable.banana,
-//            R.drawable.chicken,
-//            R.drawable.cow,
-//            R.drawable.tomato,
-//            R.drawable.cabbage,
-//            R.drawable.banana,
-//            R.drawable.chicken
-//    ));
-
-    ObjectPlay products = new ObjectPlay();
-
-    Color coc;
-
-
     RecyclerView.LayoutManager layoutManager;
     RecyclerView recyclerViewHome;
+
+    int spanCount;
 
     public FragmentHome() {
     }
@@ -68,12 +46,12 @@ public class FragmentHome extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
-        layoutManager = new GridLayoutManager(getActivity(), 2);
+        spanCount = (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)? 3 : 2;
+
+        layoutManager = new GridLayoutManager(getActivity(), spanCount);
         recyclerViewHome = rootView.findViewById(R.id.recyclerViewHome);
         recyclerViewHome.setLayoutManager(layoutManager);
         recyclerViewHome.setHasFixedSize(true);
-
-
 
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
@@ -102,8 +80,6 @@ public class FragmentHome extends Fragment {
                 Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-
-
 
         return rootView;
     }
