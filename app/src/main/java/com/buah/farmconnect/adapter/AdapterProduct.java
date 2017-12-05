@@ -44,7 +44,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ProductH
     @Override
     public void onBindViewHolder(ProductHolder holder, int position) {
 
-        ObjectProduct product = products.get(position);
+        final ObjectProduct product = products.get(position);
 
         holder.productName.setText(product.getProductname());
         holder.productPrice.setText(product.getPrice());
@@ -55,6 +55,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ProductH
             public void onClick(View view) {
 
                 Intent intent = new Intent(mContext, ActivityViewProduct.class);
+                intent.putExtra("ID", product.getProduct_id());
                 mContext.startActivity(intent);
 
             }

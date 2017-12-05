@@ -1,5 +1,6 @@
 package com.buah.farmconnect.activity;
 
+import android.content.Intent;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +36,7 @@ public class ActivityViewProduct extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     BottomSheetBehavior mBottomSheetBehavior;
     AdapterViewProductImages adapterViewProductImages;
+    String productId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,13 @@ public class ActivityViewProduct extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle("Product");
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        if (bundle != null) {
+            productId = bundle.getString("ID");
+        }
 
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(adapterViewProductImages);
