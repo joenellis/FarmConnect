@@ -18,14 +18,13 @@ public class AdapterViewProductImages extends RecyclerView.Adapter<AdapterViewPr
 
     private Context mContext;
     private ArrayList mImage;
-    private ObjectProduct objectProductdetail;
 
 
-    public AdapterViewProductImages(Context mContext, ArrayList mImage, ObjectProduct objectProductdetail) {
+    public AdapterViewProductImages(Context mContext, ArrayList mImage) {
         this.mContext = mContext;
         this.mImage = mImage;
-        this.objectProductdetail = objectProductdetail;
     }
+
 
     @Override
     public ProductImageHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -37,16 +36,12 @@ public class AdapterViewProductImages extends RecyclerView.Adapter<AdapterViewPr
     @Override
     public void onBindViewHolder(ProductImageHolder holder, int position) {
 
-
-        String video = objectProductdetail.getVideo();
-        String audio = objectProductdetail.getAudio();
         Picasso.with(this.mContext).load(String.valueOf(mImage.get(position))).into(holder.productImage);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String video = objectProductdetail.getVideo();
-                String audio = objectProductdetail.getAudio();
+
             }
         });
     }

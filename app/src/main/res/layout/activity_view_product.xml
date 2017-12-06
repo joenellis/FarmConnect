@@ -320,6 +320,7 @@
                             android:layout_weight="1"
                             android:src="@drawable/ic_audio"
                             android:tint="@color/colorAccent"
+                            android:onClick="onPlayAudioClick"
                             tools:ignore="ContentDescription" />
                     </LinearLayout>
 
@@ -348,6 +349,7 @@
                             android:layout_weight="1"
                             android:src="@drawable/ic_play_arrow"
                             android:tint="@color/colorAccent"
+                            android:onClick="onPlayVideoClick"
                             tools:ignore="ContentDescription" />
                     </LinearLayout>
                 </LinearLayout>

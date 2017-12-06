@@ -30,7 +30,7 @@ import retrofit2.Response;
 public class ActivityViewProduct extends AppCompatActivity {
 
 
-    ArrayList mImages;
+    ArrayList<String> mImages;
     View mBottomSheet;
     Toolbar mToolbar;
     TextView mPrice;
@@ -45,8 +45,9 @@ public class ActivityViewProduct extends AppCompatActivity {
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager layoutManager;
     BottomSheetBehavior mBottomSheetBehavior;
-    AdapterViewProductImages adapterViewProductImages;
     String productId;
+    private String audio;
+    private String video;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,14 +65,14 @@ public class ActivityViewProduct extends AppCompatActivity {
         getSupportActionBar().setTitle("Product");
 
         Intent intent = getIntent();
-        String id = intent.getStringExtra("ID");
+        productId= intent.getStringExtra("ID");
 
         mRecyclerView.setLayoutManager(layoutManager);
 
-                /////test to call per product selected
+        /////test to call per product selected
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
-        Call<Result> call = service.productdetails(id);
+        Call<Result> call = service.productdetails(productId);
         call.enqueue(new Callback<Result>() {
             @Override
             public void onResponse(Call<Result> call, Response<Result> response) {
@@ -79,24 +80,24 @@ public class ActivityViewProduct extends AppCompatActivity {
                 if (response.body() != null) {
                     if (!response.body().getError()) {
 
-                        mImages = new ArrayList();
+                        mImages = new ArrayList<>();
                         mImages.add(response.body().getObjectProductdetail().getImage1());
                         mImages.add(response.body().getObjectProductdetail().getImage2());
                         mImages.add(response.body().getObjectProductdetail().getImage3());
+                        audio = response.body().getObjectProductdetail().getAudio();
+                        video = response.body().getObjectProductdetail().getVideo();
 
-                        response.body().getObjectProductdetail().getAudio();
 
-
-                        AdapterViewProductImages adapter = new AdapterViewProductImages(getApplicationContext(),mImages,response.body().getObjectProductdetail());
+                        AdapterViewProductImages adapter = new AdapterViewProductImages(getApplicationContext(), mImages);
                         ;
                         mRecyclerView.setAdapter(adapter);
 
-                        String productname =response.body().getObjectProductdetail().getProductname();
-                        String image =response.body().getObjectProductdetail().getImage();
-                        String description =response.body().getObjectProductdetail().getDescription();
-                        String farmername =response.body().getObjectProductdetail().getFullname();
-                        String price =response.body().getObjectProductdetail().getPrice();
-                        String location =response.body().getObjectProductdetail().getLocation();
+                        String productname = response.body().getObjectProductdetail().getProductname();
+                        String image = response.body().getObjectProductdetail().getImage();
+                        String description = response.body().getObjectProductdetail().getDescription();
+                        String farmername = response.body().getObjectProductdetail().getFullname();
+                        String price = response.body().getObjectProductdetail().getPrice();
+                        String location = response.body().getObjectProductdetail().getLocation();
 
                         mProductName.setText(productname);
                         Picasso.with(getApplicationContext()).load(image).into(mProductImage);
@@ -108,7 +109,7 @@ public class ActivityViewProduct extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-      ;
+                        ;
                     }
                 }
             }
@@ -170,5 +171,11 @@ public class ActivityViewProduct extends AppCompatActivity {
 
     public void onCallButtonClick(View view) {
 
+    }
+
+    public void onPlayAudioClick(View view) {
+    }
+
+    public void onPlayVideoClick(View view) {
     }
 }
