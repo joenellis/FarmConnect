@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-74:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-74:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-74:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-74:12
 MERGED from [com.android.support:design:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/design-27.0.1.aar/86d4ac3c3e0cf66bdaaed5b3dc5cfb41/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-v4:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.1.aar/7067942c38461e2ac503f51d8bd4a7ce/AndroidManifest.xml:17:1-22:12
@@ -20,20 +20,20 @@ MERGED from [com.android.support:support-core-ui:27.0.1] /Users/joenellis/.gradl
 MERGED from [com.android.support:transition:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/transition-27.0.1.aar/0e9a8f26846013853b291b300f24e658/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.0.1] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/3765f8957ac384f2587ca9ecc170adac/AndroidManifest.xml:17:1-30:12
-INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-74:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-74:12
+INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-74:12
 	package
 		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:3:5-35
 		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
-		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-74:12
 		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
-		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-73:12
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:1-74:12
 		INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:2:11-69
@@ -66,7 +66,7 @@ ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml
 	android:name
 		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:12:22-76
 application
-ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:14:5-71:19
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:14:5-72:19
 MERGED from [de.hdodenhof:circleimageview:2.2.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/5dca0366956c94cf56336b305baa9547/AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:2.2.0] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/circleimageview-2.2.0.aar/5dca0366956c94cf56336b305baa9547/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/joenellis/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/807acb12a9f4769532d0fbd1208792d1/AndroidManifest.xml:9:5-20
@@ -145,6 +145,10 @@ activity#com.buah.farmconnect.activity.ActivityEditProduct
 ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:70:9-75
 	android:name
 		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:70:19-63
+activity#com.buah.farmconnect.activity.VideoViewActivity
+ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:71:9-73
+	android:name
+		ADDED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml:71:19-61
 uses-sdk
 INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/joenellis/Desktop/FarmConnect/app/src/main/AndroidManifest.xml

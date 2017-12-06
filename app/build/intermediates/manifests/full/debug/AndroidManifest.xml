@@ -76,6 +76,7 @@
                 android:value=".activity.ActivityHome" />
         </activity>
         <activity android:name="com.buah.farmconnect.activity.ActivityEditProduct" />
+        <activity android:name="com.buah.farmconnect.activity.VideoViewActivity" />
 
         <meta-data
             android:name="android.arch.lifecycle.VERSION"

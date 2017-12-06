@@ -1,6 +1,12 @@
 package com.buah.farmconnect.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -8,11 +14,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.buah.farmconnect.adapter.AdapterViewProductImages;
 import com.buah.farmconnect.R;
@@ -21,6 +30,7 @@ import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -48,6 +58,10 @@ public class ActivityViewProduct extends AppCompatActivity {
     String productId;
     private String audio;
     private String video;
+    private String contact;
+    VideoView videoview;
+    ProgressDialog pDialog;
+    MediaPlayer mp ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,12 +98,8 @@ public class ActivityViewProduct extends AppCompatActivity {
                         mImages.add(response.body().getObjectProductdetail().getImage1());
                         mImages.add(response.body().getObjectProductdetail().getImage2());
                         mImages.add(response.body().getObjectProductdetail().getImage3());
-                        audio = response.body().getObjectProductdetail().getAudio();
-                        video = response.body().getObjectProductdetail().getVideo();
-
 
                         AdapterViewProductImages adapter = new AdapterViewProductImages(getApplicationContext(), mImages);
-                        ;
                         mRecyclerView.setAdapter(adapter);
 
                         String productname = response.body().getObjectProductdetail().getProductname();
@@ -98,6 +108,9 @@ public class ActivityViewProduct extends AppCompatActivity {
                         String farmername = response.body().getObjectProductdetail().getFullname();
                         String price = response.body().getObjectProductdetail().getPrice();
                         String location = response.body().getObjectProductdetail().getLocation();
+                        audio = response.body().getObjectProductdetail().getAudio();
+                        video = response.body().getObjectProductdetail().getVideo();
+                        contact = response.body().getObjectProductdetail().getContact();
 
                         mProductName.setText(productname);
                         Picasso.with(getApplicationContext()).load(image).into(mProductImage);
@@ -105,6 +118,7 @@ public class ActivityViewProduct extends AppCompatActivity {
                         mFarmerName.setText(farmername);
                         mPrice.setText(price);
                         mLocation.setText(location);
+                        mCall.setText(contact);
 
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
                     } else {
@@ -145,6 +159,7 @@ public class ActivityViewProduct extends AppCompatActivity {
         mCall = findViewById(R.id.viewProduct_txtCall);
         mLocation = findViewById(R.id.viewProduct_txtLocation);
         mPrice = findViewById(R.id.viewProduct_txtPrice);
+        videoview = findViewById(R.id.VideoView);
 
         layoutManager = new LinearLayoutManager(
                 this,
@@ -174,8 +189,26 @@ public class ActivityViewProduct extends AppCompatActivity {
     }
 
     public void onPlayAudioClick(View view) {
+
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        try {
+            mediaPlayer.setDataSource(audio);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            mediaPlayer.prepare();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        mediaPlayer.start();
     }
 
     public void onPlayVideoClick(View view) {
+        Intent myIntent = new Intent(this, VideoViewActivity.class);
+        myIntent.putExtra("vUrl",video);
+        this.startActivity(myIntent);
+
     }
 }

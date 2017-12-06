@@ -68,6 +68,7 @@
                 android:value=".activity.ActivityHome" />
         </activity>
         <activity android:name=".activity.ActivityEditProduct"></activity>
+        <activity android:name=".activity.VideoViewActivity"></activity>
     </application>
 
 </manifest>
