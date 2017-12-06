@@ -53,15 +53,15 @@ public class ActivityViewProduct extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle("Product");
 
+        mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.setAdapter(adapterViewProductImages);
+
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
         if (bundle != null) {
             productId = bundle.getString("ID");
         }
-
-        mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setAdapter(adapterViewProductImages);
     }
 
     private void bottomSheetHack() {
@@ -71,6 +71,22 @@ public class ActivityViewProduct extends AppCompatActivity {
                 mBottomSheetBehavior.setPeekHeight(0);
             }
         });
+    }
+
+    public void onDescButtonClick(View view) {
+        if (mBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
+            mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+        } else {
+            mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+        }
+    }
+
+    public void onMapButtonClick(View view) {
+        Snackbar.make(
+                findViewById(R.id.viewProduct_layRoot),
+                "Opening Maps",
+                Snackbar.LENGTH_LONG
+        ).show();
     }
 
     private void initializeComponents() {
@@ -101,21 +117,5 @@ public class ActivityViewProduct extends AppCompatActivity {
                 LinearLayoutManager.HORIZONTAL,
                 false
         );
-    }
-
-    public void onDescButtonClick(View view) {
-        if (mBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
-            mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-        } else {
-            mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-        }
-    }
-
-    public void onMapButtonClick(View view) {
-        Snackbar.make(
-                findViewById(R.id.viewProduct_layRoot),
-                "Opening Maps",
-                Snackbar.LENGTH_LONG
-        ).show();
     }
 }
