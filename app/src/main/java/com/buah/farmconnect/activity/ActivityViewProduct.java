@@ -12,21 +12,31 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.buah.farmconnect.adapter.AdapterViewProductImages;
 import com.buah.farmconnect.R;
+import com.buah.farmconnect.api.Api;
+import com.buah.farmconnect.api.ApiCall;
+import com.buah.farmconnect.api.Result;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ActivityViewProduct extends AppCompatActivity {
 
+
+    ArrayList mImages;
     View mBottomSheet;
     Toolbar mToolbar;
     TextView mPrice;
     Button mMapButton;
     Button mDescButton;
-    TextView mQuantity;
+    TextView mCall;
     TextView mLocation;
     TextView mFarmerName;
     TextView mProductName;
@@ -54,14 +64,61 @@ public class ActivityViewProduct extends AppCompatActivity {
         getSupportActionBar().setTitle("Product");
 
         Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-
-        if (bundle != null) {
-            productId = bundle.getString("ID");
-        }
+        String id = intent.getStringExtra("ID");
 
         mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setAdapter(adapterViewProductImages);
+
+                /////test to call per product selected
+        Api api = new Api();
+        ApiCall service = api.getRetro().create(ApiCall.class);
+        Call<Result> call = service.productdetails(id);
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+
+                if (response.body() != null) {
+                    if (!response.body().getError()) {
+
+                        mImages = new ArrayList();
+                        mImages.add(response.body().getObjectProductdetail().getImage1());
+                        mImages.add(response.body().getObjectProductdetail().getImage2());
+                        mImages.add(response.body().getObjectProductdetail().getImage3());
+
+                        response.body().getObjectProductdetail().getAudio();
+
+
+                        AdapterViewProductImages adapter = new AdapterViewProductImages(getApplicationContext(),mImages,response.body().getObjectProductdetail());
+                        ;
+                        mRecyclerView.setAdapter(adapter);
+
+                        String productname =response.body().getObjectProductdetail().getProductname();
+                        String image =response.body().getObjectProductdetail().getImage();
+                        String description =response.body().getObjectProductdetail().getDescription();
+                        String farmername =response.body().getObjectProductdetail().getFullname();
+                        String price =response.body().getObjectProductdetail().getPrice();
+                        String location =response.body().getObjectProductdetail().getLocation();
+
+                        mProductName.setText(productname);
+                        Picasso.with(getApplicationContext()).load(image).into(mProductImage);
+                        mDescription.setText(description);
+                        mFarmerName.setText(farmername);
+                        mPrice.setText(price);
+                        mLocation.setText(location);
+
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+      ;
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
     private void bottomSheetHack() {
@@ -84,18 +141,10 @@ public class ActivityViewProduct extends AppCompatActivity {
         mBottomSheetBehavior = BottomSheetBehavior.from(mBottomSheet);
         mMapButton = findViewById(R.id.viewProduct_btnViewOnMap);
         mFarmerName = findViewById(R.id.viewProduct_txtFarmName);
-        mQuantity = findViewById(R.id.viewProduct_txtQuantity);
+        mCall = findViewById(R.id.viewProduct_txtCall);
         mLocation = findViewById(R.id.viewProduct_txtLocation);
         mPrice = findViewById(R.id.viewProduct_txtPrice);
-        adapterViewProductImages = new AdapterViewProductImages(
-                this,
-                new ArrayList<>(Arrays.asList(
-                        R.drawable.tomato,
-                        R.drawable.cabbage,
-                        R.drawable.banana,
-                        R.drawable.chicken
-                ))
-        );
+
         layoutManager = new LinearLayoutManager(
                 this,
                 LinearLayoutManager.HORIZONTAL,
@@ -117,5 +166,9 @@ public class ActivityViewProduct extends AppCompatActivity {
                 "Opening Maps",
                 Snackbar.LENGTH_LONG
         ).show();
+    }
+
+    public void onCallButtonClick(View view) {
+
     }
 }

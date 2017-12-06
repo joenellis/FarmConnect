@@ -57,7 +57,6 @@
                     android:id="@+id/signUp4_txtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="onPasswordEditTextClick"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>

@@ -61,30 +61,6 @@ public class ActivityEditProfile extends AppCompatActivity {
         editTextEmail.setText(Email);
         editTextContact.setText(Contact);
 
-//        /////test to call per product selected
-//        Api api = new Api();
-//        ApiCall service = api.getRetro().create(ApiCall.class);
-//        Call<Result> call = service.productdetails("3");
-//        call.enqueue(new Callback<Result>() {
-//            @Override
-//            public void onResponse(Call<Result> call, Response<Result> response) {
-//
-//                if (response.body() != null) {
-//                    if (!response.body().getError()) {
-//                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-//                    } else {
-//                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-//      ;
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Result> call, Throwable t) {
-//                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
-//            }
-//        });
-
     }
 
     public void updateChanges() {

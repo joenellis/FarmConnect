@@ -50,6 +50,8 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ProductH
         holder.productPrice.setText(product.getPrice());
         Picasso.with(this.mContext).load(product.getImage()).into(holder.productImage);
 
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

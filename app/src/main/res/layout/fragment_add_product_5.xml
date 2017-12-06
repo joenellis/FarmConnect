@@ -45,6 +45,7 @@
             android:padding="5dp">
 
             <LinearLayout
+                android:id="@+id/addProduct_layRecordAudio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -53,6 +54,7 @@
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@+id/addProduct_txtRecordAudio"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3" />

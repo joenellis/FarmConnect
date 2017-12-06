@@ -51,6 +51,7 @@
 
     <string name="action_settings">Settings</string>
     <string name="navLogin">Login</string>
+    <string name="viewProduct_callFarmer">Call Farmer</string>
 
     <array name="categories">
         <item>Select Category</item>

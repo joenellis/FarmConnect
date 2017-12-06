@@ -8,17 +8,23 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.buah.farmconnect.R;
+import com.buah.farmconnect.object.ObjectProduct;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdapterViewProductImages extends RecyclerView.Adapter<AdapterViewProductImages.ProductImageHolder> {
 
     private Context mContext;
     private ArrayList mImage;
+    private ObjectProduct objectProductdetail;
 
-    public AdapterViewProductImages(Context mContext, ArrayList mImage) {
+
+    public AdapterViewProductImages(Context mContext, ArrayList mImage, ObjectProduct objectProductdetail) {
         this.mContext = mContext;
         this.mImage = mImage;
+        this.objectProductdetail = objectProductdetail;
     }
 
     @Override
@@ -31,11 +37,17 @@ public class AdapterViewProductImages extends RecyclerView.Adapter<AdapterViewPr
     @Override
     public void onBindViewHolder(ProductImageHolder holder, int position) {
 
-        holder.productImage.setImageResource(Integer.parseInt(mImage.get(position).toString()));
+
+        String video = objectProductdetail.getVideo();
+        String audio = objectProductdetail.getAudio();
+        Picasso.with(this.mContext).load(String.valueOf(mImage.get(position))).into(holder.productImage);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {}
+            public void onClick(View view) {
+                String video = objectProductdetail.getVideo();
+                String audio = objectProductdetail.getAudio();
+            }
         });
     }
 

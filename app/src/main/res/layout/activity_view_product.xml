@@ -52,7 +52,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_margin="5dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cabbage"
+                    android:background="#ccc"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -63,7 +63,6 @@
                     android:layout_margin="5dp"
                     android:layout_toEndOf="@id/viewProduct_imgProductImage"
                     android:layout_toRightOf="@id/viewProduct_imgProductImage"
-                    android:text="@string/dummy_text_short"
                     android:textSize="30sp" />
 
                 <TextView
@@ -73,8 +72,7 @@
                     android:layout_below="@id/viewProduct_txtProductName"
                     android:layout_margin="5dp"
                     android:layout_toEndOf="@id/viewProduct_imgProductImage"
-                    android:layout_toRightOf="@id/viewProduct_imgProductImage"
-                    android:text="@string/dummy_text_short" />
+                    android:layout_toRightOf="@id/viewProduct_imgProductImage" />
             </RelativeLayout>
 
             <View
@@ -123,40 +121,54 @@
                         android:id="@+id/viewProduct_txtPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="@string/dummy_text_short" />
+                        android:layout_margin="5dp" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/viewProduct_layQuantity"
+                <RelativeLayout
+                    android:id="@+id/viewProduct_layCall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/viewProduct_layPrice"
-                    tools:ignore="UseCompoundDrawables">
+                    android:layout_below="@+id/viewProduct_layPrice">
 
                     <ImageView
-                        android:id="@+id/viewProduct_icQuantity"
+                        android:id="@+id/viewProduct_icCall"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_margin="5dp"
-                        android:src="@drawable/ic_basket"
                         android:tint="@color/colorAccent"
+                        android:src="@drawable/ic_call"
                         tools:ignore="ContentDescription" />
 
                     <TextView
-                        android:id="@+id/viewProduct_txtQuantity"
+                        android:id="@+id/viewProduct_txtCall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:paddingTop="3dp"
-                        android:text="@string/dummy_text_short" />
-                </LinearLayout>
+                        android:layout_toEndOf="@id/viewProduct_icCall"
+                        android:layout_toRightOf="@id/viewProduct_icCall"
+                        android:paddingTop="3dp" />
+
+                    <Button
+                        android:id="@+id/viewProduct_btnCall"
+                        style="@style/Widget.AppCompat.ButtonBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/viewProduct_txtCall"
+                        android:layout_toRightOf="@id/viewProduct_txtCall"
+                        android:gravity="bottom|end"
+                        android:text="@string/viewProduct_callFarmer"
+                        android:textColor="?colorAccent"
+                        android:onClick="onCallButtonClick"/>
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/viewProduct_layLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/viewProduct_layQuantity">
+                    android:layout_below="@+id/viewProduct_layCall">
 
                     <ImageView
                         android:id="@+id/viewProduct_icLocation"
@@ -174,8 +186,7 @@
                         android:layout_margin="5dp"
                         android:layout_toEndOf="@id/viewProduct_icLocation"
                         android:layout_toRightOf="@id/viewProduct_icLocation"
-                        android:paddingTop="3dp"
-                        android:text="@string/dummy_text_short" />
+                        android:paddingTop="3dp"/>
 
                     <Button
                         android:id="@+id/viewProduct_btnViewOnMap"
@@ -212,8 +223,7 @@
                         android:id="@+id/viewProduct_txtDescriptionText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="@string/lorem_ipsium" />
+                        android:layout_margin="5dp"/>
 
                     <Button
                         android:id="@+id/viewProduct_btnMoreDescription"

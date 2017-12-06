@@ -105,7 +105,6 @@ public class ActivitySignUp extends AppCompatActivity {
         password = findViewById(R.id.signUp4_txtPassword);
         if (TextUtils.isEmpty(password.getText().toString())) {
             TextInputLayout x = findViewById(R.id.signUp4_txtPasswordLay);
-            x.setPasswordVisibilityToggleEnabled(false);
             password.setError("Enter Password!");
         } else {
             SignUp.setPassword(password.getText().toString().trim());
@@ -119,48 +118,44 @@ public class ActivitySignUp extends AppCompatActivity {
         mPager.setCurrentItem(mPager.getCurrentItem() - 1);
     }
 
-    public void onPasswordEditTextClick(View view) {
-        TextInputLayout x = findViewById(R.id.signUp4_txtPasswordLay);
-        TextInputEditText x1 = (TextInputEditText) view;
-        if (!x.isPasswordVisibilityToggleEnabled()){
-            x.setPasswordVisibilityToggleEnabled(true);
-        }
-
-    }
 
 
     public void onSignUpClick(View view) {
 
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Signing Up...");
-        progressDialog.show();
+//        final ProgressDialog progressDialog = new ProgressDialog(getParent());
+//        progressDialog.setMessage("Signing Up...");
+//        progressDialog.show();
 
-        String fullName = SignUp.getFullName();
+        String fullname = SignUp.getFullName();
         String email = SignUp.getEmail();
         String contact = SignUp.getNumber();
         String password = SignUp.getPassword();
 
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
-        Call<Result> call = service.userSignup(fullName, email, password, contact);
+        Call<Result> call = service.userSignup(fullname, email, password, contact);
+
+
         call.enqueue(new Callback<Result>() {
             @Override
             public void onResponse(Call<Result> call, Response<Result> response) {
-
+              //  progressDialog.dismiss();
                 if (response.body() != null) {
                     if (!response.body().getError()) {
-                        progressDialog.dismiss();
+
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+
                     } else {
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+
                     }
                 }
             }
 
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
-                progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+               // progressDialog.dismiss();
             }
         });
 
