@@ -4845,7 +4845,7 @@ Praesent tincidunt lorem sit amet mi consequat cursus. Interdum et malesuada fam
         <item>Upper Gaane</item>
         <item>Upper Nanson</item>
         <item>UssherTown</item>
-    </array><string name="hello_blank_fragment">Hello blank fragment</string></file><file path="C:\Users\Abizi Buah\Desktop\FarmConnect\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+    </array></file><file path="C:\Users\Abizi Buah\Desktop\FarmConnect\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

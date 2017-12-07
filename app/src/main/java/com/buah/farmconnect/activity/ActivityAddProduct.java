@@ -3,6 +3,7 @@ package com.buah.farmconnect.activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -17,6 +18,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -33,6 +35,7 @@ import com.buah.farmconnect.fragment.FragmentAddProduct4;
 import com.buah.farmconnect.fragment.FragmentAddProduct5;
 import com.buah.farmconnect.view.CustomViewPager;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ActivityAddProduct extends AppCompatActivity {
@@ -55,10 +58,14 @@ public class ActivityAddProduct extends AppCompatActivity {
     String mediaPath2;
     String mediaPath3;
 
+    boolean isRecordingAudio = false;
+
     private int GALLERY = 1;
     private int CAMERA = 2;
     private int buttonId;
     private Button button;
+    private MediaRecorder mMediaRecorder;
+    private String mAudioFilePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +75,9 @@ public class ActivityAddProduct extends AppCompatActivity {
         mToolbar = findViewById(R.id.toolbar);
         mToolbar.setTitle("Add Product");
         setSupportActionBar(mToolbar);
+
+        mAudioFilePath = getExternalCacheDir().getAbsolutePath();
+        mAudioFilePath += "/audio_description.mp3";
 
         assert getSupportActionBar() != null;
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -216,6 +226,30 @@ public class ActivityAddProduct extends AppCompatActivity {
 
         }
     }
+
+
+    public void recordAudio(){
+        mMediaRecorder = new MediaRecorder();
+        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
+        mMediaRecorder.setOutputFile(mAudioFilePath);
+        mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+
+        try{
+            mMediaRecorder.prepare();
+        } catch (IOException e){
+            Log.e("Media Recorder", e.getMessage());
+        }
+
+        mMediaRecorder.start();
+    }
+
+    public void stopRecordingAudio(){
+       mMediaRecorder.stop();
+       mMediaRecorder.release();
+       mMediaRecorder = null;
+    }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
