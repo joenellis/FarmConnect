@@ -4,7 +4,7 @@ package com.buah.farmconnect.api;
  * Created by joenellis on 30/11/2017.
  */
 
-public class Upload {
+public class AddProduct {
 
     public static String category_id;
     public static String productName;
@@ -23,7 +23,7 @@ public class Upload {
     }
 
     public static void setCategory_id(String category_id) {
-        Upload.category_id = category_id;
+        AddProduct.category_id = category_id;
     }
 
     public static String getProductName() {
@@ -31,7 +31,7 @@ public class Upload {
     }
 
     public static void setProductName(String productName) {
-        Upload.productName = productName;
+        AddProduct.productName = productName;
     }
 
     public static String getPrice() {
@@ -39,7 +39,7 @@ public class Upload {
     }
 
     public static void setPrice(String price) {
-        Upload.price = price;
+        AddProduct.price = price;
     }
 
     public static String getDescription() {
@@ -47,7 +47,7 @@ public class Upload {
     }
 
     public static void setDescription(String description) {
-        Upload.description = description;
+        AddProduct.description = description;
     }
 
     public static String getLocation() {
@@ -55,7 +55,7 @@ public class Upload {
     }
 
     public static void setLocation(String location) {
-        Upload.location = location;
+        AddProduct.location = location;
     }
 
     public static String getImg1() {
@@ -63,7 +63,7 @@ public class Upload {
     }
 
     public static void setImg1(String img1) {
-        Upload.img1 = img1;
+        AddProduct.img1 = img1;
     }
 
     public static String getImg2() {
@@ -71,7 +71,7 @@ public class Upload {
     }
 
     public static void setImg2(String img2) {
-        Upload.img2 = img2;
+        AddProduct.img2 = img2;
     }
 
     public static String getImg3() {
@@ -79,7 +79,7 @@ public class Upload {
     }
 
     public static void setImg3(String img3) {
-        Upload.img3 = img3;
+        AddProduct.img3 = img3;
     }
 
     public static String getImg4() {
@@ -87,7 +87,7 @@ public class Upload {
     }
 
     public static void setImg4(String img4) {
-        Upload.img4 = img4;
+        AddProduct.img4 = img4;
     }
 
     public static String getVideo() {
@@ -95,7 +95,7 @@ public class Upload {
     }
 
     public static void setVideo(String video) {
-        Upload.video = video;
+        AddProduct.video = video;
     }
 
     public static String getAudio() {
@@ -103,6 +103,6 @@ public class Upload {
     }
 
     public static void setAudio(String audio) {
-        Upload.audio = audio;
+        AddProduct.audio = audio;
     }
 }

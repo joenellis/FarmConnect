@@ -53,15 +53,24 @@
     <string name="navLogin">Login</string>
     <string name="viewProduct_callFarmer">Call Farmer</string>
 
-    <array name="categories">
+    <array name="categories_name">
         <item>Select Category</item>
         <item>Tubers</item>
         <item>Fruits</item>
         <item>Vegetables</item>
         <item>Grains</item>
         <item>Meat</item>
-        <item>Cudley Cats</item>
     </array>
+
+    <array name="categories_id">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </array>
+
     <array name="regions">
         <item>Select Region</item>
         <item>Ashanti Region</item>

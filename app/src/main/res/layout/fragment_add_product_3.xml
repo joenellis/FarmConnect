@@ -111,7 +111,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/activity_vertical_margin"
         android:background="@color/colorPrimary"
-        android:onClick="onAddProductNextClick"
+        android:onClick="onAddProductNextClick3"
         android:text="Next"
         android:textColor="#fff"
         android:textSize="14sp" />

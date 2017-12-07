@@ -30,7 +30,7 @@ public final class R {
     public static final int design_appbar_state_list_animator=0x7f020000;
   }
   public static final class array {
-    public static final int categories=0x7f030000;
+    public static final int categories_name =0x7f030000;
     public static final int cities=0x7f030001;
     public static final int regions=0x7f030002;
   }

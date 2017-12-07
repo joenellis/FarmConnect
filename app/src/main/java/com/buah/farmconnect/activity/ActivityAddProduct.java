@@ -3,12 +3,12 @@ package com.buah.farmconnect.activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.IdRes;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -16,13 +16,15 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.buah.farmconnect.R;
+import com.buah.farmconnect.api.AddProduct;
 import com.buah.farmconnect.fragment.FragmentAddProduct1;
 import com.buah.farmconnect.fragment.FragmentAddProduct2;
 import com.buah.farmconnect.fragment.FragmentAddProduct3;
@@ -30,15 +32,26 @@ import com.buah.farmconnect.fragment.FragmentAddProduct4;
 import com.buah.farmconnect.fragment.FragmentAddProduct5;
 import com.buah.farmconnect.view.CustomViewPager;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class ActivityAddProduct extends AppCompatActivity {
 
+    Toolbar mToolbar;
     CustomViewPager mPager;
     PagerAdapter mPagerAdapter;
-    Toolbar mToolbar;
-    String mediaPath, mediaPath1,mediaPath2,mediaPath3;
+
+    TextInputEditText productName;
+    TextInputEditText productDescription;
+    TextInputEditText productPrice;
+    Spinner productCategory;
+    Spinner productLocationRegion;
+    Spinner productLocationCity;
+
+    String mediaPath;
+    String mediaPath1;
+    String mediaPath2;
+    String mediaPath3;
+
     private int GALLERY = 1;
     private int CAMERA = 2;
     private int buttonId;
@@ -67,16 +80,49 @@ public class ActivityAddProduct extends AppCompatActivity {
 
     }
 
-    public void onAddProductNextClick(View view) {
-        mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+    public void onAddProductNextClick1(View view) {
+        productName = findViewById(R.id.addProduct_txtProductName);
+        productDescription = findViewById(R.id.addProduct_txtDescription);
+        if (TextUtils.isEmpty(productName.getText().toString())) {
+            productName.setError("Enter Product Name");
+        } else if (TextUtils.isEmpty(productDescription.getText().toString())) {
+            productDescription.setError("Enter Product Description");
+        } else {
+            AddProduct.setProductName(productName.getText().toString().trim());
+            AddProduct.setDescription(productDescription.getText().toString().trim());
+            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+        }
+    }
+
+    public void onAddProductNextClick2(View view) {
+        productPrice = findViewById(R.id.addProduct_txtPrice);
+        productCategory = findViewById(R.id.addProduct_categories);
+
+        int spinner_pos = productCategory.getSelectedItemPosition();
+        String[] id_values = getResources().getStringArray(R.array.categories_id);
+        int id = Integer.valueOf(id_values[spinner_pos]);
+
+        if (TextUtils.isEmpty(productPrice.getText().toString())) {
+            productPrice.setError("Enter Price of Product!");
+        } else if (id == 0) {
+            Snackbar.make(
+                    findViewById(R.id.addProduct2_rootLayout),
+                    "Please Select Category",
+                    Snackbar.LENGTH_LONG
+            ).show();
+        } else {
+            AddProduct.setPrice(productPrice.getText().toString().trim());
+            AddProduct.setCategory_id(String.valueOf(id));
+            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+        }
+    }
+
+    public void onAddProductClick(View view) {
     }
 
     public void onAddImageClick(View view) {
         buttonId = view.getId();
         showPictureDialog(view.getId());
-    }
-
-    public void onAddProductClick(View view) {
     }
 
     private void showPictureDialog(@IdRes final int buttonId) {
@@ -115,120 +161,6 @@ public class ActivityAddProduct extends AppCompatActivity {
         startActivityForResult(intent, CAMERA);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == this.RESULT_CANCELED) {
-            return;
-        }
-
-        Intent intent = getIntent();
-        int id = intent.getIntExtra("Button", buttonId);
-
-
-        if (requestCode == GALLERY) {
-            if (id == R.id.addProduct_btnAddImage1 ) {
-
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
-                Cursor cursor = getContentResolver().query((selectedImage), filePathColumn, null, null, null);
-                assert cursor != null;
-                cursor.moveToFirst();
-
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mediaPath = cursor.getString(columnIndex);
-
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
-
-            }else if (id == R.id.addProduct_btnAddImage2 ) {
-
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
-                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                assert cursor != null;
-                cursor.moveToFirst();
-
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mediaPath1 = cursor.getString(columnIndex);
-
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
-
-            }else if (id == R.id.addProduct_btnAddImage3 ) {
-
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
-                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                assert cursor != null;
-                cursor.moveToFirst();
-
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mediaPath2 = cursor.getString(columnIndex);
-
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
-
-            }else if(id == R.id.addProduct_btnAddImage4 ) {
-
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
-                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                assert cursor != null;
-                cursor.moveToFirst();
-
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mediaPath3 = cursor.getString(columnIndex);
-
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
-
-            }else {
-                Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
-            }
-
-        } else if(requestCode == CAMERA) {
-
-            if (id == R.id.addProduct_btnAddImage1 ) {
-
-                Uri selectedImage = data.getData();
-                mediaPath = selectedImage.getPath();
-
-             Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
-
-        }else if(id == R.id.addProduct_btnAddImage2){
-
-                Uri selectedImage = data.getData();
-                mediaPath1 = selectedImage.getPath();
-
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
-
-            }else if(id == R.id.addProduct_btnAddImage3){
-
-                Uri selectedImage = data.getData();
-                mediaPath2 = selectedImage.getPath();
-
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
-
-            }else if(id == R.id.addProduct_btnAddImage4){
-
-                Uri selectedImage = data.getData();
-                mediaPath3 = selectedImage.getPath();
-
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
-            }
-        }
-    }
-
     void setImageString(@IdRes int id) {
         TextView imageText;
         switch (id) {
@@ -252,6 +184,119 @@ public class ActivityAddProduct extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == this.RESULT_CANCELED) {
+            return;
+        }
+
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("Button", buttonId);
+
+
+        if (requestCode == GALLERY) {
+            if (id == R.id.addProduct_btnAddImage1) {
+
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+                Cursor cursor = getContentResolver().query((selectedImage), filePathColumn, null, null, null);
+                assert cursor != null;
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                mediaPath = cursor.getString(columnIndex);
+
+                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                setImageString(buttonId);
+
+            } else if (id == R.id.addProduct_btnAddImage2) {
+
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                assert cursor != null;
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                mediaPath1 = cursor.getString(columnIndex);
+
+                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                setImageString(buttonId);
+
+            } else if (id == R.id.addProduct_btnAddImage3) {
+
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                assert cursor != null;
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                mediaPath2 = cursor.getString(columnIndex);
+
+                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                setImageString(buttonId);
+
+            } else if (id == R.id.addProduct_btnAddImage4) {
+
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                assert cursor != null;
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                mediaPath3 = cursor.getString(columnIndex);
+
+                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                setImageString(buttonId);
+
+            } else {
+                Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
+            }
+
+        } else if (requestCode == CAMERA) {
+
+            if (id == R.id.addProduct_btnAddImage1) {
+
+                Uri selectedImage = data.getData();
+                mediaPath = selectedImage.getPath();
+
+                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                setImageString(buttonId);
+
+            } else if (id == R.id.addProduct_btnAddImage2) {
+
+                Uri selectedImage = data.getData();
+                mediaPath1 = selectedImage.getPath();
+
+                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                setImageString(buttonId);
+
+            } else if (id == R.id.addProduct_btnAddImage3) {
+
+                Uri selectedImage = data.getData();
+                mediaPath2 = selectedImage.getPath();
+
+                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                setImageString(buttonId);
+
+            } else if (id == R.id.addProduct_btnAddImage4) {
+
+                Uri selectedImage = data.getData();
+                mediaPath3 = selectedImage.getPath();
+
+                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                setImageString(buttonId);
+            }
+        }
+    }
 
     private class AddProductPagerAdapter extends FragmentStatePagerAdapter {
 
