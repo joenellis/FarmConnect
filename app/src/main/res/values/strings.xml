@@ -53,25 +53,25 @@
     <string name="navLogin">Login</string>
     <string name="viewProduct_callFarmer">Call Farmer</string>
 
-    <array name="categories_name">
+    <string-array name="categories_name">
         <item>Select Category</item>
         <item>Tubers</item>
         <item>Fruits</item>
         <item>Vegetables</item>
         <item>Grains</item>
         <item>Meat</item>
-    </array>
+    </string-array>
 
-    <array name="categories_id">
+    <string-array name="categories_id">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
-    </array>
+    </string-array>
 
-    <array name="regions">
+    <string-array name="regions">
         <item>Select Region</item>
         <item>Ashanti Region</item>
         <item>Brong Ahafo Region</item>
@@ -83,7 +83,7 @@
         <item>Upper West Region</item>
         <item>Volta Region</item>
         <item>Western Region</item>
-    </array>
+    </string-array>
     <array name="cities">
         <item>Select City</item>
         <item>Abaasa</item>
