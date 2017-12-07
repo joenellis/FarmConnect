@@ -217,7 +217,6 @@ public class ActivityAddProduct extends AppCompatActivity {
         startActivityForResult(intent, CAMERA);
     }
 
-
     void setImageString(@IdRes int id) {
         TextView imageText;
         switch (id) {
@@ -256,7 +255,6 @@ public class ActivityAddProduct extends AppCompatActivity {
 
         mMediaRecorder.start();
     }
-
 
     public void stopRecordingAudio(){
        mMediaRecorder.stop();
