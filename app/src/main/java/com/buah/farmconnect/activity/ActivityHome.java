@@ -234,8 +234,4 @@ public class ActivityHome extends AppCompatActivity {
         farmName = navHeader.findViewById(R.id.navDrawerHeader_UserFarmName);
 
     }
-
-
-
-
 }

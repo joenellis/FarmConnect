@@ -84,23 +84,17 @@
                     android:background="@color/colorPrimary" />
             </LinearLayout>
 
-            <LinearLayout
+            <Button
+                android:id="@+id/addProduct_btnChooseLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:background="@color/colorPrimary"
+                android:text="Choose Location"
+                android:onClick="onChooseLocationClick"
+                android:textColor="#fff"
+                android:textSize="14sp" />
 
-                <Spinner
-                    android:id="@+id/addProduct_regions"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"/>
 
-                <Spinner
-                    android:id="@+id/addProduct_cites"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"/>
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

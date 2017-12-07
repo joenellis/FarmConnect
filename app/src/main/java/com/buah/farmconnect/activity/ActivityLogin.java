@@ -69,13 +69,14 @@ public class ActivityLogin extends AppCompatActivity {
             @Override
             public void onResponse(Call<Result> call, Response<Result> response) {
                 progressDialog.dismiss();
-
-                if (!response.body().getError()) {
-                    Toast.makeText(getApplicationContext(),response.body().getMessage(), Toast.LENGTH_LONG).show() ;
-                    SharedPrefManager.getInstance(getApplicationContext()).userLogin(response.body().getObjectUser());
-                    startActivity(new Intent(getApplicationContext(), ActivityHome.class));
-                } else {
-                    Toast.makeText(getApplicationContext(),response.body().getMessage(), Toast.LENGTH_LONG).show();
+                if (response.body() != null) {
+                    if (!response.body().getError()) {
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                        SharedPrefManager.getInstance(getApplicationContext()).userLogin(response.body().getObjectUser());
+                        startActivity(new Intent(getApplicationContext(), ActivityHome.class));
+                    } else {
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                    }
                 }
             }
 

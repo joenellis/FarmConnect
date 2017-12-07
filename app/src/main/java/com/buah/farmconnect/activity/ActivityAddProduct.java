@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.buah.farmconnect.R;
 import com.buah.farmconnect.api.AddProduct;
+import com.buah.farmconnect.fragment.BlankFragment;
 import com.buah.farmconnect.fragment.FragmentAddProduct1;
 import com.buah.farmconnect.fragment.FragmentAddProduct2;
 import com.buah.farmconnect.fragment.FragmentAddProduct3;
@@ -35,6 +36,8 @@ import com.buah.farmconnect.view.CustomViewPager;
 import java.util.ArrayList;
 
 public class ActivityAddProduct extends AppCompatActivity {
+
+    public static String location = "";
 
     Toolbar mToolbar;
     CustomViewPager mPager;
@@ -115,6 +118,36 @@ public class ActivityAddProduct extends AppCompatActivity {
             AddProduct.setCategory_id(String.valueOf(id));
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
         }
+    }
+
+    public void onAddProductNextClick3(View view) {
+        if (ActivityAddProduct.location.equals("")) {
+            Snackbar.make(
+                    findViewById(R.id.addProduct2_rootLayout),
+                    "Please Select a Location",
+                    Snackbar.LENGTH_LONG
+            ).show();
+        } else {
+            AddProduct.setLocation(ActivityAddProduct.location);
+            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+        }
+    }
+
+    public void onChooseLocationClick(View view) {
+
+        final android.app.FragmentManager fm = getFragmentManager();
+        final BlankFragment p = new BlankFragment();
+        Button btn = (Button) view;
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                p.show(fm, "Select Location");
+            }
+        });
+    }
+
+    public void onAddProductNextClick4(View view) {
+        mPager.setCurrentItem(mPager.getCurrentItem() + 1);
     }
 
     public void onAddProductClick(View view) {
