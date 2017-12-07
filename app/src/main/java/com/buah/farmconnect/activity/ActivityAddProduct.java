@@ -160,6 +160,19 @@ public class ActivityAddProduct extends AppCompatActivity {
         mPager.setCurrentItem(mPager.getCurrentItem() + 1);
     }
 
+    public void OnRecordAudioClick(View view) {
+        Button record = (Button) view;
+        if (!isRecordingAudio) {
+            recordAudio();
+            record.setText("Stop Recording Audio");
+            isRecordingAudio = true;
+        } else {
+            stopRecordingAudio();
+            record.setText("Start Recording Audio");
+            AddProduct.setAudio(mAudioFilePath);
+        }
+    }
+
     public void onAddProductClick(View view) {
     }
 
@@ -204,6 +217,7 @@ public class ActivityAddProduct extends AppCompatActivity {
         startActivityForResult(intent, CAMERA);
     }
 
+
     void setImageString(@IdRes int id) {
         TextView imageText;
         switch (id) {
@@ -227,7 +241,6 @@ public class ActivityAddProduct extends AppCompatActivity {
         }
     }
 
-
     public void recordAudio(){
         mMediaRecorder = new MediaRecorder();
         mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
@@ -244,12 +257,12 @@ public class ActivityAddProduct extends AppCompatActivity {
         mMediaRecorder.start();
     }
 
+
     public void stopRecordingAudio(){
        mMediaRecorder.stop();
        mMediaRecorder.release();
        mMediaRecorder = null;
     }
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
