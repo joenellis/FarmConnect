@@ -24,19 +24,33 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 
 import com.buah.farmconnect.R;
 import com.buah.farmconnect.api.AddProduct;
+import com.buah.farmconnect.api.Api;
+import com.buah.farmconnect.api.Result;
+import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.fragment.BlankFragment;
 import com.buah.farmconnect.fragment.FragmentAddProduct1;
 import com.buah.farmconnect.fragment.FragmentAddProduct2;
 import com.buah.farmconnect.fragment.FragmentAddProduct3;
 import com.buah.farmconnect.fragment.FragmentAddProduct4;
 import com.buah.farmconnect.fragment.FragmentAddProduct5;
+import com.buah.farmconnect.session.SharedPrefManager;
 import com.buah.farmconnect.view.CustomViewPager;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ActivityAddProduct extends AppCompatActivity {
 
@@ -57,11 +71,13 @@ public class ActivityAddProduct extends AppCompatActivity {
     String mediaPath1;
     String mediaPath2;
     String mediaPath3;
+    String mediaPath4;
 
     boolean isRecordingAudio = false;
 
     private int GALLERY = 1;
     private int CAMERA = 2;
+    private int VIDEO = 3;
     private int buttonId;
     private Button button;
     private MediaRecorder mMediaRecorder;
@@ -76,8 +92,8 @@ public class ActivityAddProduct extends AppCompatActivity {
         mToolbar.setTitle("Add Product");
         setSupportActionBar(mToolbar);
 
-        mAudioFilePath = getExternalCacheDir().getAbsolutePath();
-        mAudioFilePath += "/audio_description.mp3";
+//        mAudioFilePath = getExternalCacheDir().getAbsolutePath();
+     //   mAudioFilePath += "/audio_description.mp3";
 
         assert getSupportActionBar() != null;
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -157,22 +173,82 @@ public class ActivityAddProduct extends AppCompatActivity {
     }
 
     public void onAddProductNextClick4(View view) {
+        mPager.setCurrentItem(mPager.getCurrentItem() + 1);
     }
 
     public void OnRecordAudioClick(View view) {
         Button record = (Button) view;
         if (!isRecordingAudio) {
-            recordAudio();
+            //recordAudio();
             record.setText("Stop Recording Audio");
             isRecordingAudio = true;
         } else {
-            stopRecordingAudio();
+           // stopRecordingAudio();
             record.setText("Start Recording Audio");
             AddProduct.setAudio(mAudioFilePath);
         }
     }
 
     public void onAddProductClick(View view) {
+
+        String id = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getUser_id();
+        String catid = AddProduct.getCategory_id();
+        String pname = AddProduct.getProductName();
+        String pprice = AddProduct.getPrice();
+        String descrip = AddProduct.getDescription();
+        String loca = AddProduct.getLocation();
+
+
+        // Map is used to multipart the file using okhttp3.RequestBody
+        File file = new File(mediaPath);
+        File file1 = new File(mediaPath1);
+        File file2 = new File(mediaPath2);
+        File file3 = new File(mediaPath3);
+        File file4 = new File(mediaPath4);
+
+        RequestBody userid = RequestBody.create(MediaType.parse("multipart/form-data"), id);
+        RequestBody categoryid = RequestBody.create(MediaType.parse("multipart/form-data"), catid);
+        RequestBody productname = RequestBody.create(MediaType.parse("multipart/form-data"),pname);
+        RequestBody price = RequestBody.create(MediaType.parse("multipart/form-data"), pprice);
+        RequestBody description = RequestBody.create(MediaType.parse("multipart/form-data"), descrip);
+        RequestBody location = RequestBody.create(MediaType.parse("multipart/form-data"), loca);
+
+
+        // Parsing any Media type file
+        RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), file);
+        RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), file1);
+        RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), file2);
+        RequestBody requestBody4 = RequestBody.create(MediaType.parse("*/*"), file3);
+        RequestBody requestBody5 = RequestBody.create(MediaType.parse("*/*"), file4);
+
+        MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", file.getName(), requestBody1);
+        MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", file1.getName(), requestBody2);
+        MultipartBody.Part fileToUpload3 = MultipartBody.Part.createFormData("file3", file2.getName(), requestBody3);
+        MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", file3.getName(), requestBody4);
+        MultipartBody.Part fileToUpload5 = MultipartBody.Part.createFormData("file5", file4.getName(), requestBody5);
+
+        Api api = new Api();
+        ApiCall service = api.getRetro().create(ApiCall.class);
+
+        Call<Result> call = service.uploadMulFile(userid, categoryid, productname, price, description, location,fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5);
+
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call <Result>call, Response<Result> response) {
+
+                if (!response.body().getError()) {
+                    Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call <Result> call, Throwable t) {
+
+            }
+        });
     }
 
     public void onAddImageClick(View view) {
@@ -239,40 +315,41 @@ public class ActivityAddProduct extends AppCompatActivity {
         }
     }
 
-    public void recordAudio(){
-        mMediaRecorder = new MediaRecorder();
-        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
-        mMediaRecorder.setOutputFile(mAudioFilePath);
-        mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-
-        try{
-            mMediaRecorder.prepare();
-        } catch (IOException e){
-            Log.e("Media Recorder", e.getMessage());
-        }
-
-        mMediaRecorder.start();
-    }
-
-    public void stopRecordingAudio(){
-       mMediaRecorder.stop();
-       mMediaRecorder.release();
-       mMediaRecorder = null;
-    }
+//    public void recordAudio(){
+//        mMediaRecorder = new MediaRecorder();
+//        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+//        mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
+//        mMediaRecorder.setOutputFile(mAudioFilePath);
+//        mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+//
+//        try{
+//            mMediaRecorder.prepare();
+//        } catch (IOException e){
+//            Log.e("Media Recorder", e.getMessage());
+//        }
+//
+//        mMediaRecorder.start();
+//    }
+//
+//    public void stopRecordingAudio(){
+//       mMediaRecorder.stop();
+//       mMediaRecorder.release();
+//       mMediaRecorder = null;
+//    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == this.RESULT_CANCELED) {
+            Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             return;
         }
 
         Intent intent = getIntent();
         int id = intent.getIntExtra("Button", buttonId);
 
-
+        try {
         if (requestCode == GALLERY) {
             if (id == R.id.addProduct_btnAddImage1) {
 
@@ -339,10 +416,11 @@ public class ActivityAddProduct extends AppCompatActivity {
             }
 
         } else if (requestCode == CAMERA) {
+            Uri selectedImage = null;
 
             if (id == R.id.addProduct_btnAddImage1) {
 
-                Uri selectedImage = data.getData();
+                selectedImage = data.getData();
                 mediaPath = selectedImage.getPath();
 
                 Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
@@ -350,7 +428,7 @@ public class ActivityAddProduct extends AppCompatActivity {
 
             } else if (id == R.id.addProduct_btnAddImage2) {
 
-                Uri selectedImage = data.getData();
+                selectedImage = data.getData();
                 mediaPath1 = selectedImage.getPath();
 
                 Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
@@ -358,7 +436,7 @@ public class ActivityAddProduct extends AppCompatActivity {
 
             } else if (id == R.id.addProduct_btnAddImage3) {
 
-                Uri selectedImage = data.getData();
+                selectedImage = data.getData();
                 mediaPath2 = selectedImage.getPath();
 
                 Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
@@ -366,13 +444,41 @@ public class ActivityAddProduct extends AppCompatActivity {
 
             } else if (id == R.id.addProduct_btnAddImage4) {
 
-                Uri selectedImage = data.getData();
+                selectedImage = data.getData();
                 mediaPath3 = selectedImage.getPath();
 
                 Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                 setImageString(buttonId);
+            }else {
+                Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
             }
+        } else if (requestCode == VIDEO) {
+                // Get the Video from data
+                Uri selectedVideo = data.getData();
+                String[] filePathColumn = {MediaStore.Video.Media.DATA};
+
+                Cursor cursor = getContentResolver().query(selectedVideo, filePathColumn, null, null, null);
+                assert cursor != null;
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                mediaPath4 = cursor.getString(columnIndex);
+                cursor.close();
+
+            } else {
+                Toast.makeText(this, "You haven't picked Image/Video", Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
         }
+
+
+    }
+
+    public void OnRecordVideoClick(View view) {
+        Intent intent = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, VIDEO);
     }
 
     private class AddProductPagerAdapter extends FragmentStatePagerAdapter {
