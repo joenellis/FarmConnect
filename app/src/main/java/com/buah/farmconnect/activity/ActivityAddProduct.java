@@ -1,18 +1,23 @@
 package com.buah.farmconnect.activity;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.IdRes;
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -66,6 +71,7 @@ public class ActivityAddProduct extends AppCompatActivity {
     private Button button;
     private MediaRecorder mMediaRecorder;
     private String mAudioFilePath;
+    private final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 29;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,6 +163,7 @@ public class ActivityAddProduct extends AppCompatActivity {
     }
 
     public void onAddProductNextClick4(View view) {
+        mPager.setCurrentItem(mPager.getCurrentItem() + 1);
     }
 
     public void OnRecordAudioClick(View view) {
@@ -239,26 +246,40 @@ public class ActivityAddProduct extends AppCompatActivity {
         }
     }
 
-    public void recordAudio(){
-        mMediaRecorder = new MediaRecorder();
-        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
-        mMediaRecorder.setOutputFile(mAudioFilePath);
-        mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+    public void recordAudio() {
 
-        try{
-            mMediaRecorder.prepare();
-        } catch (IOException e){
-            Log.e("Media Recorder", e.getMessage());
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.RECORD_AUDIO)) {
+
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+
+            } else {
+
+                // No explanation needed, we can request the permission.
+
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.RECORD_AUDIO},
+                        MY_PERMISSIONS_REQUEST_RECORD_AUDIO);
+
+                // MY_PERMISSIONS_REQUEST_RECORD_AUDIO is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
         }
-
-        mMediaRecorder.start();
     }
 
-    public void stopRecordingAudio(){
-       mMediaRecorder.stop();
-       mMediaRecorder.release();
-       mMediaRecorder = null;
+    public void stopRecordingAudio() {
+        mMediaRecorder.stop();
+        mMediaRecorder.release();
+        mMediaRecorder = null;
     }
 
     @Override
@@ -372,6 +393,47 @@ public class ActivityAddProduct extends AppCompatActivity {
                 Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                 setImageString(buttonId);
             }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String permissions[], @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_RECORD_AUDIO: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+
+
+                    mMediaRecorder = new MediaRecorder();
+                    mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+                    mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
+                    mMediaRecorder.setOutputFile(mAudioFilePath);
+                    mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+
+                    try {
+                        mMediaRecorder.prepare();
+                    } catch (IOException e) {
+                        Log.e("Media Recorder", e.getMessage());
+                    }
+
+                    mMediaRecorder.start();
+
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
         }
     }
 
