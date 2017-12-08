@@ -1,35 +1,40 @@
 package com.buah.farmconnect.activity;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 import com.buah.farmconnect.R;
 
-/**
- * Created by joenellis on 06/12/2017.
- */
-
 public class VideoViewActivity extends AppCompatActivity {
     // Declare variables
     ProgressDialog pDialog;
     VideoView videoview;
-
-
-
+    Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Get the layout from video_main.xml
         setContentView(R.layout.videoview_main);
+
+        mToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
+        mToolbar.setTitle("Video Description");
+
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         // Find your VideoView in your video_main.xml layout
         videoview = findViewById(R.id.VideoView);
         // Execute StreamVideo AsyncTask
