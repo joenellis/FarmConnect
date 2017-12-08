@@ -205,8 +205,7 @@ public class ActivityAddProduct extends AppCompatActivity {
         String descrip = AddProduct.getDescription();
         String loca = AddProduct.getLocation();
 
-
-        // Map is used to multipart the file using okhttp3.RequestBody
+        //Map is used to multipart the file using okhttp3.RequestBody
         File file = new File(mediaPath);
         File file1 = new File(mediaPath1);
         File file2 = new File(mediaPath2);
@@ -220,8 +219,7 @@ public class ActivityAddProduct extends AppCompatActivity {
         RequestBody description = RequestBody.create(MediaType.parse("multipart/form-data"), descrip);
         RequestBody location = RequestBody.create(MediaType.parse("multipart/form-data"), loca);
 
-
-        // Parsing any Media type file
+        //Parsing any Media type file
         RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), file);
         RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), file1);
         RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), file2);
