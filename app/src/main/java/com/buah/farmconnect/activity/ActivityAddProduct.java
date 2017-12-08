@@ -568,6 +568,12 @@ public class ActivityAddProduct extends AppCompatActivity {
         mMediaRecorder.release();
         mMediaRecorder = null;
 
+        Snackbar.make(
+                findViewById(R.id.addProduct5_rootLayout),
+                "Audio Recording Saved!",
+                Snackbar.LENGTH_LONG
+        ).show();
+
     }
 
     private class AddProductPagerAdapter extends FragmentStatePagerAdapter {
