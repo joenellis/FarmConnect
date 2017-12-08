@@ -157,7 +157,6 @@ public class ActivityAddProduct extends AppCompatActivity {
     }
 
     public void onAddProductNextClick4(View view) {
-        mPager.setCurrentItem(mPager.getCurrentItem() + 1);
     }
 
     public void OnRecordAudioClick(View view) {

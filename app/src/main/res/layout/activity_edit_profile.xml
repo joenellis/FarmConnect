@@ -155,18 +155,5 @@
 
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/btnUpdate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorPrimary"
-            android:onClick="onUpdateClick"
-            android:text="Update"
-            android:textColor="#fff"
-            android:textSize="14sp" />
     </LinearLayout>
 </LinearLayout>

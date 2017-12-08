@@ -48,12 +48,12 @@
         <Button
             android:id="@+id/login_btnLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorPrimary"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_style"
             android:onClick="onLoginClick"
             android:text="@string/login_btnLogin"
             android:textColor="#fff"
@@ -67,6 +67,7 @@
             android:layout_gravity="center_horizontal"
             android:onClick="onForgotPasswordClick"
             android:text="@string/login_btnForgotPassword"
+            android:textAllCaps="false"
             android:textColor="@color/colorPrimary" />
 
         <Button
@@ -77,6 +78,7 @@
             android:layout_gravity="center_horizontal|bottom"
             android:onClick="onGotoSignUpClick"
             android:text="@string/sign_up"
+            android:textAllCaps="false"
             android:textColor="@color/colorPrimary" />
     </LinearLayout>
 

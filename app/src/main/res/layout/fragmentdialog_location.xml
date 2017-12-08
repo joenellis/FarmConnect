@@ -19,7 +19,7 @@
         <ListView
             android:id="@+id/listView1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="250dp">
 
         </ListView>
 
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/activity_vertical_margin"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/button_style"
             android:textColor="#fff"
             android:textSize="14sp"
             android:text="Dismiss" />

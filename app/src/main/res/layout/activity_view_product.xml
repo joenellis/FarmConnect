@@ -281,7 +281,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="?colorAccent"
+        android:background="?colorPrimary"
         android:clipToPadding="true"
         android:elevation="6dp"
         app:layout_behavior="@string/bottom_sheet_behavior"
@@ -321,7 +321,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:src="@drawable/ic_audio"
-                            android:tint="@color/colorAccent"
+                            android:tint="@color/colorPrimary"
                             android:onClick="onPlayAudioClick"
                             tools:ignore="ContentDescription" />
                     </LinearLayout>
@@ -350,7 +350,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:src="@drawable/ic_play_arrow"
-                            android:tint="@color/colorAccent"
+                            android:tint="@color/colorPrimary"
                             android:onClick="onPlayVideoClick"
                             tools:ignore="ContentDescription" />
                     </LinearLayout>
