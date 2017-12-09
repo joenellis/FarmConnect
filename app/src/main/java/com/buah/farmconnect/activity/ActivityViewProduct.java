@@ -184,7 +184,6 @@ public class ActivityViewProduct extends AppCompatActivity {
     }
 
     private void deleteProduct() {
-
     }
 
     private void bottomSheetHack() {
