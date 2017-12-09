@@ -2,6 +2,9 @@ package com.buah.farmconnect.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +16,7 @@ import android.widget.TextView;
 
 import com.buah.farmconnect.R;
 import com.buah.farmconnect.activity.ActivityViewProduct;
+import com.buah.farmconnect.fragment.FragmentMore;
 import com.buah.farmconnect.object.ObjectProduct;
 
 import java.lang.reflect.Array;
@@ -60,12 +64,20 @@ public class AdapterCategoryRecyclerView extends RecyclerView.Adapter<AdapterCat
         holder.mSubtitle.setText(browse);
         holder.mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
         holder.mRecyclerView.setAdapter(new AdapterProduct(mContext, categories.get(position)));
+        final Bundle bundle = new Bundle();
+        bundle.putString("Category", category[position]);
+
+        final Fragment fragment = new FragmentMore();
+        fragment.setArguments(bundle);
 
         holder.mMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mContext, ActivityViewProduct.class);
-                mContext.startActivity(intent);
+                ((FragmentActivity)mContext).getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.homeLayout, fragment)
+                    .addToBackStack("")
+                    .commit();
             }
         });
     }

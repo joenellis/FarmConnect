@@ -39,6 +39,8 @@ public class FragmentMore extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_more, container, false);
 
+        String args = getArguments().getString("Category");
+
         spanCount = (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)? 3 : 2;
 
         layoutManager = new GridLayoutManager(getContext(), spanCount);

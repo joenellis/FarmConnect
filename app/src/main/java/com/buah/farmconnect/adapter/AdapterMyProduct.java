@@ -1,6 +1,7 @@
 package com.buah.farmconnect.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.buah.farmconnect.activity.ActivityMyProduct;
+import com.buah.farmconnect.activity.ActivityViewProduct;
 import com.buah.farmconnect.object.ObjectProduct;
 import com.buah.farmconnect.R;
 import com.squareup.picasso.Picasso;
@@ -36,12 +39,21 @@ public class AdapterMyProduct extends RecyclerView.Adapter<AdapterMyProduct.Prod
     @Override
     public void onBindViewHolder(ProductHolder holder, int position) {
 
-        ObjectProduct product = mProducts.get(position);
+        final ObjectProduct product = mProducts.get(position);
 
         holder.text.setText(product.getProductname());
         holder.text1.setText(product.getPrice());
         holder.text2.setText(product.getLocation());
         Picasso.with(this.mContext).load(product.getImage()).into(holder.imageView);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, ActivityMyProduct.class);
+                intent.putExtra("ID", product.getProduct_id());
+                mContext.startActivity(intent);
+            }
+        });
 
     }
 

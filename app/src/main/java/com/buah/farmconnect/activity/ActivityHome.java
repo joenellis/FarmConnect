@@ -178,9 +178,6 @@ public class ActivityHome extends AppCompatActivity {
             case R.id.nav_item_category:
                 fragment = new FragmentCategory();
                 break;
-            case R.id.nav_item_filter:
-                fragment = new FragmentCategory();
-                break;
             case R.id.nav_item_logout:
                 logout();
                 message = "Logged out!";
@@ -192,8 +189,6 @@ public class ActivityHome extends AppCompatActivity {
                 clicked = false;
                 break;
             //Actionbar overflow menu items
-            case R.id.action_logout:
-                activity = new ActivitySignUp();
         }
 
         // Replace the fragment/activity

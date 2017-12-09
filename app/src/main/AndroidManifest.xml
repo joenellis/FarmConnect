@@ -79,6 +79,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.ActivityHome" />
         </activity>
+        <activity android:name=".activity.ActivityMyProduct" />
     </application>
 
 </manifest>
