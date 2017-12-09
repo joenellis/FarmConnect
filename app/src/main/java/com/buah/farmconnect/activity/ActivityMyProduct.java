@@ -25,6 +25,7 @@ import com.buah.farmconnect.adapter.AdapterViewProductImages;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
+import com.buah.farmconnect.session.SharedPrefManager;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -165,7 +166,33 @@ public class ActivityMyProduct extends AppCompatActivity {
     }
 
     private void deleteProduct() {
-    }
+        final ProgressDialog progressDialog = new ProgressDialog(ActivityMyProduct.this);
+        progressDialog.setMessage("Deleting...");
+        progressDialog.show();
+        Api api = new Api();
+        ApiCall service = api.getRetro().create(ApiCall.class);
+        Call<Result> call = service.productdelete(productId);
+
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                progressDialog.dismiss();
+                if (response.body() != null) {
+                    if (!response.body().getError()) {
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(getApplicationContext(), ActivityHome.class));
+                    }
+            }
+
+        }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+            });
+        }
 
     private void bottomSheetHack() {
         mBottomSheet.post(new Runnable() {

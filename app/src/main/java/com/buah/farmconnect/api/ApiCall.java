@@ -33,6 +33,8 @@ public interface ApiCall {
     @GET("getproductdetail.php")
     Call<Result> productdetails(@Query("productid") String productid);
 
+    @GET("deleteproduct.php")
+    Call<Result> productdelete(@Query("productid") String userid);
 
     @FormUrlEncoded
     @POST("userupdate.php")

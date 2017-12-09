@@ -30,7 +30,7 @@ public class FragmentDialogLocation extends DialogFragment {
         View rootView = inflater.inflate(R.layout.fragmentdialog_location, null);
 
         //SET TITLE DIALOG TITLE
-        getDialog().setTitle("Best Players In The World");
+        getDialog().setTitle("Select City");
 
         //BUTTON,LISTVIEW,SEARCHVIEW INITIALIZATIONS
         mListView = rootView.findViewById(R.id.listView1);

@@ -32,7 +32,7 @@ public class AdapterCategoryRecyclerView extends RecyclerView.Adapter<AdapterCat
     private Context mContext;
     private ArrayList mImage;
     private List<ObjectProduct> products;
-    private String[] category = {"Tubers","Fruits"};
+    private String[] category = {"Tubers","Fruits","Vegetables", "Grains", "Dairy/Fish"};
 
 
     public AdapterCategoryRecyclerView(Context mContext, List<ObjectProduct> products, ArrayList image) {

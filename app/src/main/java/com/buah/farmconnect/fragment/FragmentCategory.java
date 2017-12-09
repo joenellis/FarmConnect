@@ -67,6 +67,9 @@ public class FragmentCategory extends Fragment {
 
                         categories.add(response.body().getObjectProductTubers());
                         categories.add(response.body().getObjectProductFruits());
+                        categories.add(response.body().getObjectProductVegetables());
+                        categories.add(response.body().getObjectProductGrains());
+                        categories.add(response.body().getObjectProductDairyFish());
 
 
                         AdapterCategoryRecyclerView adapter;

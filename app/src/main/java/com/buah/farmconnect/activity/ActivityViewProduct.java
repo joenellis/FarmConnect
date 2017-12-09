@@ -26,6 +26,7 @@ import com.buah.farmconnect.api.Result;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -55,6 +56,8 @@ public class ActivityViewProduct extends AppCompatActivity {
     private String contact;
     VideoView videoview;
     ProgressDialog pDialog;
+    FloatingActionButton mEditFab;
+    private boolean isUploader ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +66,7 @@ public class ActivityViewProduct extends AppCompatActivity {
         initializeComponents();
         bottomSheetHack();
 
+        mToolbar.setTitle("Product Name");
         setSupportActionBar(mToolbar);
         assert getSupportActionBar() != null;
         getSupportActionBar().setHomeButtonEnabled(true);
