@@ -8,6 +8,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -28,6 +31,7 @@ import com.buah.farmconnect.R;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
+import com.buah.farmconnect.session.SharedPrefManager;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -62,6 +66,8 @@ public class ActivityViewProduct extends AppCompatActivity {
     VideoView videoview;
     ProgressDialog pDialog;
     MediaPlayer mp ;
+    FloatingActionButton mEditFab;
+    private boolean isUploader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +118,17 @@ public class ActivityViewProduct extends AppCompatActivity {
                         video = response.body().getObjectProductdetail().getVideo();
                         contact = response.body().getObjectProductdetail().getContact();
 
+                        isUploader = farmername == SharedPrefManager.getInstance(ActivityViewProduct.this).getobjectUser().getFullname();
+                        if (isUploader) {
+                            mEditFab.setVisibility(View.VISIBLE);
+                            mEditFab.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+
+                                }
+                            });
+                        }
+
                         mProductName.setText(productname);
                         Picasso.with(getApplicationContext()).load(image).into(mProductImage);
                         mDescription.setText(description);
@@ -123,7 +140,7 @@ public class ActivityViewProduct extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-                        ;
+
                     }
                 }
             }
@@ -133,6 +150,28 @@ public class ActivityViewProduct extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.view_product_menu, menu);
+        return isUploader;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.action_deleteProduct:
+                deleteProduct();
+                break;
+        }
+
+        return true;
+    }
+
+    private void deleteProduct() {
 
     }
 
@@ -160,6 +199,7 @@ public class ActivityViewProduct extends AppCompatActivity {
         mLocation = findViewById(R.id.viewProduct_txtLocation);
         mPrice = findViewById(R.id.viewProduct_txtPrice);
         videoview = findViewById(R.id.VideoView);
+        mEditFab = findViewById(R.id.viewProduct_fabEdit);
 
         layoutManager = new LinearLayoutManager(
                 this,
@@ -190,19 +230,24 @@ public class ActivityViewProduct extends AppCompatActivity {
 
     public void onPlayAudioClick(View view) {
 
-        MediaPlayer mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        try {
-            mediaPlayer.setDataSource(audio);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            mediaPlayer.prepare();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        mediaPlayer.start();
+        Intent intent = new Intent();
+        intent.setAction(android.content.Intent.ACTION_VIEW);
+        intent.setDataAndType(Uri.parse(audio), "audio/*");
+        startActivity(intent);
+
+//        MediaPlayer mediaPlayer = new MediaPlayer();
+//        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//        try {
+//            mediaPlayer.setDataSource(audio);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        try {
+//            mediaPlayer.prepare();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        mediaPlayer.start();
     }
 
     public void onPlayVideoClick(View view) {

@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_deleteEditAccount"
+        android:id="@+id/action_deleteProduct"
         android:title="Delete Product"
         app:showAsAction="never"
         android:orderInCategory="100"/>
