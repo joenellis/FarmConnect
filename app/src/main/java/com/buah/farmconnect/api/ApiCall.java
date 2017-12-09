@@ -59,7 +59,9 @@ public interface ApiCall {
                                 @Part MultipartBody.Part file2,
                                 @Part MultipartBody.Part file3,
                                 @Part MultipartBody.Part file4,
-                                @Part MultipartBody.Part file5);
+                                @Part MultipartBody.Part file5,
+                                @Part MultipartBody.Part file6
+    );
 }
 
 
