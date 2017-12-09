@@ -137,7 +137,7 @@ public class ActivityViewProduct extends AppCompatActivity {
                             ViewGroup lay = findViewById(R.id.viewProduct_layVideoDescription);
                             lay.setVisibility(View.GONE);
                         }
-                        if (video==null &&audio==null) {
+                        if (video == null && audio == null) {
                             Button button = findViewById(R.id.viewProduct_btnMoreDescription);
                             button.setVisibility(View.GONE);
                         }
@@ -199,16 +199,33 @@ public class ActivityViewProduct extends AppCompatActivity {
     }
 
     public void onMapButtonClick(View view) {
-        Snackbar.make(
-                findViewById(R.id.viewProduct_layRoot),
-                "Opening Maps",
-                Snackbar.LENGTH_LONG
-        ).show();
+
+
+        String bn = "geo:0,0?q=";
+
+        Uri gmmIntentUri = Uri.parse(bn + productLocation);
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        } else {
+            Snackbar.make(
+                    findViewById(R.id.viewProduct_layRoot),
+                    "You have no suitable app",
+                    Snackbar.LENGTH_LONG
+            ).show();
+        }
+
+
     }
 
     public void onCallButtonClick(View view) {
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", contact, null));
-        startActivity(intent);
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     public void onPlayAudioClick(View view) {
