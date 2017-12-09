@@ -1,6 +1,7 @@
 package com.buah.farmconnect.activity;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -29,20 +30,18 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 
 import com.buah.farmconnect.R;
 import com.buah.farmconnect.api.AddProduct;
 import com.buah.farmconnect.api.Api;
-import com.buah.farmconnect.api.Result;
 import com.buah.farmconnect.api.ApiCall;
-import com.buah.farmconnect.fragment.FragmentDialogLocation;
+import com.buah.farmconnect.api.Result;
 import com.buah.farmconnect.fragment.FragmentAddProduct1;
 import com.buah.farmconnect.fragment.FragmentAddProduct2;
 import com.buah.farmconnect.fragment.FragmentAddProduct3;
 import com.buah.farmconnect.fragment.FragmentAddProduct4;
 import com.buah.farmconnect.fragment.FragmentAddProduct5;
+import com.buah.farmconnect.fragment.FragmentDialogLocation;
 import com.buah.farmconnect.session.SharedPrefManager;
 import com.buah.farmconnect.view.CustomViewPager;
 
@@ -51,6 +50,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -212,7 +213,7 @@ public class ActivityAddProduct extends AppCompatActivity {
 
         RequestBody userid = RequestBody.create(MediaType.parse("multipart/form-data"), id);
         RequestBody categoryid = RequestBody.create(MediaType.parse("multipart/form-data"), catid);
-        RequestBody productname = RequestBody.create(MediaType.parse("multipart/form-data"),pname);
+        RequestBody productname = RequestBody.create(MediaType.parse("multipart/form-data"), pname);
         RequestBody price = RequestBody.create(MediaType.parse("multipart/form-data"), pprice);
         RequestBody description = RequestBody.create(MediaType.parse("multipart/form-data"), descrip);
         RequestBody location = RequestBody.create(MediaType.parse("multipart/form-data"), loca);
@@ -230,26 +231,34 @@ public class ActivityAddProduct extends AppCompatActivity {
         MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", file3.getName(), requestBody4);
         MultipartBody.Part fileToUpload5 = MultipartBody.Part.createFormData("file5", file4.getName(), requestBody5);
 
+
+        final ProgressDialog progressDialog = new ProgressDialog(ActivityAddProduct.this);
+        progressDialog.setMessage("Logging In...");
+        progressDialog.show();
+
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
 
-        Call<Result> call = service.uploadMulFile(userid, categoryid, productname, price, description, location,fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5);
+        Call<Result> call = service.uploadMulFile(userid, categoryid, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5);
 
         call.enqueue(new Callback<Result>() {
             @Override
-            public void onResponse(Call <Result>call, Response<Result> response) {
+            public void onResponse(Call<Result> call, Response<Result> response) {
+
+                progressDialog.dismiss();
 
                 if (!response.body().getError()) {
                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ActivityAddProduct.this, ActivityHome.class);
+                    startActivity(intent);
                 }
+
 
             }
 
             @Override
-            public void onFailure(Call <Result> call, Throwable t) {
-
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
             }
         });
     }
@@ -380,109 +389,109 @@ public class ActivityAddProduct extends AppCompatActivity {
         int id = intent.getIntExtra("Button", buttonId);
 
         try {
-        if (requestCode == GALLERY) {
-            if (id == R.id.addProduct_btnAddImage1) {
+            if (requestCode == GALLERY) {
+                if (id == R.id.addProduct_btnAddImage1) {
 
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
-                Cursor cursor = getContentResolver().query((selectedImage), filePathColumn, null, null, null);
-                assert cursor != null;
-                cursor.moveToFirst();
+                    Cursor cursor = getContentResolver().query((selectedImage), filePathColumn, null, null, null);
+                    assert cursor != null;
+                    cursor.moveToFirst();
 
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mediaPath = cursor.getString(columnIndex);
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    mediaPath = cursor.getString(columnIndex);
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else if (id == R.id.addProduct_btnAddImage2) {
+                } else if (id == R.id.addProduct_btnAddImage2) {
 
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
-                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                assert cursor != null;
-                cursor.moveToFirst();
+                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    assert cursor != null;
+                    cursor.moveToFirst();
 
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mediaPath1 = cursor.getString(columnIndex);
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    mediaPath1 = cursor.getString(columnIndex);
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else if (id == R.id.addProduct_btnAddImage3) {
+                } else if (id == R.id.addProduct_btnAddImage3) {
 
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
-                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                assert cursor != null;
-                cursor.moveToFirst();
+                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    assert cursor != null;
+                    cursor.moveToFirst();
 
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mediaPath2 = cursor.getString(columnIndex);
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    mediaPath2 = cursor.getString(columnIndex);
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else if (id == R.id.addProduct_btnAddImage4) {
+                } else if (id == R.id.addProduct_btnAddImage4) {
 
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
-                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                assert cursor != null;
-                cursor.moveToFirst();
+                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    assert cursor != null;
+                    cursor.moveToFirst();
 
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mediaPath3 = cursor.getString(columnIndex);
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    mediaPath3 = cursor.getString(columnIndex);
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else {
-                Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
-            }
+                } else {
+                    Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
+                }
 
-        } else if (requestCode == CAMERA) {
-            Uri selectedImage = null;
+            } else if (requestCode == CAMERA) {
+                Uri selectedImage = null;
 
-            if (id == R.id.addProduct_btnAddImage1) {
+                if (id == R.id.addProduct_btnAddImage1) {
 
-                selectedImage = data.getData();
-                mediaPath = selectedImage.getPath();
+                    selectedImage = data.getData();
+                    mediaPath = selectedImage.getPath();
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else if (id == R.id.addProduct_btnAddImage2) {
+                } else if (id == R.id.addProduct_btnAddImage2) {
 
-                selectedImage = data.getData();
-                mediaPath1 = selectedImage.getPath();
+                    selectedImage = data.getData();
+                    mediaPath1 = selectedImage.getPath();
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else if (id == R.id.addProduct_btnAddImage3) {
+                } else if (id == R.id.addProduct_btnAddImage3) {
 
-                selectedImage = data.getData();
-                mediaPath2 = selectedImage.getPath();
+                    selectedImage = data.getData();
+                    mediaPath2 = selectedImage.getPath();
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else if (id == R.id.addProduct_btnAddImage4) {
+                } else if (id == R.id.addProduct_btnAddImage4) {
 
-                selectedImage = data.getData();
-                mediaPath3 = selectedImage.getPath();
+                    selectedImage = data.getData();
+                    mediaPath3 = selectedImage.getPath();
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
-            }else {
-                Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
-            }
-        } else if (requestCode == VIDEO) {
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
+                } else {
+                    Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
+                }
+            } else if (requestCode == VIDEO) {
                 // Get the Video from data
                 Uri selectedVideo = data.getData();
                 String[] filePathColumn = {MediaStore.Video.Media.DATA};
