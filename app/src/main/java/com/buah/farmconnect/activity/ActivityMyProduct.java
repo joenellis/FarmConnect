@@ -25,7 +25,6 @@ import com.buah.farmconnect.adapter.AdapterViewProductImages;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
-import com.buah.farmconnect.session.SharedPrefManager;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -119,7 +118,9 @@ public class ActivityMyProduct extends AppCompatActivity {
                         mEditFab.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-
+                                Intent intent = new Intent(getBaseContext(), ActivityEditProduct.class);
+                                intent.putExtra("ID", productId);
+                                startActivity(intent);
                             }
                         });
 
@@ -184,17 +185,17 @@ public class ActivityMyProduct extends AppCompatActivity {
                         intent.putExtra("Screen", "MyProduct");
                         startActivity(intent);
                     }
-            }
+                }
 
-        }
+            }
 
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
                 progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
-            });
-        }
+        });
+    }
 
     private void bottomSheetHack() {
         mBottomSheet.post(new Runnable() {

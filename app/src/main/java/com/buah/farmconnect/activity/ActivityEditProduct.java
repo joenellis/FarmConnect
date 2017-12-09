@@ -1,5 +1,6 @@
 package com.buah.farmconnect.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,11 +12,15 @@ import com.buah.farmconnect.R;
 public class ActivityEditProduct extends AppCompatActivity {
 
     private Spinner category;
+    private String productId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_product);
+
+        Intent intent = getIntent();
+        productId = intent.getStringExtra("ID");
 
         category = findViewById(R.id.editProduct_categories);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
