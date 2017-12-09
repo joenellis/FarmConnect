@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr\\values-mr.xml",
+            "outputFile": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr\\values-mr.xml",
             "map": [
                 {
-                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\4231d67a88760884810fe2af2aceecf6\\res\\values-mr\\values-mr.xml",
+                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\4231d67a88760884810fe2af2aceecf6\\res\\values-mr\\values-mr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-mr\\values-mr.xml",
+                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-mr\\values-mr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -33,10 +33,10 @@
             ]
         },
         {
-            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr\\values-mr.xml",
+            "outputFile": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr\\values-mr.xml",
             "map": [
                 {
-                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-mr\\values-mr.xml",
+                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-mr\\values-mr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -46,7 +46,7 @@
                     }
                 },
                 {
-                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\b9e64fc32666ac1b970706d05683abba\\res\\values-mr\\values-mr.xml",
+                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\b9e64fc32666ac1b970706d05683abba\\res\\values-mr\\values-mr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -65,10 +65,10 @@
             ]
         },
         {
-            "outputFile": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mr/values-mr.xml",
+            "outputFile": "C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr\\values-mr.xml",
             "map": [
                 {
-                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/values-mr/values-mr.xml",
+                    "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\4231d67a88760884810fe2af2aceecf6\\res\\values-mr\\values-mr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -85,13 +85,45 @@
                     }
                 },
                 {
-                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/values-mr/values-mr.xml",
+                    "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-mr\\values-mr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
                         "startOffsets": "105,216,322,429,519,620,735,812,890,970,1082,1184,1280,1389,1490,1605,1762,1867",
                         "endColumns": "110,105,106,89,100,114,76,77,79,111,101,95,108,100,114,156,104,79",
                         "endOffsets": "211,317,424,514,615,730,807,885,965,1077,1179,1275,1384,1485,1600,1757,1862,1942"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr\\values-mr.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-mr\\values-mr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,216,322,429,519,620,735,812,890,970,1082,1184,1280,1389,1490,1605,1762,1867",
+                        "endColumns": "110,105,106,89,100,114,76,77,79,111,101,95,108,100,114,156,104,79",
+                        "endOffsets": "211,317,424,514,615,730,807,885,965,1077,1179,1275,1384,1485,1600,1757,1862,1942"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\b9e64fc32666ac1b970706d05683abba\\res\\values-mr\\values-mr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1947",
+                        "endColumns": "100",
+                        "endOffsets": "2043"
                     }
                 }
             ]

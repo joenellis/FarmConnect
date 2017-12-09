@@ -4129,6 +4129,7 @@ public final class R {
     public static final int home_menu=0x7f0c0002;
     public static final int logged_in_nav_drawer_menu=0x7f0c0003;
     public static final int logged_out_nav_drawer_menu=0x7f0c0004;
+    public static final int view_product_menu=0x7f0c0005;
   }
   public static final class mipmap {
     public static final int ic_launcher=0x7f0d0000;

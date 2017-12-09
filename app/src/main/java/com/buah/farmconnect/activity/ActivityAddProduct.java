@@ -208,9 +208,6 @@ public class ActivityAddProduct extends AppCompatActivity {
         File imageFile2 = new File(mImagePath2);
         File imageFile3 = new File(mImagePath3);
         File imageFile4 = new File(mImagePath4);
-        File videoFile = new File(mVideoFilePath);
-        File audioFile = new File(mAudioFilePath);
-
         RequestBody userid = RequestBody.create(MediaType.parse("multipart/form-data"), id);
         RequestBody categoryid = RequestBody.create(MediaType.parse("multipart/form-data"), category_id);
         RequestBody productname = RequestBody.create(MediaType.parse("multipart/form-data"), productName);
@@ -223,15 +220,11 @@ public class ActivityAddProduct extends AppCompatActivity {
         RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), imageFile2);
         RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), imageFile3);
         RequestBody requestBody4 = RequestBody.create(MediaType.parse("*/*"), imageFile4);
-        RequestBody requestBody5 = RequestBody.create(MediaType.parse("*/*"), videoFile);
-        RequestBody requestBody6 = RequestBody.create(MediaType.parse("*/*"), audioFile);
 
         MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", imageFile1.getName(), requestBody1);
         MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", imageFile2.getName(), requestBody2);
         MultipartBody.Part fileToUpload3 = MultipartBody.Part.createFormData("file3", imageFile3.getName(), requestBody3);
         MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", imageFile4.getName(), requestBody4);
-        MultipartBody.Part fileToUpload5 = MultipartBody.Part.createFormData("file5", videoFile.getName(), requestBody5);
-        MultipartBody.Part fileToUpload6 = MultipartBody.Part.createFormData("file6", audioFile.getName(), requestBody6);
 
 
         final ProgressDialog progressDialog = new ProgressDialog(ActivityAddProduct.this);
@@ -243,13 +236,39 @@ public class ActivityAddProduct extends AppCompatActivity {
         Call<Result> call;
 
         if (mVideoFilePath != null && mAudioFilePath != null) {
+
+            File videoFile = new File(mVideoFilePath);
+            File audioFile = new File(mAudioFilePath);
+
+            RequestBody requestBody5 = RequestBody.create(MediaType.parse("*/*"), videoFile);
+            RequestBody requestBody6 = RequestBody.create(MediaType.parse("*/*"), audioFile);
+
+            MultipartBody.Part fileToUpload5 = MultipartBody.Part.createFormData("file5", videoFile.getName(), requestBody5);
+            MultipartBody.Part fileToUpload6 = MultipartBody.Part.createFormData("file6", audioFile.getName(), requestBody6);
+
             call = service.uploadMulFile(userid, categoryid, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5, fileToUpload6);
+
         } else if (mVideoFilePath != null) {
+
+            File videoFile = new File(mVideoFilePath);
+            RequestBody requestBody5 = RequestBody.create(MediaType.parse("*/*"), videoFile);
+            MultipartBody.Part fileToUpload5 = MultipartBody.Part.createFormData("file5", videoFile.getName(), requestBody5);
             call = service.uploadMulFile(userid, categoryid, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5);
+
         } else if (mAudioFilePath != null) {
+
+            File audioFile = new File(mAudioFilePath);
+
+            RequestBody requestBody6 = RequestBody.create(MediaType.parse("*/*"), audioFile);
+
+            MultipartBody.Part fileToUpload6 = MultipartBody.Part.createFormData("file6", audioFile.getName(), requestBody6);
+
             call = service.uploadMulFile(userid, categoryid, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload6);
+
         } else {
+
             call = service.uploadMulFile(userid, categoryid, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4);
+
         }
 
 
