@@ -180,7 +180,9 @@ public class ActivityMyProduct extends AppCompatActivity {
                 if (response.body() != null) {
                     if (!response.body().getError()) {
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(getApplicationContext(), ActivityHome.class));
+                        Intent intent = new Intent(getApplicationContext(), ActivityHome.class);
+                        intent.putExtra("Screen", "MyProduct");
+                        startActivity(intent);
                     }
             }
 

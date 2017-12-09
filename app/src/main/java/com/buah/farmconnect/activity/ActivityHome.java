@@ -28,6 +28,7 @@ import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
 import com.buah.farmconnect.fragment.FragmentCategory;
 import com.buah.farmconnect.fragment.FragmentHome;
+import com.buah.farmconnect.fragment.FragmentMore;
 import com.buah.farmconnect.fragment.FragmentMyProduct;
 import com.buah.farmconnect.object.ObjectUser;
 import com.buah.farmconnect.session.SharedPrefManager;
@@ -39,7 +40,6 @@ import retrofit2.Response;
 
 public class ActivityHome extends AppCompatActivity {
 
-    Fragment mCurrentFragment;
     View navHeader;
     ObjectUser user;
     Toolbar mToolbar;
@@ -62,8 +62,14 @@ public class ActivityHome extends AppCompatActivity {
         //Initialize widgets and components
         initialize();
 
-        // Setting up the Home Fragment
-        setHomeFragment(new FragmentHome());
+        Intent intent = getIntent();
+        String screen = intent.getStringExtra("Screen");
+
+        if (screen != null) {
+            setHomeFragment(screen);
+        } else {
+            setHomeFragment("Home");
+        }
 
         if (SharedPrefManager.getInstance(getApplicationContext()).isLoggedIn()) {
             mNavigationView.inflateMenu(R.menu.logged_in_nav_drawer_menu);
@@ -137,24 +143,41 @@ public class ActivityHome extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public void onBackPressed(){
-        if (mCurrentFragment == getSupportFragmentManager().findFragmentById(R.id.fragmentHome_rootLayout)){
-            super.onBackPressed();
+    public void setHomeFragment(String screen) {
+
+        switch (screen) {
+            case "Home":
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.homeLayout, new FragmentHome())
+                        .commit();
+                break;
+            case "Category":
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.homeLayout, new FragmentCategory())
+                        .commit();
+                break;
+            case "More":
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.homeLayout, new FragmentMore())
+                        .commit();
+                break;
+            case "MyProduct":
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.homeLayout, new FragmentMyProduct())
+                        .commit();
+                break;
+            default:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.homeLayout, new FragmentHome())
+                        .commit();
+                break;
         }
-    }
-
-    public void setHomeFragment(Fragment fragment) {
-        mCurrentFragment = fragment;
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.homeLayout, mCurrentFragment)
-                .commit();
-    }
-
-    public Fragment getHomeFragment(){
-        return mCurrentFragment;
-    }
+}
 
     private void displaySelectedScreen(@IdRes int itemId) {
         Fragment fragment = null;

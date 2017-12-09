@@ -20,14 +20,7 @@ import java.util.List;
 public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ProductHolder> {
 
     private Context mContext;
-   // private ArrayList mImage;
     private List<ObjectProduct> products;
-
-    public AdapterProduct(Context mContext, List<ObjectProduct> products, ArrayList image) {
-        this.mContext = mContext;
-        //this.mImage = image;
-        this.products = products;
-    }
 
     public AdapterProduct(Context mContext, List<ObjectProduct> products) {
         this.mContext = mContext;

@@ -11,17 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.buah.farmconnect.R;
 import com.buah.farmconnect.adapter.AdapterCategoryRecyclerView;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
 import com.buah.farmconnect.object.ObjectPlay;
-import com.buah.farmconnect.R;
-import com.buah.farmconnect.adapter.AdapterProduct;
 import com.buah.farmconnect.object.ObjectProduct;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,7 +50,6 @@ public class FragmentCategory extends Fragment {
         //mRecyclerView.setAdapter(new AdapterCategoryRecyclerView(getContext(), products.getObjectProducts()));
 
 
-
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
         Call<Result> call = service.category();
@@ -65,11 +62,26 @@ public class FragmentCategory extends Fragment {
                     if (!response.body().getError()) {
                         Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_LONG).show();
 
-                        categories.add(response.body().getObjectProductTubers());
-                        categories.add(response.body().getObjectProductFruits());
-                        categories.add(response.body().getObjectProductVegetables());
-                        categories.add(response.body().getObjectProductGrains());
-                        categories.add(response.body().getObjectProductDairyFish());
+                        if (response.body().getObjectProductTubers() != null) {
+                            if (response.body().getObjectProductTubers().size() != 0)
+                                categories.add(response.body().getObjectProductTubers());
+                        }
+                        if (response.body().getObjectProductFruits() != null) {
+                            if (response.body().getObjectProductFruits().size() != 0)
+                                categories.add(response.body().getObjectProductFruits());
+                        }
+                        if (response.body().getObjectProductVegetables() != null) {
+                            if (response.body().getObjectProductVegetables().size() != 0)
+                                categories.add(response.body().getObjectProductVegetables());
+                        }
+                        if (response.body().getObjectProductGrains() != null) {
+                            if (response.body().getObjectProductGrains().size() != 0)
+                                categories.add(response.body().getObjectProductGrains());
+                        }
+                        if (response.body().getObjectProductDairyFish() != null) {
+                            if (response.body().getObjectProductDairyFish().size() != 0)
+                                categories.add(response.body().getObjectProductDairyFish());
+                        }
 
 
                         AdapterCategoryRecyclerView adapter;
