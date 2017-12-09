@@ -65,9 +65,8 @@ public class ActivityViewProduct extends AppCompatActivity {
     private String contact;
     VideoView videoview;
     ProgressDialog pDialog;
-    MediaPlayer mp ;
     FloatingActionButton mEditFab;
-    private boolean isUploader;
+    private boolean isUploader ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,7 +155,20 @@ public class ActivityViewProduct extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.view_product_menu, menu);
-        return isUploader;
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        MenuItem item = menu.findItem(R.id.action_deleteProduct);
+
+        if(isUploader) {
+            item.setVisible(true);
+        } else {
+            item.setVisible(false);
+        }
+        return super.onPrepareOptionsMenu(menu);
     }
 
     @Override
@@ -235,19 +247,6 @@ public class ActivityViewProduct extends AppCompatActivity {
         intent.setDataAndType(Uri.parse(audio), "audio/*");
         startActivity(intent);
 
-//        MediaPlayer mediaPlayer = new MediaPlayer();
-//        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-//        try {
-//            mediaPlayer.setDataSource(audio);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        try {
-//            mediaPlayer.prepare();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        mediaPlayer.start();
     }
 
     public void onPlayVideoClick(View view) {
