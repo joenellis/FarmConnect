@@ -64,8 +64,9 @@ public class AdapterCategoryRecyclerView extends RecyclerView.Adapter<AdapterCat
         holder.mSubtitle.setText(browse);
         holder.mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
         holder.mRecyclerView.setAdapter(new AdapterProduct(mContext, categories.get(position)));
+
         final Bundle bundle = new Bundle();
-        bundle.putString("Category", category[position]);
+        bundle.putString("Category", String.valueOf(position + 1));
 
         final Fragment fragment = new FragmentMore();
         fragment.setArguments(bundle);

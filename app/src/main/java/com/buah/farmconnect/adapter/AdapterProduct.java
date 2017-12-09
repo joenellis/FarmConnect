@@ -52,7 +52,6 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ProductH
                 Intent intent = new Intent(mContext, ActivityViewProduct.class);
                 intent.putExtra("ID", product.getProduct_id());
                 mContext.startActivity(intent);
-
             }
         });
 

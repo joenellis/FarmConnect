@@ -24,8 +24,6 @@ import retrofit2.Response;
 
 public class FragmentMore extends Fragment {
 
-
-    private static final String KEY = "";
     GridLayoutManager layoutManager;
     RecyclerView mRecyclerViewMore;
 
@@ -51,7 +49,7 @@ public class FragmentMore extends Fragment {
 
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
-        Call<Result> call = service.products(KEY);
+        Call<Result> call = service.productcaegory(args);
 
         call.enqueue(new Callback<Result>() {
             @Override
@@ -67,7 +65,6 @@ public class FragmentMore extends Fragment {
                     } else {
                         Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_LONG).show();
                     }
-                } else {
                 }
             }
 

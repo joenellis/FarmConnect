@@ -27,28 +27,9 @@ import retrofit2.Response;
 
 public class FragmentMyProduct extends Fragment {
 
-    ArrayList productNames = new ArrayList<>(Arrays.asList("Tomatoes", "Cabbage", "Banana ", "Chicken", "Cow", "Person 6", "Person 7", "Person 8", "Person 9", "Person 10", "Person 11", "Person 12", "Person 13", "Person 14"));
-    ArrayList image = new ArrayList<>(Arrays.asList(
-            R.drawable.tomato,
-            R.drawable.cabbage,
-            R.drawable.banana,
-            R.drawable.chicken,
-            R.drawable.cow,
-            R.drawable.tomato,
-            R.drawable.cabbage,
-            R.drawable.banana,
-            R.drawable.chicken,
-            R.drawable.cow,
-            R.drawable.tomato,
-            R.drawable.cabbage,
-            R.drawable.banana,
-            R.drawable.chicken
-    ));
 
     RecyclerView.LayoutManager layoutManager;
     RecyclerView recyclerView;
-
-    ObjectPlay products = new ObjectPlay();
 
     @Nullable
     @Override

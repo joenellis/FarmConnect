@@ -108,6 +108,10 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     Spinner productLocationRegion;
     Spinner productLocationCity;
 
+    private String address;
+    private String city;
+    private String country;
+
     private String mImagePath1;
     private String mImagePath2;
     private String mImagePath3;
@@ -682,7 +686,15 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
             // Building the GoogleApi client
             buildGoogleApiClient();
+
+            if((buildGoogleApiClient())){
+                onStartConn();
+
+                if((onStartConn())){
+                    checkPlayServices();
+                }
         }
+    }
     }
 
     private boolean checkPlayServices() {
@@ -703,11 +715,12 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         return true;
     }
 
-    protected synchronized void buildGoogleApiClient() {
+    protected synchronized boolean buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API).build();
+        return true;
     }
 
     private void displayLocation() {
@@ -723,6 +736,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
             return;
         }
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        onStopCon();
 
         if (mLastLocation != null) {
             latitude = mLastLocation.getLatitude();
@@ -739,9 +753,13 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                 e.printStackTrace();
             }
 
-            String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
-            String city = addresses.get(0).getLocality();
-            String country = addresses.get(0).getCountryName();
+            address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+            city = addresses.get(0).getLocality();
+            country = addresses.get(0).getCountryName();
+
+            ActivityAddProduct.location = address+ " "+ city;
+            AddProduct.setLocation(location);
+
         } else {
 
            Toast.makeText(getApplicationContext(), "(Couldn't get the location. Make sure location is enabled on the device)", Toast.LENGTH_LONG);
@@ -766,12 +784,11 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                 + result.getErrorCode());
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+    public boolean onStartConn() {
         if (mGoogleApiClient != null) {
             mGoogleApiClient.connect();
         }
+        return true;
     }
 
     @Override
@@ -782,10 +799,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     }
 
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-
+    public void onStopCon() {
         if (mGoogleApiClient.isConnected()) {
             mGoogleApiClient.disconnect();
         }

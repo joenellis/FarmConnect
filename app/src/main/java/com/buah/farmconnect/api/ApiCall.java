@@ -24,17 +24,20 @@ public interface ApiCall {
     @GET("getproducts.php")
     Call<Result> mproducts(@Query("userid") String userid);
 
-    @GET("getcategory.php")
-    Call<Result> category();
-
     @GET("getprofile.php")
     Call<Result> userprofile(@Query("userid") String userid);
+
+    @GET("getcategoryproducts.php")
+    Call<Result> productcaegory(@Query("categoryid") String categoryid);
 
     @GET("getproductdetail.php")
     Call<Result> productdetails(@Query("productid") String productid);
 
     @GET("deleteproduct.php")
     Call<Result> productdelete(@Query("productid") String userid);
+
+    @GET("getcategory.php")
+    Call<Result> category();
 
     @FormUrlEncoded
     @POST("userupdate.php")

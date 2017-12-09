@@ -54,7 +54,7 @@ public class VideoViewActivity extends AppCompatActivity {
         // Set progressbar message
         pDialog.setMessage("Buffering...");
         pDialog.setIndeterminate(false);
-        pDialog.setCancelable(false);
+        pDialog.setCancelable(true);
 
         // Show progressbar
         pDialog.show();
