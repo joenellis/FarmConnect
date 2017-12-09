@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -56,7 +57,7 @@ public class ActivityViewProduct extends AppCompatActivity {
     VideoView videoview;
     ProgressDialog pDialog;
     FloatingActionButton mEditFab;
-    private boolean isUploader ;
+    private boolean isUploader;
     private String productName;
     private String productImage;
     private String productDescription;
@@ -127,6 +128,15 @@ public class ActivityViewProduct extends AppCompatActivity {
                         mPrice.setText(productPrice);
                         mLocation.setText(productLocation);
                         mCall.setText(contact);
+
+                        if (audio == null) {
+                            ViewGroup lay = findViewById(R.id.viewProduct_layAudioDescription);
+                            lay.setVisibility(View.GONE);
+                        }
+                        if (video == null) {
+                            ViewGroup lay = findViewById(R.id.viewProduct_layVideoDescription);
+                            lay.setVisibility(View.GONE);
+                        }
 
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
                     } else {
