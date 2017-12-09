@@ -44,12 +44,12 @@
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/layout/fragment_sign_up_4.xml"
     },
     {
-        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
-    },
-    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_abc_expanded_menu_layout.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
@@ -62,6 +62,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_notification_template_lines_media.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.1.aar/0b054a4b987c1236abdcca2b17883c95/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xhdpi-v4/googleg_disabled_color_18.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/menu_logged_in_nav_drawer_menu.xml.flat",
@@ -108,12 +112,12 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_abc_action_mode_close_item_material.xml.flat",
-        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/layout/abc_action_mode_close_item_material.xml"
-    },
-    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_design_navigation_item_separator.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/design-27.0.1.aar/86d4ac3c3e0cf66bdaaed5b3dc5cfb41/res/layout/design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_abc_action_mode_close_item_material.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/color-v23_abc_tint_default.xml.flat",
@@ -136,12 +140,12 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
     },
     {
-        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_fragment_sign_up_2.xml.flat",
-        "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/layout/fragment_sign_up_2.xml"
-    },
-    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_activity_my_account.xml.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/layout/activity_my_account.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_fragment_sign_up_2.xml.flat",
+        "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/layout/fragment_sign_up_2.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
@@ -200,8 +204,16 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/drawable-mdpi-v4/notification_bg_normal.9.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-hdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light_normal.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_icon_light_normal.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_home.png.flat",
@@ -236,12 +248,12 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-mdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_call.png.flat",
-        "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-hdpi/ic_call.png"
-    },
-    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_tomato.jpg.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable/tomato.jpg"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_call.png.flat",
+        "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-hdpi/ic_call.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_home_app_bar.xml.flat",
@@ -256,24 +268,28 @@
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-xxhdpi/ic_mail.png"
     },
     {
-        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_abc_text_cursor_material.xml.flat",
-        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable/abc_text_cursor_material.xml"
-    },
-    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_filter.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-mdpi/ic_filter.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_abc_text_cursor_material.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable/abc_text_cursor_material.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_collections.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-mdpi/ic_collections.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/color-v23_abc_btn_colored_borderless_text_material.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/color-v23_abc_btn_colored_borderless_text_material.xml.flat",
-        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_light_focused.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_text_light_focused.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -300,24 +316,24 @@
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-hdpi/ic_log_out.png"
     },
     {
-        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/anim_design_snackbar_out.xml.flat",
-        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/design-27.0.1.aar/86d4ac3c3e0cf66bdaaed5b3dc5cfb41/res/anim/design_snackbar_out.xml"
-    },
-    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_abc_action_bar_title_item.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/anim_design_snackbar_out.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/design-27.0.1.aar/86d4ac3c3e0cf66bdaaed5b3dc5cfb41/res/anim/design_snackbar_out.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_abc_ic_search_api_material.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable/abc_ic_search_api_material.xml"
     },
     {
-        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_back_white.png.flat",
-        "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-mdpi/ic_back_white.png"
-    },
-    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_filter_white.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-hdpi/ic_filter_white.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_back_white.png.flat",
+        "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-mdpi/ic_back_white.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_tooltip.xml.flat",
@@ -334,6 +350,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_banana.jpg.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable/banana.jpg"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-hdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_activity_add_product.xml.flat",
@@ -356,8 +376,16 @@
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-mdpi/ic_play_arrow.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_full_open_on_phone.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xhdpi-v4/common_full_open_on_phone.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_nav_cart.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-mdpi/ic_nav_cart.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark_normal.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_text_dark_normal.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_design_bottom_navigation_item_background.xml.flat",
@@ -444,6 +472,10 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-hdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_user.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-hdpi/ic_user.png"
     },
@@ -454,6 +486,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-ldrtl-xxxhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xxhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
@@ -512,6 +548,10 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/color/abc_tint_default.xml"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/color_common_google_signin_btn_text_light.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
     },
@@ -544,12 +584,20 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/design-27.0.1.aar/86d4ac3c3e0cf66bdaaed5b3dc5cfb41/res/drawable-mdpi-v4/design_ic_visibility.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_light_normal.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_abc_cab_background_top_material.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable/abc_cab_background_top_material.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_abc_vector_test.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -560,12 +608,20 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-ldrtl-xxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-mdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi_app_logo_white.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-hdpi/app_logo_white.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/anim_abc_slide_in_bottom.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light_focused.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_icon_light_focused.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
@@ -586,6 +642,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_basket.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-hdpi/ic_basket.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_disabled.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_icon_disabled.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -618,6 +678,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_light.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_text_light.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_abc_btn_colored_material.xml.flat",
@@ -784,6 +848,10 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xxhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/color_common_google_signin_btn_text_dark.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/color_abc_primary_text_material_dark.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/color/abc_primary_text_material_dark.xml"
     },
@@ -810,6 +878,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_abc_edit_text_material.xml.flat",
@@ -894,6 +966,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/color_switch_thumb_material_dark.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-mdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -984,6 +1060,10 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xxhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xxhdpi-v4/googleg_standard_color_18.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_place.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-hdpi/ic_place.png"
     },
@@ -996,12 +1076,24 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/layout-v21/notification_action.xml"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-hdpi-v4/googleg_standard_color_18.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-mdpi-v4/googleg_standard_color_18.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xxhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_play_arrow.png.flat",
@@ -1100,6 +1192,10 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-ldrtl-xxxhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-mdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_check_white.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-xhdpi/ic_check_white.png"
     },
@@ -1130,6 +1226,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/color-v23_abc_tint_switch_track.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xxhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -1376,6 +1476,10 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xxhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout-v26_abc_screen_toolbar.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/layout-v26/abc_screen_toolbar.xml"
     },
@@ -1448,8 +1552,16 @@
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/layout/fragment_more.xml"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-hdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_audio.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-xxhdpi/ic_audio.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/menu_activity_def_drawer.xml.flat",
@@ -1528,6 +1640,10 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/drawable/notification_icon_background.xml"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_audio.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-mdpi/ic_audio.png"
     },
@@ -1540,12 +1656,20 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/anim_tooltip_exit.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/anim/tooltip_exit.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark_focused.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_text_dark_focused.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_add_white.png.flat",
@@ -1592,6 +1716,10 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable/abc_ic_go_search_api_material.xml"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-hdpi-v4/googleg_disabled_color_18.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
@@ -1632,6 +1760,10 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/color_common_google_signin_btn_tint.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_home.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-xxhdpi/ic_home.png"
     },
@@ -1668,6 +1800,10 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/color/abc_tint_spinner.xml"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-mdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
@@ -1682,6 +1818,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/color_abc_secondary_text_material_light.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-mdpi-v4/googleg_disabled_color_18.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -1728,6 +1868,10 @@
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-mdpi/ic_add_white.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_full_open_on_phone.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-hdpi-v4/common_full_open_on_phone.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xxhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
@@ -1756,6 +1900,10 @@
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-hdpi/ic_filter.png"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xxhdpi-v4/googleg_disabled_color_18.png"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_abc_switch_thumb_material.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable/abc_switch_thumb_material.xml"
     },
@@ -1764,12 +1912,12 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-mdpi-v4/abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-ldrtl-mdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-mdpi-v4/abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_fragment_sign_up_3.xml.flat",
@@ -1834,6 +1982,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/layout-v16/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xhdpi-v4/googleg_standard_color_18.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -1966,6 +2118,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/drawable-hdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
@@ -2152,6 +2308,10 @@
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/layout/fragment_add_product_1.xml"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_icon_dark.xml"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -2162,6 +2322,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_cart_dark.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-hdpi/ic_cart_dark.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_text_dark.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/layout_design_navigation_item_subheader.xml.flat",
@@ -2312,6 +2476,10 @@
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/color-v21/abc_btn_colored_borderless_text_material.xml"
     },
     {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_disabled.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_text_disabled.xml"
+    },
+    {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
     },
@@ -2394,6 +2562,10 @@
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_back_white.png.flat",
         "source": "/Users/joenellis/Desktop/FarmConnect/app/src/main/res/drawable-xxhdpi/ic_back_white.png"
+    },
+    {
+        "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light.xml.flat",
+        "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/drawable/common_google_signin_btn_icon_light.xml"
     },
     {
         "merged": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
