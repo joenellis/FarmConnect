@@ -37,7 +37,7 @@ import com.buah.farmconnect.api.AddProduct;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.Result;
 import com.buah.farmconnect.api.ApiCall;
-import com.buah.farmconnect.fragment.BlankFragment;
+import com.buah.farmconnect.fragment.FragmentDialogLocation;
 import com.buah.farmconnect.fragment.FragmentAddProduct1;
 import com.buah.farmconnect.fragment.FragmentAddProduct2;
 import com.buah.farmconnect.fragment.FragmentAddProduct3;
@@ -51,8 +51,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -168,7 +166,7 @@ public class ActivityAddProduct extends AppCompatActivity {
     public void onChooseLocationClick(View view) {
 
         final android.app.FragmentManager fm = getFragmentManager();
-        final BlankFragment p = new BlankFragment();
+        final FragmentDialogLocation p = new FragmentDialogLocation();
         Button btn = (Button) view;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
