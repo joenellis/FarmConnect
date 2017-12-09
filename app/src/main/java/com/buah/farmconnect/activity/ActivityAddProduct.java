@@ -258,11 +258,8 @@ public class ActivityAddProduct extends AppCompatActivity {
         } else if (mAudioFilePath != null) {
 
             File audioFile = new File(mAudioFilePath);
-
             RequestBody requestBody6 = RequestBody.create(MediaType.parse("*/*"), audioFile);
-
             MultipartBody.Part fileToUpload6 = MultipartBody.Part.createFormData("file6", audioFile.getName(), requestBody6);
-
             call = service.uploadMulFile(userid, categoryid, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload6);
 
         } else {
@@ -270,8 +267,6 @@ public class ActivityAddProduct extends AppCompatActivity {
             call = service.uploadMulFile(userid, categoryid, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4);
 
         }
-
-
 
         call.enqueue(new Callback<Result>() {
             @Override
