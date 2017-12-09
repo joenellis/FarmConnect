@@ -63,7 +63,7 @@ public class FragmentHome extends Fragment {
 
                 if (response.body() != null) {
                     if (!response.body().getError()) {
-                        Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+//                      Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_LONG).show();
 
                         AdapterProduct adapter = new AdapterProduct(getContext(), response.body().getObjectProducts());
                         recyclerViewHome.setAdapter(adapter);
@@ -77,7 +77,7 @@ public class FragmentHome extends Fragment {
 
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
-                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 

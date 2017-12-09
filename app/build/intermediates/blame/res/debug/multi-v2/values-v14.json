@@ -17,10 +17,10 @@
             ]
         },
         {
-            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
             "map": [
                 {
-                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-v14\\values-v14.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-v14\\values-v14.xml",
                     "from": {
                         "startLines": "2,7,8,9,15",
                         "startColumns": "4,4,4,4,4",
@@ -33,10 +33,10 @@
             ]
         },
         {
-            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
             "map": [
                 {
-                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-v14\\values-v14.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-v14\\values-v14.xml",
                     "from": {
                         "startLines": "2,7,8,9,15",
                         "startColumns": "4,4,4,4,4",

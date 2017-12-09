@@ -97,6 +97,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     private double latitude, longitude;
 
     public static String location = "";
+
     Toolbar mToolbar;
     CustomViewPager mPager;
     PagerAdapter mPagerAdapter;
@@ -137,7 +138,6 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         mToolbar = findViewById(R.id.toolbar);
         mToolbar.setTitle("Add Product");
         setSupportActionBar(mToolbar);
-
 
 
         assert getSupportActionBar() != null;
@@ -208,13 +208,8 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
         final android.app.FragmentManager fm = getFragmentManager();
         final FragmentDialogLocation p = new FragmentDialogLocation();
-        Button btn = (Button) view;
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                p.show(fm, "Select Location");
-            }
-        });
+        p.show(fm, "Select Location");
+
     }
 
     public void onAddProductNextClick4(View view) {
@@ -499,69 +494,69 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     assert cursor != null;
                     cursor.moveToFirst();
 
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mImagePath3 = cursor.getString(columnIndex);
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    mImagePath3 = cursor.getString(columnIndex);
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else if (id == R.id.addProduct_btnAddImage4) {
+                } else if (id == R.id.addProduct_btnAddImage4) {
 
-                Uri selectedImage = data.getData();
-                String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
-                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                assert cursor != null;
-                cursor.moveToFirst();
+                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    assert cursor != null;
+                    cursor.moveToFirst();
 
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mImagePath4 = cursor.getString(columnIndex);
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    mImagePath4 = cursor.getString(columnIndex);
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else {
-                Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
-            }
+                } else {
+                    Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
+                }
 
-        } else if (requestCode == CAMERA) {
-            Uri selectedImage = null;
+            } else if (requestCode == CAMERA) {
+                Uri selectedImage = null;
 
-            if (id == R.id.addProduct_btnAddImage1) {
+                if (id == R.id.addProduct_btnAddImage1) {
 
-                selectedImage = data.getData();
-                mImagePath1 = selectedImage.getPath();
+                    selectedImage = data.getData();
+                    mImagePath1 = selectedImage.getPath();
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else if (id == R.id.addProduct_btnAddImage2) {
+                } else if (id == R.id.addProduct_btnAddImage2) {
 
-                selectedImage = data.getData();
-                mImagePath2 = selectedImage.getPath();
+                    selectedImage = data.getData();
+                    mImagePath2 = selectedImage.getPath();
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else if (id == R.id.addProduct_btnAddImage3) {
+                } else if (id == R.id.addProduct_btnAddImage3) {
 
-                selectedImage = data.getData();
-                mImagePath3 = selectedImage.getPath();
+                    selectedImage = data.getData();
+                    mImagePath3 = selectedImage.getPath();
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
 
-            } else if (id == R.id.addProduct_btnAddImage4) {
+                } else if (id == R.id.addProduct_btnAddImage4) {
 
-                selectedImage = data.getData();
-                mImagePath4 = selectedImage.getPath();
+                    selectedImage = data.getData();
+                    mImagePath4 = selectedImage.getPath();
 
-                Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                setImageString(buttonId);
-            }else {
-                Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
-            }
-        } else if (requestCode == VIDEO) {
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
+                } else {
+                    Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
+                }
+            } else if (requestCode == VIDEO) {
                 // Get the Video from data
                 Uri selectedVideo = data.getData();
                 String[] filePathColumn = {MediaStore.Video.Media.DATA};
@@ -656,45 +651,20 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     }
 
 
-
-    private class AddProductPagerAdapter extends FragmentStatePagerAdapter {
-
-        ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
-
-        AddProductPagerAdapter(FragmentManager fm) {
-            super(fm);
-            fragmentArrayList.add(new FragmentAddProduct1());
-            fragmentArrayList.add(new FragmentAddProduct2());
-            fragmentArrayList.add(new FragmentAddProduct3());
-            fragmentArrayList.add(new FragmentAddProduct4());
-            fragmentArrayList.add(new FragmentAddProduct5());
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return fragmentArrayList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return fragmentArrayList.size();
-        }
-    }
-
     public void onCurrentLocationClick(View view) {
         if (checkPlayServices()) {
 
             // Building the GoogleApi client
             buildGoogleApiClient();
 
-            if((buildGoogleApiClient())){
+            if ((buildGoogleApiClient())) {
                 onStartConn();
 
-                if((onStartConn())){
+                if ((onStartConn())) {
                     checkPlayServices();
                 }
+            }
         }
-    }
     }
 
     private boolean checkPlayServices() {
@@ -757,12 +727,25 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
             city = addresses.get(0).getLocality();
             country = addresses.get(0).getCountryName();
 
-            ActivityAddProduct.location = address+ " "+ city;
+            ActivityAddProduct.location = address;
             AddProduct.setLocation(location);
+
+
+
+            Snackbar.make(
+                    findViewById(R.id.addProduct3_rootLayout),
+                    address,
+                    Snackbar.LENGTH_LONG
+            ).show();
 
         } else {
 
-           Toast.makeText(getApplicationContext(), "(Couldn't get the location. Make sure location is enabled on the device)", Toast.LENGTH_LONG);
+            Snackbar.make(
+                    findViewById(R.id.addProduct3_rootLayout),
+                    "Couldn't get the location. Make sure location is enabled on the device",
+                    Snackbar.LENGTH_INDEFINITE
+            ).show();
+//           Toast.makeText(getApplicationContext(), "(Couldn't get the location. Make sure location is enabled on the device)", Toast.LENGTH_LONG);
         }
     }
 
@@ -770,7 +753,6 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     public void onConnected(@Nullable Bundle bundle) {
         displayLocation();
     }
-
 
     @Override
     public void onConnectionSuspended(int i) {
@@ -798,7 +780,6 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         checkPlayServices();
     }
 
-
     public void onStopCon() {
         if (mGoogleApiClient.isConnected()) {
             mGoogleApiClient.disconnect();
@@ -809,5 +790,29 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     protected void onPause() {
         super.onPause();
 
+    }
+
+    private class AddProductPagerAdapter extends FragmentStatePagerAdapter {
+
+        ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
+
+        AddProductPagerAdapter(FragmentManager fm) {
+            super(fm);
+            fragmentArrayList.add(new FragmentAddProduct1());
+            fragmentArrayList.add(new FragmentAddProduct2());
+            fragmentArrayList.add(new FragmentAddProduct3());
+            fragmentArrayList.add(new FragmentAddProduct4());
+            fragmentArrayList.add(new FragmentAddProduct5());
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return fragmentArrayList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fragmentArrayList.size();
+        }
     }
 }

@@ -60,7 +60,7 @@ public class FragmentMyProduct extends Fragment {
                     recyclerView.setAdapter(adapter);
 
                 } else {
-                    Toast.makeText(getActivity(),response.body().getMessage(), Toast.LENGTH_LONG).show();
+           //         Toast.makeText(getActivity(),response.body().getMessage(), Toast.LENGTH_LONG).show();
                 }
                 }
             }

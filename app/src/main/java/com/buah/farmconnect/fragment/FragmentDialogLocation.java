@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.buah.farmconnect.R;
 import com.buah.farmconnect.activity.ActivityAddProduct;
+import com.buah.farmconnect.api.AddProduct;
 
 public class FragmentDialogLocation extends DialogFragment {
 
@@ -50,6 +51,7 @@ public class FragmentDialogLocation extends DialogFragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 ActivityAddProduct.location = adapterView.getItemAtPosition(i).toString();
+                AddProduct.location = adapterView.getItemAtPosition(i).toString();
 
                 Toast.makeText(
                         getActivity().getApplicationContext(),

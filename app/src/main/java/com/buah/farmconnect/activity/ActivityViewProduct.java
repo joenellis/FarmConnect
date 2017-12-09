@@ -103,6 +103,7 @@ public class ActivityViewProduct extends AppCompatActivity {
                     if (!response.body().getError()) {
 
                         mImages = new ArrayList<>();
+                        mImages.add(response.body().getObjectProductdetail().getImage());
                         mImages.add(response.body().getObjectProductdetail().getImage1());
                         mImages.add(response.body().getObjectProductdetail().getImage2());
                         mImages.add(response.body().getObjectProductdetail().getImage3());
