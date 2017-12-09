@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\4231d67a88760884810fe2af2aceecf6\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\b9e64fc32666ac1b970706d05683abba\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -33,10 +33,74 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\b9e64fc32666ac1b970706d05683abba\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2002",
+                        "endColumns": "100",
+                        "endOffsets": "2098"
+                    }
+                },
+                {
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,225,331,438,527,628,752,836,917,1004,1111,1223,1325,1433,1540,1647,1818,1917",
+                        "endColumns": "119,105,106,88,100,123,83,80,86,106,111,101,107,106,106,170,98,84",
+                        "endOffsets": "220,326,433,522,623,747,831,912,999,1106,1218,1320,1428,1535,1642,1813,1912,1997"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml",
+            "map": [
+                {
+                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/values-pt-rPT/values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2002",
+                        "endColumns": "100",
+                        "endOffsets": "2098"
+                    }
+                },
+                {
+                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/values-pt-rPT/values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,225,331,438,527,628,752,836,917,1004,1111,1223,1325,1433,1540,1647,1818,1917",
+                        "endColumns": "119,105,106,88,100,123,83,80,86,106,111,101,107,106,106,170,98,84",
+                        "endOffsets": "220,326,433,522,623,747,831,912,999,1106,1218,1320,1428,1535,1642,1813,1912,1997"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+            "map": [
+                {
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -46,7 +110,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\b9e64fc32666ac1b970706d05683abba\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\4231d67a88760884810fe2af2aceecf6\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -65,10 +129,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -78,39 +142,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\4231d67a88760884810fe2af2aceecf6\\res\\values-pt-rPT\\values-pt-rPT.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2002",
-                        "endColumns": "100",
-                        "endOffsets": "2098"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-pt-rPT\\values-pt-rPT.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,225,331,438,527,628,752,836,917,1004,1111,1223,1325,1433,1540,1647,1818,1917",
-                        "endColumns": "119,105,106,88,100,123,83,80,86,106,111,101,107,106,106,170,98,84",
-                        "endOffsets": "220,326,433,522,623,747,831,912,999,1106,1218,1320,1428,1535,1642,1813,1912,1997"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\b9e64fc32666ac1b970706d05683abba\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\4231d67a88760884810fe2af2aceecf6\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

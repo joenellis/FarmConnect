@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-sk\\values-sk.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-sk\\values-sk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\4231d67a88760884810fe2af2aceecf6\\res\\values-sk\\values-sk.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\b9e64fc32666ac1b970706d05683abba\\res\\values-sk\\values-sk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -33,10 +33,42 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\b9e64fc32666ac1b970706d05683abba\\res\\values-sk\\values-sk.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-sk\\values-sk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,212,312,423,509,617,735,816,897,981,1086,1195,1294,1400,1511,1620,1786,1884",
+                        "endColumns": "106,99,110,85,107,117,80,80,83,104,108,98,105,110,108,165,97,87",
+                        "endOffsets": "207,307,418,504,612,730,811,892,976,1081,1190,1289,1395,1506,1615,1781,1879,1967"
+                    }
+                },
+                {
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\4231d67a88760884810fe2af2aceecf6\\res\\values-sk\\values-sk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1972",
+                        "endColumns": "100",
+                        "endOffsets": "2068"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sk/values-sk.xml",
+            "map": [
+                {
+                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/values-sk/values-sk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -53,7 +85,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-sk\\values-sk.xml",
+                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/values-sk/values-sk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -65,10 +97,20 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\b9e64fc32666ac1b970706d05683abba\\res\\values-sk\\values-sk.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-sk\\values-sk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,212,312,423,509,617,735,816,897,981,1086,1195,1294,1400,1511,1620,1786,1884",
+                        "endColumns": "106,99,110,85,107,117,80,80,83,104,108,98,105,110,108,165,97,87",
+                        "endOffsets": "207,307,418,504,612,730,811,892,976,1081,1190,1289,1395,1506,1615,1781,1879,1967"
+                    }
+                },
+                {
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\b9e64fc32666ac1b970706d05683abba\\res\\values-sk\\values-sk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -83,24 +125,14 @@
                         "endColumns": "100",
                         "endOffsets": "2068"
                     }
-                },
-                {
-                    "source": "C:\\Users\\joenellis\\Desktop\\FarmConnect\\C:\\Users\\joenellis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\f4d2b8b3a595c2f0b7118708eb66072f\\res\\values-sk\\values-sk.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,212,312,423,509,617,735,816,897,981,1086,1195,1294,1400,1511,1620,1786,1884",
-                        "endColumns": "106,99,110,85,107,117,80,80,83,104,108,98,105,110,108,165,97,87",
-                        "endOffsets": "207,307,418,504,612,730,811,892,976,1081,1190,1289,1395,1506,1615,1781,1879,1967"
-                    }
                 }
             ]
         },
         {
-            "outputFile": "C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
+            "outputFile": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\Abizi Buah\\Desktop\\FarmConnect\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-sk\\values-sk.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.1.aar\\06e4bdf95c6f8a617b811ff5ebdb57b0\\res\\values-sk\\values-sk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -110,7 +142,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\4231d67a88760884810fe2af2aceecf6\\res\\values-sk\\values-sk.xml",
+                    "source": "/Users/joenellis/Desktop/FarmConnect/C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.1.aar\\4231d67a88760884810fe2af2aceecf6\\res\\values-sk\\values-sk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
