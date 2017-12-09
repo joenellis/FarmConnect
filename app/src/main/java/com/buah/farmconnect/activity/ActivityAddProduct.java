@@ -208,6 +208,8 @@ public class ActivityAddProduct extends AppCompatActivity {
         File imageFile2 = new File(mImagePath2);
         File imageFile3 = new File(mImagePath3);
         File imageFile4 = new File(mImagePath4);
+
+
         RequestBody userid = RequestBody.create(MediaType.parse("multipart/form-data"), id);
         RequestBody categoryid = RequestBody.create(MediaType.parse("multipart/form-data"), category_id);
         RequestBody productname = RequestBody.create(MediaType.parse("multipart/form-data"), productName);
@@ -228,7 +230,7 @@ public class ActivityAddProduct extends AppCompatActivity {
 
 
         final ProgressDialog progressDialog = new ProgressDialog(ActivityAddProduct.this);
-        progressDialog.setMessage("Logging In...");
+        progressDialog.setMessage("Adding Product. Please wait...");
         progressDialog.show();
 
         Api api = new Api();
