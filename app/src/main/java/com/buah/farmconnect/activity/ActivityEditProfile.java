@@ -1,7 +1,6 @@
 package com.buah.farmconnect.activity;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.design.widget.TextInputEditText;
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 import android.app.ProgressDialog;
 
@@ -18,7 +16,7 @@ import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
 import com.buah.farmconnect.session.SharedPrefManager;
-import com.buah.farmconnect.object.ObjectUser;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,10 +43,10 @@ public class ActivityEditProfile extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
-        editTextFirstName = findViewById(R.id.editProfile_txtFirstName);
-        editTextLastName = findViewById(R.id.editProfile_txtLastName);
-        editTextEmail = findViewById(R.id.editProfile_txtEmail);
-        editTextContact = findViewById(R.id.editProfile_txtNumber);
+        editTextFirstName = findViewById(R.id.editProduct_txtProductName);
+        editTextLastName = findViewById(R.id.editProduct_txtProductDescription);
+        editTextEmail = findViewById(R.id.editProduct_txtEmail);
+        editTextContact = findViewById(R.id.editProduct_txtPrice);
 
         String userid = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getUser_id();
         String[] FullName = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getFullname().split(" ");
@@ -147,7 +145,5 @@ public class ActivityEditProfile extends AppCompatActivity {
 
         return true;
     }
-
-    //        editTextPassword = findViewById(R.id.editProfile_)
 
 }

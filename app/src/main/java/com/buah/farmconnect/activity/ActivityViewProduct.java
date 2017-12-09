@@ -26,7 +26,6 @@ import com.buah.farmconnect.api.Result;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -58,6 +57,12 @@ public class ActivityViewProduct extends AppCompatActivity {
     ProgressDialog pDialog;
     FloatingActionButton mEditFab;
     private boolean isUploader ;
+    private String productName;
+    private String productImage;
+    private String productDescription;
+    private String farmerName;
+    private String productPrice;
+    private String productLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,23 +109,23 @@ public class ActivityViewProduct extends AppCompatActivity {
                         AdapterViewProductImages adapter = new AdapterViewProductImages(getApplicationContext(), mImages);
                         mRecyclerView.setAdapter(adapter);
 
-                        String productName = response.body().getObjectProductdetail().getProductname();
-                        String image = response.body().getObjectProductdetail().getImage();
-                        String description = response.body().getObjectProductdetail().getDescription();
-                        String farmerName = response.body().getObjectProductdetail().getFullname();
-                        String price = response.body().getObjectProductdetail().getPrice();
-                        String location = response.body().getObjectProductdetail().getLocation();
+                        productName = response.body().getObjectProductdetail().getProductname();
+                        productImage = response.body().getObjectProductdetail().getImage();
+                        productDescription = response.body().getObjectProductdetail().getDescription();
+                        farmerName = response.body().getObjectProductdetail().getFullname();
+                        productPrice = response.body().getObjectProductdetail().getPrice();
+                        productLocation = response.body().getObjectProductdetail().getLocation();
                         audio = response.body().getObjectProductdetail().getAudio();
                         video = response.body().getObjectProductdetail().getVideo();
                         contact = response.body().getObjectProductdetail().getContact();
 
                         mToolbar.setTitle(productName);
                         mProductName.setText(productName);
-                        Picasso.with(getApplicationContext()).load(image).into(mProductImage);
-                        mDescription.setText(description);
+                        Picasso.with(getApplicationContext()).load(productImage).into(mProductImage);
+                        mDescription.setText(productDescription);
                         mFarmerName.setText(farmerName);
-                        mPrice.setText(price);
-                        mLocation.setText(location);
+                        mPrice.setText(productPrice);
+                        mLocation.setText(productLocation);
                         mCall.setText(contact);
 
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
@@ -188,7 +193,8 @@ public class ActivityViewProduct extends AppCompatActivity {
     }
 
     public void onCallButtonClick(View view) {
-
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", contact, null));
+        startActivity(intent);
     }
 
     public void onPlayAudioClick(View view) {
