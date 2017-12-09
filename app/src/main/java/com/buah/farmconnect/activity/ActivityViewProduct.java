@@ -137,6 +137,10 @@ public class ActivityViewProduct extends AppCompatActivity {
                             ViewGroup lay = findViewById(R.id.viewProduct_layVideoDescription);
                             lay.setVisibility(View.GONE);
                         }
+                        if (video==null &&audio==null) {
+                            Button button = findViewById(R.id.viewProduct_btnMoreDescription);
+                            button.setVisibility(View.GONE);
+                        }
 
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
                     } else {
