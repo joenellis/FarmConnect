@@ -58,10 +58,34 @@ public interface ApiCall {
                                 @Part MultipartBody.Part file1,
                                 @Part MultipartBody.Part file2,
                                 @Part MultipartBody.Part file3,
+                                @Part MultipartBody.Part file4);
+    @Multipart
+    @POST("uploadproduct.php")
+    Call<Result> uploadMulFile( @Part("userid") RequestBody id,
+                                @Part("categoryid") RequestBody categoryid,
+                                @Part("productname") RequestBody productname,
+                                @Part("price") RequestBody price,
+                                @Part("description") RequestBody description,
+                                @Part("location") RequestBody location,
+                                @Part MultipartBody.Part file1,
+                                @Part MultipartBody.Part file2,
+                                @Part MultipartBody.Part file3,
+                                @Part MultipartBody.Part file4,
+                                @Part MultipartBody.Part file5);
+    @Multipart
+    @POST("uploadproduct.php")
+    Call<Result> uploadMulFile( @Part("userid") RequestBody id,
+                                @Part("categoryid") RequestBody categoryid,
+                                @Part("productname") RequestBody productname,
+                                @Part("price") RequestBody price,
+                                @Part("description") RequestBody description,
+                                @Part("location") RequestBody location,
+                                @Part MultipartBody.Part file1,
+                                @Part MultipartBody.Part file2,
+                                @Part MultipartBody.Part file3,
                                 @Part MultipartBody.Part file4,
                                 @Part MultipartBody.Part file5,
-                                @Part MultipartBody.Part file6
-    );
+                                @Part MultipartBody.Part file6);
 }
 
 

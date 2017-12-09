@@ -30,8 +30,6 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 
 import com.buah.farmconnect.R;
 import com.buah.farmconnect.api.AddProduct;
@@ -73,11 +71,12 @@ public class ActivityAddProduct extends AppCompatActivity {
     Spinner productLocationRegion;
     Spinner productLocationCity;
 
-    String mediaPath;
-    String mediaPath1;
-    String mediaPath2;
-    String mediaPath3;
-    String mediaPath4;
+    private String mImagePath1;
+    private String mImagePath2;
+    private String mImagePath3;
+    private String mImagePath4;
+    private String mVideoFilePath;
+    private String mAudioFilePath;
 
     boolean isRecordingAudio = false;
 
@@ -87,7 +86,6 @@ public class ActivityAddProduct extends AppCompatActivity {
     private int buttonId;
     private Button button;
     private MediaRecorder mMediaRecorder;
-    private String mAudioFilePath;
     private final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 29;
 
     @Override
@@ -199,41 +197,41 @@ public class ActivityAddProduct extends AppCompatActivity {
     public void onAddProductClick(View view) {
 
         String id = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getUser_id();
-        String catid = AddProduct.getCategory_id();
-        String pname = AddProduct.getProductName();
-        String pprice = AddProduct.getPrice();
-        String descrip = AddProduct.getDescription();
-        String loca = AddProduct.getLocation();
+        String category_id = AddProduct.getCategory_id();
+        String productName = AddProduct.getProductName();
+        String productPrice = AddProduct.getPrice();
+        String productDescription = AddProduct.getDescription();
+        String productLocation = AddProduct.getLocation();
 
         //Map is used to multipart the file using okhttp3.RequestBody
-        File file = new File(mediaPath);
-        File file1 = new File(mediaPath1);
-        File file2 = new File(mediaPath2);
-        File file3 = new File(mediaPath3);
-        File file4 = new File(mediaPath4);
-        File file5 = new File(mAudioFilePath);
+        File imageFile1 = new File(mImagePath1);
+        File imageFile2 = new File(mImagePath2);
+        File imageFile3 = new File(mImagePath3);
+        File imageFile4 = new File(mImagePath4);
+        File videoFile = new File(mVideoFilePath);
+        File audioFile = new File(mAudioFilePath);
 
         RequestBody userid = RequestBody.create(MediaType.parse("multipart/form-data"), id);
-        RequestBody categoryid = RequestBody.create(MediaType.parse("multipart/form-data"), catid);
-        RequestBody productname = RequestBody.create(MediaType.parse("multipart/form-data"), pname);
-        RequestBody price = RequestBody.create(MediaType.parse("multipart/form-data"), pprice);
-        RequestBody description = RequestBody.create(MediaType.parse("multipart/form-data"), descrip);
-        RequestBody location = RequestBody.create(MediaType.parse("multipart/form-data"), loca);
+        RequestBody categoryid = RequestBody.create(MediaType.parse("multipart/form-data"), category_id);
+        RequestBody productname = RequestBody.create(MediaType.parse("multipart/form-data"), productName);
+        RequestBody price = RequestBody.create(MediaType.parse("multipart/form-data"), productPrice);
+        RequestBody description = RequestBody.create(MediaType.parse("multipart/form-data"), productDescription);
+        RequestBody location = RequestBody.create(MediaType.parse("multipart/form-data"), productLocation);
 
         //Parsing any Media type file
-        RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), file);
-        RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), file1);
-        RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), file2);
-        RequestBody requestBody4 = RequestBody.create(MediaType.parse("*/*"), file3);
-        RequestBody requestBody5 = RequestBody.create(MediaType.parse("*/*"), file4);
-        RequestBody requestBody6 = RequestBody.create(MediaType.parse("*/*"), file5);
+        RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), imageFile1);
+        RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), imageFile2);
+        RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), imageFile3);
+        RequestBody requestBody4 = RequestBody.create(MediaType.parse("*/*"), imageFile4);
+        RequestBody requestBody5 = RequestBody.create(MediaType.parse("*/*"), videoFile);
+        RequestBody requestBody6 = RequestBody.create(MediaType.parse("*/*"), audioFile);
 
-        MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", file.getName(), requestBody1);
-        MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", file1.getName(), requestBody2);
-        MultipartBody.Part fileToUpload3 = MultipartBody.Part.createFormData("file3", file2.getName(), requestBody3);
-        MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", file3.getName(), requestBody4);
-        MultipartBody.Part fileToUpload5 = MultipartBody.Part.createFormData("file5", file4.getName(), requestBody5);
-        MultipartBody.Part fileToUpload6 = MultipartBody.Part.createFormData("file6", file5.getName(), requestBody6);
+        MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", imageFile1.getName(), requestBody1);
+        MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", imageFile2.getName(), requestBody2);
+        MultipartBody.Part fileToUpload3 = MultipartBody.Part.createFormData("file3", imageFile3.getName(), requestBody3);
+        MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", imageFile4.getName(), requestBody4);
+        MultipartBody.Part fileToUpload5 = MultipartBody.Part.createFormData("file5", videoFile.getName(), requestBody5);
+        MultipartBody.Part fileToUpload6 = MultipartBody.Part.createFormData("file6", audioFile.getName(), requestBody6);
 
 
         final ProgressDialog progressDialog = new ProgressDialog(ActivityAddProduct.this);
@@ -242,8 +240,19 @@ public class ActivityAddProduct extends AppCompatActivity {
 
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
+        Call<Result> call;
 
-        Call<Result> call = service.uploadMulFile(userid, categoryid, productname, price, description, location,fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5, fileToUpload6);
+        if (mVideoFilePath != null && mAudioFilePath != null) {
+            call = service.uploadMulFile(userid, categoryid, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5, fileToUpload6);
+        } else if (mVideoFilePath != null) {
+            call = service.uploadMulFile(userid, categoryid, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5);
+        } else if (mAudioFilePath != null) {
+            call = service.uploadMulFile(userid, categoryid, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload6);
+        } else {
+            call = service.uploadMulFile(userid, categoryid, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4);
+        }
+
+
 
         call.enqueue(new Callback<Result>() {
             @Override
@@ -404,7 +413,7 @@ public class ActivityAddProduct extends AppCompatActivity {
                     cursor.moveToFirst();
 
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    mediaPath = cursor.getString(columnIndex);
+                    mImagePath1 = cursor.getString(columnIndex);
 
                     Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
@@ -419,7 +428,7 @@ public class ActivityAddProduct extends AppCompatActivity {
                     cursor.moveToFirst();
 
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    mediaPath1 = cursor.getString(columnIndex);
+                    mImagePath2 = cursor.getString(columnIndex);
 
                     Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
@@ -434,7 +443,7 @@ public class ActivityAddProduct extends AppCompatActivity {
                     cursor.moveToFirst();
 
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mediaPath2 = cursor.getString(columnIndex);
+                mImagePath3 = cursor.getString(columnIndex);
 
                 Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                 setImageString(buttonId);
@@ -449,7 +458,7 @@ public class ActivityAddProduct extends AppCompatActivity {
                 cursor.moveToFirst();
 
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mediaPath3 = cursor.getString(columnIndex);
+                mImagePath4 = cursor.getString(columnIndex);
 
                 Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                 setImageString(buttonId);
@@ -464,7 +473,7 @@ public class ActivityAddProduct extends AppCompatActivity {
             if (id == R.id.addProduct_btnAddImage1) {
 
                 selectedImage = data.getData();
-                mediaPath = selectedImage.getPath();
+                mImagePath1 = selectedImage.getPath();
 
                 Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                 setImageString(buttonId);
@@ -472,7 +481,7 @@ public class ActivityAddProduct extends AppCompatActivity {
             } else if (id == R.id.addProduct_btnAddImage2) {
 
                 selectedImage = data.getData();
-                mediaPath1 = selectedImage.getPath();
+                mImagePath2 = selectedImage.getPath();
 
                 Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                 setImageString(buttonId);
@@ -480,7 +489,7 @@ public class ActivityAddProduct extends AppCompatActivity {
             } else if (id == R.id.addProduct_btnAddImage3) {
 
                 selectedImage = data.getData();
-                mediaPath2 = selectedImage.getPath();
+                mImagePath3 = selectedImage.getPath();
 
                 Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                 setImageString(buttonId);
@@ -488,7 +497,7 @@ public class ActivityAddProduct extends AppCompatActivity {
             } else if (id == R.id.addProduct_btnAddImage4) {
 
                 selectedImage = data.getData();
-                mediaPath3 = selectedImage.getPath();
+                mImagePath4 = selectedImage.getPath();
 
                 Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                 setImageString(buttonId);
@@ -505,7 +514,7 @@ public class ActivityAddProduct extends AppCompatActivity {
                 cursor.moveToFirst();
 
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mediaPath4 = cursor.getString(columnIndex);
+                mVideoFilePath = cursor.getString(columnIndex);
                 cursor.close();
 
             } else {
