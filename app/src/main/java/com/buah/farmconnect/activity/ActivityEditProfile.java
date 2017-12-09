@@ -69,9 +69,11 @@ public class ActivityEditProfile extends AppCompatActivity {
         progressDialog.show();
 
         String userid = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getUser_id();
-        String fullname = editTextFirstName.getText().toString().trim();
+        String firstname = editTextFirstName.getText().toString().trim();
+        String lastname = editTextLastName.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         String contact = editTextContact.getText().toString().trim();
+        String fullname = firstname +" "+ lastname;
 
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
