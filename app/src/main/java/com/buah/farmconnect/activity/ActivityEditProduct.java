@@ -28,6 +28,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -60,7 +61,7 @@ import retrofit2.Response;
 public class ActivityEditProduct extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener {
 
-    private String productName,productImage,productImage1,productImage2,productImage3,productDescription,productPrice,productLocation,audio,video,categoryid;
+    private String productName, productImage, productImage1, productImage2, productImage3, productDescription, productPrice, productLocation, audio, video, categoryid;
     private String productId;
     // LogCat tag
     private static final String TAG = ActivityAddProduct.class.getSimpleName();
@@ -126,6 +127,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     private int buttonId;
     private MediaRecorder mMediaRecorder;
     private final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 29;
+    private int REQUEST_VIDEO_CAPTURE = 4;
 
 
     @Override
@@ -147,12 +149,25 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mCategory.setAdapter(adapter);
+
+        mCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String[] id_values = getResources().getStringArray(R.array.categories_id);
+                int id = Integer.valueOf(id_values[i]);
+
+                if (id != 0) {
+                    categoryid = String.valueOf(id);
+                }
+            }
+        });
     }
 
     private void init() {
-        mProductName=findViewById(R.id.editProduct_txtProductName);
-        mProductDescrition=findViewById(R.id.editProduct_txtProductDescription);
-        mProductPrice=findViewById(R.id.editProduct_txtPrice);
+        mProductName = findViewById(R.id.editProduct_txtProductName);
+        mProductDescrition = findViewById(R.id.editProduct_txtProductDescription);
+        mProductPrice = findViewById(R.id.editProduct_txtPrice);
         mCategory = findViewById(R.id.editProduct_categories);
         mImageButton1 = findViewById(R.id.editProduct_btnAddImage1);
         mImageButton2 = findViewById(R.id.editProduct_btnAddImage2);
@@ -308,7 +323,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     private void takeVideoFromCamera(int buttonId) {
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
         if (intent.resolveActivity(getPackageManager()) != null) {
-//            starta
+            startActivityForResult(intent, REQUEST_VIDEO_CAPTURE);
         }
     }
 
@@ -320,7 +335,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,@NonNull String permissions[], @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_RECORD_AUDIO: {
                 // If request is cancelled, the result arrays are empty.
@@ -571,6 +586,11 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
                 mVideoFilePath = cursor.getString(columnIndex);
                 cursor.close();
 
+            } else if (requestCode == REQUEST_VIDEO_CAPTURE) {
+
+                Uri videoUri = intent.getData();
+                mVideoFilePath = videoUri.getPath();
+
             } else {
                 Toast.makeText(this, "You haven't picked Image/Video", Toast.LENGTH_LONG).show();
             }
@@ -605,8 +625,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     }
 
 
-
-    private  void update(){
+    private void update() {
 
     }
 
@@ -621,7 +640,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_saveEditAccount:
                 //updateChanges();
                 break;
@@ -629,7 +648,6 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
 
         return true;
     }
-
 
 
     //////////////////////GPS GOOGLE API CURRENT LOCATION
