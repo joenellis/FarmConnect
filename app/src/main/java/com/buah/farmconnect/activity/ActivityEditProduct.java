@@ -49,11 +49,15 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Locale;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -128,6 +132,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     private MediaRecorder mMediaRecorder;
     private final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 29;
     private int REQUEST_VIDEO_CAPTURE = 4;
+    private boolean isclicked;
 
 
     @Override
@@ -171,7 +176,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                
+
             }
         });
     }
@@ -242,7 +247,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         } else {
             stopRecordingAudio();
             record.setText("Start Recording Audio");
-            AddProduct.setAudio(mAudioFilePath);
+            AddProduct.setAudio(audio);
             isRecordingAudio = false;
         }
     }
@@ -417,6 +422,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         final FragmentDialogLocation p = new FragmentDialogLocation();
         p.show(fm, "Select Location");
         ActivityEditProduct.isRequestingLocation = true;
+        isclicked = true;
 
     }
 
@@ -485,7 +491,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
 
         try {
             if (requestCode == GALLERY) {
-                if (id == R.id.addProduct_btnAddImage1) {
+                if (id == R.id.editProduct_btnAddImage1) {
 
                     Uri selectedImage = data.getData();
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
@@ -495,12 +501,12 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
                     cursor.moveToFirst();
 
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    mImagePath1 = cursor.getString(columnIndex);
+                    productImage = cursor.getString(columnIndex);
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    //Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage2) {
+                } else if (id == R.id.editProduct_btnAddImage2) {
 
                     Uri selectedImage = data.getData();
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
@@ -510,12 +516,12 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
                     cursor.moveToFirst();
 
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    mImagePath2 = cursor.getString(columnIndex);
+                    productImage1 = cursor.getString(columnIndex);
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    //Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage3) {
+                } else if (id == R.id.editProduct_btnAddImage3) {
 
                     Uri selectedImage = data.getData();
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
@@ -525,12 +531,12 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
                     cursor.moveToFirst();
 
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    mImagePath3 = cursor.getString(columnIndex);
+                    productImage2 = cursor.getString(columnIndex);
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    //Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage4) {
+                } else if (id == R.id.editProduct_btnAddImage4) {
 
                     Uri selectedImage = data.getData();
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
@@ -540,9 +546,9 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
                     cursor.moveToFirst();
 
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    mImagePath4 = cursor.getString(columnIndex);
+                    productImage3 = cursor.getString(columnIndex);
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    //Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
                 } else {
@@ -552,36 +558,36 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
             } else if (requestCode == CAMERA) {
                 Uri selectedImage = null;
 
-                if (id == R.id.addProduct_btnAddImage1) {
+                if (id == R.id.editProduct_btnAddImage1) {
 
                     selectedImage = data.getData();
                     mImagePath1 = selectedImage.getPath();
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    //Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage2) {
+                } else if (id == R.id.editProduct_btnAddImage2) {
 
                     selectedImage = data.getData();
                     mImagePath2 = selectedImage.getPath();
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    //Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage3) {
+                } else if (id == R.id.editProduct_btnAddImage3) {
 
                     selectedImage = data.getData();
                     mImagePath3 = selectedImage.getPath();
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                   // Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage4) {
+                } else if (id == R.id.editProduct_btnAddImage4) {
 
                     selectedImage = data.getData();
                     mImagePath4 = selectedImage.getPath();
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    //Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
                 } else {
                     Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
@@ -596,13 +602,13 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
                 cursor.moveToFirst();
 
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mVideoFilePath = cursor.getString(columnIndex);
+                video = cursor.getString(columnIndex);
                 cursor.close();
 
             } else if (requestCode == REQUEST_VIDEO_CAPTURE) {
 
                 Uri videoUri = intent.getData();
-                mVideoFilePath = videoUri.getPath();
+                video = videoUri.getPath();
 
             } else {
                 Toast.makeText(this, "You haven't picked Image/Video", Toast.LENGTH_LONG).show();
@@ -637,12 +643,6 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         }
     }
 
-
-    private void update() {
-
-    }
-
-
     ////////////Menu Items///////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -662,9 +662,9 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         return true;
     }
 
-
     //////////////////////GPS GOOGLE API CURRENT LOCATION
     public void onCurrentLocationClick(View view) {
+        isclicked = true;
         if (checkPlayServices()) {
 
             // Building the GoogleApi client
@@ -751,11 +751,11 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
 
         } else {
 
-            Snackbar.make(
-                    findViewById(R.id.addProduct3_rootLayout),
-                    "Couldn't get the location. Make sure location is enabled on the device",
-                    Snackbar.LENGTH_INDEFINITE
-            ).show();
+//            Snackbar.make(
+//                    findViewById(R.id.editProduct_rootLayout),
+//                    "Couldn't get the location. Make sure location is enabled on the device",
+//                    Snackbar.LENGTH_INDEFINITE
+//            ).show();
 //           Toast.makeText(getApplicationContext(), "(Couldn't get the location. Make sure location is enabled on the device)", Toast.LENGTH_LONG);
         }
     }
@@ -801,6 +801,107 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     protected void onPause() {
         super.onPause();
 
+    }
+
+    private void update() {
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+
+        String pname = String.valueOf(mProductName.getText()).trim();
+        String pdescription = String.valueOf(mProductDescrition.getText()).trim();
+        String pprice = String.valueOf(mProductPrice.getText()).trim();
+        if(isclicked){
+            productLocation = ActivityEditProduct.location;
+        }
+
+        //Map is used to multipart the file using okhttp3.RequestBody
+        File imageFile1 = new File(productImage);
+        File imageFile2 = new File(productImage1);
+        File imageFile3 = new File(productImage2);
+        File imageFile4 = new File(productImage3);
+
+
+
+        RequestBody product_id = RequestBody.create(MediaType.parse("multipart/form-data"), productId);
+        RequestBody category_id = RequestBody.create(MediaType.parse("multipart/form-data"), categoryid);
+        RequestBody productname = RequestBody.create(MediaType.parse("multipart/form-data"), pname);
+        RequestBody price = RequestBody.create(MediaType.parse("multipart/form-data"), pprice);
+        RequestBody description = RequestBody.create(MediaType.parse("multipart/form-data"), pdescription);
+        RequestBody location = RequestBody.create(MediaType.parse("multipart/form-data"), productLocation);
+
+        //Parsing any Media type file
+        RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), imageFile1);
+        RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), imageFile2);
+        RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), imageFile3);
+        RequestBody requestBody4 = RequestBody.create(MediaType.parse("*/*"), imageFile4);
+
+
+        MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", imageFile1.getName(), requestBody1);
+        MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", imageFile2.getName(), requestBody2);
+        MultipartBody.Part fileToUpload3 = MultipartBody.Part.createFormData("file3", imageFile3.getName(), requestBody3);
+        MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", imageFile4.getName(), requestBody4);
+
+
+        Api api = new Api();
+        ApiCall service = api.getRetro().create(ApiCall.class);
+        Call<Result> call;
+
+        if (video != null && audio != null) {
+
+            File videoFile = new File(video);
+            File audioFile = new File(audio);
+
+            RequestBody requestBody5 = RequestBody.create(MediaType.parse("*/*"), videoFile);
+            RequestBody requestBody6 = RequestBody.create(MediaType.parse("*/*"), audioFile);
+
+            MultipartBody.Part fileToUpload5 = MultipartBody.Part.createFormData("file5", videoFile.getName(), requestBody5);
+            MultipartBody.Part fileToUpload6 = MultipartBody.Part.createFormData("file6", audioFile.getName(), requestBody6);
+
+            call = service.updateProduct(product_id, category_id, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5, fileToUpload6);
+
+        } else if (video != null) {
+
+            File videoFile = new File(video);
+            RequestBody requestBody5 = RequestBody.create(MediaType.parse("*/*"), videoFile);
+            MultipartBody.Part fileToUpload5 = MultipartBody.Part.createFormData("file5", videoFile.getName(), requestBody5);
+            call = service.updateProduct(product_id, category_id, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5);
+
+        } else if (audio != null) {
+
+            File audioFile = new File(audio);
+            RequestBody requestBody6 = RequestBody.create(MediaType.parse("*/*"), audioFile);
+            MultipartBody.Part fileToUpload6 = MultipartBody.Part.createFormData("file6", audioFile.getName(), requestBody6);
+            call = service.updateProduct(product_id, category_id, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload6);
+
+        } else {
+
+            call = service.updateProduct(product_id, category_id, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4);
+
+        }
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                progressDialog.dismiss();
+                if (response.body() != null) {
+                    if (!response.body().getError()) {
+                        progressDialog.dismiss();
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+
+                    } else {
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                        progressDialog.dismiss();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+                progressDialog.dismiss();
+            }
+        });
     }
 
 }
