@@ -92,8 +92,6 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     private static int DISPLACEMENT = 10; // 10 meters
 
     // UI elements
-    private TextView lblLocation;
-    private Button btnShowLocation;
     private double latitude, longitude;
 
     public static String location = "";
@@ -106,8 +104,6 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     TextInputEditText productDescription;
     TextInputEditText productPrice;
     Spinner productCategory;
-    Spinner productLocationRegion;
-    Spinner productLocationCity;
 
     private String address;
     private String city;
@@ -209,7 +205,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         final android.app.FragmentManager fm = getFragmentManager();
         final FragmentDialogLocation p = new FragmentDialogLocation();
         p.show(fm, "Select Location");
-
+        ActivityEditProduct.isRequestingLocation = false;
     }
 
     public void onAddProductNextClick4(View view) {

@@ -5,10 +5,13 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.media.MediaRecorder;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -84,18 +87,12 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
 
     private Button btnShowLocation;
     private double latitude, longitude;
-    public static String location = "";
 
     Toolbar mToolbar;
-    CustomViewPager mPager;
-    PagerAdapter mPagerAdapter;
-//    TextInputEditText productName;
-//    TextInputEditText productDescription;
-//    TextInputEditText productPrice;
-    Spinner productCategory;
 
-    Spinner productLocationRegion;
-    Spinner productLocationCity;
+    public static boolean isRequestingLocation = false;
+    public static String location;
+
     private String address;
 
     private String city;
@@ -106,8 +103,8 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     private String mImagePath4;
     private String mVideoFilePath;
     private String mAudioFilePath;
-    TextInputEditText mProductName;
 
+    TextInputEditText mProductName;
     TextInputEditText mProductDescrition;
     TextInputEditText mProductPrice;
     Spinner mCategory;
@@ -127,7 +124,6 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     private int CAMERA = 2;
     private int VIDEO = 3;
     private int buttonId;
-    private Button button;
     private MediaRecorder mMediaRecorder;
     private final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 29;
 
@@ -136,8 +132,8 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_product);
-
         init();
+
 
         Intent intent = getIntent();
         productId = intent.getStringExtra("ID");
@@ -168,55 +164,9 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         mChooseLocationButton = findViewById(R.id.editProduct_btnChooseLocation);
     }
 
-    private void getProduct(String productId) {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading...");
-        progressDialog.show();
-
-        Api api = new Api();
-        ApiCall service = api.getRetro().create(ApiCall.class);
-        Call<Result> call = service.productdetails(productId);
-        call.enqueue(new Callback<Result>() {
-            @Override
-            public void onResponse(Call<Result> call, Response<Result> response) {
-                progressDialog.dismiss();
-                if (response.body() != null) {
-                    if (!response.body().getError()) {
-                        progressDialog.dismiss();
-                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-                        //onLoginBackground();
-
-                        productName = response.body().getObjectProductdetail().getProductname();
-                        productImage = response.body().getObjectProductdetail().getImage();
-                        productImage1 = response.body().getObjectProductdetail().getImage1();
-                        productImage2 = response.body().getObjectProductdetail().getImage2();
-                        productImage3 = response.body().getObjectProductdetail().getImage3();
-                        productDescription = response.body().getObjectProductdetail().getDescription();
-                        productPrice = response.body().getObjectProductdetail().getPrice();
-                        productLocation = response.body().getObjectProductdetail().getLocation();
-                        audio = response.body().getObjectProductdetail().getAudio();
-                        video = response.body().getObjectProductdetail().getVideo();
-                        categoryid = response.body().getObjectProductdetail().getCategory_id();
-
-
-                        mProductName.setText(productName);
-                        mProductDescrition.setText(productDescription);
-                        mProductPrice.setText(productPrice);
-
-                    } else {
-                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-                        progressDialog.dismiss();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Result> call, Throwable t) {
-                progressDialog.dismiss();
-                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
-                progressDialog.dismiss();
-            }
-        });
+    public void onAddImageClick(View view) {
+        buttonId = view.getId();
+        showPictureDialog(view.getId());
     }
 
     private void showPictureDialog(@IdRes final int buttonId) {
@@ -269,25 +219,6 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         }
     }
 
-    public void onAddImageClick(View view) {
-        buttonId = view.getId();
-        showPictureDialog(view.getId());
-    }
-
-    public void OnRecordVideoClick(View view) {
-        Intent intent = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, VIDEO);
-    }
-
-    public void onChooseLocationClick(View view) {
-
-        final android.app.FragmentManager fm = getFragmentManager();
-        final FragmentDialogLocation p = new FragmentDialogLocation();
-        p.show(fm, "Select Location");
-
-    }
-
     public void recordAudio() {
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
@@ -337,9 +268,59 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         }
     }
 
+    public void OnRecordVideoClick(View view) {
+
+        buttonId = view.getId();
+        showVideoDialog(view.getId());
+
+    }
+
+    private void showVideoDialog(@IdRes final int buttonId) {
+
+        AlertDialog.Builder videoDialog = new AlertDialog.Builder(this);
+        videoDialog.setTitle("Select Action");
+
+        String[] videoDialogItems = {
+                "Select video from gallery",
+                "Capture video from camera"
+        };
+
+        videoDialog.setItems(videoDialogItems,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        switch (which) {
+                            case 0:
+                                chooseVideoFromGallery(buttonId);
+                                break;
+                            case 1:
+                                takeVideoFromCamera(buttonId);
+                                break;
+                        }
+                    }
+                });
+
+        videoDialog.show();
+
+    }
+
+    private void takeVideoFromCamera(int buttonId) {
+        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+//            starta
+        }
+    }
+
+    private void chooseVideoFromGallery(int buttonId) {
+        Intent intent = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
+        intent.putExtra("Button", buttonId);
+        startActivityForResult(intent, VIDEO);
+    }
+
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           @NonNull String permissions[], @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode,@NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_RECORD_AUDIO: {
                 // If request is cancelled, the result arrays are empty.
@@ -402,7 +383,235 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
 
     }
 
+    public void onChooseLocationClick(View view) {
 
+        final android.app.FragmentManager fm = getFragmentManager();
+        final FragmentDialogLocation p = new FragmentDialogLocation();
+        p.show(fm, "Select Location");
+        ActivityEditProduct.isRequestingLocation = true;
+
+    }
+
+    private void getProduct(String productId) {
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+
+        Api api = new Api();
+        ApiCall service = api.getRetro().create(ApiCall.class);
+        Call<Result> call = service.productdetails(productId);
+        call.enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                progressDialog.dismiss();
+                if (response.body() != null) {
+                    if (!response.body().getError()) {
+                        progressDialog.dismiss();
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                        //onLoginBackground();
+
+                        productName = response.body().getObjectProductdetail().getProductname();
+                        productImage = response.body().getObjectProductdetail().getImage();
+                        productImage1 = response.body().getObjectProductdetail().getImage1();
+                        productImage2 = response.body().getObjectProductdetail().getImage2();
+                        productImage3 = response.body().getObjectProductdetail().getImage3();
+                        productDescription = response.body().getObjectProductdetail().getDescription();
+                        productPrice = response.body().getObjectProductdetail().getPrice();
+                        productLocation = response.body().getObjectProductdetail().getLocation();
+                        audio = response.body().getObjectProductdetail().getAudio();
+                        video = response.body().getObjectProductdetail().getVideo();
+                        categoryid = response.body().getObjectProductdetail().getCategory_id();
+
+
+                        mProductName.setText(productName);
+                        mProductDescrition.setText(productDescription);
+                        mProductPrice.setText(productPrice);
+
+                    } else {
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                        progressDialog.dismiss();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+                progressDialog.dismiss();
+            }
+        });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == this.RESULT_CANCELED) {
+            Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("Button", buttonId);
+
+        try {
+            if (requestCode == GALLERY) {
+                if (id == R.id.addProduct_btnAddImage1) {
+
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+                    Cursor cursor = getContentResolver().query((selectedImage), filePathColumn, null, null, null);
+                    assert cursor != null;
+                    cursor.moveToFirst();
+
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    mImagePath1 = cursor.getString(columnIndex);
+
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
+
+                } else if (id == R.id.addProduct_btnAddImage2) {
+
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    assert cursor != null;
+                    cursor.moveToFirst();
+
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    mImagePath2 = cursor.getString(columnIndex);
+
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
+
+                } else if (id == R.id.addProduct_btnAddImage3) {
+
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    assert cursor != null;
+                    cursor.moveToFirst();
+
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    mImagePath3 = cursor.getString(columnIndex);
+
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
+
+                } else if (id == R.id.addProduct_btnAddImage4) {
+
+                    Uri selectedImage = data.getData();
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
+
+                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                    assert cursor != null;
+                    cursor.moveToFirst();
+
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    mImagePath4 = cursor.getString(columnIndex);
+
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
+
+                } else {
+                    Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
+                }
+
+            } else if (requestCode == CAMERA) {
+                Uri selectedImage = null;
+
+                if (id == R.id.addProduct_btnAddImage1) {
+
+                    selectedImage = data.getData();
+                    mImagePath1 = selectedImage.getPath();
+
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
+
+                } else if (id == R.id.addProduct_btnAddImage2) {
+
+                    selectedImage = data.getData();
+                    mImagePath2 = selectedImage.getPath();
+
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
+
+                } else if (id == R.id.addProduct_btnAddImage3) {
+
+                    selectedImage = data.getData();
+                    mImagePath3 = selectedImage.getPath();
+
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
+
+                } else if (id == R.id.addProduct_btnAddImage4) {
+
+                    selectedImage = data.getData();
+                    mImagePath4 = selectedImage.getPath();
+
+                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    setImageString(buttonId);
+                } else {
+                    Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
+                }
+            } else if (requestCode == VIDEO) {
+                // Get the Video from data
+                Uri selectedVideo = data.getData();
+                String[] filePathColumn = {MediaStore.Video.Media.DATA};
+
+                Cursor cursor = getContentResolver().query(selectedVideo, filePathColumn, null, null, null);
+                assert cursor != null;
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                mVideoFilePath = cursor.getString(columnIndex);
+                cursor.close();
+
+            } else {
+                Toast.makeText(this, "You haven't picked Image/Video", Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
+        }
+
+
+    }
+
+    void setImageString(@IdRes int id) {
+        TextView imageText;
+        switch (id) {
+            case R.id.addProduct_btnAddImage1:
+                imageText = findViewById(R.id.addProduct_txtImageName1);
+                imageText.setText("Image Added!");
+                break;
+            case R.id.addProduct_btnAddImage2:
+                imageText = findViewById(R.id.addProduct_txtImageName2);
+                imageText.setText("Image Added!");
+                break;
+            case R.id.addProduct_btnAddImage3:
+                imageText = findViewById(R.id.addProduct_txtImageName3);
+                imageText.setText("Image Added!");
+                break;
+            case R.id.addProduct_btnAddImage4:
+                imageText = findViewById(R.id.addProduct_txtImageName4);
+                imageText.setText("Image Added!");
+                break;
+
+        }
+    }
+
+
+
+    private  void update(){
+
+    }
+
+
+    ////////////Menu Items///////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.edit_account_menu, menu);
@@ -420,6 +629,8 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
 
         return true;
     }
+
+
 
     //////////////////////GPS GOOGLE API CURRENT LOCATION
     public void onCurrentLocationClick(View view) {
@@ -498,9 +709,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
             city = addresses.get(0).getLocality();
             country = addresses.get(0).getCountryName();
 
-            ActivityAddProduct.location = address;
-            AddProduct.setLocation(location);
-
+            ActivityEditProduct.location = address;
 
 
             Snackbar.make(
