@@ -136,6 +136,12 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         setContentView(R.layout.activity_edit_product);
         init();
 
+        setSupportActionBar(mToolbar);
+
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         Intent intent = getIntent();
         productId = intent.getStringExtra("ID");
@@ -150,21 +156,28 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mCategory.setAdapter(adapter);
 
-        mCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+                int spinner_pos = mCategory.getSelectedItemPosition();
                 String[] id_values = getResources().getStringArray(R.array.categories_id);
-                int id = Integer.valueOf(id_values[i]);
+                int id = Integer.valueOf(id_values[spinner_pos]);
 
                 if (id != 0) {
                     categoryid = String.valueOf(id);
                 }
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                
+            }
         });
     }
 
     private void init() {
+        mToolbar = findViewById(R.id.toolbar);
         mProductName = findViewById(R.id.editProduct_txtProductName);
         mProductDescrition = findViewById(R.id.editProduct_txtProductDescription);
         mProductPrice = findViewById(R.id.editProduct_txtPrice);
@@ -642,7 +655,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
 
         switch (item.getItemId()) {
             case R.id.action_saveEditAccount:
-                //updateChanges();
+                update();
                 break;
         }
 
@@ -791,6 +804,3 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     }
 
 }
-//    int spinner_pos = mCategory.getSelectedItemPosition();
-//    String[] id_values = getResources().getStringArray(R.array.categories_id);
-//    int id = Integer.valueOf(id_values[spinner_pos]);

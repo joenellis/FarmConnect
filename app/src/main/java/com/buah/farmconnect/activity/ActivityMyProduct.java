@@ -58,6 +58,7 @@ public class ActivityMyProduct extends AppCompatActivity {
     ProgressDialog pDialog;
     FloatingActionButton mEditFab;
     private boolean isUploader;
+    private String location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +110,7 @@ public class ActivityMyProduct extends AppCompatActivity {
                         String description = response.body().getObjectProductdetail().getDescription();
                         String farmername = response.body().getObjectProductdetail().getFullname();
                         String price = response.body().getObjectProductdetail().getPrice();
-                        String location = response.body().getObjectProductdetail().getLocation();
+                        location = response.body().getObjectProductdetail().getLocation();
                         audio = response.body().getObjectProductdetail().getAudio();
                         video = response.body().getObjectProductdetail().getVideo();
                         contact = response.body().getObjectProductdetail().getContact();
@@ -239,15 +240,31 @@ public class ActivityMyProduct extends AppCompatActivity {
     }
 
     public void onMapButtonClick(View view) {
-        Snackbar.make(
-                findViewById(R.id.viewProduct_layRoot),
-                "Opening Maps",
-                Snackbar.LENGTH_LONG
-        ).show();
+
+        String bn = "geo:0,0?q=";
+
+        Uri gmmIntentUri = Uri.parse(bn + location);
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        } else {
+            Snackbar.make(
+                    findViewById(R.id.viewProduct_layRoot),
+                    "You have no suitable app",
+                    Snackbar.LENGTH_LONG
+            ).show();
+        }
+
+
     }
 
     public void onCallButtonClick(View view) {
-
+        Snackbar.make(findViewById(R.id.viewProduct_layRoot),
+                "You Cannot Call Yourself",
+                Snackbar.LENGTH_LONG
+        ).show();
     }
 
     public void onPlayAudioClick(View view) {
