@@ -24,6 +24,7 @@ import com.buah.farmconnect.adapter.AdapterViewProductImages;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -123,7 +124,7 @@ public class ActivityViewProduct extends AppCompatActivity {
 
                         mToolbar.setTitle(productName);
                         mProductName.setText(productName);
-                        Picasso.with(getApplicationContext()).load(productImage).into(mProductImage);
+                        Glide.with(getApplicationContext()).load(productImage).into(mProductImage);
                         mDescription.setText(productDescription);
                         mFarmerName.setText(farmerName);
                         mPrice.setText(productPrice);

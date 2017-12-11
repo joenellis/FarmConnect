@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.buah.farmconnect.R;
 import com.buah.farmconnect.object.ObjectProduct;
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class AdapterViewProductImages extends RecyclerView.Adapter<AdapterViewPr
     @Override
     public void onBindViewHolder(ProductImageHolder holder, int position) {
 
-        Picasso.with(this.mContext).load(String.valueOf(mImage.get(position))).into(holder.productImage);
+        Glide.with(this.mContext).load(String.valueOf(mImage.get(position))).into(holder.productImage);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

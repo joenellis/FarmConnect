@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Dec 10 13:28:34 GMT 2017
+#Mon Dec 11 15:02:10 GMT 2017
 0.baseType=DIRECTORY
 0.base=/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/transforms/dexMerger/debug/0
 0.path=classes.dex

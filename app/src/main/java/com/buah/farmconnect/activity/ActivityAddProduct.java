@@ -78,6 +78,8 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
     private Location mLastLocation;
 
+    private final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 25;
+
     // Google client to interact with Google API
     private GoogleApiClient mGoogleApiClient;
 
@@ -125,6 +127,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     private Button button;
     private MediaRecorder mMediaRecorder;
     private final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 29;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -463,7 +466,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                     mImagePath1 = cursor.getString(columnIndex);
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
                 } else if (id == R.id.addProduct_btnAddImage2) {
@@ -478,7 +481,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                     mImagePath2 = cursor.getString(columnIndex);
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
                 } else if (id == R.id.addProduct_btnAddImage3) {
@@ -493,7 +496,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                     mImagePath3 = cursor.getString(columnIndex);
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
                 } else if (id == R.id.addProduct_btnAddImage4) {
@@ -508,7 +511,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                     mImagePath4 = cursor.getString(columnIndex);
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
                 } else {
@@ -582,8 +585,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           @NonNull String permissions[], @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode,@NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_RECORD_AUDIO: {
                 // If request is cancelled, the result arrays are empty.
@@ -699,8 +701,10 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
-            return;
+
         }
+        requestLocPermission();
+        onStartLoc();
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         onStopCon();
 
@@ -750,6 +754,40 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         displayLocation();
     }
 
+    private boolean requestLocPermission() {
+        // Should we show an explanation?
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+            // Show an explanation to the user *asynchronously* -- don't block
+            // this thread waiting for the user's response! After the user
+            // sees the explanation, try again to request the permission.
+
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+
+        } else {
+
+            // No explanation needed, we can request the permission.
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+
+            // MY_PERMISSIONS_REQUEST_RECORD_AUDIO is an
+            // app-defined int constant. The callback method gets the
+            // result of the request.
+        }
+        return true;
+    }
+
+    public boolean onStartLoc() {
+
+        if (mGoogleApiClient != null) {
+            mGoogleApiClient.connect();
+        }
+        return true;
+    }
     @Override
     public void onConnectionSuspended(int i) {
         mGoogleApiClient.connect();

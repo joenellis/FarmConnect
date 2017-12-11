@@ -13,6 +13,7 @@ import com.buah.farmconnect.activity.ActivityMyProduct;
 import com.buah.farmconnect.activity.ActivityViewProduct;
 import com.buah.farmconnect.object.ObjectProduct;
 import com.buah.farmconnect.R;
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class AdapterMyProduct extends RecyclerView.Adapter<AdapterMyProduct.Prod
         holder.text.setText(product.getProductname());
         holder.text1.setText(product.getPrice());
         holder.text2.setText(product.getLocation());
-        Picasso.with(this.mContext).load(product.getImage()).into(holder.imageView);
+        Glide.with(this.mContext).load(product.getImage()).into(holder.imageView);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
