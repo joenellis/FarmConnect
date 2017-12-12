@@ -14,7 +14,7 @@ import com.buah.farmconnect.activity.ActivityViewProduct;
 import com.buah.farmconnect.object.ObjectProduct;
 import com.buah.farmconnect.R;
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
+//import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;

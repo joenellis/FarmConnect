@@ -25,7 +25,7 @@ import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
+//import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 

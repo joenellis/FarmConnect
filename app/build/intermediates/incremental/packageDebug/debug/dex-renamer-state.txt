@@ -1,4 +1,4 @@
-#Mon Dec 11 15:02:10 GMT 2017
-base.0=/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/transforms/dexMerger/debug/0
+#Tue Dec 12 17:58:43 GMT 2017
+base.0=/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/transforms/dexMerger/debug/19
 path.0=classes.dex
 renamed.0=classes.dex

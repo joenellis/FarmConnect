@@ -25,7 +25,8 @@ import com.buah.farmconnect.adapter.AdapterViewProductImages;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
+//import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -98,6 +99,7 @@ public class ActivityMyProduct extends AppCompatActivity {
                     if (!response.body().getError()) {
 
                         mImages = new ArrayList<>();
+                        mImages.add(response.body().getObjectProductdetail().getImage());
                         mImages.add(response.body().getObjectProductdetail().getImage1());
                         mImages.add(response.body().getObjectProductdetail().getImage2());
                         mImages.add(response.body().getObjectProductdetail().getImage3());
@@ -126,7 +128,7 @@ public class ActivityMyProduct extends AppCompatActivity {
                         });
 
                         mProductName.setText(productname);
-                        Picasso.with(getApplicationContext()).load(image).into(mProductImage);
+                        Glide.with(getApplicationContext()).load(image).into(mProductImage);
                         mDescription.setText(description);
                         mFarmerName.setText(farmername);
                         mPrice.setText(price);

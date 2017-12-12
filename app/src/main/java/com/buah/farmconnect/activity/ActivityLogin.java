@@ -71,7 +71,7 @@ public class ActivityLogin extends AppCompatActivity {
                 progressDialog.dismiss();
                 if (response.body() != null) {
                     if (!response.body().getError()) {
-                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                       // Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
                         SharedPrefManager.getInstance(getApplicationContext()).userLogin(response.body().getObjectUser());
                         startActivity(new Intent(getApplicationContext(), ActivityHome.class));
                     } else {

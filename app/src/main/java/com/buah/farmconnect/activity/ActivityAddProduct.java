@@ -526,7 +526,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     selectedImage = data.getData();
                     mImagePath1 = selectedImage.getPath();
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
                 } else if (id == R.id.addProduct_btnAddImage2) {
@@ -534,7 +534,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     selectedImage = data.getData();
                     mImagePath2 = selectedImage.getPath();
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
                 } else if (id == R.id.addProduct_btnAddImage3) {
@@ -542,15 +542,15 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     selectedImage = data.getData();
                     mImagePath3 = selectedImage.getPath();
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
                 } else if (id == R.id.addProduct_btnAddImage4) {
 
-                    selectedImage = data.getData();
+                    selectedImage = (Uri) data.getExtras().get("Bu");
                     mImagePath4 = selectedImage.getPath();
 
-                    Snackbar.make(findViewById(R.id.loginRootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
                 } else {
                     Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();

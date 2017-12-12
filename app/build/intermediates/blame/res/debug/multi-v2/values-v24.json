@@ -4,7 +4,7 @@
             "outputFile": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/values-v24/values-v24.xml",
+                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/ea4b6497795f8681dcc918a4806b7817/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.1.aar/0b054a4b987c1236abdcca2b17883c95/res/values-v24/values-v24.xml",
+                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/85b423054ecfdfab55cfb67620ad3d56/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

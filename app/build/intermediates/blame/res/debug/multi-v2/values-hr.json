@@ -4,6 +4,23 @@
             "outputFile": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hr/values-hr.xml",
             "map": [
                 {
+                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/ea4b6497795f8681dcc918a4806b7817/res/values-hr/values-hr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,307,417,503,607,726,810,893,979,1083,1196,1302,1407,1520,1627,1796,1893",
+                        "endColumns": "104,96,109,85,103,118,83,82,85,103,112,105,104,112,106,168,96,88",
+                        "endOffsets": "205,302,412,498,602,721,805,888,974,1078,1191,1297,1402,1515,1622,1791,1888,1977"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,36",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,307,417,503,607,726,810,893,979,1083,1196,1302,1407,1520,1627,1796,4424",
+                        "endColumns": "104,96,109,85,103,118,83,82,85,103,112,105,104,112,106,168,96,88",
+                        "endOffsets": "205,302,412,498,602,721,805,888,974,1078,1191,1297,1402,1515,1622,1791,1888,4508"
+                    }
+                },
+                {
                     "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/values-hr/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
@@ -21,20 +38,20 @@
                     }
                 },
                 {
-                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/values-hr/values-hr.xml",
+                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/7d6cc394ed63cc336afe10e5e2c6144b/res/values-hr/values-hr.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,307,417,503,607,726,810,893,979,1083,1196,1302,1407,1520,1627,1796,1893",
-                        "endColumns": "104,96,109,85,103,118,83,82,85,103,112,105,104,112,106,168,96,88",
-                        "endOffsets": "205,302,412,498,602,721,805,888,974,1078,1191,1297,1402,1515,1622,1791,1888,1977"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,36",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,307,417,503,607,726,810,893,979,1083,1196,1302,1407,1520,1627,1796,4424",
-                        "endColumns": "104,96,109,85,103,118,83,82,85,103,112,105,104,112,106,168,96,88",
-                        "endOffsets": "205,302,412,498,602,721,805,888,974,1078,1191,1297,1402,1515,1622,1791,1888,4508"
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "4513",
+                        "endColumns": "100",
+                        "endOffsets": "4609"
                     }
                 },
                 {
@@ -52,23 +69,6 @@
                         "startOffsets": "2918",
                         "endColumns": "190",
                         "endOffsets": "3104"
-                    }
-                },
-                {
-                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/values-hr/values-hr.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "4513",
-                        "endColumns": "100",
-                        "endOffsets": "4609"
                     }
                 }
             ]

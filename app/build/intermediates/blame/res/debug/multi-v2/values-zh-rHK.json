@@ -4,23 +4,6 @@
             "outputFile": "/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
-                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/f4d2b8b3a595c2f0b7118708eb66072f/res/values-zh-rHK/values-zh-rHK.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,200,293,393,475,572,680,756,832,910,1006,1102,1197,1294,1389,1487,1638,1732",
-                        "endColumns": "94,92,99,81,96,107,75,75,77,95,95,94,96,94,97,150,93,77",
-                        "endOffsets": "195,288,388,470,567,675,751,827,905,1001,1097,1192,1289,1384,1482,1633,1727,1805"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,36",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,200,293,393,475,572,680,756,832,910,1006,1102,1197,1294,1389,1487,1638,3915",
-                        "endColumns": "94,92,99,81,96,107,75,75,77,95,95,94,96,94,97,150,93,77",
-                        "endOffsets": "195,288,388,470,567,675,751,827,905,1001,1097,1192,1289,1384,1482,1633,1727,3988"
-                    }
-                },
-                {
                     "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-base-11.6.2.aar/5c66b6f69a589fd0bc3bd86598218993/res/values-zh-rHK/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
@@ -38,23 +21,6 @@
                     }
                 },
                 {
-                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/b9e64fc32666ac1b970706d05683abba/res/values-zh-rHK/values-zh-rHK.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "101",
-                        "endOffsets": "152"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "3993",
-                        "endColumns": "101",
-                        "endOffsets": "4090"
-                    }
-                },
-                {
                     "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.6.2.aar/f201a9e0c3dc0af1d241efa149f0d6d2/res/values-zh-rHK/values.xml",
                     "from": {
                         "startLines": "4",
@@ -69,6 +35,40 @@
                         "startOffsets": "2622",
                         "endColumns": "166",
                         "endOffsets": "2784"
+                    }
+                },
+                {
+                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/ea4b6497795f8681dcc918a4806b7817/res/values-zh-rHK/values-zh-rHK.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,200,293,393,475,572,680,756,832,910,1006,1102,1197,1294,1389,1487,1638,1732",
+                        "endColumns": "94,92,99,81,96,107,75,75,77,95,95,94,96,94,97,150,93,77",
+                        "endOffsets": "195,288,388,470,567,675,751,827,905,1001,1097,1192,1289,1384,1482,1633,1727,1805"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,36",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,200,293,393,475,572,680,756,832,910,1006,1102,1197,1294,1389,1487,1638,3915",
+                        "endColumns": "94,92,99,81,96,107,75,75,77,95,95,94,96,94,97,150,93,77",
+                        "endOffsets": "195,288,388,470,567,675,751,827,905,1001,1097,1192,1289,1384,1482,1633,1727,3988"
+                    }
+                },
+                {
+                    "source": "/Users/joenellis/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/7d6cc394ed63cc336afe10e5e2c6144b/res/values-zh-rHK/values-zh-rHK.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "101",
+                        "endOffsets": "152"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "3993",
+                        "endColumns": "101",
+                        "endOffsets": "4090"
                     }
                 }
             ]

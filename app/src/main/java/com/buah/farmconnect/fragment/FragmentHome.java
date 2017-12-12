@@ -64,7 +64,6 @@ public class FragmentHome extends Fragment {
                 if (response.body() != null) {
                     if (!response.body().getError()) {
 //                      Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-
                         AdapterProduct adapter = new AdapterProduct(getContext(), response.body().getObjectProducts());
                         recyclerViewHome.setAdapter(adapter);
 
