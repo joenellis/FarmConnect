@@ -294,67 +294,57 @@
             android:padding="10dp"
             app:cardUseCompatPadding="true">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/viewProduct_mediaDescriptionTitle"
+                    android:textSize="18sp" />
+
                 <LinearLayout
+                    android:id="@+id/viewProduct_layAudioDescription"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/viewProduct_mediaDescriptionTitle"
-                        android:textSize="18sp" />
-                    <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:padding="15dp">
+
+                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="15dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="9dp"
-                            android:layout_weight="3"
-                            android:text="@string/viewProduct_audioDescriptionText"
-                            android:textSize="16sp" />
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:src="@drawable/ic_audio"
-                            android:tint="@color/colorPrimary"
-                            android:onClick="onPlayAudioClick"
-                            tools:ignore="ContentDescription" />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_margin="10dp"
-                        android:background="#aaa" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="15dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="9dp"
-                            android:layout_weight="3"
-                            android:text="@string/viewProduct_videoDescriptionText"
-                            android:textSize="16sp" />
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:src="@drawable/ic_play_arrow"
-                            android:tint="@color/colorPrimary"
-                            android:onClick="onPlayVideoClick"
-                            tools:ignore="ContentDescription" />
-                    </LinearLayout>
+                        android:layout_marginTop="9dp"
+                        android:background="@drawable/button_style"
+                        android:onClick="onPlayAudioClick"
+                        android:text="@string/viewProduct_audioDescriptionText"
+                        android:textColor="#fff"
+                        android:textSize="14sp" />
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_margin="10dp"
+                    android:background="#aaa" />
+
+                <LinearLayout
+                    android:id="@+id/viewProduct_layVideoDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_style"
+                        android:onClick="onPlayVideoClick"
+                        android:text="@string/viewProduct_videoDescriptionText"
+                        android:textColor="#fff"
+                        android:layout_marginBottom="9dp"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
         </android.support.v7.widget.CardView>
     </android.support.v4.widget.NestedScrollView>
 

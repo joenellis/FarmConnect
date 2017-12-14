@@ -24,6 +24,7 @@ import com.buah.farmconnect.adapter.AdapterViewProductImages;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
+import com.buah.farmconnect.session.SharedPrefManager;
 import com.bumptech.glide.Glide;
 //import com.squareup.picasso.Picasso;
 
@@ -219,6 +220,30 @@ public class ActivityViewProduct extends AppCompatActivity {
             ).show();
         }
 
+
+    }
+
+    public void onAddToWishListClick(View view) {
+        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
+
+            addToWishList();
+
+            Intent intent = new Intent(this, ActivityHome.class);
+            intent.putExtra("Screen", "WishList");
+            startActivity(intent);
+
+        } else {
+
+            Snackbar.make(
+                    findViewById(R.id.rootMyWishList),
+                    "Please Sign In To Complete This Action",
+                    Snackbar.LENGTH_LONG
+            ).show();
+
+        }
+    }
+
+    private void addToWishList() {
 
     }
 

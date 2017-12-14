@@ -30,6 +30,7 @@
     <string name="navCategories">Categories</string>
     <string name="navFilter">Filter</string>
     <string name="navMyProducts">My Products</string>
+    <string name="navWishList">My Wish List</string>
     <string name="navLogout">Logout</string>
     <string name="navAddProduct">Add Product</string>
 
