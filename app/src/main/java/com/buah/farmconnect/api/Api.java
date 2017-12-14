@@ -12,7 +12,7 @@ public class Api {
 
             if (retro==null) {
                 retro = new Retrofit.Builder()
-                        .baseUrl("http://farmconnect.leefranco.com/")
+                        .baseUrl("http://farmconnect.leefranco.com/farmconnect/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
             }

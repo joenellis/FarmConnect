@@ -213,7 +213,7 @@ public class ActivitySignUp extends AppCompatActivity {
 
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
-        Call<Result> call = service.userSignup(fullname, email, password, contact);
+        Call<Result> call = service.userSignup(fullname, email, password, contact, securityQuestion_Id, answer);
 
 
         call.enqueue(new Callback<Result>() {

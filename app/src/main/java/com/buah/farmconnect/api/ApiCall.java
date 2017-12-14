@@ -18,6 +18,8 @@ public interface ApiCall {
     Call<Result> userLogin(@Query("email") String email,
                            @Query("password") String password) ;
 
+
+
     @GET("getallproducts.php")
     Call<Result> products(@Query("key") String key) ;
 
@@ -51,9 +53,11 @@ public interface ApiCall {
     Call<Result> userSignup(@Field("fullname") String fullname,
                             @Field("email") String email,
                             @Field("password") String password,
-                            @Field("contact") String contact);
+                            @Field("contact") String contact,
+                            @Field("question") String question,
+                            @Field("answer") String answer);
     @Multipart
-    @POST("uploadproduct.php")
+    @POST("useruploadproduct.php")
     Call<Result> uploadMulFile( @Part("userid") RequestBody id,
                                 @Part("categoryid") RequestBody categoryid,
                                 @Part("productname") RequestBody productname,
@@ -65,7 +69,7 @@ public interface ApiCall {
                                 @Part MultipartBody.Part file3,
                                 @Part MultipartBody.Part file4);
     @Multipart
-    @POST("uploadproduct.php")
+    @POST("useruploadproduct.php")
     Call<Result> uploadMulFile( @Part("userid") RequestBody id,
                                 @Part("categoryid") RequestBody categoryid,
                                 @Part("productname") RequestBody productname,
@@ -78,7 +82,7 @@ public interface ApiCall {
                                 @Part MultipartBody.Part file4,
                                 @Part MultipartBody.Part file5);
     @Multipart
-    @POST("uploadproduct.php")
+    @POST("useruploadproduct.php")
     Call<Result> uploadMulFile( @Part("userid") RequestBody id,
                                 @Part("categoryid") RequestBody categoryid,
                                 @Part("productname") RequestBody productname,
