@@ -300,14 +300,13 @@ public class ActivityHome extends AppCompatActivity {
         mToolbar = findViewById(R.id.toolbar);
         fab = findViewById(R.id.homeAppBar_fab);
         mDrawerLayout = findViewById(R.id.drawerLayout);
+        mFragmentManager = getSupportFragmentManager();
+        mNavigationView = findViewById(R.id.navigationView);
+
+        mNavMenu = mNavigationView.getMenu();
+        navHeader = mNavigationView.getHeaderView(0);
         fullName = navHeader.findViewById(R.id.navDrawerHeader_UserFullName);
         farmName = navHeader.findViewById(R.id.navDrawerHeader_UserFarmName);
-
-        mFragmentManager = getSupportFragmentManager();
-
-        mNavigationView = findViewById(R.id.navigationView);
-        navHeader = mNavigationView.getHeaderView(0);
-        mNavMenu = mNavigationView.getMenu();
 
     }
 }

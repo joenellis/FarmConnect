@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/addProduct2_rootLayout"
+    android:id="@+id/signUp5_rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
@@ -29,9 +29,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/securityoptions"
+                android:textAlignment="center"
                 android:textColor="#000"
-                android:textSize="25sp"
-                android:textAlignment="center"/>
+                android:textSize="25sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -46,7 +46,7 @@
             android:padding="5dp">
 
             <Spinner
-                android:id="@+id/addProduct_categories"
+                android:id="@+id/signUp5_spnSecurityQ"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -55,22 +55,45 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:padding="2dp">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/signUp5_txtPasswordLay"
+                    android:id="@+id/signUp5_txtAnswer"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                     />
+                    android:layout_height="wrap_content" />
             </android.support.design.widget.TextInputLayout>
 
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/signUp_layPrevious"
+            style="?attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/signUp5_btnPrevious"
+                style="?attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="start|center_vertical"
+                android:onClick="onPreviousClick"
+                android:text="Previous"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
 
         </LinearLayout>
     </LinearLayout>
 
     <Button
-        android:id="@+id/addProduct_btnNext2"
+        android:id="@+id/signUp5_btnNext"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

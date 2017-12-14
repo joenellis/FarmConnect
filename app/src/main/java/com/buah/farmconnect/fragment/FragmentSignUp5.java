@@ -26,7 +26,7 @@ public class FragmentSignUp5 extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sign_up_5, container, false);
 
-        Spinner securityQuestion = view.findViewById(R.id.forgotPassword_securityQuestion);
+        Spinner securityQuestion = view.findViewById(R.id.signUp5_spnSecurityQ);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 getContext(),
                 R.array.security_questions,

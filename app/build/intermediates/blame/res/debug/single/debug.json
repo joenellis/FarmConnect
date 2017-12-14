@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\a983133ee8993bdeaabeb56238a2093d\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg_low.xml.flat",
-        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\b6b9d1f60a813f5b25962923ec3d6f3c\\res\\drawable\\notification_bg_low.xml"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\b6b9d1f60a813f5b25962923ec3d6f3c\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg_low.xml.flat",
+        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\b6b9d1f60a813f5b25962923ec3d6f3c\\res\\drawable\\notification_bg_low.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_search_view.xml.flat",
@@ -32,12 +32,12 @@
         "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\b6b9d1f60a813f5b25962923ec3d6f3c\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_design_ic_visibility_off.png.flat",
-        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\b5165059aede0674dce286c891644ca2\\res\\drawable-xxxhdpi-v4\\design_ic_visibility_off.png"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\a983133ee8993bdeaabeb56238a2093d\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_design_ic_visibility_off.png.flat",
+        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\b5165059aede0674dce286c891644ca2\\res\\drawable-xxxhdpi-v4\\design_ic_visibility_off.png"
     },
     {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
@@ -100,12 +100,12 @@
         "source": "C:\\Users\\Kareem\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\e2edcb981257b4549e62320284ee2053\\res\\color-v23\\design_tint_password_toggle.xml"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\b6b9d1f60a813f5b25962923ec3d6f3c\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
-    },
-    {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_normal.xml.flat",
         "source": "C:\\Users\\Kareem\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\336fd241695eea3a92e07dcbc12811e6\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\b6b9d1f60a813f5b25962923ec3d6f3c\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
@@ -168,12 +168,12 @@
         "source": "C:\\Users\\Kareem\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\c22bd0b77bd34d22679e41007f6ace4a\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_play_arrow.png.flat",
         "source": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\drawable-hdpi\\ic_play_arrow.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_16dp.png.flat",
@@ -216,36 +216,36 @@
         "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\bd9e7ff8d1240b9b9cf0c16635e17018\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_shrink_fade_out_from_bottom.xml.flat",
-        "source": "C:\\Users\\Kareem\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\7daf456f66031840e20af20447b7b19a\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_vector_test.xml.flat",
         "source": "C:\\Users\\Kareem\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\7daf456f66031840e20af20447b7b19a\\res\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_shrink_fade_out_from_bottom.xml.flat",
+        "source": "C:\\Users\\Kareem\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\7daf456f66031840e20af20447b7b19a\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_design_ic_visibility_off.png.flat",
-        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\b5165059aede0674dce286c891644ca2\\res\\drawable-mdpi-v4\\design_ic_visibility_off.png"
-    },
-    {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Kareem\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\7daf456f66031840e20af20447b7b19a\\res\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_design_ic_visibility_off.png.flat",
+        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\b5165059aede0674dce286c891644ca2\\res\\drawable-mdpi-v4\\design_ic_visibility_off.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
         "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\a983133ee8993bdeaabeb56238a2093d\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",
-        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\41f52c662ab4814d94533b4617bb2520\\res\\layout\\notification_media_cancel_action.xml"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_filter.png.flat",
         "source": "C:\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\drawable-hdpi\\ic_filter.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",
+        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\41f52c662ab4814d94533b4617bb2520\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -296,12 +296,12 @@
         "source": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\drawable-hdpi\\ic_lock_white.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\b6b9d1f60a813f5b25962923ec3d6f3c\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
-    },
-    {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "C:\\Users\\Kareem\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\7daf456f66031840e20af20447b7b19a\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\b6b9d1f60a813f5b25962923ec3d6f3c\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
@@ -344,12 +344,12 @@
         "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\bd9e7ff8d1240b9b9cf0c16635e17018\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_lock_white.png.flat",
-        "source": "C:\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\drawable-xxhdpi\\ic_lock_white.png"
-    },
-    {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility_off.xml.flat",
         "source": "C:\\Users\\Kareem\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\e2edcb981257b4549e62320284ee2053\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_lock_white.png.flat",
+        "source": "C:\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\drawable-xxhdpi\\ic_lock_white.png"
     },
     {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_full_open_on_phone.png.flat",
@@ -372,12 +372,12 @@
         "source": "C:\\Users\\Kareem\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\7daf456f66031840e20af20447b7b19a\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\a983133ee8993bdeaabeb56238a2093d\\res\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\a983133ee8993bdeaabeb56238a2093d\\res\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -400,12 +400,12 @@
         "source": "C:\\Users\\Abizi Buah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\a983133ee8993bdeaabeb56238a2093d\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\layout_toolbar.xml.flat",
-        "source": "C:\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\layout\\toolbar.xml"
-    },
-    {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_eye_white.png.flat",
         "source": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\drawable-xhdpi\\ic_eye_white.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\layout_toolbar.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\FarmConnect\\app\\src\\main\\res\\layout\\toolbar.xml"
     },
     {
         "merged": "C:\\Users\\Kareem\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_out.xml.flat",

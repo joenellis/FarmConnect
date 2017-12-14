@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/loginRootLayout"
+    android:id="@+id/signUp1_rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
@@ -70,7 +70,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btn_Sign_Up_1_Next"
+            android:id="@+id/signUp1_btnNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_vertical_margin"

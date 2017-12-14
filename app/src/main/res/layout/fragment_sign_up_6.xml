@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/loginRootLayout"
+    android:id="@+id/signUp6_rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.ActivitySignUp">
@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="Before signing up make sure your information is accurate and you agree to the terms of use."
+                android:text="Before signing up make sure your information is accurate.\n\nBy clicking Sign Up you agree to the terms of use."
                 android:textSize="14sp" />
 
             <TextView
@@ -51,7 +51,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/login_btnLogin"
+            android:id="@+id/signUp6_btnSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -72,7 +72,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/Sign_Up_3_btnPrevious"
+                android:id="@+id/signUp6_btnPrevious"
                 style="?attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

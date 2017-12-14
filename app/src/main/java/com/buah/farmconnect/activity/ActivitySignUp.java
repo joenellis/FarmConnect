@@ -1,5 +1,6 @@
 package com.buah.farmconnect.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -55,6 +56,7 @@ public class ActivitySignUp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
@@ -71,54 +73,85 @@ public class ActivitySignUp extends AppCompatActivity {
         mPager.setPagingEnabled(false);
         mPagerAdapter = new SignUpPagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
+
     }
 
     public void onNextClick1(View view) {
+
         firstName = findViewById(R.id.signUp1_txtFirstName);
         lastName = findViewById(R.id.signUp1_txtLastName);
+
         if (TextUtils.isEmpty(firstName.getText().toString())) {
+
             firstName.setError("Enter First name");
+
         } else if (TextUtils.isEmpty(lastName.getText().toString())) {
+
             lastName.setError("Enter Last name");
+
         } else {
+
             SignUp.setFirstName(firstName.getText().toString().trim());
             SignUp.setLastName(lastName.getText().toString().trim());
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+
         }
     }
 
     public void onNextClick2(View view) {
+
         number = findViewById(R.id.signUp2_txtNumber);
+
         if (TextUtils.isEmpty(number.getText().toString())) {
+
             number.setError("Enter Number!");
+
         } else {
+
             SignUp.setNumber(number.getText().toString().trim());
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+
         }
+
     }
 
     public void onNextClick3(View view) {
+
         email = findViewById(R.id.signUp3_txtEmail);
+
         if (TextUtils.isEmpty(email.getText().toString())) {
+
             email.setError("Enter Email!");
+
         } else {
+
             SignUp.setEmail(email.getText().toString().trim());
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+
         }
     }
 
     public void onNextClick4(View view) {
+
         password = findViewById(R.id.signUp4_txtPassword);
+
         if (TextUtils.isEmpty(password.getText().toString())) {
-            TextInputLayout x = findViewById(R.id.signUp4_txtPasswordLay);
+
             password.setError("Enter Password!");
+
         } else {
+
             SignUp.setPassword(password.getText().toString().trim());
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+
         }
+
     }
 
     public void onNextClick5(View view) {
+
+        securityQuestion = findViewById(R.id.signUp5_spnSecurityQ);
+        answer = findViewById(R.id.signUp5_txtAnswer);
 
         int spinner_pos = securityQuestion.getSelectedItemPosition();
         String[] id_values = getResources().getStringArray(R.array.security_questions_id);
@@ -144,26 +177,31 @@ public class ActivitySignUp extends AppCompatActivity {
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
 
         }
+
     }
 
     public void onTermsOfUseClick(View view) {
+
         Intent  terms_of_use_intent = new Intent(this, WebActivity.class);
         startActivity(terms_of_use_intent);
+
     }
 
     public void onPreviousClick(View view) {
+
         ViewGroup layPrevious = findViewById(R.id.signUp_layPrevious);
         layPrevious.setVisibility(View.VISIBLE);
         mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+
     }
 
 
 
     public void onSignUpClick(View view) {
 
-//        final ProgressDialog progressDialog = new ProgressDialog(getParent());
-//        progressDialog.setMessage("Signing Up...");
-//        progressDialog.show();
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Signing Up...");
+        progressDialog.show();
 
         String fullname = SignUp.getFullName();
         String email = SignUp.getEmail();
@@ -179,15 +217,23 @@ public class ActivitySignUp extends AppCompatActivity {
 
 
         call.enqueue(new Callback<Result>() {
+
             @Override
             public void onResponse(Call<Result> call, Response<Result> response) {
-              //  progressDialog.dismiss();
+                progressDialog.dismiss();
+
                 if (response.body() != null) {
+
                     if (!response.body().getError()) {
 
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
 
+                        Intent intent = new Intent(getBaseContext(), ActivityLogin.class);
+                        startActivity(intent);
+                        finish();
+
                     } else {
+
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
 
                     }
@@ -196,23 +242,30 @@ public class ActivitySignUp extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
+
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
                // progressDialog.dismiss();
+
             }
+
         });
 
-        Intent intent = new Intent(this, ActivityLogin.class);
-        startActivity(intent);
-        finish();
+
     }
 
     @Override
     public void onBackPressed() {
+
         if (mPager.getCurrentItem() == 0) {
+
             super.onBackPressed();
+
         } else {
+
             mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+
         }
+
     }
 
     private class SignUpPagerAdapter extends FragmentStatePagerAdapter {
@@ -220,6 +273,7 @@ public class ActivitySignUp extends AppCompatActivity {
         ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
 
         SignUpPagerAdapter(FragmentManager fm) {
+
             super(fm);
             fragmentArrayList.add(new FragmentSignUp1());
             fragmentArrayList.add(new FragmentSignUp2());
@@ -227,16 +281,22 @@ public class ActivitySignUp extends AppCompatActivity {
             fragmentArrayList.add(new FragmentSignUp4());
             fragmentArrayList.add(new FragmentSignUp5());
             fragmentArrayList.add(new FragmentSignUp6());
+
         }
 
         @Override
         public Fragment getItem(int position) {
+
             return fragmentArrayList.get(position);
+
         }
+
 
         @Override
         public int getCount() {
+
             return fragmentArrayList.size();
+
         }
     }
 }
