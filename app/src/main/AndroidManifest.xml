@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.buah.farmconnect">
 
-
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -21,11 +20,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
-
+            android:value="@integer/google_play_services_version" />
 
         <activity android:name=".activity.ActivityHome">
             <intent-filter>
@@ -76,14 +73,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.ActivityHome" />
         </activity>
-        <activity android:name=".activity.ActivityEditProduct"></activity>
-        <activity android:name=".activity.VideoViewActivity"
+        <activity android:name=".activity.ActivityEditProduct" />
+        <activity
+            android:name=".activity.VideoViewActivity"
             android:parentActivityName=".activity.ActivityViewProduct">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.ActivityHome" />
         </activity>
         <activity android:name=".activity.ActivityMyProduct" />
+        <activity android:name=".WebActivity" />
+        <activity android:name=".activity.ActivityForgotPassword" />
+        <activity android:name=".activity.ActivityEditPassword"></activity>
     </application>
 
 </manifest>

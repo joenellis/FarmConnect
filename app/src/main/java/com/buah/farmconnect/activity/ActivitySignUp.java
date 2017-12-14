@@ -1,8 +1,8 @@
 package com.buah.farmconnect.activity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
@@ -14,9 +14,12 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.buah.farmconnect.fragment.FragmentSignUp5;
 import com.buah.farmconnect.R;
+import com.buah.farmconnect.WebActivity;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
@@ -25,7 +28,7 @@ import com.buah.farmconnect.fragment.FragmentSignUp1;
 import com.buah.farmconnect.fragment.FragmentSignUp2;
 import com.buah.farmconnect.fragment.FragmentSignUp3;
 import com.buah.farmconnect.fragment.FragmentSignUp4;
-import com.buah.farmconnect.fragment.FragmentSignUp5;
+import com.buah.farmconnect.fragment.FragmentSignUp6;
 import com.buah.farmconnect.view.CustomViewPager;
 
 import java.util.ArrayList;
@@ -45,6 +48,9 @@ public class ActivitySignUp extends AppCompatActivity {
     TextInputEditText number;
     TextInputEditText email;
     TextInputEditText password;
+    TextInputEditText answer;
+    Spinner securityQuestion;
+
 
 
     @Override
@@ -112,6 +118,39 @@ public class ActivitySignUp extends AppCompatActivity {
         }
     }
 
+    public void onNextClick5(View view) {
+
+        int spinner_pos = securityQuestion.getSelectedItemPosition();
+        String[] id_values = getResources().getStringArray(R.array.security_questions_id);
+        int securityQuestion_Id = Integer.valueOf(id_values[spinner_pos]);
+
+        if (securityQuestion_Id == 0) {
+
+            Snackbar.make(
+                    findViewById(R.id.forgotPassword1_rootLayout),
+                    "Please Select A Security Question!",
+                    Snackbar.LENGTH_LONG
+            ).show();
+
+        } else if (TextUtils.isEmpty(answer.getText().toString())) {
+
+            answer.setError("Enter An Answer!");
+
+        } else {
+
+            SignUp.setSecurityQuestion_id(String.valueOf(securityQuestion_Id));
+            SignUp.setAnswer(answer.getText().toString().trim());
+
+            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+
+        }
+    }
+
+    public void onTermsOfUseClick(View view) {
+        Intent  terms_of_use_intent = new Intent(this, WebActivity.class);
+        startActivity(terms_of_use_intent);
+    }
+
     public void onPreviousClick(View view) {
         ViewGroup layPrevious = findViewById(R.id.signUp_layPrevious);
         layPrevious.setVisibility(View.VISIBLE);
@@ -130,6 +169,9 @@ public class ActivitySignUp extends AppCompatActivity {
         String email = SignUp.getEmail();
         String contact = SignUp.getNumber();
         String password = SignUp.getPassword();
+
+        String answer = SignUp.getAnswer();
+        String securityQuestion_Id = SignUp.getSecurityQuestion_id();
 
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
@@ -184,6 +226,7 @@ public class ActivitySignUp extends AppCompatActivity {
             fragmentArrayList.add(new FragmentSignUp3());
             fragmentArrayList.add(new FragmentSignUp4());
             fragmentArrayList.add(new FragmentSignUp5());
+            fragmentArrayList.add(new FragmentSignUp6());
         }
 
         @Override

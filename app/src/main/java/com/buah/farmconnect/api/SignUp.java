@@ -2,13 +2,15 @@ package com.buah.farmconnect.api;
 
 public class SignUp {
 
-    static String  firstName;
+    static String firstName;
     static String lastName;
     static String number;
     static String email;
     static String password;
+    static String securityQuestion_id;
+    static String answer;
 
-    public static String getFullName(){
+    public static String getFullName() {
         return SignUp.firstName + " " + SignUp.lastName;
     }
 
@@ -42,5 +44,21 @@ public class SignUp {
 
     public static void setPassword(String password) {
         SignUp.password = password;
+    }
+
+    public static String getSecurityQuestion_id() {
+        return securityQuestion_id;
+    }
+
+    public static void setSecurityQuestion_id(String securityQuestion_id) {
+        SignUp.securityQuestion_id = securityQuestion_id;
+    }
+
+    public static String getAnswer() {
+        return answer;
+    }
+
+    public static void setAnswer(String answer) {
+        SignUp.answer = answer;
     }
 }

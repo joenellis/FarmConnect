@@ -648,7 +648,6 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
     }
 
-
     public void onCurrentLocationClick(View view) {
         if (checkPlayServices()) {
 

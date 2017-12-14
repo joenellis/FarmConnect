@@ -90,6 +90,9 @@
                 android:value=".activity.ActivityHome" />
         </activity>
         <activity android:name="com.buah.farmconnect.activity.ActivityMyProduct" />
+        <activity android:name="com.buah.farmconnect.WebActivity" />
+        <activity android:name="com.buah.farmconnect.activity.ActivityForgotPassword" />
+        <activity android:name="com.buah.farmconnect.activity.ActivityEditPassword" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

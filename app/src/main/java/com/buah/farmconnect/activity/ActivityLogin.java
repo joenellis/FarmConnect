@@ -95,6 +95,8 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     public void onForgotPasswordClick(View view) {
+        Intent intent = new Intent(this, ActivityForgotPassword.class);
+        startActivity(intent);
     }
 
     public void onGotoSignUpClick(View view) {
