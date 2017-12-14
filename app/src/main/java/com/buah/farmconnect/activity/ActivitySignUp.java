@@ -242,9 +242,8 @@ public class ActivitySignUp extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
-
+                progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
-               // progressDialog.dismiss();
 
             }
 
