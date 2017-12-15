@@ -1,5 +1,7 @@
 package com.buah.farmconnect.activity;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
@@ -15,13 +17,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.buah.farmconnect.R;
+import com.buah.farmconnect.api.Api;
+import com.buah.farmconnect.api.ApiCall;
+import com.buah.farmconnect.api.Result;
+import com.buah.farmconnect.api.SignUp;
 import com.buah.farmconnect.fragment.FragmentForgotPassword1;
 import com.buah.farmconnect.fragment.FragmentForgotPassword2;
 import com.buah.farmconnect.view.CustomViewPager;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ActivityForgotPassword extends AppCompatActivity {
 
@@ -81,6 +92,47 @@ public class ActivityForgotPassword extends AppCompatActivity {
 
         String answer = mAnswer.getText().toString().trim();
 
+
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Signing Up...");
+        progressDialog.show();
+
+        Api api = new Api();
+        ApiCall service = api.getRetro().create(ApiCall.class);
+        Call<Result> call = service.verifyemail(answer);
+
+        call.enqueue(new Callback<Result>() {
+
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                progressDialog.dismiss();
+
+                if (response.body() != null) {
+
+                    if (!response.body().getError()) {
+
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+
+                        Intent intent = new Intent(getBaseContext(), ActivityLogin.class);
+                        startActivity(intent);
+                        finish();
+
+                    } else {
+
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+
+            }
+
+        });
         return false;
     }
 
@@ -88,6 +140,8 @@ public class ActivityForgotPassword extends AppCompatActivity {
 
         String newPassword = mNewPassword.getText().toString().trim();
         String confirmPassword = mConfirmPassword.getText().toString().trim();
+
+
 
     }
 

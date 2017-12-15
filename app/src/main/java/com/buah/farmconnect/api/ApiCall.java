@@ -18,7 +18,8 @@ public interface ApiCall {
     Call<Result> userLogin(@Query("email") String email,
                            @Query("password") String password) ;
 
-
+    @GET("verifyemail.php")
+    Call<Result> verifyemail(@Query("email") String email);
 
     @GET("getallproducts.php")
     Call<Result> products(@Query("key") String key) ;
