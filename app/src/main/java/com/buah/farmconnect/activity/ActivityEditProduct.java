@@ -431,7 +431,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        Api api = new Api();
+        final Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
         Call<Result> call = service.productdetails(productId);
         call.enqueue(new Callback<Result>() {
@@ -445,17 +445,10 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
                         //onLoginBackground();
 
                         productName = response.body().getObjectProductdetail().getProductname();
-                        productImage = response.body().getObjectProductdetail().getImage();
-                        productImage1 = response.body().getObjectProductdetail().getImage1();
-                        productImage2 = response.body().getObjectProductdetail().getImage2();
-                        productImage3 = response.body().getObjectProductdetail().getImage3();
                         productDescription = response.body().getObjectProductdetail().getDescription();
                         productPrice = response.body().getObjectProductdetail().getPrice();
                         productLocation = response.body().getObjectProductdetail().getLocation();
-                        audio = response.body().getObjectProductdetail().getAudio();
-                        video = response.body().getObjectProductdetail().getVideo();
                         categoryid = response.body().getObjectProductdetail().getCategory_id();
-
 
                         mProductName.setText(productName);
                         mProductDescrition.setText(productDescription);
@@ -811,16 +804,10 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         String pname = String.valueOf(mProductName.getText()).trim();
         String pdescription = String.valueOf(mProductDescrition.getText()).trim();
         String pprice = String.valueOf(mProductPrice.getText()).trim();
+
         if(isclicked){
             productLocation = ActivityEditProduct.location;
         }
-
-        //Map is used to multipart the file using okhttp3.RequestBody
-        File imageFile1 = new File(productImage);
-        File imageFile2 = new File(productImage1);
-        File imageFile3 = new File(productImage2);
-        File imageFile4 = new File(productImage3);
-
 
 
         RequestBody product_id = RequestBody.create(MediaType.parse("multipart/form-data"), productId);
@@ -830,24 +817,30 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
         RequestBody description = RequestBody.create(MediaType.parse("multipart/form-data"), pdescription);
         RequestBody location = RequestBody.create(MediaType.parse("multipart/form-data"), productLocation);
 
-        //Parsing any Media type file
-        RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), imageFile1);
-        RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), imageFile2);
-        RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), imageFile3);
-        RequestBody requestBody4 = RequestBody.create(MediaType.parse("*/*"), imageFile4);
-
-
-        MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", imageFile1.getName(), requestBody1);
-        MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", imageFile2.getName(), requestBody2);
-        MultipartBody.Part fileToUpload3 = MultipartBody.Part.createFormData("file3", imageFile3.getName(), requestBody3);
-        MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", imageFile4.getName(), requestBody4);
-
 
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
         Call<Result> call;
 
-        if (video != null && audio != null) {
+        if (productImage != null && productImage1 != null && productImage2 != null && productImage3 != null && video != null && audio != null) {
+            //Map is used to multipart the file using okhttp3.RequestBody
+            File imageFile1 = new File(productImage);
+            File imageFile2 = new File(productImage1);
+            File imageFile3 = new File(productImage2);
+            File imageFile4 = new File(productImage3);
+
+
+            //Parsing any Media type file
+            RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), imageFile1);
+            RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), imageFile2);
+            RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), imageFile3);
+            RequestBody requestBody4 = RequestBody.create(MediaType.parse("*/*"), imageFile4);
+
+
+            MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", imageFile1.getName(), requestBody1);
+            MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", imageFile2.getName(), requestBody2);
+            MultipartBody.Part fileToUpload3 = MultipartBody.Part.createFormData("file3", imageFile3.getName(), requestBody3);
+            MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", imageFile4.getName(), requestBody4);
 
             File videoFile = new File(video);
             File audioFile = new File(audio);
@@ -860,23 +853,83 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
 
             call = service.updateProduct(product_id, category_id, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5, fileToUpload6);
 
-        } else if (video != null) {
+        } else if (productImage != null && productImage1 != null && productImage2 != null && productImage3 != null && video != null) {
+//Map is used to multipart the file using okhttp3.RequestBody
+            File imageFile1 = new File(productImage);
+            File imageFile2 = new File(productImage1);
+            File imageFile3 = new File(productImage2);
+            File imageFile4 = new File(productImage3);
+
+
+            //Parsing any Media type file
+            RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), imageFile1);
+            RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), imageFile2);
+            RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), imageFile3);
+            RequestBody requestBody4 = RequestBody.create(MediaType.parse("*/*"), imageFile4);
+
+
+            MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", imageFile1.getName(), requestBody1);
+            MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", imageFile2.getName(), requestBody2);
+            MultipartBody.Part fileToUpload3 = MultipartBody.Part.createFormData("file3", imageFile3.getName(), requestBody3);
+            MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", imageFile4.getName(), requestBody4);
 
             File videoFile = new File(video);
             RequestBody requestBody5 = RequestBody.create(MediaType.parse("*/*"), videoFile);
             MultipartBody.Part fileToUpload5 = MultipartBody.Part.createFormData("file5", videoFile.getName(), requestBody5);
             call = service.updateProduct(product_id, category_id, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload5);
 
-        } else if (audio != null) {
+        } else if (productImage != null && productImage1 != null && productImage2 != null && productImage3 != null && audio != null) {
+            //Map is used to multipart the file using okhttp3.RequestBody
+            File imageFile1 = new File(productImage);
+            File imageFile2 = new File(productImage1);
+            File imageFile3 = new File(productImage2);
+            File imageFile4 = new File(productImage3);
+
+
+            //Parsing any Media type file
+            RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), imageFile1);
+            RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), imageFile2);
+            RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), imageFile3);
+            RequestBody requestBody4 = RequestBody.create(MediaType.parse("*/*"), imageFile4);
+
+
+            MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", imageFile1.getName(), requestBody1);
+            MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", imageFile2.getName(), requestBody2);
+            MultipartBody.Part fileToUpload3 = MultipartBody.Part.createFormData("file3", imageFile3.getName(), requestBody3);
+            MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", imageFile4.getName(), requestBody4);
 
             File audioFile = new File(audio);
             RequestBody requestBody6 = RequestBody.create(MediaType.parse("*/*"), audioFile);
             MultipartBody.Part fileToUpload6 = MultipartBody.Part.createFormData("file6", audioFile.getName(), requestBody6);
             call = service.updateProduct(product_id, category_id, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4, fileToUpload6);
 
-        } else {
+        }  else if (productImage != null && productImage1 != null && productImage2 != null && productImage3 != null) {
+
+
+            //Map is used to multipart the file using okhttp3.RequestBody
+            File imageFile1 = new File(productImage);
+            File imageFile2 = new File(productImage1);
+            File imageFile3 = new File(productImage2);
+            File imageFile4 = new File(productImage3);
+
+
+            //Parsing any Media type file
+            RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), imageFile1);
+            RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), imageFile2);
+            RequestBody requestBody3 = RequestBody.create(MediaType.parse("*/*"), imageFile3);
+            RequestBody requestBody4 = RequestBody.create(MediaType.parse("*/*"), imageFile4);
+
+
+            MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file1", imageFile1.getName(), requestBody1);
+            MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file2", imageFile2.getName(), requestBody2);
+            MultipartBody.Part fileToUpload3 = MultipartBody.Part.createFormData("file3", imageFile3.getName(), requestBody3);
+            MultipartBody.Part fileToUpload4 = MultipartBody.Part.createFormData("file4", imageFile4.getName(), requestBody4);
 
             call = service.updateProduct(product_id, category_id, productname, price, description, location, fileToUpload1, fileToUpload2, fileToUpload3, fileToUpload4);
+
+        }else {
+
+            call = service.updateProduct(product_id, category_id, productname, price, description, location);
 
         }
         call.enqueue(new Callback<Result>() {
@@ -903,5 +956,6 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
             }
         });
     }
+
 
 }

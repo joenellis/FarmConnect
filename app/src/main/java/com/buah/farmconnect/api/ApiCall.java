@@ -139,6 +139,15 @@ public interface ApiCall {
                                 @Part MultipartBody.Part file3,
                                 @Part MultipartBody.Part file4,
                                 @Part MultipartBody.Part file5);
+
+    @Multipart
+    @POST("userupdateproduct.php")
+    Call<Result> updateProduct(@Part("productid") RequestBody id,
+                               @Part("categoryid") RequestBody categoryid,
+                               @Part("productname") RequestBody productname,
+                               @Part("price") RequestBody price,
+                               @Part("description") RequestBody description,
+                               @Part("location") RequestBody location);
 }
 
 

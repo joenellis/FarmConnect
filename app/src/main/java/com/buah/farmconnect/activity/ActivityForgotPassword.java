@@ -90,6 +90,8 @@ public class ActivityForgotPassword extends AppCompatActivity {
 
     private boolean verify(int securityQuestion_Id) {
 
+        final boolean[] returner = new boolean[1];
+
         String answer = mAnswer.getText().toString().trim();
 
 
@@ -113,13 +115,13 @@ public class ActivityForgotPassword extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
 
-                        Intent intent = new Intent(getBaseContext(), ActivityLogin.class);
-                        startActivity(intent);
-                        finish();
+                        returner[0] = true;
 
                     } else {
 
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+
+                        returner[0] = false;
 
                     }
                 }
@@ -130,10 +132,12 @@ public class ActivityForgotPassword extends AppCompatActivity {
                 progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
 
+                returner[0] = false;
+
             }
 
         });
-        return false;
+        return returner[0];
     }
 
     private void update() {
@@ -174,6 +178,7 @@ public class ActivityForgotPassword extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case 1:
+                update();
                 break;
             default:
                 break;
