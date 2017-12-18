@@ -212,7 +212,51 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     }
 
     public void onAddProductNextClick4(View view) {
-        mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+
+        TextView imageText1 = findViewById(R.id.addProduct4_txtImageName1);
+        TextView imageText2 = findViewById(R.id.addProduct4_txtImageName2);
+        TextView imageText3 = findViewById(R.id.addProduct4_txtImageName3);
+        TextView imageText4 = findViewById(R.id.addProduct4_txtImageName4);
+
+        if (imageText1.getText().length() <= 0) {
+
+            Snackbar.make(
+                    findViewById(R.id.addProduct4_rootLayout),
+                    "Please Select Four Images",
+                    Snackbar.LENGTH_LONG
+            ).show();
+
+        } else if (imageText2.getText().length() <= 0) {
+
+            Snackbar.make(
+                    findViewById(R.id.addProduct4_rootLayout),
+                    "Please Select Four Images",
+                    Snackbar.LENGTH_LONG
+            ).show();
+
+        } else if (imageText3.getText().length() <= 0) {
+
+            Snackbar.make(
+                    findViewById(R.id.addProduct4_rootLayout),
+                    "Please Select Four Images",
+                    Snackbar.LENGTH_LONG
+            ).show();
+
+        } else if (imageText4.getText().length() <= 0) {
+
+            Snackbar.make(
+                    findViewById(R.id.addProduct4_rootLayout),
+                    "Please Select Four Images",
+                    Snackbar.LENGTH_LONG
+            ).show();
+
+        } else {
+
+            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+
+        }
+
+
     }
 
     public void OnRecordAudioClick(View view) {
@@ -371,20 +415,20 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     void setImageString(@IdRes int id) {
         TextView imageText;
         switch (id) {
-            case R.id.addProduct_btnAddImage1:
-                imageText = findViewById(R.id.addProduct_txtImageName1);
+            case R.id.addProduct4_btnAddImage1:
+                imageText = findViewById(R.id.addProduct4_txtImageName1);
                 imageText.setText("Image Added!");
                 break;
-            case R.id.addProduct_btnAddImage2:
-                imageText = findViewById(R.id.addProduct_txtImageName2);
+            case R.id.addProduct4_btnAddImage2:
+                imageText = findViewById(R.id.addProduct4_txtImageName2);
                 imageText.setText("Image Added!");
                 break;
-            case R.id.addProduct_btnAddImage3:
-                imageText = findViewById(R.id.addProduct_txtImageName3);
+            case R.id.addProduct4_btnAddImage3:
+                imageText = findViewById(R.id.addProduct4_txtImageName3);
                 imageText.setText("Image Added!");
                 break;
-            case R.id.addProduct_btnAddImage4:
-                imageText = findViewById(R.id.addProduct_txtImageName4);
+            case R.id.addProduct4_btnAddImage4:
+                imageText = findViewById(R.id.addProduct4_txtImageName4);
                 imageText.setText("Image Added!");
                 break;
 
@@ -454,7 +498,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
         try {
             if (requestCode == GALLERY) {
-                if (id == R.id.addProduct_btnAddImage1) {
+                if (id == R.id.addProduct4_btnAddImage1) {
 
                     Uri selectedImage = data.getData();
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
@@ -469,7 +513,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage2) {
+                } else if (id == R.id.addProduct4_btnAddImage2) {
 
                     Uri selectedImage = data.getData();
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
@@ -484,7 +528,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage3) {
+                } else if (id == R.id.addProduct4_btnAddImage3) {
 
                     Uri selectedImage = data.getData();
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
@@ -499,7 +543,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage4) {
+                } else if (id == R.id.addProduct4_btnAddImage4) {
 
                     Uri selectedImage = data.getData();
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
@@ -521,7 +565,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
             } else if (requestCode == CAMERA) {
                 Uri selectedImage;
 
-                if (id == R.id.addProduct_btnAddImage1) {
+                if (id == R.id.addProduct4_btnAddImage1) {
 
                     selectedImage = data.getData();
                     mImagePath1 = selectedImage.getPath();
@@ -529,7 +573,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage2) {
+                } else if (id == R.id.addProduct4_btnAddImage2) {
 
                     selectedImage = data.getData();
                     mImagePath2 = selectedImage.getPath();
@@ -537,7 +581,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage3) {
+                } else if (id == R.id.addProduct4_btnAddImage3) {
 
                     selectedImage = data.getData();
                     mImagePath3 = selectedImage.getPath();
@@ -545,7 +589,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                     Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
-                } else if (id == R.id.addProduct_btnAddImage4) {
+                } else if (id == R.id.addProduct4_btnAddImage4) {
 
                     selectedImage = (Uri) data.getExtras().get("data");
                     mImagePath4 = selectedImage.getPath();
@@ -585,7 +629,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,@NonNull String permissions[], @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_RECORD_AUDIO: {
                 // If request is cancelled, the result arrays are empty.
@@ -730,7 +774,6 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
             AddProduct.setLocation(location);
 
 
-
             Snackbar.make(
                     findViewById(R.id.addProduct3_rootLayout),
                     address,
@@ -787,6 +830,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         }
         return true;
     }
+
     @Override
     public void onConnectionSuspended(int i) {
         mGoogleApiClient.connect();

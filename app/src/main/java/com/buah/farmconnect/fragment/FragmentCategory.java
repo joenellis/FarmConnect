@@ -16,7 +16,6 @@ import com.buah.farmconnect.adapter.AdapterCategoryRecyclerView;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
-import com.buah.farmconnect.object.ObjectPlay;
 import com.buah.farmconnect.object.ObjectProduct;
 
 import java.util.ArrayList;
@@ -28,8 +27,6 @@ import retrofit2.Response;
 public class FragmentCategory extends Fragment {
 
     ArrayList<ArrayList<ObjectProduct>> categories = new ArrayList<>();
-
-    ObjectPlay products = new ObjectPlay();
 
     RecyclerView.LayoutManager mLayoutManagerNew;
     RecyclerView mRecyclerView;

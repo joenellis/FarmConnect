@@ -10,9 +10,11 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -63,12 +65,11 @@ public class ActivityHome extends AppCompatActivity {
         if (screen != null) {
 
             setHomeFragment(screen);
-            mToolbar.setTitle(screen);
 
         } else {
 
             setHomeFragment("Home");
-mToolbar.setTitle("Home");
+            mToolbar.setTitle("Home");
         }
 
         if (SharedPrefManager.getInstance(getApplicationContext()).isLoggedIn()) {
@@ -127,25 +128,6 @@ mToolbar.setTitle("Home");
 
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.home_menu, menu);
-        return true;
-
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        displaySelectedScreen(item.getItemId());
-        return true;
-
-    }
-
-
     private void gotoActivity(AppCompatActivity activity) {
 
         startActivity(new Intent(this, activity.getClass()));
@@ -162,9 +144,9 @@ mToolbar.setTitle("Home");
                 mFragmentManager
                         .beginTransaction()
                         .replace(R.id.homeLayout, fragmentHome, TAG)
-                        .addToBackStack(null)
                         .commit();
 
+                mToolbar.setTitle(TAG);
                 mCurrentFragment = fragmentHome;
                 break;
 
@@ -174,9 +156,9 @@ mToolbar.setTitle("Home");
                 mFragmentManager
                         .beginTransaction()
                         .replace(R.id.homeLayout, fragmentCategory, TAG)
-                        .addToBackStack(null)
                         .commit();
 
+                mToolbar.setTitle(TAG);
                 mCurrentFragment = fragmentCategory;
                 break;
 
@@ -186,9 +168,9 @@ mToolbar.setTitle("Home");
                 mFragmentManager
                         .beginTransaction()
                         .replace(R.id.homeLayout, fragmentMore, TAG)
-                        .addToBackStack(null)
                         .commit();
 
+                mToolbar.setTitle(TAG);
                 mCurrentFragment = fragmentMore;
                 break;
 
@@ -198,9 +180,9 @@ mToolbar.setTitle("Home");
                 mFragmentManager
                         .beginTransaction()
                         .replace(R.id.homeLayout, fragmentMyProduct, TAG)
-                        .addToBackStack(null)
                         .commit();
 
+                mToolbar.setTitle(TAG);
                 mCurrentFragment = fragmentMyProduct;
                 break;
 
@@ -210,9 +192,9 @@ mToolbar.setTitle("Home");
                 mFragmentManager
                         .beginTransaction()
                         .replace(R.id.homeLayout, fragmentMyWishList, TAG)
-                        .addToBackStack(null)
                         .commit();
 
+                mToolbar.setTitle(TAG);
                 mCurrentFragment = fragmentMyWishList;
                 break;
 
@@ -344,7 +326,7 @@ mToolbar.setTitle("Home");
 
         } else {
 
-            super.onBackPressed();
+            gotoActivity(new ActivityHome());
 
         }
     }

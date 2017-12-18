@@ -19,7 +19,6 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,7 +41,6 @@ import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
 import com.buah.farmconnect.fragment.FragmentDialogLocation;
-import com.buah.farmconnect.view.CustomViewPager;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -616,20 +614,20 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     void setImageString(@IdRes int id) {
         TextView imageText;
         switch (id) {
-            case R.id.addProduct_btnAddImage1:
-                imageText = findViewById(R.id.addProduct_txtImageName1);
+            case R.id.addProduct4_btnAddImage1:
+                imageText = findViewById(R.id.addProduct4_txtImageName1);
                 imageText.setText("Image Added!");
                 break;
-            case R.id.addProduct_btnAddImage2:
-                imageText = findViewById(R.id.addProduct_txtImageName2);
+            case R.id.addProduct4_btnAddImage2:
+                imageText = findViewById(R.id.addProduct4_txtImageName2);
                 imageText.setText("Image Added!");
                 break;
-            case R.id.addProduct_btnAddImage3:
-                imageText = findViewById(R.id.addProduct_txtImageName3);
+            case R.id.addProduct4_btnAddImage3:
+                imageText = findViewById(R.id.addProduct4_txtImageName3);
                 imageText.setText("Image Added!");
                 break;
-            case R.id.addProduct_btnAddImage4:
-                imageText = findViewById(R.id.addProduct_txtImageName4);
+            case R.id.addProduct4_btnAddImage4:
+                imageText = findViewById(R.id.addProduct4_txtImageName4);
                 imageText.setText("Image Added!");
                 break;
 

@@ -62,6 +62,74 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ProductH
         return products.size();
     }
 
+
+    public List<ObjectProduct> filter(List<ObjectProduct> products, String query) {
+        query = query.toLowerCase();
+
+        ArrayList<ObjectProduct> filteredCompanyList = new ArrayList<>();
+
+        for (ObjectProduct item : products) {
+            final String productName = item.getProductname().toLowerCase();
+            final String productPrice = item.getPrice().toLowerCase();
+            if (productName.contains(query) || productPrice.contains(query)) {
+                filteredCompanyList.add(item);
+            }
+        }
+        return filteredCompanyList;
+    }
+
+    public void animateTo(List<ObjectProduct> models) {
+        applyAndAnimateRemovals(models);
+        applyAndAnimateAdditions(models);
+        applyAndAnimateMovedItems(models);
+    }
+
+    private void applyAndAnimateRemovals(List<ObjectProduct> newModels) {
+        for (int i = products.size() - 1; i >= 0; i--) {
+            final ObjectProduct model = products.get(i);
+            if (!newModels.contains(model)) {
+                removeItem(i);
+            }
+        }
+    }
+
+    private void applyAndAnimateAdditions(List<ObjectProduct> newModels) {
+        for (int i = 0, count = newModels.size(); i < count; i++) {
+            final ObjectProduct model = newModels.get(i);
+            if (!products.contains(model)) {
+                addItem(i, model);
+            }
+        }
+    }
+
+    private void applyAndAnimateMovedItems(List<ObjectProduct> newModels) {
+        for (int toPosition = newModels.size() - 1; toPosition >= 0; toPosition--) {
+            final ObjectProduct model = newModels.get(toPosition);
+            final int fromPosition = products.indexOf(model);
+            if (fromPosition >= 0 && fromPosition != toPosition) {
+                moveItem(fromPosition, toPosition);
+            }
+        }
+    }
+
+    public ObjectProduct removeItem(int position) {
+        final ObjectProduct model = products.remove(position);
+        notifyItemRemoved(position);
+        return model;
+    }
+
+    public void addItem(int position, ObjectProduct model) {
+        products.add(position, model);
+        notifyItemInserted(position);
+    }
+
+    public void moveItem(int fromPosition, int toPosition) {
+        final ObjectProduct model = products.remove(fromPosition);
+        products.add(toPosition, model);
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
+
     class ProductHolder extends RecyclerView.ViewHolder {
 
         TextView productName;
