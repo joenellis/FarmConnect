@@ -12,9 +12,10 @@ public class Api {
 
             if (retro==null) {
                 retro = new Retrofit.Builder()
-                        .baseUrl("http://farmconnect.leefranco.com/farmconnect/")
+                        .baseUrl("http://1ebabc29.ngrok.io/farmconnect/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
+                //.baseUrl("http://farmconnect.leefranco.com/farmconnect/")
             }
 
             return retro;

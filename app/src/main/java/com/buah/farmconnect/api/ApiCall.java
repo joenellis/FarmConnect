@@ -58,7 +58,7 @@ public interface ApiCall {
                             @Field("question") String question,
                             @Field("answer") String answer);
     @Multipart
-    @POST("useruploadproduct.php")
+    @POST("uploadproduct.php")
     Call<Result> uploadMulFile( @Part("userid") RequestBody id,
                                 @Part("categoryid") RequestBody categoryid,
                                 @Part("productname") RequestBody productname,
@@ -70,7 +70,7 @@ public interface ApiCall {
                                 @Part MultipartBody.Part file3,
                                 @Part MultipartBody.Part file4);
     @Multipart
-    @POST("useruploadproduct.php")
+    @POST("uploadproduct.php")
     Call<Result> uploadMulFile( @Part("userid") RequestBody id,
                                 @Part("categoryid") RequestBody categoryid,
                                 @Part("productname") RequestBody productname,
@@ -83,7 +83,7 @@ public interface ApiCall {
                                 @Part MultipartBody.Part file4,
                                 @Part MultipartBody.Part file5);
     @Multipart
-    @POST("useruploadproduct.php")
+    @POST("uploadproduct.php")
     Call<Result> uploadMulFile( @Part("userid") RequestBody id,
                                 @Part("categoryid") RequestBody categoryid,
                                 @Part("productname") RequestBody productname,
