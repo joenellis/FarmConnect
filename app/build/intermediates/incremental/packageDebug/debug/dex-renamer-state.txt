@@ -1,19 +1,4 @@
-#Mon Dec 18 17:02:21 GMT 2017
-path.1=classes.dex
+#Mon Dec 18 17:59:40 GMT 2017
+base.0=/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/transforms/dexMerger/debug/57
 path.0=classes.dex
-renamed.5=classes6.dex
-renamed.4=classes5.dex
-renamed.3=classes4.dex
-renamed.2=classes3.dex
-renamed.1=classes2.dex
 renamed.0=classes.dex
-base.5=C\:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\43
-base.4=C\:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\40
-base.3=C\:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\42
-base.2=C\:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\39
-base.1=C\:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\38
-base.0=C\:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\41
-path.5=classes.dex
-path.4=classes.dex
-path.3=classes.dex
-path.2=classes.dex

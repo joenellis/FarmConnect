@@ -2,16 +2,20 @@ package com.buah.farmconnect.activity;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.media.MediaRecorder;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
@@ -54,10 +58,13 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
@@ -78,10 +85,14 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
     private Location mLastLocation;
 
+    private static final String IMAGE_DIRECTORY = "/farmconnectDCIM";
+
     private final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 25;
 
     // Google client to interact with Google API
     private GoogleApiClient mGoogleApiClient;
+
+    private File f;
 
     // boolean flag to toggle periodic location updates
     private boolean mRequestingLocationUpdates = false;
@@ -93,6 +104,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     private static int FATEST_INTERVAL = 5000; // 5 sec
     private static int DISPLACEMENT = 10; // 10 meters
 
+    Uri selectedImage;
     // UI elements
     private double latitude, longitude;
 
@@ -407,9 +419,11 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     }
 
     private void takePhotoFromCamera(@IdRes int buttonId) {
-        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra("Button", buttonId);
-        startActivityForResult(intent, CAMERA);
+        Intent cameraintent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        cameraintent.putExtra("Button", buttonId);
+        startActivityForResult(cameraintent, CAMERA);
+
+
     }
 
     void setImageString(@IdRes int id) {
@@ -563,27 +577,56 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                 }
 
             } else if (requestCode == CAMERA) {
-                Uri selectedImage;
+
 
                 if (id == R.id.addProduct4_btnAddImage1) {
 
-                    selectedImage = data.getData();
-                    mImagePath1 = selectedImage.getPath();
+//                    File file = new File(getExternalCacheDir(),
+//                            String.valueOf(System.currentTimeMillis()) + ".jpg");
+//                    //selectedImage = Uri.fromFile(file);
+//
+//                    ContentValues values = new ContentValues();
+//                    values.put(MediaStore.Images.Media.TITLE, String.valueOf(file));
+//                    selectedImage = getContentResolver().insert(
+//                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+//
+//                    String[] projection = { MediaStore.Images.Media.DATA };
+//
+//                    @SuppressWarnings("deprecation")
+//                    Cursor cursor = managedQuery(selectedImage, projection,
+//                            null, null, null);
+//                    int column_index_data = cursor
+//                            .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+//                    cursor.moveToFirst();
+//                    mImagePath1 = cursor.getString(column_index_data);
+
+                    Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+                    String path = saveImage(thumbnail);
+
+
+                   mImagePath1 = path;
 
                     Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
                 } else if (id == R.id.addProduct4_btnAddImage2) {
 
-                    selectedImage = data.getData();
-                    mImagePath2 = selectedImage.getPath();
+                    File file = new File(getExternalCacheDir(),
+                            String.valueOf(System.currentTimeMillis()) + ".jpg");
+                    selectedImage = Uri.fromFile(file);
 
+
+                    mImagePath2 = selectedImage.getPath();
                     Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
                     setImageString(buttonId);
 
                 } else if (id == R.id.addProduct4_btnAddImage3) {
 
-                    selectedImage = data.getData();
+                    File file = new File(getExternalCacheDir(),
+                            String.valueOf(System.currentTimeMillis()) + ".jpg");
+                    selectedImage = Uri.fromFile(file);
+
+
                     mImagePath3 = selectedImage.getPath();
 
                     Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
@@ -591,7 +634,11 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
                 } else if (id == R.id.addProduct4_btnAddImage4) {
 
-                    selectedImage = (Uri) data.getExtras().get("data");
+                    File file = new File(getExternalCacheDir(),
+                            String.valueOf(System.currentTimeMillis()) + ".jpg");
+                    selectedImage = Uri.fromFile(file);
+
+
                     mImagePath4 = selectedImage.getPath();
 
                     Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
@@ -620,6 +667,35 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         }
 
 
+    }
+
+    public String saveImage(Bitmap myBitmap) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        myBitmap.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
+        File wallpaperDirectory = new File(
+                Environment.getExternalStorageDirectory() + IMAGE_DIRECTORY);
+        // have the object build the directory structure, if needed.
+        if (!wallpaperDirectory.exists()) {
+            wallpaperDirectory.mkdirs();
+        }
+
+        try {
+            f = new File(wallpaperDirectory, Calendar.getInstance()
+                    .getTimeInMillis() + ".jpg");
+            f.createNewFile();
+            FileOutputStream fo = new FileOutputStream(f);
+            fo.write(bytes.toByteArray());
+            MediaScannerConnection.scanFile(this,
+                    new String[]{f.getPath()},
+                    new String[]{"image/jpeg"}, null);
+            fo.close();
+            Log.d("TAG", "File Saved::--->" + f.getAbsolutePath());
+
+            return f.getAbsolutePath();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+       return f.getAbsolutePath();
     }
 
     public void OnRecordVideoClick(View view) {
