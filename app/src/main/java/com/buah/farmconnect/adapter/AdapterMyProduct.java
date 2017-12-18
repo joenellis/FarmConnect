@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,7 +31,7 @@ public class AdapterMyProduct extends RecyclerView.Adapter<AdapterMyProduct.Prod
     public ProductHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View view = inflater.inflate(R.layout.holder_my_product, parent);
+        View view = inflater.inflate(R.layout.holder_my_product, parent, false);
         return new ProductHolder(view);
     }
 
@@ -41,8 +40,10 @@ public class AdapterMyProduct extends RecyclerView.Adapter<AdapterMyProduct.Prod
 
         final ObjectProduct product = mProducts.get(position);
 
+        String price = "Ghc " + product.getPrice();
+
         holder.text1.setText(product.getProductname());
-        holder.text2.setText(product.getPrice());
+        holder.text2.setText(price);
         Glide.with(this.mContext).load(product.getImage()).into(holder.imageView);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -51,13 +52,6 @@ public class AdapterMyProduct extends RecyclerView.Adapter<AdapterMyProduct.Prod
                 Intent intent = new Intent(mContext, ActivityMyProduct.class);
                 intent.putExtra("ID", product.getProduct_id());
                 mContext.startActivity(intent);
-            }
-        });
-
-        holder.button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
             }
         });
 
@@ -75,9 +69,7 @@ public class AdapterMyProduct extends RecyclerView.Adapter<AdapterMyProduct.Prod
 
         ImageView imageView;
 
-        ImageButton button;
-
-         ProductHolder(View itemView) {
+        ProductHolder(View itemView) {
             super(itemView);
 
             text1 = itemView.findViewById(R.id.holderMyProduct_txtProductName);
@@ -85,7 +77,6 @@ public class AdapterMyProduct extends RecyclerView.Adapter<AdapterMyProduct.Prod
 
             imageView = itemView.findViewById(R.id.holderMyProduct_imgProductImage);
 
-            button = itemView.findViewById(R.id.holderMyProduct_btnMore);
         }
     }
 }

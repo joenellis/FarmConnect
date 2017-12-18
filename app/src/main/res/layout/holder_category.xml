@@ -34,7 +34,6 @@
             android:layout_alignTop="@+id/holderCategory_txtCategory"
             android:layout_marginBottom="5dp"
             android:gravity="top|end"
-            android:onClick="onNewMoreClick"
             android:text="@string/homeNewMore"
             android:textColor="#09f" />
 

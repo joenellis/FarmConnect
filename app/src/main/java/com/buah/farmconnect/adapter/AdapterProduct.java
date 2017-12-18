@@ -40,8 +40,10 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ProductH
 
         final ObjectProduct product = products.get(position);
 
+        String price = "GhC " + product.getPrice();
+
         holder.productName.setText(product.getProductname());
-        holder.productPrice.setText(product.getPrice());
+        holder.productPrice.setText(price);
         Glide.with(this.mContext).load(product.getImage()).into(holder.productImage);
 
 
@@ -134,7 +136,6 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ProductH
 
         TextView productName;
         TextView productPrice;
-        TextView productQuantity;
         ImageView productImage;
 
 
@@ -143,7 +144,6 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ProductH
 
             productName = itemView.findViewById(R.id.txtItem);
             productPrice = itemView.findViewById(R.id.txtPrice);
-            productQuantity = itemView.findViewById(R.id.txtQuantity);
             productImage = itemView.findViewById(R.id.imgItem);
         }
     }
