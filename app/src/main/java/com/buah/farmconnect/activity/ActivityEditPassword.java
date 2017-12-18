@@ -4,6 +4,7 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -38,9 +39,26 @@ public class ActivityEditPassword extends AppCompatActivity {
 
     private void updatePassword(){
 
-        String txtOldPassword = oldPassword.getText().toString().trim();
-        String txtNewPassword = newPassword.getText().toString().trim();
-        String txtConfirmOldPassword = confirmPassword.getText().toString().trim();
+        if (TextUtils.isEmpty(oldPassword.getText().toString())) {
+
+            oldPassword.setError("Enter Your Old Password");
+
+        } else if (TextUtils.isEmpty(newPassword.getText().toString())) {
+
+            newPassword.setError("Enter Your New Password");
+
+        } else if (TextUtils.isEmpty(confirmPassword.getText().toString())) {
+
+            confirmPassword.setError("Enter Your Confirm Password");
+
+        }else {
+
+            String txtOldPassword = oldPassword.getText().toString().trim();
+            String txtNewPassword = newPassword.getText().toString().trim();
+            String txtConfirmOldPassword = confirmPassword.getText().toString().trim();
+
+
+        }
     }
 
     @Override

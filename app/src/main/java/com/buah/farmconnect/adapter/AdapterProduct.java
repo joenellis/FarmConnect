@@ -43,7 +43,6 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ProductH
         holder.productName.setText(product.getProductname());
         holder.productPrice.setText(product.getPrice());
         Glide.with(this.mContext).load(product.getImage()).into(holder.productImage);
-String o;
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

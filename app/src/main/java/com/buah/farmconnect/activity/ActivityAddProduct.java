@@ -519,7 +519,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                 }
 
             } else if (requestCode == CAMERA) {
-                Uri selectedImage = null;
+                Uri selectedImage;
 
                 if (id == R.id.addProduct_btnAddImage1) {
 
@@ -547,7 +547,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
                 } else if (id == R.id.addProduct_btnAddImage4) {
 
-                    selectedImage = (Uri) data.getExtras().get("Bu");
+                    selectedImage = (Uri) data.getExtras().get("data");
                     mImagePath4 = selectedImage.getPath();
 
                     Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();

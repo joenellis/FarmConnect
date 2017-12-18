@@ -28,6 +28,7 @@ public class ActivityEditProfile extends AppCompatActivity {
     private String FirstName;
     private String Contact;
     private String Email;
+    private String usr,pwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,8 +83,9 @@ public class ActivityEditProfile extends AppCompatActivity {
                 progressDialog.dismiss();
                 if (response.body() != null) {
                     if (!response.body().getError()) {
-                        progressDialog.dismiss();
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                        usr = response.body().getObjectUser().getEmail();
+                        pwd = response.body().getObjectUser().getPassword();
                         onLoginBackground();
                     } else {
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
@@ -96,18 +98,16 @@ public class ActivityEditProfile extends AppCompatActivity {
             public void onFailure(Call<Result> call, Throwable t) {
                 progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
-                progressDialog.dismiss();
+
             }
         });
     }
 
     public void onLoginBackground() {
 
-        String uname = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getEmail();
-        String password = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getPassword();
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
-        Call<Result> call = service.userLogin(uname, password);
+        Call<Result> call = service.userLogin(usr, pwd);
 
         call.enqueue(new Callback<Result>() {
             @Override
@@ -115,6 +115,7 @@ public class ActivityEditProfile extends AppCompatActivity {
 
                 if (!response.body().getError()) {
                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                    SharedPrefManager.getInstance(getApplicationContext()).logout();
                     SharedPrefManager.getInstance(getApplicationContext()).userLogin(response.body().getObjectUser());
                     startActivity(new Intent(getBaseContext(), ActivityMyAccount.class));
                 } else {
