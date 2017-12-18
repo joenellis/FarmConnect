@@ -134,11 +134,12 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
     private int GALLERY = 1;
     private int CAMERA = 2;
-    private int VIDEO = 3;
+    private int VIDEO_PICK = 3;
     private int buttonId;
     private Button button;
     private MediaRecorder mMediaRecorder;
     private final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 29;
+    private final int VIDEO_CAPTURE = 101;
 
 
     @Override
@@ -388,26 +389,33 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         showPictureDialog(view.getId());
     }
 
-    private void showPictureDialog(@IdRes final int buttonId) {
+    private void showPictureDialog(@IdRes final int btnId) {
+
         AlertDialog.Builder pictureDialog = new AlertDialog.Builder(this);
         pictureDialog.setTitle("Select Action");
+
         String[] pictureDialogItems = {
                 "Select photo from gallery",
-                "Capture photo from camera"};
+                "Capture photo from camera"
+        };
+
         pictureDialog.setItems(pictureDialogItems,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
                         switch (which) {
                             case 0:
-                                choosePhotoFromGallery(buttonId);
+                                choosePhotoFromGallery(btnId);
                                 break;
                             case 1:
-                                takePhotoFromCamera(buttonId);
+                                takePhotoFromCamera(btnId);
                                 break;
                         }
+
                     }
                 });
+
         pictureDialog.show();
     }
 
@@ -646,7 +654,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                 } else {
                     Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
                 }
-            } else if (requestCode == VIDEO) {
+            } else if (requestCode == VIDEO_PICK) {
                 // Get the Video from data
                 Uri selectedVideo = data.getData();
                 String[] filePathColumn = {MediaStore.Video.Media.DATA};
@@ -658,6 +666,21 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 mVideoFilePath = cursor.getString(columnIndex);
                 cursor.close();
+
+            } else if (requestCode == VIDEO_CAPTURE) {
+
+
+                if (resultCode == RESULT_OK) {
+                    Toast.makeText(this, "Video saved to:\n" +
+                            data.getData(), Toast.LENGTH_LONG).show();
+                } else if (resultCode == RESULT_CANCELED) {
+                    Toast.makeText(this, "Video recording cancelled.",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(this, "Failed to record video",
+                            Toast.LENGTH_LONG).show();
+                }
+
 
             } else {
                 Toast.makeText(this, "You haven't picked Image/Video", Toast.LENGTH_LONG).show();
@@ -699,9 +722,58 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     }
 
     public void OnRecordVideoClick(View view) {
+
+        buttonId = view.getId();
+        showVideoDialog(view.getId());
+
+    }
+
+    private void showVideoDialog(@IdRes final int btnId) {
+
+        AlertDialog.Builder videoDialog = new AlertDialog.Builder(this);
+        videoDialog.setTitle("Select Action");
+
+        String[] videoDialogItems = {
+                "Select video from gallery",
+                "Record video from camera"
+        };
+
+        videoDialog.setItems(videoDialogItems,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        switch (which) {
+                            case 0:
+                                chooseVideoFromGallery(btnId);
+                                break;
+                            case 1:
+                                recordVideoFromCamera(btnId);
+                                break;
+                        }
+
+                    }
+                });
+
+        videoDialog.show();
+    }
+
+    private void recordVideoFromCamera(int btnId) {
+
+        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+
+        intent.putExtra("Button", btnId);
+        startActivityForResult(intent, VIDEO_CAPTURE);
+    }
+
+    private void chooseVideoFromGallery(int btnId) {
+
         Intent intent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, VIDEO);
+
+        intent.putExtra("Button", btnId);
+        startActivityForResult(intent, VIDEO_PICK);
+
     }
 
     @Override

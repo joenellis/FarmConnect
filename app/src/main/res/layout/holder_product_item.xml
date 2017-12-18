@@ -17,7 +17,6 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
-            android:src="#099"
             tools:ignore="ContentDescription" />
 
         <TextView
