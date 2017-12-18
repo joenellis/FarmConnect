@@ -8,12 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.buah.farmconnect.R;
-import com.buah.farmconnect.object.ObjectProduct;
 import com.bumptech.glide.Glide;
 //import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AdapterViewProductImages extends RecyclerView.Adapter<AdapterViewProductImages.ProductImageHolder> {
 
@@ -30,7 +28,7 @@ public class AdapterViewProductImages extends RecyclerView.Adapter<AdapterViewPr
     @Override
     public ProductImageHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View view = inflater.inflate(R.layout.holder_, null);
+        View view = inflater.inflate(R.layout.holder_view_product_images, null);
         return new ProductImageHolder(view);
     }
 

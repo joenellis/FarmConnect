@@ -3,9 +3,9 @@ package com.buah.farmconnect.activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.buah.farmconnect.fragment.FragmentSignUp5;
 import com.buah.farmconnect.R;
 import com.buah.farmconnect.WebActivity;
 import com.buah.farmconnect.api.Api;
@@ -29,6 +28,7 @@ import com.buah.farmconnect.fragment.FragmentSignUp1;
 import com.buah.farmconnect.fragment.FragmentSignUp2;
 import com.buah.farmconnect.fragment.FragmentSignUp3;
 import com.buah.farmconnect.fragment.FragmentSignUp4;
+import com.buah.farmconnect.fragment.FragmentSignUp5;
 import com.buah.farmconnect.fragment.FragmentSignUp6;
 import com.buah.farmconnect.view.CustomViewPager;
 
@@ -51,7 +51,6 @@ public class ActivitySignUp extends AppCompatActivity {
     TextInputEditText password;
     TextInputEditText answer;
     Spinner securityQuestion;
-
 
 
     @Override
@@ -182,7 +181,7 @@ public class ActivitySignUp extends AppCompatActivity {
 
     public void onTermsOfUseClick(View view) {
 
-        Intent  terms_of_use_intent = new Intent(this, WebActivity.class);
+        Intent terms_of_use_intent = new Intent(this, WebActivity.class);
         startActivity(terms_of_use_intent);
 
     }
@@ -194,7 +193,6 @@ public class ActivitySignUp extends AppCompatActivity {
         mPager.setCurrentItem(mPager.getCurrentItem() - 1);
 
     }
-
 
 
     public void onSignUpClick(View view) {
@@ -219,7 +217,7 @@ public class ActivitySignUp extends AppCompatActivity {
         call.enqueue(new Callback<Result>() {
 
             @Override
-            public void onResponse(Call<Result> call, Response<Result> response) {
+            public void onResponse(@NonNull Call<Result> call, @NonNull Response<Result> response) {
                 progressDialog.dismiss();
 
                 if (response.body() != null) {
@@ -241,7 +239,7 @@ public class ActivitySignUp extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Result> call, Throwable t) {
+            public void onFailure(@NonNull Call<Result> call, @NonNull Throwable t) {
                 progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
 

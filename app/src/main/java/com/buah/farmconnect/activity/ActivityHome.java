@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -44,6 +45,7 @@ public class ActivityHome extends AppCompatActivity {
     NavigationView mNavigationView;
     ActionBarDrawerToggle mDrawerToggle;
     private FragmentManager mFragmentManager;
+    private Fragment mCurrentFragment;
 
 
     @Override
@@ -61,11 +63,12 @@ public class ActivityHome extends AppCompatActivity {
         if (screen != null) {
 
             setHomeFragment(screen);
+            mToolbar.setTitle(screen);
 
         } else {
 
             setHomeFragment("Home");
-
+mToolbar.setTitle("Home");
         }
 
         if (SharedPrefManager.getInstance(getApplicationContext()).isLoggedIn()) {
@@ -152,52 +155,75 @@ public class ActivityHome extends AppCompatActivity {
 
     public void setHomeFragment(String TAG) {
 
+        FragmentHome fragmentHome = new FragmentHome();
+
         switch (TAG) {
             case "Home":
                 mFragmentManager
                         .beginTransaction()
-                        .replace(R.id.homeLayout, new FragmentHome(), TAG)
+                        .replace(R.id.homeLayout, fragmentHome, TAG)
                         .addToBackStack(null)
                         .commit();
+
+                mCurrentFragment = fragmentHome;
                 break;
+
 
             case "Category":
+                FragmentCategory fragmentCategory = new FragmentCategory();
                 mFragmentManager
                         .beginTransaction()
-                        .replace(R.id.homeLayout, new FragmentCategory(), TAG)
+                        .replace(R.id.homeLayout, fragmentCategory, TAG)
                         .addToBackStack(null)
                         .commit();
+
+                mCurrentFragment = fragmentCategory;
                 break;
+
 
             case "More":
+                FragmentMore fragmentMore = new FragmentMore();
                 mFragmentManager
                         .beginTransaction()
-                        .replace(R.id.homeLayout, new FragmentMore(), TAG)
+                        .replace(R.id.homeLayout, fragmentMore, TAG)
                         .addToBackStack(null)
                         .commit();
+
+                mCurrentFragment = fragmentMore;
                 break;
+
 
             case "MyProduct":
+                FragmentMyProduct fragmentMyProduct = new FragmentMyProduct();
                 mFragmentManager
                         .beginTransaction()
-                        .replace(R.id.homeLayout, new FragmentMyProduct(), TAG)
+                        .replace(R.id.homeLayout, fragmentMyProduct, TAG)
                         .addToBackStack(null)
                         .commit();
+
+                mCurrentFragment = fragmentMyProduct;
                 break;
 
+
             case "MyWishList":
+                FragmentMyWishList fragmentMyWishList = new FragmentMyWishList();
                 mFragmentManager
                         .beginTransaction()
-                        .replace(R.id.homeLayout, new FragmentMyWishList(), TAG)
+                        .replace(R.id.homeLayout, fragmentMyWishList, TAG)
                         .addToBackStack(null)
                         .commit();
+
+                mCurrentFragment = fragmentMyWishList;
                 break;
+
 
             default:
                 mFragmentManager
                         .beginTransaction()
-                        .replace(R.id.homeLayout, new FragmentHome())
+                        .replace(R.id.homeLayout, fragmentHome)
                         .commit();
+
+                mCurrentFragment = fragmentHome;
                 break;
 
         }
@@ -308,5 +334,18 @@ public class ActivityHome extends AppCompatActivity {
         fullName = navHeader.findViewById(R.id.navDrawerHeader_UserFullName);
         farmName = navHeader.findViewById(R.id.navDrawerHeader_UserFarmName);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mFragmentManager.findFragmentByTag("Home") == mCurrentFragment) {
+
+            this.finishAffinity();
+
+        } else {
+
+            super.onBackPressed();
+
+        }
     }
 }

@@ -11,7 +11,7 @@
     <string name="homeNewMore">More</string>
 
     <!-- Activity Forgot password -->
-    <string name="questionCaption">What be your Security Question?</string>
+    <string name="questionCaption">Enter Your Security Details</string>
     <string name="createnewpassword">Create New Password</string>
     <string name="securityoptions">Security Options</string>
 
@@ -62,12 +62,12 @@
 
     <!-- Strings related to Sign up -->
     <string-array name="security_questions">
-        <item>What be your security question?</item>
+        <item>Select your security question</item>
         <item>What is your mother's name?</item>
         <item>What is your favorite animal?</item>
         <item>What is your street name?</item>
         <item>What is the name of your first crush?</item>
-        <item>What is your favorite School teacher's name?</item>
+        <item>What is your favorite school teacher's name?</item>
     </string-array>
 
     <string-array name="security_questions_id">

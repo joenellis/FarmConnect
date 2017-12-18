@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
-            app:contentScrim="@drawable/material_flat"
+            app:contentScrim="@color/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
 
             <android.support.v7.widget.Toolbar
@@ -268,7 +268,7 @@
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/viewProduct_recyclerViewForImages"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp" />
+                        android:layout_height="150dp" />
                 </android.support.v7.widget.CardView>
             </LinearLayout>
         </LinearLayout>
@@ -278,7 +278,6 @@
         android:id="@+id/viewProduct_bottomSheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:background="?colorPrimary"
         android:clipToPadding="true"
         android:elevation="6dp"
@@ -300,6 +299,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:text="@string/viewProduct_mediaDescriptionTitle"
                     android:textSize="18sp" />
 
@@ -321,6 +321,7 @@
                 </LinearLayout>
 
                 <View
+                    android:id="@+id/viewProduct_dividerBottomSheet"
                     android:layout_width="match_parent"
                     android:layout_height="0.3dp"
                     android:layout_margin="10dp"
