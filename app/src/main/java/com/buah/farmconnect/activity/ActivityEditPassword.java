@@ -24,7 +24,13 @@ public class ActivityEditPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_password);
         init();
+
         setSupportActionBar(mToolbar);
+
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
     }
 

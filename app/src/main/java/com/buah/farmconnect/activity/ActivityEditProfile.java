@@ -139,9 +139,16 @@ public class ActivityEditProfile extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
+
             case R.id.action_saveEditAccount:
+
                 updateChanges();
                 break;
+
+            case R.id.action_EditPassword:
+
+                startActivity(new Intent(this, ActivityEditPassword.class));
+
         }
 
         return true;

@@ -9,7 +9,7 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/action_deleteEditAccount"
+        android:id="@+id/action_EditPassword"
         android:title="Edit Password"
         app:showAsAction="never"
         android:orderInCategory="100"/>

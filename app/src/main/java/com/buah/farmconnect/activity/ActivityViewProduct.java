@@ -67,11 +67,13 @@ public class ActivityViewProduct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_product);
+
         initializeComponents();
         bottomSheetHack();
 
-
         setSupportActionBar(mToolbar);
+
+
         assert getSupportActionBar() != null;
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -124,7 +126,6 @@ public class ActivityViewProduct extends AppCompatActivity {
                         video = response.body().getObjectProductdetail().getVideo();
                         contact = response.body().getObjectProductdetail().getContact();
 
-                        mToolbar.setTitle(productName);
                         mProductName.setText(productName);
                         Glide.with(getApplicationContext()).load(productImage).into(mProductImage);
                         mDescription.setText(productDescription);

@@ -81,18 +81,36 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.ActivityHome" />
         </activity>
-        <activity android:name="com.buah.farmconnect.activity.ActivityEditProduct" />
+        <activity
+            android:name="com.buah.farmconnect.activity.ActivityEditProduct"
+            android:parentActivityName="com.buah.farmconnect.activity.ActivityMyAccount" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ActivityMyAccount" />
+        </activity>
         <activity
             android:name="com.buah.farmconnect.activity.VideoViewActivity"
             android:parentActivityName="com.buah.farmconnect.activity.ActivityViewProduct" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ActivityViewProduct" />
+        </activity>
+        <activity
+            android:name="com.buah.farmconnect.activity.ActivityMyProduct"
+            android:parentActivityName="com.buah.farmconnect.activity.ActivityHome" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.ActivityHome" />
         </activity>
-        <activity android:name="com.buah.farmconnect.activity.ActivityMyProduct" />
         <activity android:name="com.buah.farmconnect.WebActivity" />
         <activity android:name="com.buah.farmconnect.activity.ActivityForgotPassword" />
-        <activity android:name="com.buah.farmconnect.activity.ActivityEditPassword" />
+        <activity
+            android:name="com.buah.farmconnect.activity.ActivityEditPassword"
+            android:parentActivityName="com.buah.farmconnect.activity.ActivityEditProfile" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ActivityEditProfile" />
+        </activity>
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

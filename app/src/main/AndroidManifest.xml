@@ -73,18 +73,37 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.ActivityHome" />
         </activity>
-        <activity android:name=".activity.ActivityEditProduct" />
+        <activity
+            android:name=".activity.ActivityEditProduct"
+            android:parentActivityName=".activity.ActivityMyAccount">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ActivityMyAccount" />
+        </activity>
         <activity
             android:name=".activity.VideoViewActivity"
             android:parentActivityName=".activity.ActivityViewProduct">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ActivityViewProduct" />
+        </activity>
+        <activity
+            android:name=".activity.ActivityMyProduct"
+            android:parentActivityName=".activity.ActivityHome">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.ActivityHome" />
         </activity>
-        <activity android:name=".activity.ActivityMyProduct" />
         <activity android:name=".WebActivity" />
         <activity android:name=".activity.ActivityForgotPassword" />
-        <activity android:name=".activity.ActivityEditPassword"></activity>
+
+        <activity
+            android:name=".activity.ActivityEditPassword"
+            android:parentActivityName=".activity.ActivityEditProfile">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ActivityEditProfile" />
+        </activity>
     </application>
 
 </manifest>

@@ -140,6 +140,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     private MediaRecorder mMediaRecorder;
     private final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 29;
     private final int VIDEO_CAPTURE = 101;
+    private Uri mVideoFileUri;
 
 
     @Override
@@ -167,17 +168,26 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     }
 
     public void onAddProductNextClick1(View view) {
+
         productName = findViewById(R.id.addProduct_txtProductName);
         productDescription = findViewById(R.id.addProduct_txtDescription);
+
         if (TextUtils.isEmpty(productName.getText().toString())) {
+
             productName.setError("Enter Product Name");
+
         } else if (TextUtils.isEmpty(productDescription.getText().toString())) {
+
             productDescription.setError("Enter Product Description");
+
         } else {
+
             AddProduct.setProductName(productName.getText().toString().trim());
             AddProduct.setDescription(productDescription.getText().toString().trim());
             mPager.setCurrentItem(mPager.getCurrentItem() + 1);
+
         }
+
     }
 
     public void onAddProductNextClick2(View view) {
@@ -295,6 +305,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         String productDescription = AddProduct.getDescription();
         String productLocation = AddProduct.getLocation();
 
+
         //Map is used to multipart the file using okhttp3.RequestBody
         File imageFile1 = new File(mImagePath1);
         File imageFile2 = new File(mImagePath2);
@@ -363,15 +374,18 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         }
 
         call.enqueue(new Callback<Result>() {
+
             @Override
             public void onResponse(Call<Result> call, Response<Result> response) {
 
                 progressDialog.dismiss();
 
                 if (!response.body().getError()) {
+
                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(ActivityAddProduct.this, ActivityHome.class);
                     startActivity(intent);
+
                 }
 
 
@@ -381,6 +395,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
             public void onFailure(Call<Result> call, Throwable t) {
                 progressDialog.dismiss();
             }
+
         });
     }
 
@@ -510,7 +525,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == this.RESULT_CANCELED) {
+        if (resultCode == RESULT_CANCELED) {
             Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             return;
         }
@@ -671,14 +686,22 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
 
                 if (resultCode == RESULT_OK) {
+
                     Toast.makeText(this, "Video saved to:\n" +
                             data.getData(), Toast.LENGTH_LONG).show();
+
+                    mVideoFilePath = mVideoFilePath;
+
                 } else if (resultCode == RESULT_CANCELED) {
+
                     Toast.makeText(this, "Video recording cancelled.",
                             Toast.LENGTH_LONG).show();
+
                 } else {
+
                     Toast.makeText(this, "Failed to record video",
                             Toast.LENGTH_LONG).show();
+
                 }
 
 
@@ -724,11 +747,11 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     public void OnRecordVideoClick(View view) {
 
         buttonId = view.getId();
-        showVideoDialog(view.getId());
+        showVideoDialog();
 
     }
 
-    private void showVideoDialog(@IdRes final int btnId) {
+    private void showVideoDialog() {
 
         AlertDialog.Builder videoDialog = new AlertDialog.Builder(this);
         videoDialog.setTitle("Select Action");
@@ -745,10 +768,10 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
                         switch (which) {
                             case 0:
-                                chooseVideoFromGallery(btnId);
+                                chooseVideoFromGallery();
                                 break;
                             case 1:
-                                recordVideoFromCamera(btnId);
+                                recordVideoFromCamera();
                                 break;
                         }
 
@@ -758,20 +781,25 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         videoDialog.show();
     }
 
-    private void recordVideoFromCamera(int btnId) {
+    private void recordVideoFromCamera() {
+
+        File mediaFile = new
+                File(getExternalCacheDir().getPath()
+                + "/myvideo.mp4");
+        mVideoFileUri = Uri.fromFile(mediaFile);
 
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
 
-        intent.putExtra("Button", btnId);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, mVideoFileUri);
         startActivityForResult(intent, VIDEO_CAPTURE);
     }
 
-    private void chooseVideoFromGallery(int btnId) {
+    private void chooseVideoFromGallery() {
 
         Intent intent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
 
-        intent.putExtra("Button", btnId);
+
         startActivityForResult(intent, VIDEO_PICK);
 
     }
