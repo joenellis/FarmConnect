@@ -10,11 +10,9 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,7 +24,6 @@ import com.buah.farmconnect.fragment.FragmentCategory;
 import com.buah.farmconnect.fragment.FragmentHome;
 import com.buah.farmconnect.fragment.FragmentMore;
 import com.buah.farmconnect.fragment.FragmentMyProduct;
-import com.buah.farmconnect.fragment.FragmentMyWishList;
 import com.buah.farmconnect.object.ObjectUser;
 import com.buah.farmconnect.session.SharedPrefManager;
 
@@ -184,18 +181,6 @@ public class ActivityHome extends AppCompatActivity {
 
                 mToolbar.setTitle(TAG);
                 mCurrentFragment = fragmentMyProduct;
-                break;
-
-
-            case "MyWishList":
-                FragmentMyWishList fragmentMyWishList = new FragmentMyWishList();
-                mFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.homeLayout, fragmentMyWishList, TAG)
-                        .commit();
-
-                mToolbar.setTitle(TAG);
-                mCurrentFragment = fragmentMyWishList;
                 break;
 
 

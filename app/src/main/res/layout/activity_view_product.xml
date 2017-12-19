@@ -348,13 +348,4 @@
         </android.support.v7.widget.CardView>
     </android.support.v4.widget.NestedScrollView>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/viewProduct_fabAddToCart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:onClick="onAddToWishListClick"
-        android:src="@drawable/ic_add_cart_white" />
-
 </android.support.design.widget.CoordinatorLayout>
