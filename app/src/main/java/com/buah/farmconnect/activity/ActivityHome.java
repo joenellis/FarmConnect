@@ -214,10 +214,6 @@ public class ActivityHome extends AppCompatActivity {
                 setHomeFragment("Category");
                 break;
 
-            case R.id.nav_item_wishList:
-                setHomeFragment("MyWishList");
-                break;
-
             case R.id.nav_item_account:
                 gotoActivity(new ActivityMyAccount());
                 break;

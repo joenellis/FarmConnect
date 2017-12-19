@@ -242,44 +242,7 @@ public class ActivityViewProduct extends AppCompatActivity {
 
     }
 
-//    public void onAddToWishListClick(View view) {
-//
-//        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
-//
-//            addToWishList();
-//
-//            Intent intent = new Intent(this, ActivityHome.class);
-//            intent.putExtra("Screen", "WishList");
-//            startActivity(intent);
-//
-//        } else {
-//
-//            Snackbar.make(
-//                    findViewById(R.id.rootMyWishList),
-//                    "Please Sign In To Complete This Action",
-//                    Snackbar.LENGTH_LONG
-//            ).setAction(
-//                    "Sign In",
-//
-//                    new View.OnClickListener() {
-//
-//                        @Override
-//                        public void onClick(View view) {
-//
-//                            Intent intent = new Intent(getBaseContext(), ActivityLogin.class);
-//                            intent.putExtra("Screen", "WishList");
-//                            startActivity(intent);
-//
-//                        }
-//                    }
-//            ).show();
-//
-//        }
-//    }
 
-//    private void addToWishList() {
-//
-//    }
 
     public void onCallButtonClick(View view) {
 
