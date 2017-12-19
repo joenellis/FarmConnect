@@ -1,7 +1,7 @@
 #Internal package file, do not edit.
-#Tue Dec 19 00:40:50 GMT 2017
+#Tue Dec 19 06:01:37 GMT 2017
 0.baseType=DIRECTORY
-0.base=C\:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\19
+0.base=/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/transforms/dexMerger/debug/76
 0.path=classes.dex
 0.set=DEX
 count=1

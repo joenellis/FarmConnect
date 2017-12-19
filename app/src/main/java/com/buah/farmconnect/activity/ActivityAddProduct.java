@@ -28,6 +28,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -64,8 +65,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -75,6 +78,8 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE;
 
 public class ActivityAddProduct extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener {
@@ -94,6 +99,8 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     private GoogleApiClient mGoogleApiClient;
 
     private File f;
+
+    private Uri fileUri;
 
     // boolean flag to toggle periodic location updates
     private boolean mRequestingLocationUpdates = false;
@@ -142,6 +149,7 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     private final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 29;
     private final int VIDEO_CAPTURE = 101;
     private Uri mVideoFileUri;
+    String mCurrentPhotoPath;
 
 
     @Override
@@ -168,6 +176,8 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
     }
 
+
+    //Next Click Things
     public void onAddProductNextClick1(View view) {
 
         productName = findViewById(R.id.addProduct_txtProductName);
@@ -227,14 +237,6 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         }
     }
 
-    public void onChooseLocationClick(View view) {
-
-        final android.app.FragmentManager fm = getFragmentManager();
-        final FragmentDialogLocation p = new FragmentDialogLocation();
-        p.show(fm, "Select Location");
-        ActivityEditProduct.isRequestingLocation = false;
-    }
-
     public void onAddProductNextClick4(View view) {
 
         TextView imageText1 = findViewById(R.id.addProduct4_txtImageName1);
@@ -283,6 +285,168 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
     }
 
+    public void onChooseLocationClick(View view) {
+
+        final android.app.FragmentManager fm = getFragmentManager();
+        final FragmentDialogLocation p = new FragmentDialogLocation();
+        p.show(fm, "Select Location");
+        ActivityEditProduct.isRequestingLocation = false;
+    }
+
+
+    //Image Things
+    public void onAddImageClick(View view) {
+        buttonId = view.getId();
+        showPictureDialog(view.getId());
+    }
+
+    private void showPictureDialog(@IdRes final int btnId) {
+
+        AlertDialog.Builder pictureDialog = new AlertDialog.Builder(this);
+        pictureDialog.setTitle("Select Action");
+
+        String[] pictureDialogItems = {
+                "Select photo from gallery",
+                "Capture photo from camera"
+        };
+
+        pictureDialog.setItems(pictureDialogItems,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        switch (which) {
+                            case 0:
+                                choosePhotoFromGallery(btnId);
+                                break;
+                            case 1:
+                                takePhotoFromCamera(btnId);
+                                break;
+                        }
+
+                    }
+                });
+
+        pictureDialog.show();
+    }
+
+    private void choosePhotoFromGallery(int buttonId) {
+
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        galleryIntent.putExtra("Button", buttonId);
+
+        startActivityForResult(galleryIntent, GALLERY);
+
+    }
+
+    private void takePhotoFromCamera(@IdRes int buttonId) {
+
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+
+            // Create the File where the photo should go
+            File photoFile = null;
+
+            try {
+
+                photoFile = createImageFile();
+
+            } catch (IOException ex) {
+                // Error occurred while creating the File
+
+            }
+
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+
+                Uri photoURI = FileProvider.getUriForFile(this,
+                        "com.buah.farmconnect.fileprovider",
+                        photoFile);
+
+                takePictureIntent.putExtra("Button", buttonId);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+
+                startActivityForResult(takePictureIntent, CAMERA);
+
+
+                setImageString(buttonId, photoURI.getPath());
+            }
+
+        }
+
+    }
+
+    void setImageString(@IdRes int id, String fileLocation) {
+        TextView imageText;
+        switch (id) {
+            case R.id.addProduct4_btnAddImage1:
+                imageText = findViewById(R.id.addProduct4_txtImageName1);
+                mImagePath1 = fileLocation;
+                imageText.setText("Image Added!");
+                break;
+            case R.id.addProduct4_btnAddImage2:
+                imageText = findViewById(R.id.addProduct4_txtImageName2);
+                mImagePath2 = fileLocation;
+                imageText.setText("Image Added!");
+                break;
+            case R.id.addProduct4_btnAddImage3:
+                imageText = findViewById(R.id.addProduct4_txtImageName3);
+                mImagePath3 = fileLocation;
+                imageText.setText("Image Added!");
+                break;
+            case R.id.addProduct4_btnAddImage4:
+                imageText = findViewById(R.id.addProduct4_txtImageName4);
+                mImagePath4 = fileLocation;
+                imageText.setText("Image Added!");
+                break;
+
+        }
+    }
+
+    void setImageString(@IdRes int id) {
+        TextView imageText;
+        switch (id) {
+            case R.id.addProduct4_btnAddImage1:
+                imageText = findViewById(R.id.addProduct4_txtImageName1);
+                imageText.setText("Image Added!");
+                break;
+            case R.id.addProduct4_btnAddImage2:
+                imageText = findViewById(R.id.addProduct4_txtImageName2);
+                imageText.setText("Image Added!");
+                break;
+            case R.id.addProduct4_btnAddImage3:
+                imageText = findViewById(R.id.addProduct4_txtImageName3);
+                imageText.setText("Image Added!");
+                break;
+            case R.id.addProduct4_btnAddImage4:
+                imageText = findViewById(R.id.addProduct4_txtImageName4);
+                imageText.setText("Image Added!");
+                break;
+
+        }
+    }
+
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        mCurrentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
+
+    //Record Audio Things
     public void OnRecordAudioClick(View view) {
         Button record = (Button) view;
         if (!isRecordingAudio) {
@@ -294,6 +458,119 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
             record.setText("Start Recording Audio");
             AddProduct.setAudio(mAudioFilePath);
             isRecordingAudio = false;
+        }
+    }
+
+    public void recordAudio() {
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            requestMicPermission();
+
+        } else {
+
+            startRecordingAudio();
+
+        }
+    }
+
+    private void requestMicPermission() {
+        // Should we show an explanation?
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                Manifest.permission.RECORD_AUDIO)) {
+
+            // Show an explanation to the user *asynchronously* -- don't block
+            // this thread waiting for the user's response! After the user
+            // sees the explanation, try again to request the permission.
+
+            Snackbar.make(findViewById(R.id.addProduct5_rootLayout),
+                    "This is to let you record.",
+                    Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Ok", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            ActivityCompat.requestPermissions(ActivityAddProduct.this,
+                                    new String[]{Manifest.permission.CAMERA},
+                                    MY_PERMISSIONS_REQUEST_RECORD_AUDIO);
+                        }
+                    })
+                    .show();
+
+        } else {
+
+            // No explanation needed, we can request the permission.
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO},
+                    MY_PERMISSIONS_REQUEST_RECORD_AUDIO);
+
+            // MY_PERMISSIONS_REQUEST_RECORD_AUDIO is an
+            // app-defined int constant. The callback method gets the
+            // result of the request.
+        }
+    }
+
+    private void startRecordingAudio() {
+
+        mAudioFilePath = getExternalCacheDir().getPath();
+        mAudioFilePath += "/audio_description.mp3";
+        mMediaRecorder = new MediaRecorder();
+        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
+        mMediaRecorder.setOutputFile(mAudioFilePath);
+        mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+
+        try {
+
+            mMediaRecorder.prepare();
+
+        } catch (IOException e) {
+
+            Log.e("Media Recorder", e.getMessage());
+
+        }
+
+        mMediaRecorder.start();
+
+    }
+
+    public void stopRecordingAudio() {
+
+        mMediaRecorder.stop();
+        mMediaRecorder.release();
+        mMediaRecorder = null;
+
+        Snackbar.make(
+                findViewById(R.id.addProduct5_rootLayout),
+                "Audio Recording Saved!",
+                Snackbar.LENGTH_LONG
+        ).show();
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_RECORD_AUDIO: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+
+                    startRecordingAudio();
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
         }
     }
 
@@ -381,12 +658,13 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
                 progressDialog.dismiss();
 
-                if (!response.body().getError()) {
+                if (response.body() != null) {
+                    if (!response.body().getError()) {
 
-                    Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(ActivityAddProduct.this, ActivityHome.class);
-                    startActivity(intent);
-
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(ActivityAddProduct.this, ActivityHome.class);
+                        startActivity(intent);
+                    }
                 }
 
 
@@ -400,130 +678,73 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         });
     }
 
-    public void onAddImageClick(View view) {
+
+    //Record Video Things
+    public void OnRecordVideoClick(View view) {
+
         buttonId = view.getId();
-        showPictureDialog(view.getId());
+        showVideoDialog();
+
     }
 
-    private void showPictureDialog(@IdRes final int btnId) {
+    private void showVideoDialog() {
 
-        AlertDialog.Builder pictureDialog = new AlertDialog.Builder(this);
-        pictureDialog.setTitle("Select Action");
+        AlertDialog.Builder videoDialog = new AlertDialog.Builder(this);
+        videoDialog.setTitle("Select Action");
 
-        String[] pictureDialogItems = {
-                "Select photo from gallery",
-                "Capture photo from camera"
+        String[] videoDialogItems = {
+                "Select video from gallery",
+                "Record video from camera"
         };
 
-        pictureDialog.setItems(pictureDialogItems,
+        videoDialog.setItems(videoDialogItems,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         switch (which) {
                             case 0:
-                                choosePhotoFromGallery(btnId);
+                                chooseVideoFromGallery();
                                 break;
                             case 1:
-                                takePhotoFromCamera(btnId);
+                                recordVideoFromCamera();
                                 break;
                         }
 
                     }
                 });
 
-        pictureDialog.show();
+        videoDialog.show();
     }
 
-    private void choosePhotoFromGallery(int buttonId) {
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        galleryIntent.putExtra("Button", buttonId);
-        startActivityForResult(galleryIntent, GALLERY);
+    private void recordVideoFromCamera() {
+
+        File mediaFile = new
+                File(getCacheDir().getPath()
+                + "/myvideo.mp4");
+        mVideoFileUri = Uri.fromFile(mediaFile);
+
+        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, mVideoFileUri);
+        startActivityForResult(intent, VIDEO_CAPTURE);
     }
 
-    private void takePhotoFromCamera(@IdRes int buttonId) {
-        Intent cameraintent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        cameraintent.putExtra("Button", buttonId);
-        startActivityForResult(cameraintent, CAMERA);
+    private void chooseVideoFromGallery() {
 
+        Intent intent = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
+
+
+        startActivityForResult(intent, VIDEO_PICK);
 
     }
 
-    void setImageString(@IdRes int id) {
-        TextView imageText;
-        switch (id) {
-            case R.id.addProduct4_btnAddImage1:
-                imageText = findViewById(R.id.addProduct4_txtImageName1);
-                imageText.setText("Image Added!");
-                break;
-            case R.id.addProduct4_btnAddImage2:
-                imageText = findViewById(R.id.addProduct4_txtImageName2);
-                imageText.setText("Image Added!");
-                break;
-            case R.id.addProduct4_btnAddImage3:
-                imageText = findViewById(R.id.addProduct4_txtImageName3);
-                imageText.setText("Image Added!");
-                break;
-            case R.id.addProduct4_btnAddImage4:
-                imageText = findViewById(R.id.addProduct4_txtImageName4);
-                imageText.setText("Image Added!");
-                break;
 
-        }
-    }
-
-    public void recordAudio() {
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            requestMicPermission();
-
-        } else {
-
-            startRecordingAudio();
-
-        }
-    }
-
-    private void requestMicPermission() {
-        // Should we show an explanation?
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.RECORD_AUDIO)) {
-
-            // Show an explanation to the user *asynchronously* -- don't block
-            // this thread waiting for the user's response! After the user
-            // sees the explanation, try again to request the permission.
-
-            Snackbar.make(findViewById(R.id.addProduct5_rootLayout),
-                    "This is to let you record.",
-                    Snackbar.LENGTH_INDEFINITE)
-                    .setAction("Ok", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            ActivityCompat.requestPermissions(ActivityAddProduct.this,
-                                    new String[]{Manifest.permission.CAMERA},
-                                    MY_PERMISSIONS_REQUEST_RECORD_AUDIO);
-                        }
-                    })
-                    .show();
-
-        } else {
-
-            // No explanation needed, we can request the permission.
-
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO},
-                    MY_PERMISSIONS_REQUEST_RECORD_AUDIO);
-
-            // MY_PERMISSIONS_REQUEST_RECORD_AUDIO is an
-            // app-defined int constant. The callback method gets the
-            // result of the request.
-        }
-    }
-
+    //Result Things
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
 
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_CANCELED) {
@@ -602,74 +823,52 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
             } else if (requestCode == CAMERA) {
 
-
-                if (id == R.id.addProduct4_btnAddImage1) {
-
+//
+//                if (id == R.id.addProduct4_btnAddImage1) {
+//
+//                    selectedImage = (Uri) data.getExtras().get("data");
+//                    mImagePath1 = getRealPathFromURI(this, selectedImage);
+//
+//                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+//                    setImageString(buttonId);
+//
+//                } else if (id == R.id.addProduct4_btnAddImage2) {
+//
 //                    File file = new File(getExternalCacheDir(),
 //                            String.valueOf(System.currentTimeMillis()) + ".jpg");
-//                    //selectedImage = Uri.fromFile(file);
+//                    selectedImage = Uri.fromFile(file);
 //
-//                    ContentValues values = new ContentValues();
-//                    values.put(MediaStore.Images.Media.TITLE, String.valueOf(file));
-//                    selectedImage = getContentResolver().insert(
-//                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
 //
-//                    String[] projection = { MediaStore.Images.Media.DATA };
+//                    mImagePath2 = selectedImage.getPath();
+//                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+//                    setImageString(buttonId);
 //
-//                    @SuppressWarnings("deprecation")
-//                    Cursor cursor = managedQuery(selectedImage, projection,
-//                            null, null, null);
-//                    int column_index_data = cursor
-//                            .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-//                    cursor.moveToFirst();
-//                    mImagePath1 = cursor.getString(column_index_data);
-
-                    Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
-                    String path = saveImage(thumbnail);
-
-
-                   mImagePath1 = path;
-
-                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                    setImageString(buttonId);
-
-                } else if (id == R.id.addProduct4_btnAddImage2) {
-
-                    File file = new File(getExternalCacheDir(),
-                            String.valueOf(System.currentTimeMillis()) + ".jpg");
-                    selectedImage = Uri.fromFile(file);
-
-
-                    mImagePath2 = selectedImage.getPath();
-                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                    setImageString(buttonId);
-
-                } else if (id == R.id.addProduct4_btnAddImage3) {
-
-                    File file = new File(getExternalCacheDir(),
-                            String.valueOf(System.currentTimeMillis()) + ".jpg");
-                    selectedImage = Uri.fromFile(file);
-
-
-                    mImagePath3 = selectedImage.getPath();
-
-                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                    setImageString(buttonId);
-
-                } else if (id == R.id.addProduct4_btnAddImage4) {
-
-                    File file = new File(getExternalCacheDir(),
-                            String.valueOf(System.currentTimeMillis()) + ".jpg");
-                    selectedImage = Uri.fromFile(file);
-
-
-                    mImagePath4 = selectedImage.getPath();
-
-                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                    setImageString(buttonId);
-                } else {
-                    Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
-                }
+//                } else if (id == R.id.addProduct4_btnAddImage3) {
+//
+//                    File file = new File(getExternalCacheDir(),
+//                            String.valueOf(System.currentTimeMillis()) + ".jpg");
+//                    selectedImage = Uri.fromFile(file);
+//
+//
+//                    mImagePath3 = selectedImage.getPath();
+//
+//                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+//                    setImageString(buttonId);
+//
+//                } else if (id == R.id.addProduct4_btnAddImage4) {
+//
+//                    File file = new File(getExternalCacheDir(),
+//                            String.valueOf(System.currentTimeMillis()) + ".jpg");
+//                    selectedImage = Uri.fromFile(file);
+//
+//
+//                    mImagePath4 = selectedImage.getPath();
+//
+//                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
+//                    setImageString(buttonId);
+//                } else {
+//                    Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
+//                }
             } else if (requestCode == VIDEO_PICK) {
                 // Get the Video from data
                 Uri selectedVideo = data.getData();
@@ -732,159 +931,8 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         }
     }
 
-    public String saveImage(Bitmap myBitmap) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        myBitmap.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
-        File wallpaperDirectory = new File(
-                Environment.getExternalStorageDirectory() + IMAGE_DIRECTORY);
-        // have the object build the directory structure, if needed.
-        if (!wallpaperDirectory.exists()) {
-            wallpaperDirectory.mkdirs();
-        }
 
-        try {
-            f = new File(wallpaperDirectory, Calendar.getInstance()
-                    .getTimeInMillis() + ".jpg");
-            f.createNewFile();
-            FileOutputStream fo = new FileOutputStream(f);
-            fo.write(bytes.toByteArray());
-            MediaScannerConnection.scanFile(this,
-                    new String[]{f.getPath()},
-                    new String[]{"image/jpeg"}, null);
-            fo.close();
-            Log.d("TAG", "File Saved::--->" + f.getAbsolutePath());
-
-            return f.getAbsolutePath();
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-       return f.getAbsolutePath();
-    }
-
-    public void OnRecordVideoClick(View view) {
-
-        buttonId = view.getId();
-        showVideoDialog();
-
-    }
-
-    private void showVideoDialog() {
-
-        AlertDialog.Builder videoDialog = new AlertDialog.Builder(this);
-        videoDialog.setTitle("Select Action");
-
-        String[] videoDialogItems = {
-                "Select video from gallery",
-                "Record video from camera"
-        };
-
-        videoDialog.setItems(videoDialogItems,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        switch (which) {
-                            case 0:
-                                chooseVideoFromGallery();
-                                break;
-                            case 1:
-                                recordVideoFromCamera();
-                                break;
-                        }
-
-                    }
-                });
-
-        videoDialog.show();
-    }
-
-    private void recordVideoFromCamera() {
-
-        File mediaFile = new
-                File(getExternalCacheDir().getPath()
-                + "/myvideo.mp4");
-        mVideoFileUri = Uri.fromFile(mediaFile);
-
-        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, mVideoFileUri);
-        startActivityForResult(intent, VIDEO_CAPTURE);
-    }
-
-    private void chooseVideoFromGallery() {
-
-        Intent intent = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
-
-
-        startActivityForResult(intent, VIDEO_PICK);
-
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_RECORD_AUDIO: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
-
-                    startRecordingAudio();
-
-                } else {
-
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-
-                }
-                return;
-            }
-
-            // other 'case' lines to check for other
-            // permissions this app might request
-        }
-    }
-
-    private void startRecordingAudio() {
-
-        mAudioFilePath = getExternalCacheDir().getPath();
-        mAudioFilePath += "/audio_description.mp3";
-        mMediaRecorder = new MediaRecorder();
-        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
-        mMediaRecorder.setOutputFile(mAudioFilePath);
-        mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-
-        try {
-
-            mMediaRecorder.prepare();
-
-        } catch (IOException e) {
-
-            Log.e("Media Recorder", e.getMessage());
-
-        }
-
-        mMediaRecorder.start();
-
-    }
-
-    public void stopRecordingAudio() {
-
-        mMediaRecorder.stop();
-        mMediaRecorder.release();
-        mMediaRecorder = null;
-
-        Snackbar.make(
-                findViewById(R.id.addProduct5_rootLayout),
-                "Audio Recording Saved!",
-                Snackbar.LENGTH_LONG
-        ).show();
-
-    }
-
+    //Location Things
     public void onCurrentLocationClick(View view) {
         if (checkPlayServices()) {
 

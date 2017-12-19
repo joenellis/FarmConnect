@@ -1,4 +1,4 @@
-#Tue Dec 19 00:40:49 GMT 2017
-base.0=C\:\\AndroidStudioProjects\\FarmConnect\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\19
+#Tue Dec 19 06:01:37 GMT 2017
+base.0=/Users/joenellis/Desktop/FarmConnect/app/build/intermediates/transforms/dexMerger/debug/76
 path.0=classes.dex
 renamed.0=classes.dex

@@ -13,7 +13,7 @@ public class WebActivity extends AppCompatActivity {
 
         String url = "http://www.facebook.com";
 
-        WebView web = (WebView) findViewById(R.id.webview);
+        WebView web = findViewById(R.id.webview);
         web.loadUrl(url);
     }
 }

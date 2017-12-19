@@ -1,6 +1,7 @@
 package com.buah.farmconnect.activity;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -472,7 +473,7 @@ public class ActivityEditProduct extends AppCompatActivity implements GoogleApiC
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == this.RESULT_CANCELED) {
+        if (resultCode == RESULT_CANCELED) {
             Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             return;
         }

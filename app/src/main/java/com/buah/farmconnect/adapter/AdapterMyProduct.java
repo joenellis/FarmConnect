@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,10 +41,8 @@ public class AdapterMyProduct extends RecyclerView.Adapter<AdapterMyProduct.Prod
 
         final ObjectProduct product = mProducts.get(position);
 
-        String price = "Ghc " + product.getPrice();
-
         holder.text1.setText(product.getProductname());
-        holder.text2.setText(price);
+        holder.text2.setText(product.getPrice());
         Glide.with(this.mContext).load(product.getImage()).into(holder.imageView);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +53,8 @@ public class AdapterMyProduct extends RecyclerView.Adapter<AdapterMyProduct.Prod
                 mContext.startActivity(intent);
             }
         });
+
+
 
     }
 
@@ -69,7 +70,7 @@ public class AdapterMyProduct extends RecyclerView.Adapter<AdapterMyProduct.Prod
 
         ImageView imageView;
 
-        ProductHolder(View itemView) {
+         ProductHolder(View itemView) {
             super(itemView);
 
             text1 = itemView.findViewById(R.id.holderMyProduct_txtProductName);
