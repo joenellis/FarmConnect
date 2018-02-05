@@ -1,28 +1,30 @@
 package com.buah.farmconnect.fragment;
 
-import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.buah.farmconnect.activity.ActivityHome;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
-import com.buah.farmconnect.object.ObjectPlay;
 import com.buah.farmconnect.R;
 import com.buah.farmconnect.adapter.AdapterProduct;
+import com.buah.farmconnect.object.ObjectProduct;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,8 +39,16 @@ public class FragmentHome extends Fragment {
     RecyclerView recyclerViewHome;
 
     int spanCount;
+    private AdapterProduct adapter;
+    private ArrayList<ObjectProduct> products;
 
     public FragmentHome() {
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @Nullable
@@ -63,9 +73,9 @@ public class FragmentHome extends Fragment {
 
                 if (response.body() != null) {
                     if (!response.body().getError()) {
-                        Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-
-                        AdapterProduct adapter = new AdapterProduct(getContext(), response.body().getObjectProducts());
+//                      Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                        products = response.body().getObjectProducts();
+                        adapter = new AdapterProduct(getContext(), products);
                         recyclerViewHome.setAdapter(adapter);
 
                     } else {
@@ -77,10 +87,52 @@ public class FragmentHome extends Fragment {
 
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
-                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 
         return rootView;
     }
+
+
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        inflater.inflate(R.menu.home_menu, menu);
+
+        final MenuItem searchItem = menu.findItem(R.id.action_search);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                final List<ObjectProduct> filteredModelList = adapter.filter(products, newText);
+                adapter.animateTo(filteredModelList);
+                recyclerViewHome.scrollToPosition(0);
+
+                return true;
+            }
+        });
+
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+       // displaySelectedScreen(item.getItemId());
+        return true;
+
+    }
+
 }

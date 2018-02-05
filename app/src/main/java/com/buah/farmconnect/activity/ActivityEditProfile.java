@@ -1,7 +1,6 @@
 package com.buah.farmconnect.activity;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.design.widget.TextInputEditText;
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 import android.app.ProgressDialog;
 
@@ -18,7 +16,7 @@ import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
 import com.buah.farmconnect.session.SharedPrefManager;
-import com.buah.farmconnect.object.ObjectUser;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,6 +28,7 @@ public class ActivityEditProfile extends AppCompatActivity {
     private String FirstName;
     private String Contact;
     private String Email;
+    private String usr,pwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +44,10 @@ public class ActivityEditProfile extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
-        editTextFirstName = findViewById(R.id.editProfile_txtFirstName);
-        editTextLastName = findViewById(R.id.editProfile_txtLastName);
-        editTextEmail = findViewById(R.id.editProfile_txtEmail);
-        editTextContact = findViewById(R.id.editProfile_txtNumber);
+        editTextFirstName = findViewById(R.id.editProduct_txtProductName);
+        editTextLastName = findViewById(R.id.editProduct_txtProductDescription);
+        editTextEmail = findViewById(R.id.editProduct_txtEmail);
+        editTextContact = findViewById(R.id.editProduct_txtPrice);
 
         String userid = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getUser_id();
         String[] FullName = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getFullname().split(" ");
@@ -61,30 +60,6 @@ public class ActivityEditProfile extends AppCompatActivity {
         editTextEmail.setText(Email);
         editTextContact.setText(Contact);
 
-//        /////test to call per product selected
-//        Api api = new Api();
-//        ApiCall service = api.getRetro().create(ApiCall.class);
-//        Call<Result> call = service.productdetails("3");
-//        call.enqueue(new Callback<Result>() {
-//            @Override
-//            public void onResponse(Call<Result> call, Response<Result> response) {
-//
-//                if (response.body() != null) {
-//                    if (!response.body().getError()) {
-//                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-//                    } else {
-//                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-//      ;
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Result> call, Throwable t) {
-//                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
-//            }
-//        });
-
     }
 
     public void updateChanges() {
@@ -93,9 +68,11 @@ public class ActivityEditProfile extends AppCompatActivity {
         progressDialog.show();
 
         String userid = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getUser_id();
-        String fullname = editTextFirstName.getText().toString().trim();
+        String firstname = editTextFirstName.getText().toString().trim();
+        String lastname = editTextLastName.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         String contact = editTextContact.getText().toString().trim();
+        String fullname = firstname +" "+ lastname;
 
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
@@ -106,8 +83,9 @@ public class ActivityEditProfile extends AppCompatActivity {
                 progressDialog.dismiss();
                 if (response.body() != null) {
                     if (!response.body().getError()) {
-                        progressDialog.dismiss();
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                        usr = response.body().getObjectUser().getEmail();
+                        pwd = response.body().getObjectUser().getPassword();
                         onLoginBackground();
                     } else {
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
@@ -120,18 +98,16 @@ public class ActivityEditProfile extends AppCompatActivity {
             public void onFailure(Call<Result> call, Throwable t) {
                 progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
-                progressDialog.dismiss();
+
             }
         });
     }
 
     public void onLoginBackground() {
 
-        String uname = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getEmail();
-        String password = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getPassword();
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
-        Call<Result> call = service.userLogin(uname, password);
+        Call<Result> call = service.userLogin(usr, pwd);
 
         call.enqueue(new Callback<Result>() {
             @Override
@@ -139,6 +115,7 @@ public class ActivityEditProfile extends AppCompatActivity {
 
                 if (!response.body().getError()) {
                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                    SharedPrefManager.getInstance(getApplicationContext()).logout();
                     SharedPrefManager.getInstance(getApplicationContext()).userLogin(response.body().getObjectUser());
                     startActivity(new Intent(getBaseContext(), ActivityMyAccount.class));
                 } else {
@@ -162,14 +139,19 @@ public class ActivityEditProfile extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
+
             case R.id.action_saveEditAccount:
+
                 updateChanges();
                 break;
+
+            case R.id.action_EditPassword:
+
+                startActivity(new Intent(this, ActivityEditPassword.class));
+
         }
 
         return true;
     }
-
-    //        editTextPassword = findViewById(R.id.editProfile_)
 
 }

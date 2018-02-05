@@ -27,6 +27,15 @@ public class Result {
 
     @SerializedName("fruits")
     private ArrayList<ObjectProduct> objectProductFruits;
+
+    @SerializedName("vegetables")
+    private ArrayList<ObjectProduct> objectProductVegetables;
+
+    @SerializedName("grains")
+    private ArrayList<ObjectProduct> objectProductGrains;
+
+    @SerializedName("diaryfish")
+    private ArrayList<ObjectProduct> objectProductDairyFish;
 //
 //    @SerializedName("products")
 //    private ArrayList<ObjectProduct> objectProducts;
@@ -78,6 +87,18 @@ public class Result {
 
     public ArrayList<ObjectProduct> getObjectProductFruits() {
         return objectProductFruits;
+    }
+
+    public ArrayList<ObjectProduct> getObjectProductVegetables() {
+        return objectProductVegetables;
+    }
+
+    public ArrayList<ObjectProduct> getObjectProductGrains() {
+        return objectProductGrains;
+    }
+
+    public ArrayList<ObjectProduct> getObjectProductDairyFish() {
+        return objectProductDairyFish;
     }
 
 }

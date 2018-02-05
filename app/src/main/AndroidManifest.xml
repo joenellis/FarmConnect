@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -18,6 +21,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.buah.farmconnect.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+
+            </meta-data>
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity android:name=".activity.ActivityHome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,7 +87,37 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.ActivityHome" />
         </activity>
-        <activity android:name=".activity.ActivityEditProduct"></activity>
+        <activity
+            android:name=".activity.ActivityEditProduct"
+            android:parentActivityName=".activity.ActivityMyAccount">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ActivityMyAccount" />
+        </activity>
+        <activity
+            android:name=".activity.VideoViewActivity"
+            android:parentActivityName=".activity.ActivityViewProduct">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ActivityViewProduct" />
+        </activity>
+        <activity
+            android:name=".activity.ActivityMyProduct"
+            android:parentActivityName=".activity.ActivityHome">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ActivityHome" />
+        </activity>
+        <activity android:name=".WebActivity" />
+        <activity android:name=".activity.ActivityForgotPassword" />
+
+        <activity
+            android:name=".activity.ActivityEditPassword"
+            android:parentActivityName=".activity.ActivityEditProfile">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ActivityEditProfile" />
+        </activity>
     </application>
 
 </manifest>

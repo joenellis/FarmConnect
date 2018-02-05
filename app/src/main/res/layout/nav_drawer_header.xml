@@ -17,7 +17,7 @@
         android:layout_height="80dp"
         android:contentDescription="@string/image"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@drawable/material_flat" />
+        android:src="@drawable/app_logo" />
 
     <TextView
         android:id="@+id/navDrawerHeader_UserFullName"

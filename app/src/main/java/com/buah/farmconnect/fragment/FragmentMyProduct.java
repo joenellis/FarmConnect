@@ -14,12 +14,8 @@ import com.buah.farmconnect.adapter.AdapterMyProduct;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
-import com.buah.farmconnect.object.ObjectPlay;
 import com.buah.farmconnect.R;
 import com.buah.farmconnect.session.SharedPrefManager;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,28 +23,9 @@ import retrofit2.Response;
 
 public class FragmentMyProduct extends Fragment {
 
-    ArrayList productNames = new ArrayList<>(Arrays.asList("Tomatoes", "Cabbage", "Banana ", "Chicken", "Cow", "Person 6", "Person 7", "Person 8", "Person 9", "Person 10", "Person 11", "Person 12", "Person 13", "Person 14"));
-    ArrayList image = new ArrayList<>(Arrays.asList(
-            R.drawable.tomato,
-            R.drawable.cabbage,
-            R.drawable.banana,
-            R.drawable.chicken,
-            R.drawable.cow,
-            R.drawable.tomato,
-            R.drawable.cabbage,
-            R.drawable.banana,
-            R.drawable.chicken,
-            R.drawable.cow,
-            R.drawable.tomato,
-            R.drawable.cabbage,
-            R.drawable.banana,
-            R.drawable.chicken
-    ));
 
     RecyclerView.LayoutManager layoutManager;
     RecyclerView recyclerView;
-
-    ObjectPlay products = new ObjectPlay();
 
     @Nullable
     @Override
@@ -79,7 +56,7 @@ public class FragmentMyProduct extends Fragment {
                     recyclerView.setAdapter(adapter);
 
                 } else {
-                    Toast.makeText(getActivity(),response.body().getMessage(), Toast.LENGTH_LONG).show();
+           //         Toast.makeText(getActivity(),response.body().getMessage(), Toast.LENGTH_LONG).show();
                 }
                 }
             }

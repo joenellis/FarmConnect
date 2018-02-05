@@ -1,7 +1,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/viewProduct_layRoot"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewProduct_layRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
-            app:contentScrim="@drawable/material_flat"
+            app:contentScrim="@color/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
 
             <android.support.v7.widget.Toolbar
@@ -24,8 +24,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:fitsSystemWindows="true"
-                app:layout_collapseMode="pin"
-                />
+                app:title="Product Details"
+                app:layout_collapseMode="pin" />
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -51,8 +51,8 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_margin="5dp"
+                    android:background="#ccc"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cabbage"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -63,7 +63,6 @@
                     android:layout_margin="5dp"
                     android:layout_toEndOf="@id/viewProduct_imgProductImage"
                     android:layout_toRightOf="@id/viewProduct_imgProductImage"
-                    android:text="@string/dummy_text_short"
                     android:textSize="30sp" />
 
                 <TextView
@@ -73,8 +72,7 @@
                     android:layout_below="@id/viewProduct_txtProductName"
                     android:layout_margin="5dp"
                     android:layout_toEndOf="@id/viewProduct_imgProductImage"
-                    android:layout_toRightOf="@id/viewProduct_imgProductImage"
-                    android:text="@string/dummy_text_short" />
+                    android:layout_toRightOf="@id/viewProduct_imgProductImage" />
             </RelativeLayout>
 
             <View
@@ -123,48 +121,62 @@
                         android:id="@+id/viewProduct_txtPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="@string/dummy_text_short" />
+                        android:layout_margin="5dp" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/viewProduct_layQuantity"
+                <RelativeLayout
+                    android:id="@+id/viewProduct_layCall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/viewProduct_layPrice"
-                    tools:ignore="UseCompoundDrawables">
+                    android:layout_below="@+id/viewProduct_layPrice">
 
                     <ImageView
-                        android:id="@+id/viewProduct_icQuantity"
+                        android:id="@+id/viewProduct_icCall"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_margin="5dp"
-                        android:src="@drawable/ic_basket"
+                        android:src="@drawable/ic_call"
                         android:tint="@color/colorAccent"
                         tools:ignore="ContentDescription" />
 
                     <TextView
-                        android:id="@+id/viewProduct_txtQuantity"
+                        android:id="@+id/viewProduct_txtCall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:paddingTop="3dp"
-                        android:text="@string/dummy_text_short" />
-                </LinearLayout>
+                        android:layout_toEndOf="@id/viewProduct_icCall"
+                        android:layout_toRightOf="@id/viewProduct_icCall"
+                        android:paddingTop="3dp" />
+
+                    <Button
+                        android:id="@+id/viewProduct_btnCall"
+                        style="@style/Widget.AppCompat.ButtonBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@id/viewProduct_txtCall"
+                        android:layout_toRightOf="@id/viewProduct_txtCall"
+                        android:gravity="bottom|end"
+                        android:onClick="onCallButtonClick"
+                        android:text="@string/viewProduct_callFarmer"
+                        android:textColor="?colorAccent" />
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/viewProduct_layLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/viewProduct_layQuantity">
+                    android:layout_below="@+id/viewProduct_layCall">
 
                     <ImageView
                         android:id="@+id/viewProduct_icLocation"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_margin="5dp"
-                        android:tint="@color/colorAccent"
                         android:src="@drawable/ic_place"
+                        android:tint="@color/colorAccent"
                         tools:ignore="ContentDescription" />
 
                     <TextView
@@ -174,8 +186,7 @@
                         android:layout_margin="5dp"
                         android:layout_toEndOf="@id/viewProduct_icLocation"
                         android:layout_toRightOf="@id/viewProduct_icLocation"
-                        android:paddingTop="3dp"
-                        android:text="@string/dummy_text_short" />
+                        android:paddingTop="3dp" />
 
                     <Button
                         android:id="@+id/viewProduct_btnViewOnMap"
@@ -188,9 +199,9 @@
                         android:layout_toEndOf="@id/viewProduct_txtLocation"
                         android:layout_toRightOf="@id/viewProduct_txtLocation"
                         android:gravity="bottom|end"
+                        android:onClick="onMapButtonClick"
                         android:text="@string/viewProduct_viewOnMap"
-                        android:textColor="?colorAccent"
-                        android:onClick="onMapButtonClick"/>
+                        android:textColor="?colorAccent" />
                 </RelativeLayout>
 
                 <View
@@ -212,8 +223,7 @@
                         android:id="@+id/viewProduct_txtDescriptionText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="@string/lorem_ipsium" />
+                        android:layout_margin="5dp" />
 
                     <Button
                         android:id="@+id/viewProduct_btnMoreDescription"
@@ -228,6 +238,7 @@
                 </LinearLayout>
 
             </RelativeLayout>
+
 
             <View
                 android:layout_width="match_parent"
@@ -250,15 +261,15 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardUseCompatPadding="true"
-                    android:paddingTop="5dp"
+                    android:layout_margin="10dp"
                     android:paddingBottom="5dp"
-                    android:layout_margin="10dp">
+                    android:paddingTop="5dp"
+                    app:cardUseCompatPadding="true">
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/viewProduct_recyclerViewForImages"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/viewProduct_recyclerViewForImages"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp" />
                 </android.support.v7.widget.CardView>
             </LinearLayout>
         </LinearLayout>
@@ -268,8 +279,7 @@
         android:id="@+id/viewProduct_bottomSheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="?colorAccent"
+        android:background="?colorPrimary"
         android:clipToPadding="true"
         android:elevation="6dp"
         app:layout_behavior="@string/bottom_sheet_behavior"
@@ -282,65 +292,60 @@
             android:padding="10dp"
             app:cardUseCompatPadding="true">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/viewProduct_mediaDescriptionTitle"
+                    android:textSize="18sp" />
+
                 <LinearLayout
+                    android:id="@+id/viewProduct_layAudioDescription"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/viewProduct_mediaDescriptionTitle"
-                        android:textSize="18sp" />
-                    <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:padding="15dp">
+
+                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="15dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="9dp"
-                            android:layout_weight="3"
-                            android:text="@string/viewProduct_audioDescriptionText"
-                            android:textSize="16sp" />
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:src="@drawable/ic_audio"
-                            android:tint="@color/colorAccent"
-                            tools:ignore="ContentDescription" />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_margin="10dp"
-                        android:background="#aaa" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="15dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="9dp"
-                            android:layout_weight="3"
-                            android:text="@string/viewProduct_videoDescriptionText"
-                            android:textSize="16sp" />
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:src="@drawable/ic_play_arrow"
-                            android:tint="@color/colorAccent"
-                            tools:ignore="ContentDescription" />
-                    </LinearLayout>
+                        android:layout_marginTop="9dp"
+                        android:background="@drawable/button_style"
+                        android:onClick="onPlayAudioClick"
+                        android:text="@string/viewProduct_audioDescriptionText"
+                        android:textColor="#fff"
+                        android:textSize="14sp" />
                 </LinearLayout>
+
+                <View
+                    android:id="@+id/viewProduct_dividerBottomSheet"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_margin="10dp"
+                    android:background="#aaa" />
+
+                <LinearLayout
+                    android:id="@+id/viewProduct_layVideoDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_style"
+                        android:onClick="onPlayVideoClick"
+                        android:text="@string/viewProduct_videoDescriptionText"
+                        android:textColor="#fff"
+                        android:layout_marginBottom="9dp"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
         </android.support.v7.widget.CardView>
     </android.support.v4.widget.NestedScrollView>
+
 </android.support.design.widget.CoordinatorLayout>

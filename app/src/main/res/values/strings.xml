@@ -10,6 +10,11 @@
     <string name="homeBrowseVegetable">Browse our vegetable category</string>
     <string name="homeNewMore">More</string>
 
+    <!-- Activity Forgot password -->
+    <string name="questionCaption">Enter Your Security Details</string>
+    <string name="createnewpassword">Create New Password</string>
+    <string name="securityoptions">Security Options</string>
+
     <!-- Application wide -->
     <string name="dummy_text_long">Lorem ipsium dolor sit amet</string>
     <string name="dummy_text_short">Lorem</string>
@@ -25,6 +30,7 @@
     <string name="navCategories">Categories</string>
     <string name="navFilter">Filter</string>
     <string name="navMyProducts">My Products</string>
+    <string name="navWishList">My Wish List</string>
     <string name="navLogout">Logout</string>
     <string name="navAddProduct">Add Product</string>
 
@@ -38,8 +44,9 @@
     <string name="login_btnLogin">Login</string>
     <string name="login_btnForgotPassword">Forgot Password?</string>
 
-    <!-- View Product Activity Strings-->
     <string name="viewProduct_descriptionTitle">Description</string>
+
+    <!-- View Product Activity Strings-->
     <string name="viewProduct_currencyPrefix">GhC</string>
     <string name="viewProduct_viewOnMap">View On Map</string>
     <string name="viewProduct_moreDescription">More Description</string>
@@ -51,21 +58,52 @@
 
     <string name="action_settings">Settings</string>
     <string name="navLogin">Login</string>
+    <string name="viewProduct_callFarmer">Call Farmer</string>
 
-    <array name="categories">
+    <!-- Strings related to Sign up -->
+    <string-array name="security_questions">
+        <item>Select your security question</item>
+        <item>What is your mother's name?</item>
+        <item>What is your favorite animal?</item>
+        <item>What is your street name?</item>
+        <item>What is the name of your first crush?</item>
+        <item>What is your favorite school teacher's name?</item>
+    </string-array>
+
+    <string-array name="security_questions_id">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+
+    <string-array name="categories_name">
         <item>Select Category</item>
         <item>Tubers</item>
         <item>Fruits</item>
         <item>Vegetables</item>
         <item>Grains</item>
         <item>Meat</item>
-        <item>Cudley Cats</item>
-    </array>
-    <array name="regions">
+    </string-array>
+
+    <string-array name="categories_id">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="regions">
         <item>Select Region</item>
         <item>Ashanti Region</item>
         <item>Brong Ahafo Region</item>
         <item>Central Region</item>
+        <!-- Strings related to Sign up -->
         <item>Eastern Region</item>
         <item>Greater Accra Region</item>
         <item>Northern Region</item>
@@ -73,7 +111,7 @@
         <item>Upper West Region</item>
         <item>Volta Region</item>
         <item>Western Region</item>
-    </array>
+    </string-array>
     <array name="cities">
         <item>Select City</item>
         <item>Abaasa</item>
@@ -2883,4 +2921,8 @@
         <item>Upper Nanson</item>
         <item>UssherTown</item>
     </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next">Next</string>
 </resources>

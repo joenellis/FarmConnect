@@ -10,21 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.buah.farmconnect.R;
-import com.buah.farmconnect.api.Upload;
+import com.buah.farmconnect.api.AddProduct;
 
 public class FragmentAddProduct1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_add_product_1, container, false);
-
-
-        TextInputEditText productName = view.findViewById(R.id.addProduct_txtProductName);
-        TextInputEditText description = view.findViewById(R.id.addProduct_txtDescription);
-
-        Upload.setProductName(productName.getText().toString());
-        Upload.setDescription(description.getText().toString());
-
-        return view;
+        return inflater.inflate(R.layout.fragment_add_product_1, container, false);
     }
 }

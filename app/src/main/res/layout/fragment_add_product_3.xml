@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/loginRootLayout"
+    android:id="@+id/addProduct3_rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
@@ -48,8 +48,9 @@
                 android:id="@+id/addProduct_btnCurrentLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/button_style"
                 android:text="Use Current Location"
+                android:onClick="onCurrentLocationClick"
                 android:textColor="#fff"
                 android:textSize="14sp" />
 
@@ -84,23 +85,17 @@
                     android:background="@color/colorPrimary" />
             </LinearLayout>
 
-            <LinearLayout
+            <Button
+                android:id="@+id/addProduct_btnChooseLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:background="@drawable/button_style"
+                android:text="Choose Location"
+                android:onClick="onChooseLocationClick"
+                android:textColor="#fff"
+                android:textSize="14sp" />
 
-                <Spinner
-                    android:id="@+id/addProduct_regions"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"/>
 
-                <Spinner
-                    android:id="@+id/addProduct_cites"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"/>
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -110,8 +105,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/activity_vertical_margin"
-        android:background="@color/colorPrimary"
-        android:onClick="onAddProductNextClick"
+        android:background="@drawable/button_style"
+        android:onClick="onAddProductNextClick3"
         android:text="Next"
         android:textColor="#fff"
         android:textSize="14sp" />
