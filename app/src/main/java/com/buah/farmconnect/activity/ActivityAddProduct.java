@@ -2,18 +2,15 @@ package com.buah.farmconnect.activity;
 
 import android.Manifest;
 import android.app.ProgressDialog;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.media.MediaRecorder;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -46,11 +43,6 @@ import com.buah.farmconnect.api.AddProduct;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
-import com.buah.farmconnect.fragment.FragmentAddProduct1;
-import com.buah.farmconnect.fragment.FragmentAddProduct2;
-import com.buah.farmconnect.fragment.FragmentAddProduct3;
-import com.buah.farmconnect.fragment.FragmentAddProduct4;
-import com.buah.farmconnect.fragment.FragmentAddProduct5;
 import com.buah.farmconnect.fragment.FragmentDialogLocation;
 import com.buah.farmconnect.session.SharedPrefManager;
 import com.buah.farmconnect.view.CustomViewPager;
@@ -60,14 +52,11 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -78,8 +67,6 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE;
 
 public class ActivityAddProduct extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener {
@@ -167,168 +154,16 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
-        mPager = findViewById(R.id.addProduct_viewPager);
-        mPager.setPagingEnabled(false);
-        mPagerAdapter = new AddProductPagerAdapter(getSupportFragmentManager());
-        mPager.setAdapter(mPagerAdapter);
-
-        button = findViewById(R.id.addProduct_btnRecordAudio);
-
-    }
-
-
-    //Next Click Things
-    public void onAddProductNextClick1(View view) {
-
-        productName = findViewById(R.id.addProduct_txtProductName);
-        productDescription = findViewById(R.id.addProduct_txtDescription);
-
-        if (TextUtils.isEmpty(productName.getText().toString())) {
-
-            productName.setError("Enter Product Name");
-
-        } else if (TextUtils.isEmpty(productDescription.getText().toString())) {
-
-            productDescription.setError("Enter Product Description");
-
-        } else {
-
-            AddProduct.setProductName(productName.getText().toString().trim());
-            AddProduct.setDescription(productDescription.getText().toString().trim());
-            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
-
-        }
-
-    }
-
-    public void onAddProductNextClick2(View view) {
-        productPrice = findViewById(R.id.addProduct_txtPrice);
-        productCategory = findViewById(R.id.addProduct_categories);
-
-        int spinner_pos = productCategory.getSelectedItemPosition();
-        String[] id_values = getResources().getStringArray(R.array.categories_id);
-        int id = Integer.valueOf(id_values[spinner_pos]);
-
-        if (TextUtils.isEmpty(productPrice.getText().toString())) {
-            productPrice.setError("Enter Price of Product!");
-        } else if (id == 0) {
-            Snackbar.make(
-                    findViewById(R.id.addProduct2_rootLayout),
-                    "Please Select Category",
-                    Snackbar.LENGTH_LONG
-            ).show();
-        } else {
-            AddProduct.setPrice(productPrice.getText().toString().trim());
-            AddProduct.setCategory_id(String.valueOf(id));
-            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
-        }
-    }
-
-    public void onAddProductNextClick3(View view) {
-        if (ActivityAddProduct.location.equals("")) {
-            Snackbar.make(
-                    findViewById(R.id.addProduct2_rootLayout),
-                    "Please Select a Location",
-                    Snackbar.LENGTH_LONG
-            ).show();
-        } else {
-            AddProduct.setLocation(ActivityAddProduct.location);
-            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
-        }
-    }
-
-    public void onAddProductNextClick4(View view) {
-
-        TextView imageText1 = findViewById(R.id.addProduct4_txtImageName1);
-        TextView imageText2 = findViewById(R.id.addProduct4_txtImageName2);
-        TextView imageText3 = findViewById(R.id.addProduct4_txtImageName3);
-        TextView imageText4 = findViewById(R.id.addProduct4_txtImageName4);
-
-        if (imageText1.getText().length() <= 0) {
-
-            Snackbar.make(
-                    findViewById(R.id.addProduct4_rootLayout),
-                    "Please Select Four Images",
-                    Snackbar.LENGTH_LONG
-            ).show();
-
-        } else if (imageText2.getText().length() <= 0) {
-
-            Snackbar.make(
-                    findViewById(R.id.addProduct4_rootLayout),
-                    "Please Select Four Images",
-                    Snackbar.LENGTH_LONG
-            ).show();
-
-        } else if (imageText3.getText().length() <= 0) {
-
-            Snackbar.make(
-                    findViewById(R.id.addProduct4_rootLayout),
-                    "Please Select Four Images",
-                    Snackbar.LENGTH_LONG
-            ).show();
-
-        } else if (imageText4.getText().length() <= 0) {
-
-            Snackbar.make(
-                    findViewById(R.id.addProduct4_rootLayout),
-                    "Please Select Four Images",
-                    Snackbar.LENGTH_LONG
-            ).show();
-
-        } else {
-
-            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
-
-        }
-
-
-    }
-
-    public void onChooseLocationClick(View view) {
-
-        final android.app.FragmentManager fm = getFragmentManager();
-        final FragmentDialogLocation p = new FragmentDialogLocation();
-        p.show(fm, "Select Location");
-        ActivityEditProduct.isRequestingLocation = false;
     }
 
 
     //Image Things
     public void onAddImageClick(View view) {
         buttonId = view.getId();
-        showPictureDialog(view.getId());
+        //showPictureDialog(view.getId());
     }
 
-    private void showPictureDialog(@IdRes final int btnId) {
 
-        AlertDialog.Builder pictureDialog = new AlertDialog.Builder(this);
-        pictureDialog.setTitle("Select Action");
-
-        String[] pictureDialogItems = {
-                "Select photo from gallery",
-                "Capture photo from camera"
-        };
-
-        pictureDialog.setItems(pictureDialogItems,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        switch (which) {
-                            case 0:
-                                choosePhotoFromGallery(btnId);
-                                break;
-                            case 1:
-                                takePhotoFromCamera(btnId);
-                                break;
-                        }
-
-                    }
-                });
-
-        pictureDialog.show();
-    }
 
     private void choosePhotoFromGallery(int buttonId) {
 
@@ -340,239 +175,6 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
     }
 
-    private void takePhotoFromCamera(@IdRes int buttonId) {
-
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-        // Ensure that there's a camera activity to handle the intent
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-
-            // Create the File where the photo should go
-            File photoFile = null;
-
-            try {
-
-                photoFile = createImageFile();
-
-            } catch (IOException ex) {
-                // Error occurred while creating the File
-
-            }
-
-            // Continue only if the File was successfully created
-            if (photoFile != null) {
-
-                Uri photoURI = FileProvider.getUriForFile(this,
-                        "com.buah.farmconnect.fileprovider",
-                        photoFile);
-
-                takePictureIntent.putExtra("Button", buttonId);
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-
-                startActivityForResult(takePictureIntent, CAMERA);
-
-
-                setImageString(buttonId, photoURI.getPath());
-            }
-
-        }
-
-    }
-
-    void setImageString(@IdRes int id, String fileLocation) {
-        TextView imageText;
-        switch (id) {
-            case R.id.addProduct4_btnAddImage1:
-                imageText = findViewById(R.id.addProduct4_txtImageName1);
-                mImagePath1 = fileLocation;
-                imageText.setText("Image Added!");
-                break;
-            case R.id.addProduct4_btnAddImage2:
-                imageText = findViewById(R.id.addProduct4_txtImageName2);
-                mImagePath2 = fileLocation;
-                imageText.setText("Image Added!");
-                break;
-            case R.id.addProduct4_btnAddImage3:
-                imageText = findViewById(R.id.addProduct4_txtImageName3);
-                mImagePath3 = fileLocation;
-                imageText.setText("Image Added!");
-                break;
-            case R.id.addProduct4_btnAddImage4:
-                imageText = findViewById(R.id.addProduct4_txtImageName4);
-                mImagePath4 = fileLocation;
-                imageText.setText("Image Added!");
-                break;
-
-        }
-    }
-
-    void setImageString(@IdRes int id) {
-        TextView imageText;
-        switch (id) {
-            case R.id.addProduct4_btnAddImage1:
-                imageText = findViewById(R.id.addProduct4_txtImageName1);
-                imageText.setText("Image Added!");
-                break;
-            case R.id.addProduct4_btnAddImage2:
-                imageText = findViewById(R.id.addProduct4_txtImageName2);
-                imageText.setText("Image Added!");
-                break;
-            case R.id.addProduct4_btnAddImage3:
-                imageText = findViewById(R.id.addProduct4_txtImageName3);
-                imageText.setText("Image Added!");
-                break;
-            case R.id.addProduct4_btnAddImage4:
-                imageText = findViewById(R.id.addProduct4_txtImageName4);
-                imageText.setText("Image Added!");
-                break;
-
-        }
-    }
-
-    private File createImageFile() throws IOException {
-        // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
-        );
-
-        // Save a file: path for use with ACTION_VIEW intents
-        mCurrentPhotoPath = image.getAbsolutePath();
-        return image;
-    }
-
-
-    //Record Audio Things
-    public void OnRecordAudioClick(View view) {
-        Button record = (Button) view;
-        if (!isRecordingAudio) {
-            recordAudio();
-            record.setText("Stop Recording Audio");
-            isRecordingAudio = true;
-        } else {
-            stopRecordingAudio();
-            record.setText("Start Recording Audio");
-            AddProduct.setAudio(mAudioFilePath);
-            isRecordingAudio = false;
-        }
-    }
-
-    public void recordAudio() {
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            requestMicPermission();
-
-        } else {
-
-            startRecordingAudio();
-
-        }
-    }
-
-    private void requestMicPermission() {
-        // Should we show an explanation?
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.RECORD_AUDIO)) {
-
-            // Show an explanation to the user *asynchronously* -- don't block
-            // this thread waiting for the user's response! After the user
-            // sees the explanation, try again to request the permission.
-
-            Snackbar.make(findViewById(R.id.addProduct5_rootLayout),
-                    "This is to let you record.",
-                    Snackbar.LENGTH_INDEFINITE)
-                    .setAction("Ok", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            ActivityCompat.requestPermissions(ActivityAddProduct.this,
-                                    new String[]{Manifest.permission.CAMERA},
-                                    MY_PERMISSIONS_REQUEST_RECORD_AUDIO);
-                        }
-                    })
-                    .show();
-
-        } else {
-
-            // No explanation needed, we can request the permission.
-
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO},
-                    MY_PERMISSIONS_REQUEST_RECORD_AUDIO);
-
-            // MY_PERMISSIONS_REQUEST_RECORD_AUDIO is an
-            // app-defined int constant. The callback method gets the
-            // result of the request.
-        }
-    }
-
-    private void startRecordingAudio() {
-
-        mAudioFilePath = getExternalCacheDir().getPath();
-        mAudioFilePath += "/audio_description.mp3";
-        mMediaRecorder = new MediaRecorder();
-        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
-        mMediaRecorder.setOutputFile(mAudioFilePath);
-        mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-
-        try {
-
-            mMediaRecorder.prepare();
-
-        } catch (IOException e) {
-
-            Log.e("Media Recorder", e.getMessage());
-
-        }
-
-        mMediaRecorder.start();
-
-    }
-
-    public void stopRecordingAudio() {
-
-        mMediaRecorder.stop();
-        mMediaRecorder.release();
-        mMediaRecorder = null;
-
-        Snackbar.make(
-                findViewById(R.id.addProduct5_rootLayout),
-                "Audio Recording Saved!",
-                Snackbar.LENGTH_LONG
-        ).show();
-
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_RECORD_AUDIO: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
-
-                    startRecordingAudio();
-
-                } else {
-
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-
-                }
-                return;
-            }
-
-            // other 'case' lines to check for other
-            // permissions this app might request
-        }
-    }
 
     public void onAddProductClick(View view) {
 
@@ -741,180 +343,6 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
     }
 
 
-    //Result Things
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_CANCELED) {
-            Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        Intent intent = getIntent();
-        int id = intent.getIntExtra("Button", buttonId);
-
-        try {
-            if (requestCode == GALLERY) {
-                if (id == R.id.addProduct4_btnAddImage1) {
-
-                    Uri selectedImage = data.getData();
-                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
-                    Cursor cursor = getContentResolver().query((selectedImage), filePathColumn, null, null, null);
-                    assert cursor != null;
-                    cursor.moveToFirst();
-
-                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    mImagePath1 = cursor.getString(columnIndex);
-
-                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                    setImageString(buttonId);
-
-                } else if (id == R.id.addProduct4_btnAddImage2) {
-
-                    Uri selectedImage = data.getData();
-                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
-                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                    assert cursor != null;
-                    cursor.moveToFirst();
-
-                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    mImagePath2 = cursor.getString(columnIndex);
-
-                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                    setImageString(buttonId);
-
-                } else if (id == R.id.addProduct4_btnAddImage3) {
-
-                    Uri selectedImage = data.getData();
-                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
-                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                    assert cursor != null;
-                    cursor.moveToFirst();
-
-                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    mImagePath3 = cursor.getString(columnIndex);
-
-                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                    setImageString(buttonId);
-
-                } else if (id == R.id.addProduct4_btnAddImage4) {
-
-                    Uri selectedImage = data.getData();
-                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
-                    Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                    assert cursor != null;
-                    cursor.moveToFirst();
-
-                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    mImagePath4 = cursor.getString(columnIndex);
-
-                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-                    setImageString(buttonId);
-
-                } else {
-                    Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
-                }
-
-            } else if (requestCode == CAMERA) {
-
-//
-//                if (id == R.id.addProduct4_btnAddImage1) {
-//
-//                    selectedImage = (Uri) data.getExtras().get("data");
-//                    mImagePath1 = getRealPathFromURI(this, selectedImage);
-//
-//                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-//                    setImageString(buttonId);
-//
-//                } else if (id == R.id.addProduct4_btnAddImage2) {
-//
-//                    File file = new File(getExternalCacheDir(),
-//                            String.valueOf(System.currentTimeMillis()) + ".jpg");
-//                    selectedImage = Uri.fromFile(file);
-//
-//
-//                    mImagePath2 = selectedImage.getPath();
-//                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-//                    setImageString(buttonId);
-//
-//                } else if (id == R.id.addProduct4_btnAddImage3) {
-//
-//                    File file = new File(getExternalCacheDir(),
-//                            String.valueOf(System.currentTimeMillis()) + ".jpg");
-//                    selectedImage = Uri.fromFile(file);
-//
-//
-//                    mImagePath3 = selectedImage.getPath();
-//
-//                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-//                    setImageString(buttonId);
-//
-//                } else if (id == R.id.addProduct4_btnAddImage4) {
-//
-//                    File file = new File(getExternalCacheDir(),
-//                            String.valueOf(System.currentTimeMillis()) + ".jpg");
-//                    selectedImage = Uri.fromFile(file);
-//
-//
-//                    mImagePath4 = selectedImage.getPath();
-//
-//                    Snackbar.make(findViewById(R.id.addProduct3_rootLayout), "Image Added!", Snackbar.LENGTH_LONG).show();
-//                    setImageString(buttonId);
-//                } else {
-//                    Toast.makeText(this, "No id found", Toast.LENGTH_SHORT).show();
-//                }
-            } else if (requestCode == VIDEO_PICK) {
-                // Get the Video from data
-                Uri selectedVideo = data.getData();
-                String[] filePathColumn = {MediaStore.Video.Media.DATA};
-
-                Cursor cursor = getContentResolver().query(selectedVideo, filePathColumn, null, null, null);
-                assert cursor != null;
-                cursor.moveToFirst();
-
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                mVideoFilePath = cursor.getString(columnIndex);
-                cursor.close();
-
-            } else if (requestCode == VIDEO_CAPTURE) {
-
-
-                if (resultCode == RESULT_OK) {
-
-//                    video_uri = data.getData();
-//                    mVideoView.setVideoURI(video_uri);
-                    String videoRealPath = getRealPathFromURI(this, data.getData());
-
-
-                    mVideoFilePath = videoRealPath;
-
-                } else if (resultCode == RESULT_CANCELED) {
-
-                    Toast.makeText(this, "Video recording cancelled.",
-                            Toast.LENGTH_LONG).show();
-
-                } else {
-
-                    Toast.makeText(this, "Failed to record video",
-                            Toast.LENGTH_LONG).show();
-
-                }
-
-
-            } else {
-                Toast.makeText(this, "You haven't picked Image/Video", Toast.LENGTH_LONG).show();
-            }
-        } catch (Exception e) {
-            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
-        }
-
-    }
 
     public String getRealPathFromURI(Context context, Uri contentUri) {
         Cursor cursor = null;
@@ -1015,19 +443,8 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
             AddProduct.setLocation(location);
 
 
-            Snackbar.make(
-                    findViewById(R.id.addProduct3_rootLayout),
-                    address,
-                    Snackbar.LENGTH_LONG
-            ).show();
-
         } else {
 
-            Snackbar.make(
-                    findViewById(R.id.addProduct3_rootLayout),
-                    "Couldn't get the location. Make sure location is enabled on the device",
-                    Snackbar.LENGTH_INDEFINITE
-            ).show();
 //           Toast.makeText(getApplicationContext(), "(Couldn't get the location. Make sure location is enabled on the device)", Toast.LENGTH_LONG);
         }
     }
@@ -1110,27 +527,4 @@ public class ActivityAddProduct extends AppCompatActivity implements GoogleApiCl
 
     }
 
-    private class AddProductPagerAdapter extends FragmentStatePagerAdapter {
-
-        ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
-
-        AddProductPagerAdapter(FragmentManager fm) {
-            super(fm);
-            fragmentArrayList.add(new FragmentAddProduct1());
-            fragmentArrayList.add(new FragmentAddProduct2());
-            fragmentArrayList.add(new FragmentAddProduct3());
-            fragmentArrayList.add(new FragmentAddProduct4());
-            fragmentArrayList.add(new FragmentAddProduct5());
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return fragmentArrayList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return fragmentArrayList.size();
-        }
-    }
 }

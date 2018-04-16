@@ -84,9 +84,7 @@ public class ActivityEditProfile extends AppCompatActivity {
                 if (response.body() != null) {
                     if (!response.body().getError()) {
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-                        usr = response.body().getObjectUser().getEmail();
-                        pwd = response.body().getObjectUser().getPassword();
-                        onLoginBackground();
+
                     } else {
                         Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
                         progressDialog.dismiss();
@@ -97,7 +95,7 @@ public class ActivityEditProfile extends AppCompatActivity {
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });

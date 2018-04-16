@@ -1,5 +1,52 @@
 <resources>
     <string name="app_name">Farm Connect</string>
+    <!-- Login Strings -->
+    <string name="login_title">Sign In</string>
+    <string name="login_email">Email Address</string>
+    <string name="login_password">Password</string>
+    <string name="login_loginText">Sign In</string>
+    <string name="login_dividerText">OR</string>
+    <string name="login_signUpText">Sign Up For Account</string>
+    <string name="login_forgotPasswordText">Forgot Password?</string>
+
+    <!-- Sign Up Strings -->
+    <string name="signUp_title">Sign Up</string>
+    <string name="signUp_firstName">First Name</string>
+    <string name="signUp_lastName">Last Name</string>
+    <string name="signUp_number">Number</string>
+    <string name="signUp_email">Email</string>
+    <string name="signUp_password">Password</string>
+    <string name="signUp_answer">Answer</string>
+    <string name="signUp_signUp">Sign Up</string>
+    <string name="signUp_profession">Profession</string>
+    <string name="signUp_organisation">Organisation</string>
+    <string name="Employed">Employed</string>
+    <string name="Unemployed">Unemployed</string>
+    <string name="signUp_dob">Date Of Birth</string>
+    <string name="signUp_code">Access Code</string>
+    <string name="signUp_location">Address</string>
+
+    <!-- Edit User Strings -->
+    <string name="editUser_instructionsText">Edit Your Details</string>
+    <string name="editUser_firstName">First Name</string>
+    <string name="editUser_lastName">Last Name</string>
+    <string name="editText_number">Number</string>
+    <string name="editText_email">Email</string>
+    <string name="editUser_password">Password</string>
+    <string name="editUser_oldPassword">Old Password</string>
+    <string name="editUser_confirmPassword">Confirm Password</string>
+    <string name="editUser_updatePassword">Update Password</string>
+    <string name="editUser_answer">Answer</string>
+    <string name="editUser_updateSecurityCredentials">Update Security Credentials</string>
+
+    <!-- Forgot Password Strings -->
+    <string name="forgotPassword_instruction">Verify Your Security Credentials</string>
+    <string name="forgotPassword_email">Email</string>
+    <string name="forgotPassword_answer">Answer</string>
+    <string name="forgotPassword_verify">Verify</string>
+    <string name="forgotPassword_password">Password</string>
+    <string name="forgotPassword_confirmPassword">Confirm Password</string>
+    <string name="forgotPassword_updatePassword">Update Password</string>
 
     <!-- Home Fragment Strings -->
     <string name="homeNewHeading">New</string>
@@ -25,11 +72,11 @@
     <string name="sign_up">Sign Up</string>
 
     <!-- Navigation Drawer Strings -->
-    <string name="navHome">Home</string>
+    <string name="navHome">News Feeds</string>
     <string name="navMyAccount">My Account</string>
-    <string name="navCategories">Categories</string>
+    <string name="navCategories">Year Groups</string>
     <string name="navFilter">Filter</string>
-    <string name="navMyProducts">My Products</string>
+    <string name="navMyProducts">Members</string>
     <string name="navWishList">My Wish List</string>
     <string name="navLogout">Logout</string>
     <string name="navAddProduct">Add Product</string>
@@ -2925,4 +2972,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next">Next</string>
+
+
 </resources>

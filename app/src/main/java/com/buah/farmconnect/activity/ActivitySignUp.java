@@ -1,5 +1,6 @@
 package com.buah.farmconnect.activity;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,33 +16,40 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.*;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.buah.farmconnect.R;
 import com.buah.farmconnect.WebActivity;
 import com.buah.farmconnect.api.Api;
 import com.buah.farmconnect.api.ApiCall;
 import com.buah.farmconnect.api.Result;
 import com.buah.farmconnect.api.SignUp;
-import com.buah.farmconnect.fragment.FragmentSignUp1;
-import com.buah.farmconnect.fragment.FragmentSignUp2;
-import com.buah.farmconnect.fragment.FragmentSignUp3;
-import com.buah.farmconnect.fragment.FragmentSignUp4;
-import com.buah.farmconnect.fragment.FragmentSignUp5;
-import com.buah.farmconnect.fragment.FragmentSignUp6;
 import com.buah.farmconnect.view.CustomViewPager;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import okhttp3.Response;
+
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 
-public class ActivitySignUp extends AppCompatActivity {
+public class ActivitySignUp extends AppCompatActivity implements View.OnClickListener {
 
-    CustomViewPager mPager;
-    PagerAdapter mPagerAdapter;
     Toolbar mToolbar;
 
     TextInputEditText firstName;
@@ -49,9 +57,37 @@ public class ActivitySignUp extends AppCompatActivity {
     TextInputEditText number;
     TextInputEditText email;
     TextInputEditText password;
+    TextInputEditText dob;
+    TextInputEditText location;
+    TextInputEditText code;
+    TextInputEditText profession;
+    TextInputEditText orgainsation;
     TextInputEditText answer;
     Spinner securityQuestion;
 
+
+    private String mFirstName;
+    private String mLastName;
+    private String mNumber;
+    private String mEmail;
+    private String mPassword;
+    private String mDob;
+    private String mLocation;
+    private String mCode;
+    private String mProfession;
+    private String mOrganisation;
+    private String mStatus = null;
+    private String mCountry;
+    private String mSecurityQuestion;
+    private String mAnswer;
+    private Button buttonSignUp;
+    private RadioGroup radioGender;
+    private DatePickerDialog datePickerDialog;
+
+
+    private Spinner spinner;
+    private String URL="http://techiesatish.com/demo_api/spinner.php";
+    private  ArrayList<String> YearGroupName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,165 +95,195 @@ public class ActivitySignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        /////bind ids
+        bindViews();
+
+        ////Spinner foryear groups
+        YearGroupName=new ArrayList<>();
+        loadSpinnerData(URL);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                mCountry=spinner.getItemAtPosition(spinner.getSelectedItemPosition()).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                String mCountrynull = null;
+            }
+        });
+
+    }
+    private void loadSpinnerData(String url) {
+        RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest=new StringRequest(Request.Method.GET, url, new com.android.volley.Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try{
+                    JSONObject jsonObject=new JSONObject(response);
+                    if(jsonObject.getInt("success")==1){
+                        JSONArray jsonArray=jsonObject.getJSONArray("Name");
+                        for(int i=0;i<jsonArray.length();i++){
+                            JSONObject jsonObject1=jsonArray.getJSONObject(i);
+                            String country=jsonObject1.getString("Country");
+                            YearGroupName.add(country);
+                        }
+                    }
+                    spinner.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, YearGroupName));
+                }catch (JSONException e){e.printStackTrace();}
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        int socketTimeout = 30000;
+        RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+        stringRequest.setRetryPolicy(policy);
+        requestQueue.add(stringRequest);
+    }
+
+    public void SignUp() {
+
+        if (allDataSet()) {
+          if(checkAccessCode()){
+                createAccount();
+          }
+        }
+    }
+
+
+    private boolean allDataSet() {
+
+        mFirstName = firstName.getText().toString().trim();
+        mLastName = lastName.getText().toString().trim();
+        mNumber = number.getText().toString().trim();
+        mEmail = email.getText().toString().trim();
+        mPassword = password.getText().toString().trim();
+        mDob = dob.getText().toString().trim();
+        mLocation= location.getText().toString().trim();
+        mCode = code.getText().toString().trim();
+        mProfession = profession.getText().toString().trim();
+        mOrganisation = orgainsation.getText().toString().trim();
+
+        final RadioButton status = findViewById(radioGender.getCheckedRadioButtonId());
+        if (status != null) {
+           mStatus = status.getText().toString();
+        }
+        //mAnswer = mTextAnswer.getText().toString().trim();
+        //mSecurityQuestion = mSpinSecurityQuestion.getSelectedItem().toString();
+
+        if (TextUtils.isEmpty(mFirstName)) {
+
+            firstName.setError("Enter First Name");
+            return false;
+
+        } else if (TextUtils.isEmpty(mLastName)) {
+
+            lastName.setError("Enter Last Name");
+            return false;
+
+        } else if (TextUtils.isEmpty(mLocation)) {
+
+            location.setError("Enter Location");
+            return false;
+
+        } else if (TextUtils.isEmpty(mNumber)) {
+
+            number.setError("Enter Number");
+            return false;
+
+        } else if (TextUtils.isEmpty(mDob)) {
+
+            dob.setError("Enter Date Of Birth");
+            return false;
+
+        } else if (TextUtils.isEmpty(mEmail)) {
+
+            email.setError("Enter Email Address");
+            return false;
+
+        } else if (TextUtils.isEmpty(mPassword)) {
+
+            password.setError("Enter Your Password");
+            return false;
+
+        } else if (TextUtils.isEmpty(mProfession)) {
+
+            profession.setError("Enter Profession");
+            return false;
+
+        } else if (TextUtils.isEmpty(mOrganisation)) {
+
+            orgainsation.setError("Enter Organisation");
+            return false;
+
+        } else if (TextUtils.isEmpty(mCode)) {
+
+            code.setError("Enter Year Group Access Code");
+            return false;
+
+        } else if (TextUtils.isEmpty(mStatus)) {
+            Toast.makeText(this, "Please Select Employment Status", Toast.LENGTH_SHORT).show();
+            return false;
+
+        } else if (TextUtils.isEmpty(mCountry)) {
+        Toast.makeText(this, "Please Select Year Gruop", Toast.LENGTH_SHORT).show();
+        return false;
+
+//        } else if (mSpinSecurityQuestion.getSelectedItemPosition() == 0) {
+//
+//            showMessage("Select Security Question!");
+//            return false;
+//
+//        } else if (TextUtils.isEmpty(mAnswer)) {
+//
+//            mTextAnswer.setError("Enter Your Answer");
+//            return false;
+
+        } else {
+            return true;
+        }
+
+    }
+
+
+    private void bindViews() {
         mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Sign Up");
-        setSupportActionBar(mToolbar);
+        firstName =findViewById(R.id.signUp_txtFirstName);
+        lastName =findViewById(R.id.signUp_txtLastName);
+        number =findViewById(R.id.signUp_txtNumber);
+        email =findViewById(R.id.signUp_txtEmail);
+        password =findViewById(R.id.signUp_txtPassword);
+        dob =findViewById(R.id.signUp_txtDob);
+        radioGender =findViewById(R.id.signUp_radioEmploymentStatus);
+        spinner=findViewById(R.id.country_Name);
+        location=findViewById(R.id.signUp_txtLocation);
+        code=findViewById(R.id.signUp_txtCode);
+        profession=findViewById(R.id.signUp_txtProfession);
+        orgainsation=findViewById(R.id.signUp_txtOrganisation);
 
-        assert getSupportActionBar() != null;
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
-
-        mPager = findViewById(R.id.sign_Up_viewPager);
-        mPager.setPagingEnabled(false);
-        mPagerAdapter = new SignUpPagerAdapter(getSupportFragmentManager());
-        mPager.setAdapter(mPagerAdapter);
-
-    }
-
-    public void onNextClick1(View view) {
-
-        firstName = findViewById(R.id.signUp1_txtFirstName);
-        lastName = findViewById(R.id.signUp1_txtLastName);
-
-        if (TextUtils.isEmpty(firstName.getText().toString())) {
-
-            firstName.setError("Enter First name");
-
-        } else if (TextUtils.isEmpty(lastName.getText().toString())) {
-
-            lastName.setError("Enter Last name");
-
-        } else {
-
-            SignUp.setFirstName(firstName.getText().toString().trim());
-            SignUp.setLastName(lastName.getText().toString().trim());
-            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
-
-        }
-    }
-
-    public void onNextClick2(View view) {
-
-        number = findViewById(R.id.signUp2_txtNumber);
-
-        if (TextUtils.isEmpty(number.getText().toString())) {
-
-            number.setError("Enter Number!");
-
-        } else {
-
-            SignUp.setNumber(number.getText().toString().trim());
-            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
-
-        }
-
-    }
-
-    public void onNextClick3(View view) {
-
-        email = findViewById(R.id.signUp3_txtEmail);
-
-        if (TextUtils.isEmpty(email.getText().toString())) {
-
-            email.setError("Enter Email!");
-
-        } else {
-
-            SignUp.setEmail(email.getText().toString().trim());
-            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
-
-        }
-    }
-
-    public void onNextClick4(View view) {
-
-        password = findViewById(R.id.signUp4_txtPassword);
-
-        if (TextUtils.isEmpty(password.getText().toString())) {
-
-            password.setError("Enter Password!");
-
-        } else {
-
-            SignUp.setPassword(password.getText().toString().trim());
-            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
-
-        }
-
-    }
-
-    public void onNextClick5(View view) {
-
-        securityQuestion = findViewById(R.id.signUp5_spnSecurityQ);
-        answer = findViewById(R.id.signUp5_txtAnswer);
-
-        int spinner_pos = securityQuestion.getSelectedItemPosition();
-        String[] id_values = getResources().getStringArray(R.array.security_questions_id);
-        int securityQuestion_Id = Integer.valueOf(id_values[spinner_pos]);
-
-        if (securityQuestion_Id == 0) {
-
-            Snackbar.make(
-                    findViewById(R.id.forgotPassword1_rootLayout),
-                    "Please Select A Security Question!",
-                    Snackbar.LENGTH_LONG
-            ).show();
-
-        } else if (TextUtils.isEmpty(answer.getText().toString())) {
-
-            answer.setError("Enter An Answer!");
-
-        } else {
-
-            SignUp.setSecurityQuestion_id(String.valueOf(securityQuestion_Id));
-            SignUp.setAnswer(answer.getText().toString().trim());
-
-            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
-
-        }
-
-    }
-
-    public void onTermsOfUseClick(View view) {
-
-        Intent terms_of_use_intent = new Intent(this, WebActivity.class);
-        startActivity(terms_of_use_intent);
-
-    }
-
-    public void onPreviousClick(View view) {
-
-        ViewGroup layPrevious = findViewById(R.id.signUp_layPrevious);
-        layPrevious.setVisibility(View.VISIBLE);
-        mPager.setCurrentItem(mPager.getCurrentItem() - 1);
+        buttonSignUp = findViewById(R.id.signUp_btnSignUp);
+        buttonSignUp.setOnClickListener(this);
 
     }
 
 
-    public void onSignUpClick(View view) {
-
+    private boolean checkAccessCode() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Signing Up...");
+        progressDialog.setMessage("Authenticating Access Code...");
+        progressDialog.setCancelable(false);
         progressDialog.show();
-
-        String fullname = SignUp.getFullName();
-        String email = SignUp.getEmail();
-        String contact = SignUp.getNumber();
-        String password = SignUp.getPassword();
-
-        String answer = SignUp.getAnswer();
-        String securityQuestion_Id = SignUp.getSecurityQuestion_id();
 
         Api api = new Api();
         ApiCall service = api.getRetro().create(ApiCall.class);
-        Call<Result> call = service.userSignup(fullname, email, password, contact, securityQuestion_Id, answer);
+        Call<Result> call = service.userSignup();
 
 
         call.enqueue(new Callback<Result>() {
 
             @Override
-            public void onResponse(@NonNull Call<Result> call, @NonNull Response<Result> response) {
+            public void onResponse(@NonNull Call<Result> call, @NonNull retrofit2.Response<Result> response) {
                 progressDialog.dismiss();
 
                 if (response.body() != null) {
@@ -246,54 +312,60 @@ public class ActivitySignUp extends AppCompatActivity {
             }
 
         });
+        return true;
+    }
+
+    private void createAccount() {
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Creating Account...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+
+        Api api = new Api();
+        ApiCall service = api.getRetro().create(ApiCall.class);
+        Call<Result> call = service.userSignup();
 
 
+        call.enqueue(new Callback<Result>() {
+
+            @Override
+            public void onResponse(@NonNull Call<Result> call, @NonNull retrofit2.Response<Result> response) {
+                progressDialog.dismiss();
+
+                if (response.body() != null) {
+
+                    if (!response.body().getError()) {
+
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+
+                        Intent intent = new Intent(getBaseContext(), ActivityLogin.class);
+                        startActivity(intent);
+                        finish();
+
+                    } else {
+
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Result> call, @NonNull Throwable t) {
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+
+            }
+
+        });
     }
 
     @Override
-    public void onBackPressed() {
-
-        if (mPager.getCurrentItem() == 0) {
-
-            super.onBackPressed();
-
-        } else {
-
-            mPager.setCurrentItem(mPager.getCurrentItem() - 1);
-
-        }
-
-    }
-
-    private class SignUpPagerAdapter extends FragmentStatePagerAdapter {
-
-        ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
-
-        SignUpPagerAdapter(FragmentManager fm) {
-
-            super(fm);
-            fragmentArrayList.add(new FragmentSignUp1());
-            fragmentArrayList.add(new FragmentSignUp2());
-            fragmentArrayList.add(new FragmentSignUp3());
-            fragmentArrayList.add(new FragmentSignUp4());
-            fragmentArrayList.add(new FragmentSignUp5());
-            fragmentArrayList.add(new FragmentSignUp6());
-
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-
-            return fragmentArrayList.get(position);
-
-        }
-
-
-        @Override
-        public int getCount() {
-
-            return fragmentArrayList.size();
-
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.signUp_btnSignUp:
+                SignUp();
+                break;
         }
     }
 }

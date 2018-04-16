@@ -51,12 +51,7 @@ public interface ApiCall {
 
     @FormUrlEncoded
     @POST("usersignup.php")
-    Call<Result> userSignup(@Field("fullname") String fullname,
-                            @Field("email") String email,
-                            @Field("password") String password,
-                            @Field("contact") String contact,
-                            @Field("question") String question,
-                            @Field("answer") String answer);
+    Call<Result> userSignup();
     @Multipart
     @POST("uploadproduct.php")
     Call<Result> uploadMulFile( @Part("userid") RequestBody id,

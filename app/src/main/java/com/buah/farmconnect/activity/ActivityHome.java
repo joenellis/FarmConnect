@@ -26,6 +26,9 @@ import com.buah.farmconnect.fragment.FragmentMore;
 import com.buah.farmconnect.fragment.FragmentMyProduct;
 import com.buah.farmconnect.object.ObjectUser;
 import com.buah.farmconnect.session.SharedPrefManager;
+import com.bumptech.glide.Glide;
+import com.github.clans.fab.FloatingActionMenu;
+import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -45,6 +48,8 @@ public class ActivityHome extends AppCompatActivity {
     ActionBarDrawerToggle mDrawerToggle;
     private FragmentManager mFragmentManager;
     private Fragment mCurrentFragment;
+    FloatingActionMenu materialDesignFAM;
+    com.github.clans.fab.FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3, floatingActionButton4;
 
 
     @Override
@@ -79,6 +84,39 @@ public class ActivityHome extends AppCompatActivity {
 
         }
 
+        ////////////////////fabclan_again
+        materialDesignFAM = findViewById(R.id.material_design_android_floating_action_menu);
+        floatingActionButton1 = findViewById(R.id.material_design_floating_action_menu_item1);
+        floatingActionButton2 = findViewById(R.id.material_design_floating_action_menu_item2);
+        floatingActionButton3 = findViewById(R.id.material_design_floating_action_menu_item3);
+        floatingActionButton4 = findViewById(R.id.material_design_floating_action_menu_item4);
+
+        floatingActionButton1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //startActivity(new Intent(getApplicationContext(), MtnPayActivity.class));
+            }
+        });
+        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+               // startActivity(new Intent(getApplicationContext(), TigoPayActivity.class));
+
+            }
+        });
+        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+               // startActivity(new Intent(getApplicationContext(), AirtelPayActivity.class));
+
+            }
+        });
+        floatingActionButton4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu second item clicked
+
+            }
+        });
+        //String imageurl = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getImage;
+        //Glide.with(getApplicationContext()).load(imageurl).into(profilepic);
+        /////////////////
 
         String fullName = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getFullname();
         String email = SharedPrefManager.getInstance(getApplicationContext()).getobjectUser().getEmail();
@@ -137,7 +175,7 @@ public class ActivityHome extends AppCompatActivity {
         FragmentHome fragmentHome = new FragmentHome();
 
         switch (TAG) {
-            case "Home":
+            case "News Feeds":
                 mFragmentManager
                         .beginTransaction()
                         .replace(R.id.homeLayout, fragmentHome, TAG)
@@ -148,7 +186,7 @@ public class ActivityHome extends AppCompatActivity {
                 break;
 
 
-            case "Category":
+            case "Year Groups":
                 FragmentCategory fragmentCategory = new FragmentCategory();
                 mFragmentManager
                         .beginTransaction()
@@ -159,20 +197,20 @@ public class ActivityHome extends AppCompatActivity {
                 mCurrentFragment = fragmentCategory;
                 break;
 
+//
+//            case "More":
+//                FragmentMore fragmentMore = new FragmentMore();
+//                mFragmentManager
+//                        .beginTransaction()
+//                        .replace(R.id.homeLayout, fragmentMore, TAG)
+//                        .commit();
+//
+//                mToolbar.setTitle(TAG);
+//                mCurrentFragment = fragmentMore;
+//                break;
 
-            case "More":
-                FragmentMore fragmentMore = new FragmentMore();
-                mFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.homeLayout, fragmentMore, TAG)
-                        .commit();
 
-                mToolbar.setTitle(TAG);
-                mCurrentFragment = fragmentMore;
-                break;
-
-
-            case "MyProduct":
+            case "Members":
                 FragmentMyProduct fragmentMyProduct = new FragmentMyProduct();
                 mFragmentManager
                         .beginTransaction()
@@ -203,15 +241,15 @@ public class ActivityHome extends AppCompatActivity {
         switch (itemId) {
 
             case R.id.nav_item_home:
-                setHomeFragment("Home");
+                setHomeFragment("News Feeds");
                 break;
 
             case R.id.nav_item_products:
-                setHomeFragment("MyProduct");
+                setHomeFragment("Members");
                 break;
 
             case R.id.nav_item_category:
-                setHomeFragment("Category");
+                setHomeFragment("Year Groups");
                 break;
 
             case R.id.nav_item_account:
@@ -243,34 +281,7 @@ public class ActivityHome extends AppCompatActivity {
 
 
     public void onAddProductClick(View view) {
-
-        if (SharedPrefManager.getInstance(getApplicationContext()).isLoggedIn()) {
-
             gotoActivity(new ActivityAddProduct());
-
-        } else {
-
-            Snackbar.make(
-                    findViewById(R.id.homeAppBar_rootLayout),
-                    "Sign In To Complete This Action.",
-                    Snackbar.LENGTH_LONG
-
-            ).setAction(
-                    R.string.title_activity_login,
-                    new View.OnClickListener() {
-
-                        @Override
-                        public void onClick(View view) {
-
-                            gotoActivity(new ActivityLogin());
-
-                        }
-
-                    }
-
-            ).show();
-
-        }
     }
 
 
@@ -278,7 +289,7 @@ public class ActivityHome extends AppCompatActivity {
 
         SharedPrefManager.getInstance(this).logout();
         finish();
-        gotoActivity(new ActivityHome());
+        gotoActivity(new ActivityLogin());
 
     }
 
@@ -287,7 +298,6 @@ public class ActivityHome extends AppCompatActivity {
 
         user = new ObjectUser();
         mToolbar = findViewById(R.id.toolbar);
-        fab = findViewById(R.id.homeAppBar_fab);
         mDrawerLayout = findViewById(R.id.drawerLayout);
         mFragmentManager = getSupportFragmentManager();
         mNavigationView = findViewById(R.id.navigationView);
@@ -301,7 +311,7 @@ public class ActivityHome extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (mFragmentManager.findFragmentByTag("Home") == mCurrentFragment) {
+        if (mFragmentManager.findFragmentByTag("News Feeds") == mCurrentFragment) {
 
             this.finishAffinity();
 

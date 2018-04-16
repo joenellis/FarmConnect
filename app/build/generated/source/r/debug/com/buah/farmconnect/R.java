@@ -19,12 +19,18 @@ public final class R {
     public static final int abc_slide_in_top=0x7f010007;
     public static final int abc_slide_out_bottom=0x7f010008;
     public static final int abc_slide_out_top=0x7f010009;
-    public static final int design_bottom_sheet_slide_in=0x7f01000a;
-    public static final int design_bottom_sheet_slide_out=0x7f01000b;
-    public static final int design_snackbar_in=0x7f01000c;
-    public static final int design_snackbar_out=0x7f01000d;
-    public static final int tooltip_enter=0x7f01000e;
-    public static final int tooltip_exit=0x7f01000f;
+    public static final int abc_tooltip_enter=0x7f01000a;
+    public static final int abc_tooltip_exit=0x7f01000b;
+    public static final int design_bottom_sheet_slide_in=0x7f01000c;
+    public static final int design_bottom_sheet_slide_out=0x7f01000d;
+    public static final int design_snackbar_in=0x7f01000e;
+    public static final int design_snackbar_out=0x7f01000f;
+    public static final int fab_scale_down=0x7f010010;
+    public static final int fab_scale_up=0x7f010011;
+    public static final int fab_slide_in_from_left=0x7f010012;
+    public static final int fab_slide_in_from_right=0x7f010013;
+    public static final int fab_slide_out_to_left=0x7f010014;
+    public static final int fab_slide_out_to_right=0x7f010015;
   }
   public static final class animator {
     public static final int design_appbar_state_list_animator=0x7f020000;
@@ -574,12 +580,20 @@ public final class R {
      */
     public static final int buttonGravity=0x7f040045;
     /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int buttonIconDimen=0x7f040046;
+    /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int buttonPanelSideLayout=0x7f040046;
+    public static final int buttonPanelSideLayout=0x7f040047;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -596,27 +610,27 @@ public final class R {
      * <tr><td>wide</td><td>1</td><td></td></tr>
      * </table>
      */
-    public static final int buttonSize=0x7f040047;
+    public static final int buttonSize=0x7f040048;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int buttonStyle=0x7f040048;
+    public static final int buttonStyle=0x7f040049;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int buttonStyleSmall=0x7f040049;
+    public static final int buttonStyleSmall=0x7f04004a;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int buttonTint=0x7f04004a;
+    public static final int buttonTint=0x7f04004b;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -632,13 +646,13 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      */
-    public static final int buttonTintMode=0x7f04004b;
+    public static final int buttonTintMode=0x7f04004c;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int cardBackgroundColor=0x7f04004c;
+    public static final int cardBackgroundColor=0x7f04004d;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -646,7 +660,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int cardCornerRadius=0x7f04004d;
+    public static final int cardCornerRadius=0x7f04004e;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -654,7 +668,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int cardElevation=0x7f04004e;
+    public static final int cardElevation=0x7f04004f;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -662,47 +676,54 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int cardMaxElevation=0x7f04004f;
+    public static final int cardMaxElevation=0x7f040050;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int cardPreventCornerOverlap=0x7f040050;
+    public static final int cardPreventCornerOverlap=0x7f040051;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int cardUseCompatPadding=0x7f040051;
+    public static final int cardUseCompatPadding=0x7f040052;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int checkboxStyle=0x7f040052;
+    public static final int cardViewStyle=0x7f040053;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int checkedTextViewStyle=0x7f040053;
+    public static final int checkboxStyle=0x7f040054;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int checkedTextViewStyle=0x7f040055;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int circleCrop=0x7f040054;
+    public static final int circleCrop=0x7f040056;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int civ_border_color=0x7f040055;
+    public static final int civ_border_color=0x7f040057;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int civ_border_overlay=0x7f040056;
+    public static final int civ_border_overlay=0x7f040058;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -710,45 +731,45 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int civ_border_width=0x7f040057;
+    public static final int civ_border_width=0x7f040059;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int civ_circle_background_color=0x7f040058;
+    public static final int civ_circle_background_color=0x7f04005a;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int civ_fill_color=0x7f040059;
+    public static final int civ_fill_color=0x7f04005b;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int closeIcon=0x7f04005a;
+    public static final int closeIcon=0x7f04005c;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int closeItemLayout=0x7f04005b;
+    public static final int closeItemLayout=0x7f04005d;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int collapseContentDescription=0x7f04005c;
+    public static final int collapseContentDescription=0x7f04005e;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int collapseIcon=0x7f04005d;
+    public static final int collapseIcon=0x7f04005f;
     /**
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
      * <table>
@@ -768,56 +789,56 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      */
-    public static final int collapsedTitleGravity=0x7f04005e;
+    public static final int collapsedTitleGravity=0x7f040060;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int collapsedTitleTextAppearance=0x7f04005f;
+    public static final int collapsedTitleTextAppearance=0x7f040061;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int color=0x7f040060;
+    public static final int color=0x7f040062;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int colorAccent=0x7f040061;
+    public static final int colorAccent=0x7f040063;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int colorBackgroundFloating=0x7f040062;
+    public static final int colorBackgroundFloating=0x7f040064;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int colorButtonNormal=0x7f040063;
+    public static final int colorButtonNormal=0x7f040065;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int colorControlActivated=0x7f040064;
+    public static final int colorControlActivated=0x7f040066;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int colorControlHighlight=0x7f040065;
+    public static final int colorControlHighlight=0x7f040067;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int colorControlNormal=0x7f040066;
+    public static final int colorControlNormal=0x7f040068;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -827,19 +848,19 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int colorError=0x7f040067;
+    public static final int colorError=0x7f040069;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int colorPrimary=0x7f040068;
+    public static final int colorPrimary=0x7f04006a;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int colorPrimaryDark=0x7f040069;
+    public static final int colorPrimaryDark=0x7f04006b;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -856,32 +877,32 @@ public final class R {
      * <tr><td>light</td><td>1</td><td></td></tr>
      * </table>
      */
-    public static final int colorScheme=0x7f04006a;
+    public static final int colorScheme=0x7f04006c;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int colorSwitchThumbNormal=0x7f04006b;
+    public static final int colorSwitchThumbNormal=0x7f04006d;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int commitIcon=0x7f04006c;
+    public static final int commitIcon=0x7f04006e;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int constraintSet=0x7f04006d;
+    public static final int constraintSet=0x7f04006f;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int contentDescription=0x7f04006e;
+    public static final int contentDescription=0x7f040070;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -889,7 +910,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int contentInsetEnd=0x7f04006f;
+    public static final int contentInsetEnd=0x7f040071;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -897,7 +918,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int contentInsetEndWithActions=0x7f040070;
+    public static final int contentInsetEndWithActions=0x7f040072;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -905,7 +926,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int contentInsetLeft=0x7f040071;
+    public static final int contentInsetLeft=0x7f040073;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -913,7 +934,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int contentInsetRight=0x7f040072;
+    public static final int contentInsetRight=0x7f040074;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -921,7 +942,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int contentInsetStart=0x7f040073;
+    public static final int contentInsetStart=0x7f040075;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -929,7 +950,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int contentInsetStartWithNavigation=0x7f040074;
+    public static final int contentInsetStartWithNavigation=0x7f040076;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -937,7 +958,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int contentPadding=0x7f040075;
+    public static final int contentPadding=0x7f040077;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -945,7 +966,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int contentPaddingBottom=0x7f040076;
+    public static final int contentPaddingBottom=0x7f040078;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -953,7 +974,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int contentPaddingLeft=0x7f040077;
+    public static final int contentPaddingLeft=0x7f040079;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -961,7 +982,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int contentPaddingRight=0x7f040078;
+    public static final int contentPaddingRight=0x7f04007a;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -969,55 +990,62 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int contentPaddingTop=0x7f040079;
+    public static final int contentPaddingTop=0x7f04007b;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int contentScrim=0x7f04007a;
+    public static final int contentScrim=0x7f04007c;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int controlBackground=0x7f04007b;
+    public static final int controlBackground=0x7f04007d;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int coordinatorLayoutStyle=0x7f04007e;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int counterEnabled=0x7f04007c;
+    public static final int counterEnabled=0x7f04007f;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int counterMaxLength=0x7f04007d;
+    public static final int counterMaxLength=0x7f040080;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int counterOverflowTextAppearance=0x7f04007e;
+    public static final int counterOverflowTextAppearance=0x7f040081;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int counterTextAppearance=0x7f04007f;
+    public static final int counterTextAppearance=0x7f040082;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int customNavigationLayout=0x7f040080;
+    public static final int customNavigationLayout=0x7f040083;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int defaultQueryHint=0x7f040081;
+    public static final int defaultQueryHint=0x7f040084;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1025,14 +1053,14 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int dialogPreferredPadding=0x7f040082;
+    public static final int dialogPreferredPadding=0x7f040085;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int dialogTheme=0x7f040083;
+    public static final int dialogTheme=0x7f040086;
     /**
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
      * <table>
@@ -1049,21 +1077,21 @@ public final class R {
      * <tr><td>useLogo</td><td>1</td><td></td></tr>
      * </table>
      */
-    public static final int displayOptions=0x7f040084;
+    public static final int displayOptions=0x7f040087;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int divider=0x7f040085;
+    public static final int divider=0x7f040088;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int dividerHorizontal=0x7f040086;
+    public static final int dividerHorizontal=0x7f040089;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1071,14 +1099,14 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int dividerPadding=0x7f040087;
+    public static final int dividerPadding=0x7f04008a;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int dividerVertical=0x7f040088;
+    public static final int dividerVertical=0x7f04008b;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1086,21 +1114,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int drawableSize=0x7f040089;
+    public static final int drawableSize=0x7f04008c;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int drawerArrowStyle=0x7f04008a;
+    public static final int drawerArrowStyle=0x7f04008d;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int dropDownListViewStyle=0x7f04008b;
+    public static final int dropDownListViewStyle=0x7f04008e;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1108,14 +1136,14 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int dropdownListPreferredItemHeight=0x7f04008c;
+    public static final int dropdownListPreferredItemHeight=0x7f04008f;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int editTextBackground=0x7f04008d;
+    public static final int editTextBackground=0x7f040090;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1125,14 +1153,14 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int editTextColor=0x7f04008e;
+    public static final int editTextColor=0x7f040091;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int editTextStyle=0x7f04008f;
+    public static final int editTextStyle=0x7f040092;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1140,31 +1168,31 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int elevation=0x7f040090;
+    public static final int elevation=0x7f040093;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int errorEnabled=0x7f040091;
+    public static final int errorEnabled=0x7f040094;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int errorTextAppearance=0x7f040092;
+    public static final int errorTextAppearance=0x7f040095;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int expandActivityOverflowButtonDrawable=0x7f040093;
+    public static final int expandActivityOverflowButtonDrawable=0x7f040096;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int expanded=0x7f040094;
+    public static final int expanded=0x7f040097;
     /**
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
      * <table>
@@ -1184,7 +1212,7 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      */
-    public static final int expandedTitleGravity=0x7f040095;
+    public static final int expandedTitleGravity=0x7f040098;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1192,7 +1220,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int expandedTitleMargin=0x7f040096;
+    public static final int expandedTitleMargin=0x7f040099;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1200,7 +1228,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int expandedTitleMarginBottom=0x7f040097;
+    public static final int expandedTitleMarginBottom=0x7f04009a;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1208,7 +1236,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int expandedTitleMarginEnd=0x7f040098;
+    public static final int expandedTitleMarginEnd=0x7f04009b;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1216,7 +1244,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int expandedTitleMarginStart=0x7f040099;
+    public static final int expandedTitleMarginStart=0x7f04009c;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1224,14 +1252,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int expandedTitleMarginTop=0x7f04009a;
+    public static final int expandedTitleMarginTop=0x7f04009d;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int expandedTitleTextAppearance=0x7f04009b;
+    public static final int expandedTitleTextAppearance=0x7f04009e;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int fabCustomSize=0x7f04009f;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1244,40 +1280,87 @@ public final class R {
      * <tr><td>normal</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int fabSize=0x7f04009c;
+    public static final int fabSize=0x7f0400a0;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int fab_colorDisabled=0x7f0400a1;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int fab_colorNormal=0x7f0400a2;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int fab_colorPressed=0x7f0400a3;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int fab_colorRipple=0x7f0400a4;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int fab_elevationCompat=0x7f0400a5;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int fab_hideAnimation=0x7f0400a6;
+    /**
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     */
+    public static final int fab_label=0x7f0400a7;
+    /**
+     * <p>May be an integer value, such as "<code>100</code>".
+     */
+    public static final int fab_progress=0x7f0400a8;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int fab_progress_backgroundColor=0x7f0400a9;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int fab_progress_color=0x7f0400aa;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int fastScrollEnabled=0x7f04009d;
+    public static final int fab_progress_indeterminate=0x7f0400ab;
     /**
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int fastScrollHorizontalThumbDrawable=0x7f04009e;
+    public static final int fab_progress_max=0x7f0400ac;
     /**
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
      */
-    public static final int fastScrollHorizontalTrackDrawable=0x7f04009f;
+    public static final int fab_progress_showBackground=0x7f0400ad;
     /**
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int fastScrollVerticalThumbDrawable=0x7f0400a0;
-    /**
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     */
-    public static final int fastScrollVerticalTrackDrawable=0x7f0400a1;
+    public static final int fab_shadowColor=0x7f0400ae;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1285,7 +1368,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int finalHeight=0x7f0400a2;
+    public static final int fab_shadowRadius=0x7f0400af;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1293,31 +1376,112 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int finalYPosition=0x7f0400a3;
+    public static final int fab_shadowXOffset=0x7f0400b0;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int fab_shadowYOffset=0x7f0400b1;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int font=0x7f0400a4;
+    public static final int fab_showAnimation=0x7f0400b2;
     /**
-     * <p>May be a string value, using '\\;' to escape characters such as
-     * '\\n' or '\\uxxxx' for a unicode character;
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
      */
-    public static final int fontFamily=0x7f0400a5;
+    public static final int fab_showShadow=0x7f0400b3;
     /**
-     * <p>May be a string value, using '\\;' to escape characters such as
-     * '\\n' or '\\uxxxx' for a unicode character;
+     * <p>Must be one of the following constant values.</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+     * <tr><td>mini</td><td>1</td><td></td></tr>
+     * <tr><td>normal</td><td>0</td><td></td></tr>
+     * </table>
      */
-    public static final int fontProviderAuthority=0x7f0400a6;
+    public static final int fab_size=0x7f0400b4;
+    /**
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
+     */
+    public static final int fastScrollEnabled=0x7f0400b5;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int fontProviderCerts=0x7f0400a7;
+    public static final int fastScrollHorizontalThumbDrawable=0x7f0400b6;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int fastScrollHorizontalTrackDrawable=0x7f0400b7;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int fastScrollVerticalThumbDrawable=0x7f0400b8;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int fastScrollVerticalTrackDrawable=0x7f0400b9;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int finalHeight=0x7f0400ba;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int finalYPosition=0x7f0400bb;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int font=0x7f0400bc;
+    /**
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     */
+    public static final int fontFamily=0x7f0400bd;
+    /**
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     */
+    public static final int fontProviderAuthority=0x7f0400be;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int fontProviderCerts=0x7f0400bf;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1329,7 +1493,7 @@ public final class R {
      * <tr><td>blocking</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int fontProviderFetchStrategy=0x7f0400a8;
+    public static final int fontProviderFetchStrategy=0x7f0400c0;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      * <p>Must be one of the following constant values.</p>
@@ -1341,17 +1505,17 @@ public final class R {
      * <tr><td>forever</td><td>ffffffff</td><td></td></tr>
      * </table>
      */
-    public static final int fontProviderFetchTimeout=0x7f0400a9;
+    public static final int fontProviderFetchTimeout=0x7f0400c1;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontProviderPackage=0x7f0400aa;
+    public static final int fontProviderPackage=0x7f0400c2;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontProviderQuery=0x7f0400ab;
+    public static final int fontProviderQuery=0x7f0400c3;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1363,16 +1527,16 @@ public final class R {
      * <tr><td>normal</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int fontStyle=0x7f0400ac;
+    public static final int fontStyle=0x7f0400c4;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int fontWeight=0x7f0400ad;
+    public static final int fontWeight=0x7f0400c5;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int foregroundInsidePadding=0x7f0400ae;
+    public static final int foregroundInsidePadding=0x7f0400c6;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1380,21 +1544,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int gapBetweenBars=0x7f0400af;
+    public static final int gapBetweenBars=0x7f0400c7;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int goIcon=0x7f0400b0;
+    public static final int goIcon=0x7f0400c8;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int headerLayout=0x7f0400b1;
+    public static final int headerLayout=0x7f0400c9;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1402,56 +1566,56 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int height=0x7f0400b2;
+    public static final int height=0x7f0400ca;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int hideOnContentScroll=0x7f0400b3;
+    public static final int hideOnContentScroll=0x7f0400cb;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int hintAnimationEnabled=0x7f0400b4;
+    public static final int hintAnimationEnabled=0x7f0400cc;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int hintEnabled=0x7f0400b5;
+    public static final int hintEnabled=0x7f0400cd;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int hintTextAppearance=0x7f0400b6;
+    public static final int hintTextAppearance=0x7f0400ce;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int homeAsUpIndicator=0x7f0400b7;
+    public static final int homeAsUpIndicator=0x7f0400cf;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int homeLayout=0x7f0400b8;
+    public static final int homeLayout=0x7f0400d0;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int icon=0x7f0400b9;
+    public static final int icon=0x7f0400d1;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int iconTint=0x7f0400ba;
+    public static final int iconTint=0x7f0400d2;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1467,16 +1631,16 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      */
-    public static final int iconTintMode=0x7f0400bb;
+    public static final int iconTintMode=0x7f0400d3;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int iconifiedByDefault=0x7f0400bc;
+    public static final int iconifiedByDefault=0x7f0400d4;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int imageAspectRatio=0x7f0400bd;
+    public static final int imageAspectRatio=0x7f0400d5;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1489,26 +1653,26 @@ public final class R {
      * <tr><td>none</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int imageAspectRatioAdjust=0x7f0400be;
+    public static final int imageAspectRatioAdjust=0x7f0400d6;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int imageButtonStyle=0x7f0400bf;
+    public static final int imageButtonStyle=0x7f0400d7;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int indeterminateProgressStyle=0x7f0400c0;
+    public static final int indeterminateProgressStyle=0x7f0400d8;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int initialActivityCount=0x7f0400c1;
+    public static final int initialActivityCount=0x7f0400d9;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1518,25 +1682,25 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int insetForeground=0x7f0400c2;
+    public static final int insetForeground=0x7f0400da;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int isLightTheme=0x7f0400c3;
+    public static final int isLightTheme=0x7f0400db;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int itemBackground=0x7f0400c4;
+    public static final int itemBackground=0x7f0400dc;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int itemIconTint=0x7f0400c5;
+    public static final int itemIconTint=0x7f0400dd;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1544,46 +1708,46 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int itemPadding=0x7f0400c6;
+    public static final int itemPadding=0x7f0400de;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int itemTextAppearance=0x7f0400c7;
+    public static final int itemTextAppearance=0x7f0400df;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int itemTextColor=0x7f0400c8;
+    public static final int itemTextColor=0x7f0400e0;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int keylines=0x7f0400c9;
+    public static final int keylines=0x7f0400e1;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int layout=0x7f0400ca;
+    public static final int layout=0x7f0400e2;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int layoutManager=0x7f0400cb;
+    public static final int layoutManager=0x7f0400e3;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int layout_anchor=0x7f0400cc;
+    public static final int layout_anchor=0x7f0400e4;
     /**
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
      * <table>
@@ -1607,12 +1771,12 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      */
-    public static final int layout_anchorGravity=0x7f0400cd;
+    public static final int layout_anchorGravity=0x7f0400e5;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int layout_behavior=0x7f0400ce;
+    public static final int layout_behavior=0x7f0400e6;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1625,15 +1789,15 @@ public final class R {
      * <tr><td>pin</td><td>1</td><td></td></tr>
      * </table>
      */
-    public static final int layout_collapseMode=0x7f0400cf;
+    public static final int layout_collapseMode=0x7f0400e7;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int layout_collapseParallaxMultiplier=0x7f0400d0;
+    public static final int layout_collapseParallaxMultiplier=0x7f0400e8;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int layout_constraintBaseline_creator=0x7f0400d1;
+    public static final int layout_constraintBaseline_creator=0x7f0400e9;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1648,11 +1812,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintBaseline_toBaselineOf=0x7f0400d2;
+    public static final int layout_constraintBaseline_toBaselineOf=0x7f0400ea;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int layout_constraintBottom_creator=0x7f0400d3;
+    public static final int layout_constraintBottom_creator=0x7f0400eb;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1667,7 +1831,7 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintBottom_toBottomOf=0x7f0400d4;
+    public static final int layout_constraintBottom_toBottomOf=0x7f0400ec;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1682,12 +1846,12 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintBottom_toTopOf=0x7f0400d5;
+    public static final int layout_constraintBottom_toTopOf=0x7f0400ed;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int layout_constraintDimensionRatio=0x7f0400d6;
+    public static final int layout_constraintDimensionRatio=0x7f0400ee;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1702,7 +1866,7 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintEnd_toEndOf=0x7f0400d7;
+    public static final int layout_constraintEnd_toEndOf=0x7f0400ef;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1717,7 +1881,7 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintEnd_toStartOf=0x7f0400d8;
+    public static final int layout_constraintEnd_toStartOf=0x7f0400f0;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1725,7 +1889,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_constraintGuide_begin=0x7f0400d9;
+    public static final int layout_constraintGuide_begin=0x7f0400f1;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1733,11 +1897,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_constraintGuide_end=0x7f0400da;
+    public static final int layout_constraintGuide_end=0x7f0400f2;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int layout_constraintGuide_percent=0x7f0400db;
+    public static final int layout_constraintGuide_percent=0x7f0400f3;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1749,7 +1913,7 @@ public final class R {
      * <tr><td>wrap</td><td>1</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintHeight_default=0x7f0400dc;
+    public static final int layout_constraintHeight_default=0x7f0400f4;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1757,7 +1921,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_constraintHeight_max=0x7f0400dd;
+    public static final int layout_constraintHeight_max=0x7f0400f5;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1765,11 +1929,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_constraintHeight_min=0x7f0400de;
+    public static final int layout_constraintHeight_min=0x7f0400f6;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int layout_constraintHorizontal_bias=0x7f0400df;
+    public static final int layout_constraintHorizontal_bias=0x7f0400f7;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1782,15 +1946,15 @@ public final class R {
      * <tr><td>spread_inside</td><td>1</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintHorizontal_chainStyle=0x7f0400e0;
+    public static final int layout_constraintHorizontal_chainStyle=0x7f0400f8;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int layout_constraintHorizontal_weight=0x7f0400e1;
+    public static final int layout_constraintHorizontal_weight=0x7f0400f9;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int layout_constraintLeft_creator=0x7f0400e2;
+    public static final int layout_constraintLeft_creator=0x7f0400fa;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1805,7 +1969,7 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintLeft_toLeftOf=0x7f0400e3;
+    public static final int layout_constraintLeft_toLeftOf=0x7f0400fb;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1820,11 +1984,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintLeft_toRightOf=0x7f0400e4;
+    public static final int layout_constraintLeft_toRightOf=0x7f0400fc;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int layout_constraintRight_creator=0x7f0400e5;
+    public static final int layout_constraintRight_creator=0x7f0400fd;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1839,7 +2003,7 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintRight_toLeftOf=0x7f0400e6;
+    public static final int layout_constraintRight_toLeftOf=0x7f0400fe;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1854,7 +2018,7 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintRight_toRightOf=0x7f0400e7;
+    public static final int layout_constraintRight_toRightOf=0x7f0400ff;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1869,7 +2033,7 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintStart_toEndOf=0x7f0400e8;
+    public static final int layout_constraintStart_toEndOf=0x7f040100;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1884,11 +2048,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintStart_toStartOf=0x7f0400e9;
+    public static final int layout_constraintStart_toStartOf=0x7f040101;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int layout_constraintTop_creator=0x7f0400ea;
+    public static final int layout_constraintTop_creator=0x7f040102;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1903,7 +2067,7 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintTop_toBottomOf=0x7f0400eb;
+    public static final int layout_constraintTop_toBottomOf=0x7f040103;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1918,11 +2082,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintTop_toTopOf=0x7f0400ec;
+    public static final int layout_constraintTop_toTopOf=0x7f040104;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int layout_constraintVertical_bias=0x7f0400ed;
+    public static final int layout_constraintVertical_bias=0x7f040105;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1935,11 +2099,11 @@ public final class R {
      * <tr><td>spread_inside</td><td>1</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintVertical_chainStyle=0x7f0400ee;
+    public static final int layout_constraintVertical_chainStyle=0x7f040106;
     /**
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int layout_constraintVertical_weight=0x7f0400ef;
+    public static final int layout_constraintVertical_weight=0x7f040107;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1951,7 +2115,7 @@ public final class R {
      * <tr><td>wrap</td><td>1</td><td></td></tr>
      * </table>
      */
-    public static final int layout_constraintWidth_default=0x7f0400f0;
+    public static final int layout_constraintWidth_default=0x7f040108;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1959,7 +2123,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_constraintWidth_max=0x7f0400f1;
+    public static final int layout_constraintWidth_max=0x7f040109;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1967,7 +2131,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_constraintWidth_min=0x7f0400f2;
+    public static final int layout_constraintWidth_min=0x7f04010a;
     /**
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
      * <table>
@@ -1980,12 +2144,12 @@ public final class R {
      * <tr><td>end</td><td>800005</td><td></td></tr>
      * <tr><td>left</td><td>3</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
-     * <tr><td>right</td><td>3</td><td></td></tr>
+     * <tr><td>right</td><td>5</td><td></td></tr>
      * <tr><td>start</td><td>800003</td><td></td></tr>
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      */
-    public static final int layout_dodgeInsetEdges=0x7f0400f3;
+    public static final int layout_dodgeInsetEdges=0x7f04010b;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1993,7 +2157,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_editor_absoluteX=0x7f0400f4;
+    public static final int layout_editor_absoluteX=0x7f04010c;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2001,7 +2165,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_editor_absoluteY=0x7f0400f5;
+    public static final int layout_editor_absoluteY=0x7f04010d;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2009,7 +2173,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_goneMarginBottom=0x7f0400f6;
+    public static final int layout_goneMarginBottom=0x7f04010e;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2017,7 +2181,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_goneMarginEnd=0x7f0400f7;
+    public static final int layout_goneMarginEnd=0x7f04010f;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2025,7 +2189,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_goneMarginLeft=0x7f0400f8;
+    public static final int layout_goneMarginLeft=0x7f040110;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2033,7 +2197,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_goneMarginRight=0x7f0400f9;
+    public static final int layout_goneMarginRight=0x7f040111;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2041,7 +2205,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_goneMarginStart=0x7f0400fa;
+    public static final int layout_goneMarginStart=0x7f040112;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2049,7 +2213,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int layout_goneMarginTop=0x7f0400fb;
+    public static final int layout_goneMarginTop=0x7f040113;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -2061,16 +2225,16 @@ public final class R {
      * <tr><td>end</td><td>800005</td><td></td></tr>
      * <tr><td>left</td><td>3</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
-     * <tr><td>right</td><td>3</td><td></td></tr>
+     * <tr><td>right</td><td>5</td><td></td></tr>
      * <tr><td>start</td><td>800003</td><td></td></tr>
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      */
-    public static final int layout_insetEdge=0x7f0400fc;
+    public static final int layout_insetEdge=0x7f040114;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int layout_keyline=0x7f0400fd;
+    public static final int layout_keyline=0x7f040115;
     /**
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
      * <table>
@@ -2084,7 +2248,7 @@ public final class R {
      * <tr><td>none</td><td>1</td><td></td></tr>
      * </table>
      */
-    public static final int layout_optimizationLevel=0x7f0400fe;
+    public static final int layout_optimizationLevel=0x7f040116;
     /**
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
      * <table>
@@ -2099,56 +2263,56 @@ public final class R {
      * <tr><td>snap</td><td>10</td><td></td></tr>
      * </table>
      */
-    public static final int layout_scrollFlags=0x7f0400ff;
+    public static final int layout_scrollFlags=0x7f040117;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int layout_scrollInterpolator=0x7f040100;
+    public static final int layout_scrollInterpolator=0x7f040118;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int listChoiceBackgroundIndicator=0x7f040101;
+    public static final int listChoiceBackgroundIndicator=0x7f040119;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int listDividerAlertDialog=0x7f040102;
+    public static final int listDividerAlertDialog=0x7f04011a;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int listItemLayout=0x7f040103;
+    public static final int listItemLayout=0x7f04011b;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int listLayout=0x7f040104;
+    public static final int listLayout=0x7f04011c;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int listMenuViewStyle=0x7f040105;
+    public static final int listMenuViewStyle=0x7f04011d;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int listPopupWindowStyle=0x7f040106;
+    public static final int listPopupWindowStyle=0x7f04011e;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2156,7 +2320,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int listPreferredItemHeight=0x7f040107;
+    public static final int listPreferredItemHeight=0x7f04011f;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2164,7 +2328,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int listPreferredItemHeightLarge=0x7f040108;
+    public static final int listPreferredItemHeightLarge=0x7f040120;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2172,7 +2336,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int listPreferredItemHeightSmall=0x7f040109;
+    public static final int listPreferredItemHeightSmall=0x7f040121;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2180,7 +2344,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int listPreferredItemPaddingLeft=0x7f04010a;
+    public static final int listPreferredItemPaddingLeft=0x7f040122;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2188,19 +2352,19 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int listPreferredItemPaddingRight=0x7f04010b;
+    public static final int listPreferredItemPaddingRight=0x7f040123;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int logo=0x7f04010c;
+    public static final int logo=0x7f040124;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int logoDescription=0x7f04010d;
+    public static final int logoDescription=0x7f040125;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2208,7 +2372,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int maxActionInlineWidth=0x7f04010e;
+    public static final int maxActionInlineWidth=0x7f040126;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2216,38 +2380,325 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int maxButtonHeight=0x7f04010f;
+    public static final int maxButtonHeight=0x7f040127;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int measureWithLargestChild=0x7f040110;
+    public static final int measureWithLargestChild=0x7f040128;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int menu=0x7f040111;
+    public static final int menu=0x7f040129;
+    /**
+     * <p>May be an integer value, such as "<code>100</code>".
+     */
+    public static final int menu_animationDelayPerItem=0x7f04012a;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int menu_backgroundColor=0x7f04012b;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_buttonSpacing=0x7f04012c;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int multiChoiceItemLayout=0x7f040112;
+    public static final int menu_buttonToggleAnimation=0x7f04012d;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int menu_colorNormal=0x7f04012e;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int menu_colorPressed=0x7f04012f;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int menu_colorRipple=0x7f040130;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int menu_fab_hide_animation=0x7f040131;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int navigationContentDescription=0x7f040113;
+    public static final int menu_fab_label=0x7f040132;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int navigationIcon=0x7f040114;
+    public static final int menu_fab_show_animation=0x7f040133;
+    /**
+     * <p>Must be one of the following constant values.</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+     * <tr><td>mini</td><td>1</td><td></td></tr>
+     * <tr><td>normal</td><td>0</td><td></td></tr>
+     * </table>
+     */
+    public static final int menu_fab_size=0x7f040134;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int menu_icon=0x7f040135;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int menu_labels_colorNormal=0x7f040136;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int menu_labels_colorPressed=0x7f040137;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int menu_labels_colorRipple=0x7f040138;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_labels_cornerRadius=0x7f040139;
+    /**
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     */
+    public static final int menu_labels_customFont=0x7f04013a;
+    /**
+     * <p>Must be one of the following constant values.</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+     * <tr><td>end</td><td>3</td><td></td></tr>
+     * <tr><td>marquee</td><td>4</td><td></td></tr>
+     * <tr><td>middle</td><td>2</td><td></td></tr>
+     * <tr><td>none</td><td>0</td><td></td></tr>
+     * <tr><td>start</td><td>1</td><td></td></tr>
+     * </table>
+     */
+    public static final int menu_labels_ellipsize=0x7f04013b;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int menu_labels_hideAnimation=0x7f04013c;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_labels_margin=0x7f04013d;
+    /**
+     * <p>May be an integer value, such as "<code>100</code>".
+     */
+    public static final int menu_labels_maxLines=0x7f04013e;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_labels_padding=0x7f04013f;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_labels_paddingBottom=0x7f040140;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_labels_paddingLeft=0x7f040141;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_labels_paddingRight=0x7f040142;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_labels_paddingTop=0x7f040143;
+    /**
+     * <p>Must be one of the following constant values.</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+     * <tr><td>left</td><td>0</td><td></td></tr>
+     * <tr><td>right</td><td>1</td><td></td></tr>
+     * </table>
+     */
+    public static final int menu_labels_position=0x7f040144;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int menu_labels_showAnimation=0x7f040145;
+    /**
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
+     */
+    public static final int menu_labels_showShadow=0x7f040146;
+    /**
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
+     */
+    public static final int menu_labels_singleLine=0x7f040147;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int menu_labels_style=0x7f040148;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int menu_labels_textColor=0x7f040149;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_labels_textSize=0x7f04014a;
+    /**
+     * <p>Must be one of the following constant values.</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+     * <tr><td>down</td><td>1</td><td></td></tr>
+     * <tr><td>up</td><td>0</td><td></td></tr>
+     * </table>
+     */
+    public static final int menu_openDirection=0x7f04014b;
+    /**
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int menu_shadowColor=0x7f04014c;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_shadowRadius=0x7f04014d;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_shadowXOffset=0x7f04014e;
+    /**
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     */
+    public static final int menu_shadowYOffset=0x7f04014f;
+    /**
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
+     */
+    public static final int menu_showShadow=0x7f040150;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int multiChoiceItemLayout=0x7f040151;
+    /**
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     */
+    public static final int navigationContentDescription=0x7f040152;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     */
+    public static final int navigationIcon=0x7f040153;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -2260,7 +2711,7 @@ public final class R {
      * <tr><td>tabMode</td><td>2</td><td></td></tr>
      * </table>
      */
-    public static final int navigationMode=0x7f040115;
+    public static final int navigationMode=0x7f040154;
     /**
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
      * <table>
@@ -2276,12 +2727,12 @@ public final class R {
      * <tr><td>SYM</td><td>4</td><td></td></tr>
      * </table>
      */
-    public static final int numericModifiers=0x7f040116;
+    public static final int numericModifiers=0x7f040155;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int overlapAnchor=0x7f040117;
+    public static final int overlapAnchor=0x7f040156;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2289,7 +2740,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int paddingBottomNoButtons=0x7f040118;
+    public static final int paddingBottomNoButtons=0x7f040157;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2297,7 +2748,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int paddingEnd=0x7f040119;
+    public static final int paddingEnd=0x7f040158;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2305,7 +2756,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int paddingStart=0x7f04011a;
+    public static final int paddingStart=0x7f040159;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2313,21 +2764,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int paddingTopNoTitle=0x7f04011b;
+    public static final int paddingTopNoTitle=0x7f04015a;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int panelBackground=0x7f04011c;
+    public static final int panelBackground=0x7f04015b;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int panelMenuListTheme=0x7f04011d;
+    public static final int panelMenuListTheme=0x7f04015c;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2335,30 +2786,30 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int panelMenuListWidth=0x7f04011e;
+    public static final int panelMenuListWidth=0x7f04015d;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int passwordToggleContentDescription=0x7f04011f;
+    public static final int passwordToggleContentDescription=0x7f04015e;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int passwordToggleDrawable=0x7f040120;
+    public static final int passwordToggleDrawable=0x7f04015f;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int passwordToggleEnabled=0x7f040121;
+    public static final int passwordToggleEnabled=0x7f040160;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int passwordToggleTint=0x7f040122;
+    public static final int passwordToggleTint=0x7f040161;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -2373,33 +2824,33 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      */
-    public static final int passwordToggleTintMode=0x7f040123;
+    public static final int passwordToggleTintMode=0x7f040162;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int popupMenuStyle=0x7f040124;
+    public static final int popupMenuStyle=0x7f040163;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int popupTheme=0x7f040125;
+    public static final int popupTheme=0x7f040164;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int popupWindowStyle=0x7f040126;
+    public static final int popupWindowStyle=0x7f040165;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int preserveIconSpacing=0x7f040127;
+    public static final int preserveIconSpacing=0x7f040166;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2407,7 +2858,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int pressedTranslationZ=0x7f040128;
+    public static final int pressedTranslationZ=0x7f040167;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2415,65 +2866,65 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int progressBarPadding=0x7f040129;
+    public static final int progressBarPadding=0x7f040168;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int progressBarStyle=0x7f04012a;
+    public static final int progressBarStyle=0x7f040169;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int queryBackground=0x7f04012b;
+    public static final int queryBackground=0x7f04016a;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int queryHint=0x7f04012c;
+    public static final int queryHint=0x7f04016b;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int radioButtonStyle=0x7f04012d;
+    public static final int radioButtonStyle=0x7f04016c;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int ratingBarStyle=0x7f04012e;
+    public static final int ratingBarStyle=0x7f04016d;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int ratingBarStyleIndicator=0x7f04012f;
+    public static final int ratingBarStyleIndicator=0x7f04016e;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int ratingBarStyleSmall=0x7f040130;
+    public static final int ratingBarStyleSmall=0x7f04016f;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int reverseLayout=0x7f040131;
+    public static final int reverseLayout=0x7f040170;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int rippleColor=0x7f040132;
+    public static final int rippleColor=0x7f040171;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -2482,11 +2933,11 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int scopeUris=0x7f040133;
+    public static final int scopeUris=0x7f040172;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int scrimAnimationDuration=0x7f040134;
+    public static final int scrimAnimationDuration=0x7f040173;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2494,49 +2945,49 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int scrimVisibleHeightTrigger=0x7f040135;
+    public static final int scrimVisibleHeightTrigger=0x7f040174;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int searchHintIcon=0x7f040136;
+    public static final int searchHintIcon=0x7f040175;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int searchIcon=0x7f040137;
+    public static final int searchIcon=0x7f040176;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int searchViewStyle=0x7f040138;
+    public static final int searchViewStyle=0x7f040177;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int seekBarStyle=0x7f040139;
+    public static final int seekBarStyle=0x7f040178;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int selectableItemBackground=0x7f04013a;
+    public static final int selectableItemBackground=0x7f040179;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int selectableItemBackgroundBorderless=0x7f04013b;
+    public static final int selectableItemBackgroundBorderless=0x7f04017a;
     /**
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
      * <table>
@@ -2551,7 +3002,7 @@ public final class R {
      * <tr><td>withText</td><td>4</td><td></td></tr>
      * </table>
      */
-    public static final int showAsAction=0x7f04013c;
+    public static final int showAsAction=0x7f04017b;
     /**
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
      * <table>
@@ -2565,64 +3016,64 @@ public final class R {
      * <tr><td>none</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int showDividers=0x7f04013d;
+    public static final int showDividers=0x7f04017c;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int showText=0x7f04013e;
+    public static final int showText=0x7f04017d;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int showTitle=0x7f04013f;
+    public static final int showTitle=0x7f04017e;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int singleChoiceItemLayout=0x7f040140;
+    public static final int singleChoiceItemLayout=0x7f04017f;
     /**
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int spanCount=0x7f040141;
+    public static final int spanCount=0x7f040180;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int spinBars=0x7f040142;
+    public static final int spinBars=0x7f040181;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int spinnerDropDownItemStyle=0x7f040143;
+    public static final int spinnerDropDownItemStyle=0x7f040182;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int spinnerStyle=0x7f040144;
+    public static final int spinnerStyle=0x7f040183;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int splitTrack=0x7f040145;
+    public static final int splitTrack=0x7f040184;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int srcCompat=0x7f040146;
+    public static final int srcCompat=0x7f040185;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int stackFromEnd=0x7f040147;
+    public static final int stackFromEnd=0x7f040186;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2630,7 +3081,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int startHeight=0x7f040148;
+    public static final int startHeight=0x7f040187;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2638,7 +3089,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int startToolbarPosition=0x7f040149;
+    public static final int startToolbarPosition=0x7f040188;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2646,81 +3097,84 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int startXPosition=0x7f04014a;
+    public static final int startXPosition=0x7f040189;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int state_above_anchor=0x7f04014b;
+    public static final int state_above_anchor=0x7f04018a;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int state_collapsed=0x7f04014c;
+    public static final int state_collapsed=0x7f04018b;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int state_collapsible=0x7f04014d;
+    public static final int state_collapsible=0x7f04018c;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int statusBarBackground=0x7f04014e;
+    public static final int statusBarBackground=0x7f04018d;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int statusBarScrim=0x7f04014f;
+    public static final int statusBarScrim=0x7f04018e;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int subMenuArrow=0x7f040150;
+    public static final int subMenuArrow=0x7f04018f;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int submitBackground=0x7f040151;
+    public static final int submitBackground=0x7f040190;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int subtitle=0x7f040152;
+    public static final int subtitle=0x7f040191;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int subtitleTextAppearance=0x7f040153;
+    public static final int subtitleTextAppearance=0x7f040192;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int subtitleTextColor=0x7f040154;
+    public static final int subtitleTextColor=0x7f040193;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int subtitleTextStyle=0x7f040155;
+    public static final int subtitleTextStyle=0x7f040194;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int suggestionRowLayout=0x7f040156;
+    public static final int suggestionRowLayout=0x7f040195;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2728,7 +3182,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int switchMinWidth=0x7f040157;
+    public static final int switchMinWidth=0x7f040196;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2736,28 +3190,28 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int switchPadding=0x7f040158;
+    public static final int switchPadding=0x7f040197;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int switchStyle=0x7f040159;
+    public static final int switchStyle=0x7f040198;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int switchTextAppearance=0x7f04015a;
+    public static final int switchTextAppearance=0x7f040199;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int tabBackground=0x7f04015b;
+    public static final int tabBackground=0x7f04019a;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2765,7 +3219,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int tabContentStart=0x7f04015c;
+    public static final int tabContentStart=0x7f04019b;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -2777,13 +3231,13 @@ public final class R {
      * <tr><td>fill</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int tabGravity=0x7f04015d;
+    public static final int tabGravity=0x7f04019c;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int tabIndicatorColor=0x7f04015e;
+    public static final int tabIndicatorColor=0x7f04019d;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2791,7 +3245,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int tabIndicatorHeight=0x7f04015f;
+    public static final int tabIndicatorHeight=0x7f04019e;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2799,7 +3253,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int tabMaxWidth=0x7f040160;
+    public static final int tabMaxWidth=0x7f04019f;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2807,7 +3261,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int tabMinWidth=0x7f040161;
+    public static final int tabMinWidth=0x7f0401a0;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -2819,7 +3273,7 @@ public final class R {
      * <tr><td>scrollable</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int tabMode=0x7f040162;
+    public static final int tabMode=0x7f0401a1;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2827,7 +3281,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int tabPadding=0x7f040163;
+    public static final int tabPadding=0x7f0401a2;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2835,7 +3289,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int tabPaddingBottom=0x7f040164;
+    public static final int tabPaddingBottom=0x7f0401a3;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2843,7 +3297,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int tabPaddingEnd=0x7f040165;
+    public static final int tabPaddingEnd=0x7f0401a4;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2851,7 +3305,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int tabPaddingStart=0x7f040166;
+    public static final int tabPaddingStart=0x7f0401a5;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2859,26 +3313,26 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int tabPaddingTop=0x7f040167;
+    public static final int tabPaddingTop=0x7f0401a6;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int tabSelectedTextColor=0x7f040168;
+    public static final int tabSelectedTextColor=0x7f0401a7;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int tabTextAppearance=0x7f040169;
+    public static final int tabTextAppearance=0x7f0401a8;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int tabTextColor=0x7f04016a;
+    public static final int tabTextColor=0x7f0401a9;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -2887,73 +3341,63 @@ public final class R {
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int textAllCaps=0x7f04016b;
+    public static final int textAllCaps=0x7f0401aa;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int textAppearanceLargePopupMenu=0x7f04016c;
+    public static final int textAppearanceLargePopupMenu=0x7f0401ab;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int textAppearanceListItem=0x7f04016d;
+    public static final int textAppearanceListItem=0x7f0401ac;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int textAppearanceListItemSecondary=0x7f04016e;
+    public static final int textAppearanceListItemSecondary=0x7f0401ad;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int textAppearanceListItemSmall=0x7f04016f;
+    public static final int textAppearanceListItemSmall=0x7f0401ae;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int textAppearancePopupMenuHeader=0x7f040170;
+    public static final int textAppearancePopupMenuHeader=0x7f0401af;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int textAppearanceSearchResultSubtitle=0x7f040171;
+    public static final int textAppearanceSearchResultSubtitle=0x7f0401b0;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int textAppearanceSearchResultTitle=0x7f040172;
+    public static final int textAppearanceSearchResultTitle=0x7f0401b1;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int textAppearanceSmallPopupMenu=0x7f040173;
-    /**
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
-     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
-     * "<code>#<i>aarrggbb</i></code>".
-     */
-    public static final int textColorAlertDialogListItem=0x7f040174;
+    public static final int textAppearanceSmallPopupMenu=0x7f0401b2;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -2963,7 +3407,7 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int textColorError=0x7f040175;
+    public static final int textColorAlertDialogListItem=0x7f0401b3;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -2973,14 +3417,24 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int textColorSearchUrl=0x7f040176;
+    public static final int textColorError=0x7f0401b4;
+    /**
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     */
+    public static final int textColorSearchUrl=0x7f0401b5;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int theme=0x7f040177;
+    public static final int theme=0x7f0401b6;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2988,7 +3442,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int thickness=0x7f040178;
+    public static final int thickness=0x7f0401b7;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -2996,13 +3450,13 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int thumbTextPadding=0x7f040179;
+    public static final int thumbTextPadding=0x7f0401b8;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int thumbTint=0x7f04017a;
+    public static final int thumbTint=0x7f0401b9;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -3018,20 +3472,20 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      */
-    public static final int thumbTintMode=0x7f04017b;
+    public static final int thumbTintMode=0x7f0401ba;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int tickMark=0x7f04017c;
+    public static final int tickMark=0x7f0401bb;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int tickMarkTint=0x7f04017d;
+    public static final int tickMarkTint=0x7f0401bc;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -3047,13 +3501,13 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      */
-    public static final int tickMarkTintMode=0x7f04017e;
+    public static final int tickMarkTintMode=0x7f0401bd;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int tint=0x7f04017f;
+    public static final int tint=0x7f0401be;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -3069,17 +3523,17 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      */
-    public static final int tintMode=0x7f040180;
+    public static final int tintMode=0x7f0401bf;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int title=0x7f040181;
+    public static final int title=0x7f0401c0;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int titleEnabled=0x7f040182;
+    public static final int titleEnabled=0x7f0401c1;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3087,7 +3541,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int titleMargin=0x7f040183;
+    public static final int titleMargin=0x7f0401c2;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3095,7 +3549,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int titleMarginBottom=0x7f040184;
+    public static final int titleMarginBottom=0x7f0401c3;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3103,7 +3557,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int titleMarginEnd=0x7f040185;
+    public static final int titleMarginEnd=0x7f0401c4;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3111,7 +3565,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int titleMarginStart=0x7f040186;
+    public static final int titleMarginStart=0x7f0401c5;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3119,7 +3573,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int titleMarginTop=0x7f040187;
+    public static final int titleMarginTop=0x7f0401c6;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3127,48 +3581,48 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-    public static final int titleMargins=0x7f040188;
+    public static final int titleMargins=0x7f0401c7;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int titleTextAppearance=0x7f040189;
+    public static final int titleTextAppearance=0x7f0401c8;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int titleTextColor=0x7f04018a;
+    public static final int titleTextColor=0x7f0401c9;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int titleTextStyle=0x7f04018b;
+    public static final int titleTextStyle=0x7f0401ca;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int toolbarId=0x7f04018c;
+    public static final int toolbarId=0x7f0401cb;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int toolbarNavigationButtonStyle=0x7f04018d;
+    public static final int toolbarNavigationButtonStyle=0x7f0401cc;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int toolbarStyle=0x7f04018e;
+    public static final int toolbarStyle=0x7f0401cd;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -3178,32 +3632,32 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int tooltipForegroundColor=0x7f04018f;
+    public static final int tooltipForegroundColor=0x7f0401ce;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int tooltipFrameBackground=0x7f040190;
+    public static final int tooltipFrameBackground=0x7f0401cf;
     /**
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int tooltipText=0x7f040191;
+    public static final int tooltipText=0x7f0401d0;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int track=0x7f040192;
+    public static final int track=0x7f0401d1;
     /**
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
-    public static final int trackTint=0x7f040193;
+    public static final int trackTint=0x7f0401d2;
     /**
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -3219,34 +3673,39 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      */
-    public static final int trackTintMode=0x7f040194;
+    public static final int trackTintMode=0x7f0401d3;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int useCompatPadding=0x7f040195;
+    public static final int useCompatPadding=0x7f0401d4;
+    /**
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     */
+    public static final int viewInflaterClass=0x7f0401d5;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int voiceIcon=0x7f040196;
+    public static final int voiceIcon=0x7f0401d6;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int windowActionBar=0x7f040197;
+    public static final int windowActionBar=0x7f0401d7;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int windowActionBarOverlay=0x7f040198;
+    public static final int windowActionBarOverlay=0x7f0401d8;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int windowActionModeOverlay=0x7f040199;
+    public static final int windowActionModeOverlay=0x7f0401d9;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3258,7 +3717,7 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      */
-    public static final int windowFixedHeightMajor=0x7f04019a;
+    public static final int windowFixedHeightMajor=0x7f0401da;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3270,7 +3729,7 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      */
-    public static final int windowFixedHeightMinor=0x7f04019b;
+    public static final int windowFixedHeightMinor=0x7f0401db;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3282,7 +3741,7 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      */
-    public static final int windowFixedWidthMajor=0x7f04019c;
+    public static final int windowFixedWidthMajor=0x7f0401dc;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3294,7 +3753,7 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      */
-    public static final int windowFixedWidthMinor=0x7f04019d;
+    public static final int windowFixedWidthMinor=0x7f0401dd;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3306,7 +3765,7 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      */
-    public static final int windowMinWidthMajor=0x7f04019e;
+    public static final int windowMinWidthMajor=0x7f0401de;
     /**
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -3318,19 +3777,18 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      */
-    public static final int windowMinWidthMinor=0x7f04019f;
+    public static final int windowMinWidthMinor=0x7f0401df;
     /**
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
-    public static final int windowNoTitle=0x7f0401a0;
+    public static final int windowNoTitle=0x7f0401e0;
   }
   public static final class bool {
     public static final int abc_action_bar_embed_tabs=0x7f050000;
     public static final int abc_allow_stacked_button_bar=0x7f050001;
     public static final int abc_config_actionMenuItemAllCaps=0x7f050002;
-    public static final int abc_config_closeDialogWhenTouchOutside=0x7f050003;
-    public static final int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f050004;
+    public static final int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f050003;
   }
   public static final class color {
     public static final int abc_background_cache_hint_selector_material_dark=0x7f060000;
@@ -3363,92 +3821,102 @@ public final class R {
     public static final int background_floating_material_light=0x7f06001b;
     public static final int background_material_dark=0x7f06001c;
     public static final int background_material_light=0x7f06001d;
-    public static final int bright_foreground_disabled_material_dark=0x7f06001e;
-    public static final int bright_foreground_disabled_material_light=0x7f06001f;
-    public static final int bright_foreground_inverse_material_dark=0x7f060020;
-    public static final int bright_foreground_inverse_material_light=0x7f060021;
-    public static final int bright_foreground_material_dark=0x7f060022;
-    public static final int bright_foreground_material_light=0x7f060023;
-    public static final int button_material_dark=0x7f060024;
-    public static final int button_material_light=0x7f060025;
-    public static final int cardview_dark_background=0x7f060026;
-    public static final int cardview_light_background=0x7f060027;
-    public static final int cardview_shadow_end_color=0x7f060028;
-    public static final int cardview_shadow_start_color=0x7f060029;
-    public static final int colorAccent=0x7f06002a;
-    public static final int colorPrimary=0x7f06002b;
-    public static final int colorPrimaryDark=0x7f06002c;
-    public static final int common_google_signin_btn_text_dark=0x7f06002d;
-    public static final int common_google_signin_btn_text_dark_default=0x7f06002e;
-    public static final int common_google_signin_btn_text_dark_disabled=0x7f06002f;
-    public static final int common_google_signin_btn_text_dark_focused=0x7f060030;
-    public static final int common_google_signin_btn_text_dark_pressed=0x7f060031;
-    public static final int common_google_signin_btn_text_light=0x7f060032;
-    public static final int common_google_signin_btn_text_light_default=0x7f060033;
-    public static final int common_google_signin_btn_text_light_disabled=0x7f060034;
-    public static final int common_google_signin_btn_text_light_focused=0x7f060035;
-    public static final int common_google_signin_btn_text_light_pressed=0x7f060036;
-    public static final int common_google_signin_btn_tint=0x7f060037;
-    public static final int design_bottom_navigation_shadow_color=0x7f060038;
-    public static final int design_error=0x7f060039;
-    public static final int design_fab_shadow_end_color=0x7f06003a;
-    public static final int design_fab_shadow_mid_color=0x7f06003b;
-    public static final int design_fab_shadow_start_color=0x7f06003c;
-    public static final int design_fab_stroke_end_inner_color=0x7f06003d;
-    public static final int design_fab_stroke_end_outer_color=0x7f06003e;
-    public static final int design_fab_stroke_top_inner_color=0x7f06003f;
-    public static final int design_fab_stroke_top_outer_color=0x7f060040;
-    public static final int design_snackbar_background_color=0x7f060041;
-    public static final int design_tint_password_toggle=0x7f060042;
-    public static final int dim_foreground_disabled_material_dark=0x7f060043;
-    public static final int dim_foreground_disabled_material_light=0x7f060044;
-    public static final int dim_foreground_material_dark=0x7f060045;
-    public static final int dim_foreground_material_light=0x7f060046;
-    public static final int error_color_material=0x7f060047;
-    public static final int foreground_material_dark=0x7f060048;
-    public static final int foreground_material_light=0x7f060049;
-    public static final int highlighted_text_material_dark=0x7f06004a;
-    public static final int highlighted_text_material_light=0x7f06004b;
-    public static final int material_blue_grey_800=0x7f06004c;
-    public static final int material_blue_grey_900=0x7f06004d;
-    public static final int material_blue_grey_950=0x7f06004e;
-    public static final int material_deep_teal_200=0x7f06004f;
-    public static final int material_deep_teal_500=0x7f060050;
-    public static final int material_grey_100=0x7f060051;
-    public static final int material_grey_300=0x7f060052;
-    public static final int material_grey_50=0x7f060053;
-    public static final int material_grey_600=0x7f060054;
-    public static final int material_grey_800=0x7f060055;
-    public static final int material_grey_850=0x7f060056;
-    public static final int material_grey_900=0x7f060057;
-    public static final int notification_action_color_filter=0x7f060058;
-    public static final int notification_icon_bg_color=0x7f060059;
-    public static final int notification_material_background_media_default_color=0x7f06005a;
-    public static final int primary=0x7f06005b;
-    public static final int primaryDark=0x7f06005c;
-    public static final int primary_dark_material_dark=0x7f06005d;
-    public static final int primary_dark_material_light=0x7f06005e;
-    public static final int primary_material_dark=0x7f06005f;
-    public static final int primary_material_light=0x7f060060;
-    public static final int primary_text_default_material_dark=0x7f060061;
-    public static final int primary_text_default_material_light=0x7f060062;
-    public static final int primary_text_disabled_material_dark=0x7f060063;
-    public static final int primary_text_disabled_material_light=0x7f060064;
-    public static final int ripple_material_dark=0x7f060065;
-    public static final int ripple_material_light=0x7f060066;
-    public static final int secondary_text_default_material_dark=0x7f060067;
-    public static final int secondary_text_default_material_light=0x7f060068;
-    public static final int secondary_text_disabled_material_dark=0x7f060069;
-    public static final int secondary_text_disabled_material_light=0x7f06006a;
-    public static final int switch_thumb_disabled_material_dark=0x7f06006b;
-    public static final int switch_thumb_disabled_material_light=0x7f06006c;
-    public static final int switch_thumb_material_dark=0x7f06006d;
-    public static final int switch_thumb_material_light=0x7f06006e;
-    public static final int switch_thumb_normal_material_dark=0x7f06006f;
-    public static final int switch_thumb_normal_material_light=0x7f060070;
-    public static final int terms_and_conditions=0x7f060071;
-    public static final int tooltip_background_dark=0x7f060072;
-    public static final int tooltip_background_light=0x7f060073;
+    public static final int black_overlay=0x7f06001e;
+    public static final int blue_grey_500=0x7f06001f;
+    public static final int blue_grey_600=0x7f060020;
+    public static final int blue_grey_700=0x7f060021;
+    public static final int blue_grey_800=0x7f060022;
+    public static final int blue_grey_900=0x7f060023;
+    public static final int bright_foreground_disabled_material_dark=0x7f060024;
+    public static final int bright_foreground_disabled_material_light=0x7f060025;
+    public static final int bright_foreground_inverse_material_dark=0x7f060026;
+    public static final int bright_foreground_inverse_material_light=0x7f060027;
+    public static final int bright_foreground_material_dark=0x7f060028;
+    public static final int bright_foreground_material_light=0x7f060029;
+    public static final int button_material_dark=0x7f06002a;
+    public static final int button_material_light=0x7f06002b;
+    public static final int cardview_dark_background=0x7f06002c;
+    public static final int cardview_light_background=0x7f06002d;
+    public static final int cardview_shadow_end_color=0x7f06002e;
+    public static final int cardview_shadow_start_color=0x7f06002f;
+    public static final int colorAccent=0x7f060030;
+    public static final int colorPrimary=0x7f060031;
+    public static final int colorPrimaryDark=0x7f060032;
+    public static final int colorWhite=0x7f060033;
+    public static final int common_google_signin_btn_text_dark=0x7f060034;
+    public static final int common_google_signin_btn_text_dark_default=0x7f060035;
+    public static final int common_google_signin_btn_text_dark_disabled=0x7f060036;
+    public static final int common_google_signin_btn_text_dark_focused=0x7f060037;
+    public static final int common_google_signin_btn_text_dark_pressed=0x7f060038;
+    public static final int common_google_signin_btn_text_light=0x7f060039;
+    public static final int common_google_signin_btn_text_light_default=0x7f06003a;
+    public static final int common_google_signin_btn_text_light_disabled=0x7f06003b;
+    public static final int common_google_signin_btn_text_light_focused=0x7f06003c;
+    public static final int common_google_signin_btn_text_light_pressed=0x7f06003d;
+    public static final int common_google_signin_btn_tint=0x7f06003e;
+    public static final int design_bottom_navigation_shadow_color=0x7f06003f;
+    public static final int design_error=0x7f060040;
+    public static final int design_fab_shadow_end_color=0x7f060041;
+    public static final int design_fab_shadow_mid_color=0x7f060042;
+    public static final int design_fab_shadow_start_color=0x7f060043;
+    public static final int design_fab_stroke_end_inner_color=0x7f060044;
+    public static final int design_fab_stroke_end_outer_color=0x7f060045;
+    public static final int design_fab_stroke_top_inner_color=0x7f060046;
+    public static final int design_fab_stroke_top_outer_color=0x7f060047;
+    public static final int design_snackbar_background_color=0x7f060048;
+    public static final int design_tint_password_toggle=0x7f060049;
+    public static final int dim_foreground_disabled_material_dark=0x7f06004a;
+    public static final int dim_foreground_disabled_material_light=0x7f06004b;
+    public static final int dim_foreground_material_dark=0x7f06004c;
+    public static final int dim_foreground_material_light=0x7f06004d;
+    public static final int error_color_material=0x7f06004e;
+    public static final int foreground_material_dark=0x7f06004f;
+    public static final int foreground_material_light=0x7f060050;
+    public static final int highlighted_text_material_dark=0x7f060051;
+    public static final int highlighted_text_material_light=0x7f060052;
+    public static final int linkColor=0x7f060053;
+    public static final int material_blue_grey_800=0x7f060054;
+    public static final int material_blue_grey_900=0x7f060055;
+    public static final int material_blue_grey_950=0x7f060056;
+    public static final int material_deep_teal_200=0x7f060057;
+    public static final int material_deep_teal_500=0x7f060058;
+    public static final int material_grey_100=0x7f060059;
+    public static final int material_grey_300=0x7f06005a;
+    public static final int material_grey_50=0x7f06005b;
+    public static final int material_grey_600=0x7f06005c;
+    public static final int material_grey_800=0x7f06005d;
+    public static final int material_grey_850=0x7f06005e;
+    public static final int material_grey_900=0x7f06005f;
+    public static final int notification_action_color_filter=0x7f060060;
+    public static final int notification_icon_bg_color=0x7f060061;
+    public static final int notification_material_background_media_default_color=0x7f060062;
+    public static final int primary=0x7f060063;
+    public static final int primaryDark=0x7f060064;
+    public static final int primary_dark_material_dark=0x7f060065;
+    public static final int primary_dark_material_light=0x7f060066;
+    public static final int primary_material_dark=0x7f060067;
+    public static final int primary_material_light=0x7f060068;
+    public static final int primary_text_default_material_dark=0x7f060069;
+    public static final int primary_text_default_material_light=0x7f06006a;
+    public static final int primary_text_disabled_material_dark=0x7f06006b;
+    public static final int primary_text_disabled_material_light=0x7f06006c;
+    public static final int ripple_material_dark=0x7f06006d;
+    public static final int ripple_material_light=0x7f06006e;
+    public static final int secondary_text_default_material_dark=0x7f06006f;
+    public static final int secondary_text_default_material_light=0x7f060070;
+    public static final int secondary_text_disabled_material_dark=0x7f060071;
+    public static final int secondary_text_disabled_material_light=0x7f060072;
+    public static final int switch_thumb_disabled_material_dark=0x7f060073;
+    public static final int switch_thumb_disabled_material_light=0x7f060074;
+    public static final int switch_thumb_material_dark=0x7f060075;
+    public static final int switch_thumb_material_light=0x7f060076;
+    public static final int switch_thumb_normal_material_dark=0x7f060077;
+    public static final int switch_thumb_normal_material_light=0x7f060078;
+    public static final int terms_and_conditions=0x7f060079;
+    public static final int textColor=0x7f06007a;
+    public static final int textColorCustom=0x7f06007b;
+    public static final int tooltip_background_dark=0x7f06007c;
+    public static final int tooltip_background_light=0x7f06007d;
   }
   public static final class dimen {
     public static final int abc_action_bar_content_inset_material=0x7f070000;
@@ -3469,156 +3937,169 @@ public final class R {
     public static final int abc_action_button_min_width_material=0x7f07000f;
     public static final int abc_action_button_min_width_overflow_material=0x7f070010;
     public static final int abc_alert_dialog_button_bar_height=0x7f070011;
-    public static final int abc_button_inset_horizontal_material=0x7f070012;
-    public static final int abc_button_inset_vertical_material=0x7f070013;
-    public static final int abc_button_padding_horizontal_material=0x7f070014;
-    public static final int abc_button_padding_vertical_material=0x7f070015;
-    public static final int abc_cascading_menus_min_smallest_width=0x7f070016;
-    public static final int abc_config_prefDialogWidth=0x7f070017;
-    public static final int abc_control_corner_material=0x7f070018;
-    public static final int abc_control_inset_material=0x7f070019;
-    public static final int abc_control_padding_material=0x7f07001a;
-    public static final int abc_dialog_fixed_height_major=0x7f07001b;
-    public static final int abc_dialog_fixed_height_minor=0x7f07001c;
-    public static final int abc_dialog_fixed_width_major=0x7f07001d;
-    public static final int abc_dialog_fixed_width_minor=0x7f07001e;
-    public static final int abc_dialog_list_padding_bottom_no_buttons=0x7f07001f;
-    public static final int abc_dialog_list_padding_top_no_title=0x7f070020;
-    public static final int abc_dialog_min_width_major=0x7f070021;
-    public static final int abc_dialog_min_width_minor=0x7f070022;
-    public static final int abc_dialog_padding_material=0x7f070023;
-    public static final int abc_dialog_padding_top_material=0x7f070024;
-    public static final int abc_dialog_title_divider_material=0x7f070025;
-    public static final int abc_disabled_alpha_material_dark=0x7f070026;
-    public static final int abc_disabled_alpha_material_light=0x7f070027;
-    public static final int abc_dropdownitem_icon_width=0x7f070028;
-    public static final int abc_dropdownitem_text_padding_left=0x7f070029;
-    public static final int abc_dropdownitem_text_padding_right=0x7f07002a;
-    public static final int abc_edit_text_inset_bottom_material=0x7f07002b;
-    public static final int abc_edit_text_inset_horizontal_material=0x7f07002c;
-    public static final int abc_edit_text_inset_top_material=0x7f07002d;
-    public static final int abc_floating_window_z=0x7f07002e;
-    public static final int abc_list_item_padding_horizontal_material=0x7f07002f;
-    public static final int abc_panel_menu_list_width=0x7f070030;
-    public static final int abc_progress_bar_height_material=0x7f070031;
-    public static final int abc_search_view_preferred_height=0x7f070032;
-    public static final int abc_search_view_preferred_width=0x7f070033;
-    public static final int abc_seekbar_track_background_height_material=0x7f070034;
-    public static final int abc_seekbar_track_progress_height_material=0x7f070035;
-    public static final int abc_select_dialog_padding_start_material=0x7f070036;
-    public static final int abc_switch_padding=0x7f070037;
-    public static final int abc_text_size_body_1_material=0x7f070038;
-    public static final int abc_text_size_body_2_material=0x7f070039;
-    public static final int abc_text_size_button_material=0x7f07003a;
-    public static final int abc_text_size_caption_material=0x7f07003b;
-    public static final int abc_text_size_display_1_material=0x7f07003c;
-    public static final int abc_text_size_display_2_material=0x7f07003d;
-    public static final int abc_text_size_display_3_material=0x7f07003e;
-    public static final int abc_text_size_display_4_material=0x7f07003f;
-    public static final int abc_text_size_headline_material=0x7f070040;
-    public static final int abc_text_size_large_material=0x7f070041;
-    public static final int abc_text_size_medium_material=0x7f070042;
-    public static final int abc_text_size_menu_header_material=0x7f070043;
-    public static final int abc_text_size_menu_material=0x7f070044;
-    public static final int abc_text_size_small_material=0x7f070045;
-    public static final int abc_text_size_subhead_material=0x7f070046;
-    public static final int abc_text_size_subtitle_material_toolbar=0x7f070047;
-    public static final int abc_text_size_title_material=0x7f070048;
-    public static final int abc_text_size_title_material_toolbar=0x7f070049;
-    public static final int activity_horizontal_margin=0x7f07004a;
-    public static final int activity_vertical_margin=0x7f07004b;
-    public static final int cardview_compat_inset_shadow=0x7f07004c;
-    public static final int cardview_default_elevation=0x7f07004d;
-    public static final int cardview_default_radius=0x7f07004e;
-    public static final int compat_button_inset_horizontal_material=0x7f07004f;
-    public static final int compat_button_inset_vertical_material=0x7f070050;
-    public static final int compat_button_padding_horizontal_material=0x7f070051;
-    public static final int compat_button_padding_vertical_material=0x7f070052;
-    public static final int compat_control_corner_material=0x7f070053;
-    public static final int def_margin=0x7f070054;
-    public static final int design_appbar_elevation=0x7f070055;
-    public static final int design_bottom_navigation_active_item_max_width=0x7f070056;
-    public static final int design_bottom_navigation_active_text_size=0x7f070057;
-    public static final int design_bottom_navigation_elevation=0x7f070058;
-    public static final int design_bottom_navigation_height=0x7f070059;
-    public static final int design_bottom_navigation_item_max_width=0x7f07005a;
-    public static final int design_bottom_navigation_item_min_width=0x7f07005b;
-    public static final int design_bottom_navigation_margin=0x7f07005c;
-    public static final int design_bottom_navigation_shadow_height=0x7f07005d;
-    public static final int design_bottom_navigation_text_size=0x7f07005e;
-    public static final int design_bottom_sheet_modal_elevation=0x7f07005f;
-    public static final int design_bottom_sheet_peek_height_min=0x7f070060;
-    public static final int design_fab_border_width=0x7f070061;
-    public static final int design_fab_elevation=0x7f070062;
-    public static final int design_fab_image_size=0x7f070063;
-    public static final int design_fab_size_mini=0x7f070064;
-    public static final int design_fab_size_normal=0x7f070065;
-    public static final int design_fab_translation_z_pressed=0x7f070066;
-    public static final int design_navigation_elevation=0x7f070067;
-    public static final int design_navigation_icon_padding=0x7f070068;
-    public static final int design_navigation_icon_size=0x7f070069;
-    public static final int design_navigation_max_width=0x7f07006a;
-    public static final int design_navigation_padding_bottom=0x7f07006b;
-    public static final int design_navigation_separator_vertical_padding=0x7f07006c;
-    public static final int design_snackbar_action_inline_max_width=0x7f07006d;
-    public static final int design_snackbar_background_corner_radius=0x7f07006e;
-    public static final int design_snackbar_elevation=0x7f07006f;
-    public static final int design_snackbar_extra_spacing_horizontal=0x7f070070;
-    public static final int design_snackbar_max_width=0x7f070071;
-    public static final int design_snackbar_min_width=0x7f070072;
-    public static final int design_snackbar_padding_horizontal=0x7f070073;
-    public static final int design_snackbar_padding_vertical=0x7f070074;
-    public static final int design_snackbar_padding_vertical_2lines=0x7f070075;
-    public static final int design_snackbar_text_size=0x7f070076;
-    public static final int design_tab_max_width=0x7f070077;
-    public static final int design_tab_scrollable_min_width=0x7f070078;
-    public static final int design_tab_text_size=0x7f070079;
-    public static final int design_tab_text_size_2line=0x7f07007a;
-    public static final int disabled_alpha_material_dark=0x7f07007b;
-    public static final int disabled_alpha_material_light=0x7f07007c;
-    public static final int fab_margin=0x7f07007d;
-    public static final int fastscroll_default_thickness=0x7f07007e;
-    public static final int fastscroll_margin=0x7f07007f;
-    public static final int fastscroll_minimum_range=0x7f070080;
-    public static final int highlight_alpha_material_colored=0x7f070081;
-    public static final int highlight_alpha_material_dark=0x7f070082;
-    public static final int highlight_alpha_material_light=0x7f070083;
-    public static final int hint_alpha_material_dark=0x7f070084;
-    public static final int hint_alpha_material_light=0x7f070085;
-    public static final int hint_pressed_alpha_material_dark=0x7f070086;
-    public static final int hint_pressed_alpha_material_light=0x7f070087;
-    public static final int image_final_width=0x7f070088;
-    public static final int image_width=0x7f070089;
-    public static final int item_touch_helper_max_drag_scroll_per_frame=0x7f07008a;
-    public static final int item_touch_helper_swipe_escape_max_velocity=0x7f07008b;
-    public static final int item_touch_helper_swipe_escape_velocity=0x7f07008c;
-    public static final int nav_header_height=0x7f07008d;
-    public static final int nav_header_vertical_spacing=0x7f07008e;
-    public static final int notification_action_icon_size=0x7f07008f;
-    public static final int notification_action_text_size=0x7f070090;
-    public static final int notification_big_circle_margin=0x7f070091;
-    public static final int notification_content_margin_start=0x7f070092;
-    public static final int notification_large_icon_height=0x7f070093;
-    public static final int notification_large_icon_width=0x7f070094;
-    public static final int notification_main_column_padding_top=0x7f070095;
-    public static final int notification_media_narrow_margin=0x7f070096;
-    public static final int notification_right_icon_size=0x7f070097;
-    public static final int notification_right_side_padding_top=0x7f070098;
-    public static final int notification_small_icon_background_padding=0x7f070099;
-    public static final int notification_small_icon_size_as_large=0x7f07009a;
-    public static final int notification_subtext_size=0x7f07009b;
-    public static final int notification_top_pad=0x7f07009c;
-    public static final int notification_top_pad_large_text=0x7f07009d;
-    public static final int spacing_normal=0x7f07009e;
-    public static final int tooltip_corner_radius=0x7f07009f;
-    public static final int tooltip_horizontal_padding=0x7f0700a0;
-    public static final int tooltip_margin=0x7f0700a1;
-    public static final int tooltip_precise_anchor_extra_offset=0x7f0700a2;
-    public static final int tooltip_precise_anchor_threshold=0x7f0700a3;
-    public static final int tooltip_vertical_padding=0x7f0700a4;
-    public static final int tooltip_y_offset_non_touch=0x7f0700a5;
-    public static final int tooltip_y_offset_touch=0x7f0700a6;
-    public static final int txt_container_padding=0x7f0700a7;
+    public static final int abc_alert_dialog_button_dimen=0x7f070012;
+    public static final int abc_button_inset_horizontal_material=0x7f070013;
+    public static final int abc_button_inset_vertical_material=0x7f070014;
+    public static final int abc_button_padding_horizontal_material=0x7f070015;
+    public static final int abc_button_padding_vertical_material=0x7f070016;
+    public static final int abc_cascading_menus_min_smallest_width=0x7f070017;
+    public static final int abc_config_prefDialogWidth=0x7f070018;
+    public static final int abc_control_corner_material=0x7f070019;
+    public static final int abc_control_inset_material=0x7f07001a;
+    public static final int abc_control_padding_material=0x7f07001b;
+    public static final int abc_dialog_fixed_height_major=0x7f07001c;
+    public static final int abc_dialog_fixed_height_minor=0x7f07001d;
+    public static final int abc_dialog_fixed_width_major=0x7f07001e;
+    public static final int abc_dialog_fixed_width_minor=0x7f07001f;
+    public static final int abc_dialog_list_padding_bottom_no_buttons=0x7f070020;
+    public static final int abc_dialog_list_padding_top_no_title=0x7f070021;
+    public static final int abc_dialog_min_width_major=0x7f070022;
+    public static final int abc_dialog_min_width_minor=0x7f070023;
+    public static final int abc_dialog_padding_material=0x7f070024;
+    public static final int abc_dialog_padding_top_material=0x7f070025;
+    public static final int abc_dialog_title_divider_material=0x7f070026;
+    public static final int abc_disabled_alpha_material_dark=0x7f070027;
+    public static final int abc_disabled_alpha_material_light=0x7f070028;
+    public static final int abc_dropdownitem_icon_width=0x7f070029;
+    public static final int abc_dropdownitem_text_padding_left=0x7f07002a;
+    public static final int abc_dropdownitem_text_padding_right=0x7f07002b;
+    public static final int abc_edit_text_inset_bottom_material=0x7f07002c;
+    public static final int abc_edit_text_inset_horizontal_material=0x7f07002d;
+    public static final int abc_edit_text_inset_top_material=0x7f07002e;
+    public static final int abc_floating_window_z=0x7f07002f;
+    public static final int abc_list_item_padding_horizontal_material=0x7f070030;
+    public static final int abc_panel_menu_list_width=0x7f070031;
+    public static final int abc_progress_bar_height_material=0x7f070032;
+    public static final int abc_search_view_preferred_height=0x7f070033;
+    public static final int abc_search_view_preferred_width=0x7f070034;
+    public static final int abc_seekbar_track_background_height_material=0x7f070035;
+    public static final int abc_seekbar_track_progress_height_material=0x7f070036;
+    public static final int abc_select_dialog_padding_start_material=0x7f070037;
+    public static final int abc_switch_padding=0x7f070038;
+    public static final int abc_text_size_body_1_material=0x7f070039;
+    public static final int abc_text_size_body_2_material=0x7f07003a;
+    public static final int abc_text_size_button_material=0x7f07003b;
+    public static final int abc_text_size_caption_material=0x7f07003c;
+    public static final int abc_text_size_display_1_material=0x7f07003d;
+    public static final int abc_text_size_display_2_material=0x7f07003e;
+    public static final int abc_text_size_display_3_material=0x7f07003f;
+    public static final int abc_text_size_display_4_material=0x7f070040;
+    public static final int abc_text_size_headline_material=0x7f070041;
+    public static final int abc_text_size_large_material=0x7f070042;
+    public static final int abc_text_size_medium_material=0x7f070043;
+    public static final int abc_text_size_menu_header_material=0x7f070044;
+    public static final int abc_text_size_menu_material=0x7f070045;
+    public static final int abc_text_size_small_material=0x7f070046;
+    public static final int abc_text_size_subhead_material=0x7f070047;
+    public static final int abc_text_size_subtitle_material_toolbar=0x7f070048;
+    public static final int abc_text_size_title_material=0x7f070049;
+    public static final int abc_text_size_title_material_toolbar=0x7f07004a;
+    public static final int activity_horizontal_margin=0x7f07004b;
+    public static final int activity_margin=0x7f07004c;
+    public static final int activity_vertical_margin=0x7f07004d;
+    public static final int cardview_compat_inset_shadow=0x7f07004e;
+    public static final int cardview_default_elevation=0x7f07004f;
+    public static final int cardview_default_radius=0x7f070050;
+    public static final int compat_button_inset_horizontal_material=0x7f070051;
+    public static final int compat_button_inset_vertical_material=0x7f070052;
+    public static final int compat_button_padding_horizontal_material=0x7f070053;
+    public static final int compat_button_padding_vertical_material=0x7f070054;
+    public static final int compat_control_corner_material=0x7f070055;
+    public static final int def_margin=0x7f070056;
+    public static final int default_margin=0x7f070057;
+    public static final int default_padding=0x7f070058;
+    public static final int default_radius=0x7f070059;
+    public static final int design_appbar_elevation=0x7f07005a;
+    public static final int design_bottom_navigation_active_item_max_width=0x7f07005b;
+    public static final int design_bottom_navigation_active_text_size=0x7f07005c;
+    public static final int design_bottom_navigation_elevation=0x7f07005d;
+    public static final int design_bottom_navigation_height=0x7f07005e;
+    public static final int design_bottom_navigation_item_max_width=0x7f07005f;
+    public static final int design_bottom_navigation_item_min_width=0x7f070060;
+    public static final int design_bottom_navigation_margin=0x7f070061;
+    public static final int design_bottom_navigation_shadow_height=0x7f070062;
+    public static final int design_bottom_navigation_text_size=0x7f070063;
+    public static final int design_bottom_sheet_modal_elevation=0x7f070064;
+    public static final int design_bottom_sheet_peek_height_min=0x7f070065;
+    public static final int design_fab_border_width=0x7f070066;
+    public static final int design_fab_elevation=0x7f070067;
+    public static final int design_fab_image_size=0x7f070068;
+    public static final int design_fab_size_mini=0x7f070069;
+    public static final int design_fab_size_normal=0x7f07006a;
+    public static final int design_fab_translation_z_pressed=0x7f07006b;
+    public static final int design_navigation_elevation=0x7f07006c;
+    public static final int design_navigation_icon_padding=0x7f07006d;
+    public static final int design_navigation_icon_size=0x7f07006e;
+    public static final int design_navigation_max_width=0x7f07006f;
+    public static final int design_navigation_padding_bottom=0x7f070070;
+    public static final int design_navigation_separator_vertical_padding=0x7f070071;
+    public static final int design_snackbar_action_inline_max_width=0x7f070072;
+    public static final int design_snackbar_background_corner_radius=0x7f070073;
+    public static final int design_snackbar_elevation=0x7f070074;
+    public static final int design_snackbar_extra_spacing_horizontal=0x7f070075;
+    public static final int design_snackbar_max_width=0x7f070076;
+    public static final int design_snackbar_min_width=0x7f070077;
+    public static final int design_snackbar_padding_horizontal=0x7f070078;
+    public static final int design_snackbar_padding_vertical=0x7f070079;
+    public static final int design_snackbar_padding_vertical_2lines=0x7f07007a;
+    public static final int design_snackbar_text_size=0x7f07007b;
+    public static final int design_tab_max_width=0x7f07007c;
+    public static final int design_tab_scrollable_min_width=0x7f07007d;
+    public static final int design_tab_text_size=0x7f07007e;
+    public static final int design_tab_text_size_2line=0x7f07007f;
+    public static final int disabled_alpha_material_dark=0x7f070080;
+    public static final int disabled_alpha_material_light=0x7f070081;
+    public static final int editText_padding=0x7f070082;
+    public static final int fab_margin=0x7f070083;
+    public static final int fab_size_mini=0x7f070084;
+    public static final int fab_size_normal=0x7f070085;
+    public static final int fastscroll_default_thickness=0x7f070086;
+    public static final int fastscroll_margin=0x7f070087;
+    public static final int fastscroll_minimum_range=0x7f070088;
+    public static final int g_top_margin=0x7f070089;
+    public static final int highlight_alpha_material_colored=0x7f07008a;
+    public static final int highlight_alpha_material_dark=0x7f07008b;
+    public static final int highlight_alpha_material_light=0x7f07008c;
+    public static final int hint_alpha_material_dark=0x7f07008d;
+    public static final int hint_alpha_material_light=0x7f07008e;
+    public static final int hint_pressed_alpha_material_dark=0x7f07008f;
+    public static final int hint_pressed_alpha_material_light=0x7f070090;
+    public static final int image_final_width=0x7f070091;
+    public static final int image_width=0x7f070092;
+    public static final int item_touch_helper_max_drag_scroll_per_frame=0x7f070093;
+    public static final int item_touch_helper_swipe_escape_max_velocity=0x7f070094;
+    public static final int item_touch_helper_swipe_escape_velocity=0x7f070095;
+    public static final int labels_text_size=0x7f070096;
+    public static final int min_padding=0x7f070097;
+    public static final int nav_header_height=0x7f070098;
+    public static final int nav_header_vertical_spacing=0x7f070099;
+    public static final int notification_action_icon_size=0x7f07009a;
+    public static final int notification_action_text_size=0x7f07009b;
+    public static final int notification_big_circle_margin=0x7f07009c;
+    public static final int notification_content_margin_start=0x7f07009d;
+    public static final int notification_large_icon_height=0x7f07009e;
+    public static final int notification_large_icon_width=0x7f07009f;
+    public static final int notification_main_column_padding_top=0x7f0700a0;
+    public static final int notification_media_narrow_margin=0x7f0700a1;
+    public static final int notification_right_icon_size=0x7f0700a2;
+    public static final int notification_right_side_padding_top=0x7f0700a3;
+    public static final int notification_small_icon_background_padding=0x7f0700a4;
+    public static final int notification_small_icon_size_as_large=0x7f0700a5;
+    public static final int notification_subtext_size=0x7f0700a6;
+    public static final int notification_top_pad=0x7f0700a7;
+    public static final int notification_top_pad_large_text=0x7f0700a8;
+    public static final int small_margin=0x7f0700a9;
+    public static final int small_padding=0x7f0700aa;
+    public static final int spacing_normal=0x7f0700ab;
+    public static final int tooltip_corner_radius=0x7f0700ac;
+    public static final int tooltip_horizontal_padding=0x7f0700ad;
+    public static final int tooltip_margin=0x7f0700ae;
+    public static final int tooltip_precise_anchor_extra_offset=0x7f0700af;
+    public static final int tooltip_precise_anchor_threshold=0x7f0700b0;
+    public static final int tooltip_vertical_padding=0x7f0700b1;
+    public static final int tooltip_y_offset_non_touch=0x7f0700b2;
+    public static final int tooltip_y_offset_touch=0x7f0700b3;
+    public static final int txt_container_padding=0x7f0700b4;
   }
   public static final class drawable {
     public static final int abc_ab_share_pack_mtrl_alpha=0x7f080007;
@@ -3704,471 +4185,464 @@ public final class R {
     public static final int abc_textfield_search_default_mtrl_alpha=0x7f080057;
     public static final int abc_textfield_search_material=0x7f080058;
     public static final int abc_vector_test=0x7f080059;
-    public static final int app_logo=0x7f08005a;
-    public static final int app_logo_white=0x7f08005b;
-    public static final int avd_hide_password=0x7f08005c;
-    public static final int avd_show_password=0x7f08005d;
-    public static final int banana=0x7f08005e;
-    public static final int button_style=0x7f08005f;
-    public static final int cabbage=0x7f080060;
-    public static final int chicken=0x7f080061;
-    public static final int common_full_open_on_phone=0x7f080062;
-    public static final int common_google_signin_btn_icon_dark=0x7f080063;
-    public static final int common_google_signin_btn_icon_dark_focused=0x7f080064;
-    public static final int common_google_signin_btn_icon_dark_normal=0x7f080065;
-    public static final int common_google_signin_btn_icon_dark_normal_background=0x7f080066;
-    public static final int common_google_signin_btn_icon_disabled=0x7f080067;
-    public static final int common_google_signin_btn_icon_light=0x7f080068;
-    public static final int common_google_signin_btn_icon_light_focused=0x7f080069;
-    public static final int common_google_signin_btn_icon_light_normal=0x7f08006a;
-    public static final int common_google_signin_btn_icon_light_normal_background=0x7f08006b;
-    public static final int common_google_signin_btn_text_dark=0x7f08006c;
-    public static final int common_google_signin_btn_text_dark_focused=0x7f08006d;
-    public static final int common_google_signin_btn_text_dark_normal=0x7f08006e;
-    public static final int common_google_signin_btn_text_dark_normal_background=0x7f08006f;
-    public static final int common_google_signin_btn_text_disabled=0x7f080070;
-    public static final int common_google_signin_btn_text_light=0x7f080071;
-    public static final int common_google_signin_btn_text_light_focused=0x7f080072;
-    public static final int common_google_signin_btn_text_light_normal=0x7f080073;
-    public static final int common_google_signin_btn_text_light_normal_background=0x7f080074;
-    public static final int cow=0x7f080075;
-    public static final int design_bottom_navigation_item_background=0x7f080076;
-    public static final int design_fab_background=0x7f080077;
-    public static final int design_ic_visibility=0x7f080078;
-    public static final int design_ic_visibility_off=0x7f080079;
-    public static final int design_password_eye=0x7f08007a;
-    public static final int design_snackbar_background=0x7f08007b;
-    public static final int googleg_disabled_color_18=0x7f08007c;
-    public static final int googleg_standard_color_18=0x7f08007d;
-    public static final int ic_add_cart_white=0x7f08007e;
-    public static final int ic_add_photo_white=0x7f08007f;
-    public static final int ic_add_white=0x7f080080;
-    public static final int ic_audio=0x7f080081;
-    public static final int ic_back_white=0x7f080082;
-    public static final int ic_basket=0x7f080083;
-    public static final int ic_call=0x7f080084;
-    public static final int ic_cart_dark=0x7f080085;
-    public static final int ic_check_white=0x7f080086;
-    public static final int ic_collections=0x7f080087;
-    public static final int ic_edit_white=0x7f080088;
-    public static final int ic_eye_white=0x7f080089;
-    public static final int ic_filter=0x7f08008a;
-    public static final int ic_filter_white=0x7f08008b;
-    public static final int ic_home=0x7f08008c;
-    public static final int ic_launcher_foreground=0x7f08008d;
-    public static final int ic_lock_white=0x7f08008e;
-    public static final int ic_log_out=0x7f08008f;
-    public static final int ic_mail=0x7f080090;
-    public static final int ic_menu_camera=0x7f080091;
-    public static final int ic_menu_gallery=0x7f080092;
-    public static final int ic_menu_manage=0x7f080093;
-    public static final int ic_menu_send=0x7f080094;
-    public static final int ic_menu_share=0x7f080095;
-    public static final int ic_menu_slideshow=0x7f080096;
-    public static final int ic_more_vertical=0x7f080097;
-    public static final int ic_nav_cart=0x7f080098;
-    public static final int ic_phone=0x7f080099;
-    public static final int ic_place=0x7f08009a;
-    public static final int ic_play_arrow=0x7f08009b;
-    public static final int ic_price_tag=0x7f08009c;
-    public static final int ic_search=0x7f08009d;
-    public static final int ic_upload=0x7f08009e;
-    public static final int ic_user=0x7f08009f;
-    public static final int ic_user_white=0x7f0800a0;
-    public static final int london_flat=0x7f0800a1;
-    public static final int material_flat=0x7f0800a2;
-    public static final int material_wallpaper=0x7f0800a3;
-    public static final int navigation_empty_icon=0x7f0800a4;
-    public static final int notification_action_background=0x7f0800a5;
-    public static final int notification_bg=0x7f0800a6;
-    public static final int notification_bg_low=0x7f0800a7;
-    public static final int notification_bg_low_normal=0x7f0800a8;
-    public static final int notification_bg_low_pressed=0x7f0800a9;
-    public static final int notification_bg_normal=0x7f0800aa;
-    public static final int notification_bg_normal_pressed=0x7f0800ab;
-    public static final int notification_icon_background=0x7f0800ac;
-    public static final int notification_template_icon_bg=0x7f0800ad;
-    public static final int notification_template_icon_low_bg=0x7f0800ae;
-    public static final int notification_tile_bg=0x7f0800af;
-    public static final int notify_panel_notification_icon_bg=0x7f0800b0;
-    public static final int person=0x7f0800b1;
-    public static final int side_nav_bar=0x7f0800b2;
-    public static final int tomato=0x7f0800b3;
-    public static final int tooltip_frame_dark=0x7f0800b4;
-    public static final int tooltip_frame_light=0x7f0800b5;
+    public static final int airtel=0x7f08005a;
+    public static final int app_logo=0x7f08005b;
+    public static final int app_logo_white=0x7f08005c;
+    public static final int avd_hide_password=0x7f08005d;
+    public static final int avd_show_password=0x7f08005e;
+    public static final int banana=0x7f08005f;
+    public static final int button_background=0x7f080060;
+    public static final int button_style=0x7f080061;
+    public static final int cabbage=0x7f080062;
+    public static final int chicken=0x7f080063;
+    public static final int common_full_open_on_phone=0x7f080064;
+    public static final int common_google_signin_btn_icon_dark=0x7f080065;
+    public static final int common_google_signin_btn_icon_dark_focused=0x7f080066;
+    public static final int common_google_signin_btn_icon_dark_normal=0x7f080067;
+    public static final int common_google_signin_btn_icon_dark_normal_background=0x7f080068;
+    public static final int common_google_signin_btn_icon_disabled=0x7f080069;
+    public static final int common_google_signin_btn_icon_light=0x7f08006a;
+    public static final int common_google_signin_btn_icon_light_focused=0x7f08006b;
+    public static final int common_google_signin_btn_icon_light_normal=0x7f08006c;
+    public static final int common_google_signin_btn_icon_light_normal_background=0x7f08006d;
+    public static final int common_google_signin_btn_text_dark=0x7f08006e;
+    public static final int common_google_signin_btn_text_dark_focused=0x7f08006f;
+    public static final int common_google_signin_btn_text_dark_normal=0x7f080070;
+    public static final int common_google_signin_btn_text_dark_normal_background=0x7f080071;
+    public static final int common_google_signin_btn_text_disabled=0x7f080072;
+    public static final int common_google_signin_btn_text_light=0x7f080073;
+    public static final int common_google_signin_btn_text_light_focused=0x7f080074;
+    public static final int common_google_signin_btn_text_light_normal=0x7f080075;
+    public static final int common_google_signin_btn_text_light_normal_background=0x7f080076;
+    public static final int cow=0x7f080077;
+    public static final int design_bottom_navigation_item_background=0x7f080078;
+    public static final int design_fab_background=0x7f080079;
+    public static final int design_ic_visibility=0x7f08007a;
+    public static final int design_ic_visibility_off=0x7f08007b;
+    public static final int design_password_eye=0x7f08007c;
+    public static final int design_snackbar_background=0x7f08007d;
+    public static final int fab_add=0x7f08007e;
+    public static final int googleg_disabled_color_18=0x7f08007f;
+    public static final int googleg_standard_color_18=0x7f080080;
+    public static final int ic_add_cart_white=0x7f080081;
+    public static final int ic_add_photo_white=0x7f080082;
+    public static final int ic_add_white=0x7f080083;
+    public static final int ic_audio=0x7f080084;
+    public static final int ic_back_white=0x7f080085;
+    public static final int ic_basket=0x7f080086;
+    public static final int ic_call=0x7f080087;
+    public static final int ic_cart_dark=0x7f080088;
+    public static final int ic_check_white=0x7f080089;
+    public static final int ic_collections=0x7f08008a;
+    public static final int ic_edit_white=0x7f08008b;
+    public static final int ic_eye_white=0x7f08008c;
+    public static final int ic_filter=0x7f08008d;
+    public static final int ic_filter_white=0x7f08008e;
+    public static final int ic_home=0x7f08008f;
+    public static final int ic_launcher_foreground=0x7f080090;
+    public static final int ic_lock_white=0x7f080091;
+    public static final int ic_log_out=0x7f080092;
+    public static final int ic_mail=0x7f080093;
+    public static final int ic_menu_camera=0x7f080094;
+    public static final int ic_menu_gallery=0x7f080095;
+    public static final int ic_menu_manage=0x7f080096;
+    public static final int ic_menu_send=0x7f080097;
+    public static final int ic_menu_share=0x7f080098;
+    public static final int ic_menu_slideshow=0x7f080099;
+    public static final int ic_more_vertical=0x7f08009a;
+    public static final int ic_nav_cart=0x7f08009b;
+    public static final int ic_phone=0x7f08009c;
+    public static final int ic_place=0x7f08009d;
+    public static final int ic_play_arrow=0x7f08009e;
+    public static final int ic_price_tag=0x7f08009f;
+    public static final int ic_search=0x7f0800a0;
+    public static final int ic_upload=0x7f0800a1;
+    public static final int ic_user=0x7f0800a2;
+    public static final int ic_user_white=0x7f0800a3;
+    public static final int london_flat=0x7f0800a4;
+    public static final int material_flat=0x7f0800a5;
+    public static final int material_wallpaper=0x7f0800a6;
+    public static final int mtnnew=0x7f0800a7;
+    public static final int navigation_empty_icon=0x7f0800a8;
+    public static final int notification_action_background=0x7f0800a9;
+    public static final int notification_bg=0x7f0800aa;
+    public static final int notification_bg_low=0x7f0800ab;
+    public static final int notification_bg_low_normal=0x7f0800ac;
+    public static final int notification_bg_low_pressed=0x7f0800ad;
+    public static final int notification_bg_normal=0x7f0800ae;
+    public static final int notification_bg_normal_pressed=0x7f0800af;
+    public static final int notification_icon_background=0x7f0800b0;
+    public static final int notification_template_icon_bg=0x7f0800b1;
+    public static final int notification_template_icon_low_bg=0x7f0800b2;
+    public static final int notification_tile_bg=0x7f0800b3;
+    public static final int notify_panel_notification_icon_bg=0x7f0800b4;
+    public static final int person=0x7f0800b5;
+    public static final int side_nav_bar=0x7f0800b6;
+    public static final int text_background=0x7f0800b7;
+    public static final int tigo=0x7f0800b8;
+    public static final int tomato=0x7f0800b9;
+    public static final int tooltip_frame_dark=0x7f0800ba;
+    public static final int tooltip_frame_light=0x7f0800bb;
   }
   public static final class id {
     public static final int ALT=0x7f090000;
     public static final int CTRL=0x7f090001;
-    public static final int FUNCTION=0x7f090002;
-    public static final int META=0x7f090003;
-    public static final int SHIFT=0x7f090004;
-    public static final int SYM=0x7f090005;
-    public static final int VideoView=0x7f090006;
-    public static final int action0=0x7f090007;
-    public static final int action_EditPassword=0x7f090008;
-    public static final int action_bar=0x7f090009;
-    public static final int action_bar_activity_content=0x7f09000a;
-    public static final int action_bar_container=0x7f09000b;
-    public static final int action_bar_root=0x7f09000c;
-    public static final int action_bar_spinner=0x7f09000d;
-    public static final int action_bar_subtitle=0x7f09000e;
-    public static final int action_bar_title=0x7f09000f;
-    public static final int action_container=0x7f090010;
-    public static final int action_context_bar=0x7f090011;
-    public static final int action_deleteProduct=0x7f090012;
-    public static final int action_divider=0x7f090013;
-    public static final int action_image=0x7f090014;
-    public static final int action_list_view=0x7f090015;
-    public static final int action_menu_divider=0x7f090016;
-    public static final int action_menu_presenter=0x7f090017;
-    public static final int action_mode_bar=0x7f090018;
-    public static final int action_mode_bar_stub=0x7f090019;
-    public static final int action_mode_close_button=0x7f09001a;
-    public static final int action_saveEditAccount=0x7f09001b;
-    public static final int action_saveNewPassword=0x7f09001c;
-    public static final int action_search=0x7f09001d;
-    public static final int action_text=0x7f09001e;
-    public static final int actions=0x7f09001f;
-    public static final int activity_chooser_view_content=0x7f090020;
-    public static final int add=0x7f090021;
-    public static final int addProduct1_rootLayout=0x7f090022;
-    public static final int addProduct2_rootLayout=0x7f090023;
-    public static final int addProduct3_rootLayout=0x7f090024;
-    public static final int addProduct4_btnAddImage1=0x7f090025;
-    public static final int addProduct4_btnAddImage2=0x7f090026;
-    public static final int addProduct4_btnAddImage3=0x7f090027;
-    public static final int addProduct4_btnAddImage4=0x7f090028;
-    public static final int addProduct4_rootLayout=0x7f090029;
-    public static final int addProduct4_txtImageName1=0x7f09002a;
-    public static final int addProduct4_txtImageName2=0x7f09002b;
-    public static final int addProduct4_txtImageName3=0x7f09002c;
-    public static final int addProduct4_txtImageName4=0x7f09002d;
-    public static final int addProduct5_rootLayout=0x7f09002e;
-    public static final int addProduct_btnChooseLocation=0x7f09002f;
-    public static final int addProduct_btnCurrentLocation=0x7f090030;
-    public static final int addProduct_btnNext1=0x7f090031;
-    public static final int addProduct_btnNext2=0x7f090032;
-    public static final int addProduct_btnNext3=0x7f090033;
-    public static final int addProduct_btnNext4=0x7f090034;
-    public static final int addProduct_btnRecordAudio=0x7f090035;
-    public static final int addProduct_btnUploadVideo=0x7f090036;
-    public static final int addProduct_categories=0x7f090037;
-    public static final int addProduct_layRecordAudio=0x7f090038;
-    public static final int addProduct_txtDescription=0x7f090039;
-    public static final int addProduct_txtPrice=0x7f09003a;
-    public static final int addProduct_txtProductName=0x7f09003b;
-    public static final int addProduct_txtRecordAudio=0x7f09003c;
-    public static final int addProduct_viewPager=0x7f09003d;
-    public static final int adjust_height=0x7f09003e;
-    public static final int adjust_width=0x7f09003f;
-    public static final int alertTitle=0x7f090040;
-    public static final int all=0x7f090041;
-    public static final int always=0x7f090042;
-    public static final int async=0x7f090043;
-    public static final int auto=0x7f090044;
-    public static final int basic=0x7f090045;
-    public static final int beginning=0x7f090046;
-    public static final int blocking=0x7f090047;
-    public static final int bottom=0x7f090048;
-    public static final int btn_Sign_Up_1_Next=0x7f090049;
-    public static final int buttonPanel=0x7f09004a;
-    public static final int cancel_action=0x7f09004b;
-    public static final int category_recyclerView=0x7f09004c;
-    public static final int center=0x7f09004d;
-    public static final int center_horizontal=0x7f09004e;
-    public static final int center_vertical=0x7f09004f;
-    public static final int chains=0x7f090050;
-    public static final int checkbox=0x7f090051;
-    public static final int chronometer=0x7f090052;
-    public static final int clip_horizontal=0x7f090053;
-    public static final int clip_vertical=0x7f090054;
-    public static final int collapseActionView=0x7f090055;
-    public static final int container=0x7f090056;
-    public static final int contentPanel=0x7f090057;
-    public static final int coordinator=0x7f090058;
-    public static final int custom=0x7f090059;
-    public static final int customPanel=0x7f09005a;
-    public static final int d=0x7f09005b;
-    public static final int dark=0x7f09005c;
-    public static final int decor_content_parent=0x7f09005d;
-    public static final int default_activity_button=0x7f09005e;
-    public static final int design_bottom_sheet=0x7f09005f;
-    public static final int design_menu_item_action_area=0x7f090060;
-    public static final int design_menu_item_action_area_stub=0x7f090061;
-    public static final int design_menu_item_text=0x7f090062;
-    public static final int design_navigation_view=0x7f090063;
-    public static final int disableHome=0x7f090064;
-    public static final int dismiss=0x7f090065;
-    public static final int drawerLayout=0x7f090066;
-    public static final int editPassword_txtConfirmPassword=0x7f090067;
-    public static final int editPassword_txtNewPassword=0x7f090068;
-    public static final int editPassword_txtOldPassword=0x7f090069;
-    public static final int editProduct_btnAddImage1=0x7f09006a;
-    public static final int editProduct_btnAddImage2=0x7f09006b;
-    public static final int editProduct_btnAddImage3=0x7f09006c;
-    public static final int editProduct_btnAddImage4=0x7f09006d;
-    public static final int editProduct_btnChooseLocation=0x7f09006e;
-    public static final int editProduct_btnCurrentLocation=0x7f09006f;
-    public static final int editProduct_btnRecordAudio=0x7f090070;
-    public static final int editProduct_btnUploadVideo=0x7f090071;
-    public static final int editProduct_categories=0x7f090072;
-    public static final int editProduct_imgCart=0x7f090073;
-    public static final int editProduct_imgPriceTag=0x7f090074;
-    public static final int editProduct_layEmail=0x7f090075;
-    public static final int editProduct_layPrice=0x7f090076;
-    public static final int editProduct_layProductDescription=0x7f090077;
-    public static final int editProduct_layProductName=0x7f090078;
-    public static final int editProduct_rootLayout=0x7f090079;
-    public static final int editProduct_txtEmail=0x7f09007a;
-    public static final int editProduct_txtPrice=0x7f09007b;
-    public static final int editProduct_txtProductDescription=0x7f09007c;
-    public static final int editProduct_txtProductName=0x7f09007d;
-    public static final int editProfile_imgEmail=0x7f09007e;
-    public static final int edit_query=0x7f09007f;
-    public static final int email=0x7f090080;
-    public static final int end=0x7f090081;
-    public static final int end_padder=0x7f090082;
-    public static final int enterAlways=0x7f090083;
-    public static final int enterAlwaysCollapsed=0x7f090084;
-    public static final int exitUntilCollapsed=0x7f090085;
-    public static final int expand_activities_button=0x7f090086;
-    public static final int expanded_menu=0x7f090087;
-    public static final int fill=0x7f090088;
-    public static final int fill_horizontal=0x7f090089;
-    public static final int fill_vertical=0x7f09008a;
-    public static final int fixed=0x7f09008b;
-    public static final int fname=0x7f09008c;
-    public static final int forever=0x7f09008d;
-    public static final int forgotPassword1_rootLayout=0x7f09008e;
-    public static final int forgotPassword2_rootLayout=0x7f09008f;
-    public static final int forgotPassword_ViewPager=0x7f090090;
-    public static final int forgotPassword_btnNext=0x7f090091;
-    public static final int forgotPassword_securityQuestion=0x7f090092;
-    public static final int forgotPassword_txtAnswer=0x7f090093;
-    public static final int forgotPassword_txtConfirmPassword=0x7f090094;
-    public static final int forgotPassword_txtNewPassword=0x7f090095;
-    public static final int fragmentHome_rootLayout=0x7f090096;
-    public static final int fragmentMore_rootLayout=0x7f090097;
-    public static final int ghost_view=0x7f090098;
-    public static final int holderCategory_btnMore=0x7f090099;
-    public static final int holderCategory_recyclerView=0x7f09009a;
-    public static final int holderCategory_txtCategory=0x7f09009b;
-    public static final int holderCategory_txtSubtitle=0x7f09009c;
-    public static final int holderMyProduct_imgProductImage=0x7f09009d;
-    public static final int holderMyProduct_rootLayout=0x7f09009e;
-    public static final int holderMyProduct_txtProductName=0x7f09009f;
-    public static final int holderMyProduct_txtProductPrice=0x7f0900a0;
-    public static final int holder_imageView=0x7f0900a1;
-    public static final int home=0x7f0900a2;
-    public static final int homeAppBar_fab=0x7f0900a3;
-    public static final int homeAppBar_rootLayout=0x7f0900a4;
-    public static final int homeAsUp=0x7f0900a5;
-    public static final int homeLayout=0x7f0900a6;
-    public static final int icon=0x7f0900a7;
-    public static final int icon_group=0x7f0900a8;
-    public static final int icon_only=0x7f0900a9;
-    public static final int ifRoom=0x7f0900aa;
-    public static final int image=0x7f0900ab;
-    public static final int imgItem=0x7f0900ac;
-    public static final int info=0x7f0900ad;
-    public static final int italic=0x7f0900ae;
-    public static final int item_touch_helper_previous_elevation=0x7f0900af;
-    public static final int largeLabel=0x7f0900b0;
-    public static final int left=0x7f0900b1;
-    public static final int light=0x7f0900b2;
-    public static final int line1=0x7f0900b3;
-    public static final int line3=0x7f0900b4;
-    public static final int listMode=0x7f0900b5;
-    public static final int listView1=0x7f0900b6;
-    public static final int list_item=0x7f0900b7;
-    public static final int loginRootLayout=0x7f0900b8;
-    public static final int login_btnForgotPassword=0x7f0900b9;
-    public static final int login_btnLogin=0x7f0900ba;
-    public static final int login_btnSignUp=0x7f0900bb;
-    public static final int login_txtEmail=0x7f0900bc;
-    public static final int login_txtPassword=0x7f0900bd;
-    public static final int masked=0x7f0900be;
-    public static final int media_actions=0x7f0900bf;
-    public static final int message=0x7f0900c0;
-    public static final int middle=0x7f0900c1;
-    public static final int mini=0x7f0900c2;
-    public static final int multiply=0x7f0900c3;
-    public static final int myAccount_fab=0x7f0900c4;
-    public static final int navDrawerHeader_UserFarmName=0x7f0900c5;
-    public static final int navDrawerHeader_UserFullName=0x7f0900c6;
-    public static final int navDrawerHeader_UserImage=0x7f0900c7;
-    public static final int nav_camera=0x7f0900c8;
-    public static final int nav_gallery=0x7f0900c9;
-    public static final int nav_item_account=0x7f0900ca;
-    public static final int nav_item_addProduct=0x7f0900cb;
-    public static final int nav_item_category=0x7f0900cc;
-    public static final int nav_item_home=0x7f0900cd;
-    public static final int nav_item_login=0x7f0900ce;
-    public static final int nav_item_logout=0x7f0900cf;
-    public static final int nav_item_products=0x7f0900d0;
-    public static final int nav_manage=0x7f0900d1;
-    public static final int nav_send=0x7f0900d2;
-    public static final int nav_share=0x7f0900d3;
-    public static final int nav_slideshow=0x7f0900d4;
-    public static final int navigationView=0x7f0900d5;
-    public static final int navigation_header_container=0x7f0900d6;
-    public static final int never=0x7f0900d7;
-    public static final int none=0x7f0900d8;
-    public static final int normal=0x7f0900d9;
-    public static final int notification_background=0x7f0900da;
-    public static final int notification_main_column=0x7f0900db;
-    public static final int notification_main_column_container=0x7f0900dc;
-    public static final int number=0x7f0900dd;
-    public static final int packed=0x7f0900de;
-    public static final int parallax=0x7f0900df;
-    public static final int parent=0x7f0900e0;
-    public static final int parentPanel=0x7f0900e1;
-    public static final int parent_matrix=0x7f0900e2;
-    public static final int pin=0x7f0900e3;
-    public static final int progress_circular=0x7f0900e4;
-    public static final int progress_horizontal=0x7f0900e5;
-    public static final int radio=0x7f0900e6;
-    public static final int recyclerViewHome=0x7f0900e7;
-    public static final int recyclerViewMore=0x7f0900e8;
-    public static final int recyclerViewMyProducts=0x7f0900e9;
-    public static final int recyclerViewMyWishList=0x7f0900ea;
-    public static final int right=0x7f0900eb;
-    public static final int right_icon=0x7f0900ec;
-    public static final int right_side=0x7f0900ed;
-    public static final int rootMyProduct=0x7f0900ee;
-    public static final int rootMyWishList=0x7f0900ef;
-    public static final int save_image_matrix=0x7f0900f0;
-    public static final int save_non_transition_alpha=0x7f0900f1;
-    public static final int save_scale_type=0x7f0900f2;
-    public static final int screen=0x7f0900f3;
-    public static final int scroll=0x7f0900f4;
-    public static final int scrollIndicatorDown=0x7f0900f5;
-    public static final int scrollIndicatorUp=0x7f0900f6;
-    public static final int scrollView=0x7f0900f7;
-    public static final int scrollable=0x7f0900f8;
-    public static final int searchView1=0x7f0900f9;
-    public static final int search_badge=0x7f0900fa;
-    public static final int search_bar=0x7f0900fb;
-    public static final int search_button=0x7f0900fc;
-    public static final int search_close_btn=0x7f0900fd;
-    public static final int search_edit_frame=0x7f0900fe;
-    public static final int search_go_btn=0x7f0900ff;
-    public static final int search_mag_icon=0x7f090100;
-    public static final int search_plate=0x7f090101;
-    public static final int search_src_text=0x7f090102;
-    public static final int search_voice_btn=0x7f090103;
-    public static final int select_dialog_listview=0x7f090104;
-    public static final int shortcut=0x7f090105;
-    public static final int showCustom=0x7f090106;
-    public static final int showHome=0x7f090107;
-    public static final int showTitle=0x7f090108;
-    public static final int signUp1_btnNext=0x7f090109;
-    public static final int signUp1_rootLayout=0x7f09010a;
-    public static final int signUp1_txtFirstName=0x7f09010b;
-    public static final int signUp1_txtLastName=0x7f09010c;
-    public static final int signUp2_btnNext=0x7f09010d;
-    public static final int signUp2_btnPrevious=0x7f09010e;
-    public static final int signUp2_rootLayout=0x7f09010f;
-    public static final int signUp2_txtNumber=0x7f090110;
-    public static final int signUp3_btnNext=0x7f090111;
-    public static final int signUp3_btnPrevious=0x7f090112;
-    public static final int signUp3_rootLayout=0x7f090113;
-    public static final int signUp3_txtEmail=0x7f090114;
-    public static final int signUp4_btnNext=0x7f090115;
-    public static final int signUp4_btnPrevious=0x7f090116;
-    public static final int signUp4_rootLayout=0x7f090117;
-    public static final int signUp4_txtPassword=0x7f090118;
-    public static final int signUp4_txtPasswordLay=0x7f090119;
-    public static final int signUp5_btnNext=0x7f09011a;
-    public static final int signUp5_btnPrevious=0x7f09011b;
-    public static final int signUp5_rootLayout=0x7f09011c;
-    public static final int signUp5_spnSecurityQ=0x7f09011d;
-    public static final int signUp5_txtAnswer=0x7f09011e;
-    public static final int signUp6_btnPrevious=0x7f09011f;
-    public static final int signUp6_btnSignUp=0x7f090120;
-    public static final int signUp6_rootLayout=0x7f090121;
-    public static final int signUp_layPrevious=0x7f090122;
-    public static final int sign_Up_viewPager=0x7f090123;
-    public static final int smallLabel=0x7f090124;
-    public static final int snackbar_action=0x7f090125;
-    public static final int snackbar_text=0x7f090126;
-    public static final int snap=0x7f090127;
-    public static final int spacer=0x7f090128;
-    public static final int split_action_bar=0x7f090129;
-    public static final int spread=0x7f09012a;
-    public static final int spread_inside=0x7f09012b;
-    public static final int src_atop=0x7f09012c;
-    public static final int src_in=0x7f09012d;
-    public static final int src_over=0x7f09012e;
-    public static final int standard=0x7f09012f;
-    public static final int start=0x7f090130;
-    public static final int status_bar_latest_event_content=0x7f090131;
-    public static final int submenuarrow=0x7f090132;
-    public static final int submit_area=0x7f090133;
-    public static final int tabMode=0x7f090134;
-    public static final int tag_transition_group=0x7f090135;
-    public static final int text=0x7f090136;
-    public static final int text2=0x7f090137;
-    public static final int textSpacerNoButtons=0x7f090138;
-    public static final int textSpacerNoTitle=0x7f090139;
-    public static final int text_input_password_toggle=0x7f09013a;
-    public static final int textinput_counter=0x7f09013b;
-    public static final int textinput_error=0x7f09013c;
-    public static final int time=0x7f09013d;
-    public static final int title=0x7f09013e;
-    public static final int titleDividerNoCustom=0x7f09013f;
-    public static final int title_template=0x7f090140;
-    public static final int toolbar=0x7f090141;
-    public static final int top=0x7f090142;
-    public static final int topPanel=0x7f090143;
-    public static final int touch_outside=0x7f090144;
-    public static final int transition_current_scene=0x7f090145;
-    public static final int transition_layout_save=0x7f090146;
-    public static final int transition_position=0x7f090147;
-    public static final int transition_scene_layoutid_cache=0x7f090148;
-    public static final int transition_transform=0x7f090149;
-    public static final int txtItem=0x7f09014a;
-    public static final int txtPrice=0x7f09014b;
-    public static final int uniform=0x7f09014c;
-    public static final int up=0x7f09014d;
-    public static final int useLogo=0x7f09014e;
-    public static final int videoToolbar_back=0x7f09014f;
-    public static final int viewProduct_bottomSheet=0x7f090150;
-    public static final int viewProduct_btnCall=0x7f090151;
-    public static final int viewProduct_btnMoreDescription=0x7f090152;
-    public static final int viewProduct_btnViewOnMap=0x7f090153;
-    public static final int viewProduct_dividerBottomSheet=0x7f090154;
-    public static final int viewProduct_dividerInner=0x7f090155;
-    public static final int viewProduct_fabEdit=0x7f090156;
-    public static final int viewProduct_icCall=0x7f090157;
-    public static final int viewProduct_icLocation=0x7f090158;
-    public static final int viewProduct_icPriceTag=0x7f090159;
-    public static final int viewProduct_imgProductImage=0x7f09015a;
-    public static final int viewProduct_layAudioDescription=0x7f09015b;
-    public static final int viewProduct_layCall=0x7f09015c;
-    public static final int viewProduct_layDescriptionText=0x7f09015d;
-    public static final int viewProduct_layLocation=0x7f09015e;
-    public static final int viewProduct_layPrice=0x7f09015f;
-    public static final int viewProduct_layRoot=0x7f090160;
-    public static final int viewProduct_layVideoDescription=0x7f090161;
-    public static final int viewProduct_recyclerViewForImages=0x7f090162;
-    public static final int viewProduct_toolbar=0x7f090163;
-    public static final int viewProduct_txtCall=0x7f090164;
-    public static final int viewProduct_txtCurrency=0x7f090165;
-    public static final int viewProduct_txtDescriptionText=0x7f090166;
-    public static final int viewProduct_txtDescriptionTitle=0x7f090167;
-    public static final int viewProduct_txtFarmName=0x7f090168;
-    public static final int viewProduct_txtLocation=0x7f090169;
-    public static final int viewProduct_txtPrice=0x7f09016a;
-    public static final int viewProduct_txtProductName=0x7f09016b;
-    public static final int view_offset_helper=0x7f09016c;
-    public static final int visible=0x7f09016d;
-    public static final int webview=0x7f09016e;
-    public static final int wide=0x7f09016f;
-    public static final int withText=0x7f090170;
-    public static final int wrap=0x7f090171;
-    public static final int wrap_content=0x7f090172;
+    public static final int Employed=0x7f090002;
+    public static final int FUNCTION=0x7f090003;
+    public static final int META=0x7f090004;
+    public static final int SHIFT=0x7f090005;
+    public static final int SYM=0x7f090006;
+    public static final int Un_employed=0x7f090007;
+    public static final int VideoView=0x7f090008;
+    public static final int action0=0x7f090009;
+    public static final int action_EditPassword=0x7f09000a;
+    public static final int action_bar=0x7f09000b;
+    public static final int action_bar_activity_content=0x7f09000c;
+    public static final int action_bar_container=0x7f09000d;
+    public static final int action_bar_root=0x7f09000e;
+    public static final int action_bar_spinner=0x7f09000f;
+    public static final int action_bar_subtitle=0x7f090010;
+    public static final int action_bar_title=0x7f090011;
+    public static final int action_container=0x7f090012;
+    public static final int action_context_bar=0x7f090013;
+    public static final int action_deleteProduct=0x7f090014;
+    public static final int action_divider=0x7f090015;
+    public static final int action_image=0x7f090016;
+    public static final int action_list_view=0x7f090017;
+    public static final int action_menu_divider=0x7f090018;
+    public static final int action_menu_presenter=0x7f090019;
+    public static final int action_mode_bar=0x7f09001a;
+    public static final int action_mode_bar_stub=0x7f09001b;
+    public static final int action_mode_close_button=0x7f09001c;
+    public static final int action_saveEditAccount=0x7f09001d;
+    public static final int action_saveNewPassword=0x7f09001e;
+    public static final int action_search=0x7f09001f;
+    public static final int action_text=0x7f090020;
+    public static final int actions=0x7f090021;
+    public static final int activity_chooser_view_content=0x7f090022;
+    public static final int add=0x7f090023;
+    public static final int addProduct_viewPager=0x7f090024;
+    public static final int adjust_height=0x7f090025;
+    public static final int adjust_width=0x7f090026;
+    public static final int alertTitle=0x7f090027;
+    public static final int all=0x7f090028;
+    public static final int always=0x7f090029;
+    public static final int async=0x7f09002a;
+    public static final int auto=0x7f09002b;
+    public static final int basic=0x7f09002c;
+    public static final int beginning=0x7f09002d;
+    public static final int blocking=0x7f09002e;
+    public static final int bottom=0x7f09002f;
+    public static final int buttonPanel=0x7f090030;
+    public static final int cancel_action=0x7f090031;
+    public static final int category_recyclerView=0x7f090032;
+    public static final int center=0x7f090033;
+    public static final int center_horizontal=0x7f090034;
+    public static final int center_vertical=0x7f090035;
+    public static final int chains=0x7f090036;
+    public static final int checkbox=0x7f090037;
+    public static final int chronometer=0x7f090038;
+    public static final int clip_horizontal=0x7f090039;
+    public static final int clip_vertical=0x7f09003a;
+    public static final int collapseActionView=0x7f09003b;
+    public static final int container=0x7f09003c;
+    public static final int contentPanel=0x7f09003d;
+    public static final int coordinator=0x7f09003e;
+    public static final int country_Name=0x7f09003f;
+    public static final int custom=0x7f090040;
+    public static final int customPanel=0x7f090041;
+    public static final int d=0x7f090042;
+    public static final int dark=0x7f090043;
+    public static final int decor_content_parent=0x7f090044;
+    public static final int default_activity_button=0x7f090045;
+    public static final int design_bottom_sheet=0x7f090046;
+    public static final int design_menu_item_action_area=0x7f090047;
+    public static final int design_menu_item_action_area_stub=0x7f090048;
+    public static final int design_menu_item_text=0x7f090049;
+    public static final int design_navigation_view=0x7f09004a;
+    public static final int disableHome=0x7f09004b;
+    public static final int dismiss=0x7f09004c;
+    public static final int down=0x7f09004d;
+    public static final int drawerLayout=0x7f09004e;
+    public static final int editPassword_txtConfirmPassword=0x7f09004f;
+    public static final int editPassword_txtNewPassword=0x7f090050;
+    public static final int editPassword_txtOldPassword=0x7f090051;
+    public static final int editProduct_btnAddImage1=0x7f090052;
+    public static final int editProduct_btnAddImage2=0x7f090053;
+    public static final int editProduct_btnAddImage3=0x7f090054;
+    public static final int editProduct_btnAddImage4=0x7f090055;
+    public static final int editProduct_btnChooseLocation=0x7f090056;
+    public static final int editProduct_btnCurrentLocation=0x7f090057;
+    public static final int editProduct_btnRecordAudio=0x7f090058;
+    public static final int editProduct_btnUploadVideo=0x7f090059;
+    public static final int editProduct_categories=0x7f09005a;
+    public static final int editProduct_imgCart=0x7f09005b;
+    public static final int editProduct_imgPriceTag=0x7f09005c;
+    public static final int editProduct_layEmail=0x7f09005d;
+    public static final int editProduct_layPrice=0x7f09005e;
+    public static final int editProduct_layProductDescription=0x7f09005f;
+    public static final int editProduct_layProductName=0x7f090060;
+    public static final int editProduct_rootLayout=0x7f090061;
+    public static final int editProduct_txtEmail=0x7f090062;
+    public static final int editProduct_txtPrice=0x7f090063;
+    public static final int editProduct_txtProductDescription=0x7f090064;
+    public static final int editProduct_txtProductName=0x7f090065;
+    public static final int editProfile_imgEmail=0x7f090066;
+    public static final int edit_query=0x7f090067;
+    public static final int email=0x7f090068;
+    public static final int end=0x7f090069;
+    public static final int end_padder=0x7f09006a;
+    public static final int enterAlways=0x7f09006b;
+    public static final int enterAlwaysCollapsed=0x7f09006c;
+    public static final int exitUntilCollapsed=0x7f09006d;
+    public static final int expand_activities_button=0x7f09006e;
+    public static final int expanded_menu=0x7f09006f;
+    public static final int fab_label=0x7f090070;
+    public static final int fill=0x7f090071;
+    public static final int fill_horizontal=0x7f090072;
+    public static final int fill_vertical=0x7f090073;
+    public static final int fixed=0x7f090074;
+    public static final int fname=0x7f090075;
+    public static final int forever=0x7f090076;
+    public static final int forgotPassword1_rootLayout=0x7f090077;
+    public static final int forgotPassword2_rootLayout=0x7f090078;
+    public static final int forgotPassword_ViewPager=0x7f090079;
+    public static final int forgotPassword_btnNext=0x7f09007a;
+    public static final int forgotPassword_securityQuestion=0x7f09007b;
+    public static final int forgotPassword_txtAnswer=0x7f09007c;
+    public static final int forgotPassword_txtConfirmPassword=0x7f09007d;
+    public static final int forgotPassword_txtNewPassword=0x7f09007e;
+    public static final int fragmentHome_rootLayout=0x7f09007f;
+    public static final int fragmentMore_rootLayout=0x7f090080;
+    public static final int ghost_view=0x7f090081;
+    public static final int holderCategory_btnMore=0x7f090082;
+    public static final int holderCategory_recyclerView=0x7f090083;
+    public static final int holderCategory_txtCategory=0x7f090084;
+    public static final int holderCategory_txtSubtitle=0x7f090085;
+    public static final int holderMyProduct_imgProductImage=0x7f090086;
+    public static final int holderMyProduct_rootLayout=0x7f090087;
+    public static final int holderMyProduct_txtProductName=0x7f090088;
+    public static final int holderMyProduct_txtProductPrice=0x7f090089;
+    public static final int holder_imageView=0x7f09008a;
+    public static final int home=0x7f09008b;
+    public static final int homeAppBar_rootLayout=0x7f09008c;
+    public static final int homeAsUp=0x7f09008d;
+    public static final int homeLayout=0x7f09008e;
+    public static final int icon=0x7f09008f;
+    public static final int icon_group=0x7f090090;
+    public static final int icon_only=0x7f090091;
+    public static final int ifRoom=0x7f090092;
+    public static final int image=0x7f090093;
+    public static final int imgItem=0x7f090094;
+    public static final int info=0x7f090095;
+    public static final int italic=0x7f090096;
+    public static final int item_touch_helper_previous_elevation=0x7f090097;
+    public static final int largeLabel=0x7f090098;
+    public static final int left=0x7f090099;
+    public static final int light=0x7f09009a;
+    public static final int line1=0x7f09009b;
+    public static final int line3=0x7f09009c;
+    public static final int listMode=0x7f09009d;
+    public static final int listView1=0x7f09009e;
+    public static final int list_item=0x7f09009f;
+    public static final int loginRootLayout=0x7f0900a0;
+    public static final int login_btnForgotPassword=0x7f0900a1;
+    public static final int login_btnLogin=0x7f0900a2;
+    public static final int login_btnSignUp=0x7f0900a3;
+    public static final int login_txtEmail=0x7f0900a4;
+    public static final int login_txtPassword=0x7f0900a5;
+    public static final int marquee=0x7f0900a6;
+    public static final int masked=0x7f0900a7;
+    public static final int material_design_android_floating_action_menu=0x7f0900a8;
+    public static final int material_design_floating_action_menu_item1=0x7f0900a9;
+    public static final int material_design_floating_action_menu_item2=0x7f0900aa;
+    public static final int material_design_floating_action_menu_item3=0x7f0900ab;
+    public static final int material_design_floating_action_menu_item4=0x7f0900ac;
+    public static final int media_actions=0x7f0900ad;
+    public static final int message=0x7f0900ae;
+    public static final int middle=0x7f0900af;
+    public static final int mini=0x7f0900b0;
+    public static final int multiply=0x7f0900b1;
+    public static final int myAccount_fab=0x7f0900b2;
+    public static final int navDrawerHeader_UserFarmName=0x7f0900b3;
+    public static final int navDrawerHeader_UserFullName=0x7f0900b4;
+    public static final int navDrawerHeader_UserImage=0x7f0900b5;
+    public static final int nav_camera=0x7f0900b6;
+    public static final int nav_gallery=0x7f0900b7;
+    public static final int nav_item_account=0x7f0900b8;
+    public static final int nav_item_addProduct=0x7f0900b9;
+    public static final int nav_item_category=0x7f0900ba;
+    public static final int nav_item_home=0x7f0900bb;
+    public static final int nav_item_login=0x7f0900bc;
+    public static final int nav_item_logout=0x7f0900bd;
+    public static final int nav_item_products=0x7f0900be;
+    public static final int nav_manage=0x7f0900bf;
+    public static final int nav_send=0x7f0900c0;
+    public static final int nav_share=0x7f0900c1;
+    public static final int nav_slideshow=0x7f0900c2;
+    public static final int navigationView=0x7f0900c3;
+    public static final int navigation_header_container=0x7f0900c4;
+    public static final int never=0x7f0900c5;
+    public static final int none=0x7f0900c6;
+    public static final int normal=0x7f0900c7;
+    public static final int notification_background=0x7f0900c8;
+    public static final int notification_main_column=0x7f0900c9;
+    public static final int notification_main_column_container=0x7f0900ca;
+    public static final int number=0x7f0900cb;
+    public static final int packed=0x7f0900cc;
+    public static final int parallax=0x7f0900cd;
+    public static final int parent=0x7f0900ce;
+    public static final int parentPanel=0x7f0900cf;
+    public static final int parent_matrix=0x7f0900d0;
+    public static final int pin=0x7f0900d1;
+    public static final int progress_circular=0x7f0900d2;
+    public static final int progress_horizontal=0x7f0900d3;
+    public static final int radio=0x7f0900d4;
+    public static final int recyclerViewHome=0x7f0900d5;
+    public static final int recyclerViewMore=0x7f0900d6;
+    public static final int recyclerViewMyProducts=0x7f0900d7;
+    public static final int recyclerViewMyWishList=0x7f0900d8;
+    public static final int retry_button=0x7f0900d9;
+    public static final int right=0x7f0900da;
+    public static final int right_icon=0x7f0900db;
+    public static final int right_side=0x7f0900dc;
+    public static final int rootMyProduct=0x7f0900dd;
+    public static final int rootMyWishList=0x7f0900de;
+    public static final int save_image_matrix=0x7f0900df;
+    public static final int save_non_transition_alpha=0x7f0900e0;
+    public static final int save_scale_type=0x7f0900e1;
+    public static final int screen=0x7f0900e2;
+    public static final int scroll=0x7f0900e3;
+    public static final int scrollIndicatorDown=0x7f0900e4;
+    public static final int scrollIndicatorUp=0x7f0900e5;
+    public static final int scrollView=0x7f0900e6;
+    public static final int scrollable=0x7f0900e7;
+    public static final int searchView1=0x7f0900e8;
+    public static final int search_badge=0x7f0900e9;
+    public static final int search_bar=0x7f0900ea;
+    public static final int search_button=0x7f0900eb;
+    public static final int search_close_btn=0x7f0900ec;
+    public static final int search_edit_frame=0x7f0900ed;
+    public static final int search_go_btn=0x7f0900ee;
+    public static final int search_mag_icon=0x7f0900ef;
+    public static final int search_plate=0x7f0900f0;
+    public static final int search_src_text=0x7f0900f1;
+    public static final int search_voice_btn=0x7f0900f2;
+    public static final int select_dialog_listview=0x7f0900f3;
+    public static final int shortcut=0x7f0900f4;
+    public static final int showCustom=0x7f0900f5;
+    public static final int showHome=0x7f0900f6;
+    public static final int showTitle=0x7f0900f7;
+    public static final int signUp__toolbar=0x7f0900f8;
+    public static final int signUp_appBarLayout=0x7f0900f9;
+    public static final int signUp_btnSignUp=0x7f0900fa;
+    public static final int signUp_btnToolbarBack=0x7f0900fb;
+    public static final int signUp_layCode=0x7f0900fc;
+    public static final int signUp_layDob=0x7f0900fd;
+    public static final int signUp_layEmail=0x7f0900fe;
+    public static final int signUp_layFirstName=0x7f0900ff;
+    public static final int signUp_layGroup=0x7f090100;
+    public static final int signUp_layLastName=0x7f090101;
+    public static final int signUp_layLocation=0x7f090102;
+    public static final int signUp_layNumber=0x7f090103;
+    public static final int signUp_layOrganisation=0x7f090104;
+    public static final int signUp_layPassword=0x7f090105;
+    public static final int signUp_layProfession=0x7f090106;
+    public static final int signUp_layStatus=0x7f090107;
+    public static final int signUp_nestedScrollView=0x7f090108;
+    public static final int signUp_noData=0x7f090109;
+    public static final int signUp_radioEmploymentStatus=0x7f09010a;
+    public static final int signUp_root=0x7f09010b;
+    public static final int signUp_txtCode=0x7f09010c;
+    public static final int signUp_txtDob=0x7f09010d;
+    public static final int signUp_txtEmail=0x7f09010e;
+    public static final int signUp_txtFirstName=0x7f09010f;
+    public static final int signUp_txtLastName=0x7f090110;
+    public static final int signUp_txtLocation=0x7f090111;
+    public static final int signUp_txtNumber=0x7f090112;
+    public static final int signUp_txtOrganisation=0x7f090113;
+    public static final int signUp_txtPassword=0x7f090114;
+    public static final int signUp_txtProfession=0x7f090115;
+    public static final int smallLabel=0x7f090116;
+    public static final int snackbar_action=0x7f090117;
+    public static final int snackbar_text=0x7f090118;
+    public static final int snap=0x7f090119;
+    public static final int spacer=0x7f09011a;
+    public static final int split_action_bar=0x7f09011b;
+    public static final int spread=0x7f09011c;
+    public static final int spread_inside=0x7f09011d;
+    public static final int src_atop=0x7f09011e;
+    public static final int src_in=0x7f09011f;
+    public static final int src_over=0x7f090120;
+    public static final int standard=0x7f090121;
+    public static final int start=0x7f090122;
+    public static final int status_bar_latest_event_content=0x7f090123;
+    public static final int submenuarrow=0x7f090124;
+    public static final int submit_area=0x7f090125;
+    public static final int tabMode=0x7f090126;
+    public static final int tag_transition_group=0x7f090127;
+    public static final int text=0x7f090128;
+    public static final int text2=0x7f090129;
+    public static final int textSpacerNoButtons=0x7f09012a;
+    public static final int textSpacerNoTitle=0x7f09012b;
+    public static final int textView=0x7f09012c;
+    public static final int text_input_password_toggle=0x7f09012d;
+    public static final int textinput_counter=0x7f09012e;
+    public static final int textinput_error=0x7f09012f;
+    public static final int time=0x7f090130;
+    public static final int title=0x7f090131;
+    public static final int titleDividerNoCustom=0x7f090132;
+    public static final int title_template=0x7f090133;
+    public static final int toolbar=0x7f090134;
+    public static final int top=0x7f090135;
+    public static final int topPanel=0x7f090136;
+    public static final int touch_outside=0x7f090137;
+    public static final int transition_current_scene=0x7f090138;
+    public static final int transition_layout_save=0x7f090139;
+    public static final int transition_position=0x7f09013a;
+    public static final int transition_scene_layoutid_cache=0x7f09013b;
+    public static final int transition_transform=0x7f09013c;
+    public static final int txtItem=0x7f09013d;
+    public static final int txtPrice=0x7f09013e;
+    public static final int uniform=0x7f09013f;
+    public static final int up=0x7f090140;
+    public static final int useLogo=0x7f090141;
+    public static final int videoToolbar_back=0x7f090142;
+    public static final int viewProduct_bottomSheet=0x7f090143;
+    public static final int viewProduct_btnCall=0x7f090144;
+    public static final int viewProduct_btnMoreDescription=0x7f090145;
+    public static final int viewProduct_btnViewOnMap=0x7f090146;
+    public static final int viewProduct_dividerBottomSheet=0x7f090147;
+    public static final int viewProduct_dividerInner=0x7f090148;
+    public static final int viewProduct_fabEdit=0x7f090149;
+    public static final int viewProduct_icCall=0x7f09014a;
+    public static final int viewProduct_icLocation=0x7f09014b;
+    public static final int viewProduct_icPriceTag=0x7f09014c;
+    public static final int viewProduct_imgProductImage=0x7f09014d;
+    public static final int viewProduct_layAudioDescription=0x7f09014e;
+    public static final int viewProduct_layCall=0x7f09014f;
+    public static final int viewProduct_layDescriptionText=0x7f090150;
+    public static final int viewProduct_layLocation=0x7f090151;
+    public static final int viewProduct_layPrice=0x7f090152;
+    public static final int viewProduct_layRoot=0x7f090153;
+    public static final int viewProduct_layVideoDescription=0x7f090154;
+    public static final int viewProduct_recyclerViewForImages=0x7f090155;
+    public static final int viewProduct_toolbar=0x7f090156;
+    public static final int viewProduct_txtCall=0x7f090157;
+    public static final int viewProduct_txtCurrency=0x7f090158;
+    public static final int viewProduct_txtDescriptionText=0x7f090159;
+    public static final int viewProduct_txtDescriptionTitle=0x7f09015a;
+    public static final int viewProduct_txtFarmName=0x7f09015b;
+    public static final int viewProduct_txtLocation=0x7f09015c;
+    public static final int viewProduct_txtPrice=0x7f09015d;
+    public static final int viewProduct_txtProductName=0x7f09015e;
+    public static final int view_offset_helper=0x7f09015f;
+    public static final int visible=0x7f090160;
+    public static final int webview=0x7f090161;
+    public static final int wide=0x7f090162;
+    public static final int withText=0x7f090163;
+    public static final int wrap=0x7f090164;
+    public static final int wrap_content=0x7f090165;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f0a0000;
@@ -4210,80 +4684,70 @@ public final class R {
     public static final int abc_search_dropdown_item_icons_2line=0x7f0b0017;
     public static final int abc_search_view=0x7f0b0018;
     public static final int abc_select_dialog_material=0x7f0b0019;
-    public static final int activity_add_product=0x7f0b001a;
-    public static final int activity_edit_password=0x7f0b001b;
-    public static final int activity_edit_product=0x7f0b001c;
-    public static final int activity_edit_profile=0x7f0b001d;
-    public static final int activity_forgot_password=0x7f0b001e;
-    public static final int activity_home=0x7f0b001f;
-    public static final int activity_login=0x7f0b0020;
-    public static final int activity_my_account=0x7f0b0021;
-    public static final int activity_my_product=0x7f0b0022;
-    public static final int activity_sign_up=0x7f0b0023;
-    public static final int activity_view_product=0x7f0b0024;
-    public static final int activity_web=0x7f0b0025;
-    public static final int design_bottom_navigation_item=0x7f0b0026;
-    public static final int design_bottom_sheet_dialog=0x7f0b0027;
-    public static final int design_layout_snackbar=0x7f0b0028;
-    public static final int design_layout_snackbar_include=0x7f0b0029;
-    public static final int design_layout_tab_icon=0x7f0b002a;
-    public static final int design_layout_tab_text=0x7f0b002b;
-    public static final int design_menu_item_action_area=0x7f0b002c;
-    public static final int design_navigation_item=0x7f0b002d;
-    public static final int design_navigation_item_header=0x7f0b002e;
-    public static final int design_navigation_item_separator=0x7f0b002f;
-    public static final int design_navigation_item_subheader=0x7f0b0030;
-    public static final int design_navigation_menu=0x7f0b0031;
-    public static final int design_navigation_menu_item=0x7f0b0032;
-    public static final int design_text_input_password_icon=0x7f0b0033;
-    public static final int fragment_add_product_1=0x7f0b0034;
-    public static final int fragment_add_product_2=0x7f0b0035;
-    public static final int fragment_add_product_3=0x7f0b0036;
-    public static final int fragment_add_product_4=0x7f0b0037;
-    public static final int fragment_add_product_5=0x7f0b0038;
-    public static final int fragment_category=0x7f0b0039;
-    public static final int fragment_forgot_password1=0x7f0b003a;
-    public static final int fragment_forgot_password2=0x7f0b003b;
-    public static final int fragment_home=0x7f0b003c;
-    public static final int fragment_more=0x7f0b003d;
-    public static final int fragment_my_products=0x7f0b003e;
-    public static final int fragment_my_wish_list=0x7f0b003f;
-    public static final int fragment_sign_up_1=0x7f0b0040;
-    public static final int fragment_sign_up_2=0x7f0b0041;
-    public static final int fragment_sign_up_3=0x7f0b0042;
-    public static final int fragment_sign_up_4=0x7f0b0043;
-    public static final int fragment_sign_up_5=0x7f0b0044;
-    public static final int fragment_sign_up_6=0x7f0b0045;
-    public static final int fragmentdialog_location=0x7f0b0046;
-    public static final int holder_category=0x7f0b0047;
-    public static final int holder_my_product=0x7f0b0048;
-    public static final int holder_product_item=0x7f0b0049;
-    public static final int holder_view_product_images=0x7f0b004a;
-    public static final int home_app_bar=0x7f0b004b;
-    public static final int home_content=0x7f0b004c;
-    public static final int nav_drawer_header=0x7f0b004d;
-    public static final int notification_action=0x7f0b004e;
-    public static final int notification_action_tombstone=0x7f0b004f;
-    public static final int notification_media_action=0x7f0b0050;
-    public static final int notification_media_cancel_action=0x7f0b0051;
-    public static final int notification_template_big_media=0x7f0b0052;
-    public static final int notification_template_big_media_custom=0x7f0b0053;
-    public static final int notification_template_big_media_narrow=0x7f0b0054;
-    public static final int notification_template_big_media_narrow_custom=0x7f0b0055;
-    public static final int notification_template_custom_big=0x7f0b0056;
-    public static final int notification_template_icon_group=0x7f0b0057;
-    public static final int notification_template_lines_media=0x7f0b0058;
-    public static final int notification_template_media=0x7f0b0059;
-    public static final int notification_template_media_custom=0x7f0b005a;
-    public static final int notification_template_part_chronometer=0x7f0b005b;
-    public static final int notification_template_part_time=0x7f0b005c;
-    public static final int select_dialog_item_material=0x7f0b005d;
-    public static final int select_dialog_multichoice_material=0x7f0b005e;
-    public static final int select_dialog_singlechoice_material=0x7f0b005f;
-    public static final int support_simple_spinner_dropdown_item=0x7f0b0060;
-    public static final int toolbar=0x7f0b0061;
-    public static final int tooltip=0x7f0b0062;
-    public static final int videoview_main=0x7f0b0063;
+    public static final int abc_tooltip=0x7f0b001a;
+    public static final int activity_add_product=0x7f0b001b;
+    public static final int activity_edit_password=0x7f0b001c;
+    public static final int activity_edit_product=0x7f0b001d;
+    public static final int activity_edit_profile=0x7f0b001e;
+    public static final int activity_forgot_password=0x7f0b001f;
+    public static final int activity_home=0x7f0b0020;
+    public static final int activity_login=0x7f0b0021;
+    public static final int activity_my_account=0x7f0b0022;
+    public static final int activity_my_product=0x7f0b0023;
+    public static final int activity_sign_up=0x7f0b0024;
+    public static final int activity_view_product=0x7f0b0025;
+    public static final int activity_web=0x7f0b0026;
+    public static final int design_bottom_navigation_item=0x7f0b0027;
+    public static final int design_bottom_sheet_dialog=0x7f0b0028;
+    public static final int design_layout_snackbar=0x7f0b0029;
+    public static final int design_layout_snackbar_include=0x7f0b002a;
+    public static final int design_layout_tab_icon=0x7f0b002b;
+    public static final int design_layout_tab_text=0x7f0b002c;
+    public static final int design_menu_item_action_area=0x7f0b002d;
+    public static final int design_navigation_item=0x7f0b002e;
+    public static final int design_navigation_item_header=0x7f0b002f;
+    public static final int design_navigation_item_separator=0x7f0b0030;
+    public static final int design_navigation_item_subheader=0x7f0b0031;
+    public static final int design_navigation_menu=0x7f0b0032;
+    public static final int design_navigation_menu_item=0x7f0b0033;
+    public static final int design_text_input_password_icon=0x7f0b0034;
+    public static final int fragment_category=0x7f0b0035;
+    public static final int fragment_forgot_password1=0x7f0b0036;
+    public static final int fragment_forgot_password2=0x7f0b0037;
+    public static final int fragment_home=0x7f0b0038;
+    public static final int fragment_more=0x7f0b0039;
+    public static final int fragment_my_products=0x7f0b003a;
+    public static final int fragment_my_wish_list=0x7f0b003b;
+    public static final int fragmentdialog_location=0x7f0b003c;
+    public static final int holder_category=0x7f0b003d;
+    public static final int holder_my_product=0x7f0b003e;
+    public static final int holder_product_item=0x7f0b003f;
+    public static final int holder_view_product_images=0x7f0b0040;
+    public static final int home_app_bar=0x7f0b0041;
+    public static final int home_content=0x7f0b0042;
+    public static final int nav_drawer_header=0x7f0b0043;
+    public static final int notification_action=0x7f0b0044;
+    public static final int notification_action_tombstone=0x7f0b0045;
+    public static final int notification_media_action=0x7f0b0046;
+    public static final int notification_media_cancel_action=0x7f0b0047;
+    public static final int notification_template_big_media=0x7f0b0048;
+    public static final int notification_template_big_media_custom=0x7f0b0049;
+    public static final int notification_template_big_media_narrow=0x7f0b004a;
+    public static final int notification_template_big_media_narrow_custom=0x7f0b004b;
+    public static final int notification_template_custom_big=0x7f0b004c;
+    public static final int notification_template_icon_group=0x7f0b004d;
+    public static final int notification_template_lines_media=0x7f0b004e;
+    public static final int notification_template_media=0x7f0b004f;
+    public static final int notification_template_media_custom=0x7f0b0050;
+    public static final int notification_template_part_chronometer=0x7f0b0051;
+    public static final int notification_template_part_time=0x7f0b0052;
+    public static final int select_dialog_item_material=0x7f0b0053;
+    public static final int select_dialog_multichoice_material=0x7f0b0054;
+    public static final int select_dialog_singlechoice_material=0x7f0b0055;
+    public static final int support_simple_spinner_dropdown_item=0x7f0b0056;
+    public static final int toolbar=0x7f0b0057;
+    public static final int videoview_main=0x7f0b0058;
+    public static final int zz_no_data=0x7f0b0059;
   }
   public static final class menu {
     public static final int activity_def_drawer=0x7f0c0000;
@@ -4299,111 +4763,151 @@ public final class R {
     public static final int ic_launcher_round=0x7f0d0001;
   }
   public static final class string {
-    public static final int abc_action_bar_home_description=0x7f0e0000;
-    public static final int abc_action_bar_up_description=0x7f0e0001;
-    public static final int abc_action_menu_overflow_description=0x7f0e0002;
-    public static final int abc_action_mode_done=0x7f0e0003;
-    public static final int abc_activity_chooser_view_see_all=0x7f0e0004;
-    public static final int abc_activitychooserview_choose_application=0x7f0e0005;
-    public static final int abc_capital_off=0x7f0e0006;
-    public static final int abc_capital_on=0x7f0e0007;
-    public static final int abc_font_family_body_1_material=0x7f0e0008;
-    public static final int abc_font_family_body_2_material=0x7f0e0009;
-    public static final int abc_font_family_button_material=0x7f0e000a;
-    public static final int abc_font_family_caption_material=0x7f0e000b;
-    public static final int abc_font_family_display_1_material=0x7f0e000c;
-    public static final int abc_font_family_display_2_material=0x7f0e000d;
-    public static final int abc_font_family_display_3_material=0x7f0e000e;
-    public static final int abc_font_family_display_4_material=0x7f0e000f;
-    public static final int abc_font_family_headline_material=0x7f0e0010;
-    public static final int abc_font_family_menu_material=0x7f0e0011;
-    public static final int abc_font_family_subhead_material=0x7f0e0012;
-    public static final int abc_font_family_title_material=0x7f0e0013;
-    public static final int abc_search_hint=0x7f0e0014;
-    public static final int abc_searchview_description_clear=0x7f0e0015;
-    public static final int abc_searchview_description_query=0x7f0e0016;
-    public static final int abc_searchview_description_search=0x7f0e0017;
-    public static final int abc_searchview_description_submit=0x7f0e0018;
-    public static final int abc_searchview_description_voice=0x7f0e0019;
-    public static final int abc_shareactionprovider_share_with=0x7f0e001a;
-    public static final int abc_shareactionprovider_share_with_application=0x7f0e001b;
-    public static final int abc_toolbar_collapse_description=0x7f0e001c;
-    public static final int action_settings=0x7f0e001d;
-    public static final int app_name=0x7f0e001e;
-    public static final int appbar_scrolling_view_behavior=0x7f0e001f;
-    public static final int bottom_sheet_behavior=0x7f0e0020;
-    public static final int character_counter_pattern=0x7f0e0021;
-    public static final int common_google_play_services_enable_button=0x7f0e0022;
-    public static final int common_google_play_services_enable_text=0x7f0e0023;
-    public static final int common_google_play_services_enable_title=0x7f0e0024;
-    public static final int common_google_play_services_install_button=0x7f0e0025;
-    public static final int common_google_play_services_install_text=0x7f0e0026;
-    public static final int common_google_play_services_install_title=0x7f0e0027;
-    public static final int common_google_play_services_notification_ticker=0x7f0e0028;
-    public static final int common_google_play_services_unknown_issue=0x7f0e0029;
-    public static final int common_google_play_services_unsupported_text=0x7f0e002a;
-    public static final int common_google_play_services_update_button=0x7f0e002b;
-    public static final int common_google_play_services_update_text=0x7f0e002c;
-    public static final int common_google_play_services_update_title=0x7f0e002d;
-    public static final int common_google_play_services_updating_text=0x7f0e002e;
-    public static final int common_google_play_services_wear_update_text=0x7f0e002f;
-    public static final int common_open_on_phone=0x7f0e0030;
-    public static final int common_signin_button_text=0x7f0e0031;
-    public static final int common_signin_button_text_long=0x7f0e0032;
-    public static final int createnewpassword=0x7f0e0033;
-    public static final int dummy_text_long=0x7f0e0034;
-    public static final int dummy_text_short=0x7f0e0035;
-    public static final int hello_blank_fragment=0x7f0e0036;
-    public static final int homeBrowseFruit=0x7f0e0037;
-    public static final int homeBrowseNew=0x7f0e0038;
-    public static final int homeBrowseVegetable=0x7f0e0039;
-    public static final int homeFruitHeading=0x7f0e003a;
-    public static final int homeNewHeading=0x7f0e003b;
-    public static final int homeNewMore=0x7f0e003c;
-    public static final int homeVegetableHeading=0x7f0e003d;
-    public static final int image=0x7f0e003e;
-    public static final int login_btnForgotPassword=0x7f0e003f;
-    public static final int login_btnLogin=0x7f0e0040;
-    public static final int login_txtEmail=0x7f0e0041;
-    public static final int login_txtPassword=0x7f0e0042;
-    public static final int lorem=0x7f0e0043;
-    public static final int lorem_ipsium=0x7f0e0044;
-    public static final int navAddProduct=0x7f0e0045;
-    public static final int navCategories=0x7f0e0046;
-    public static final int navFilter=0x7f0e0047;
-    public static final int navHome=0x7f0e0048;
-    public static final int navLogin=0x7f0e0049;
-    public static final int navLogout=0x7f0e004a;
-    public static final int navMyAccount=0x7f0e004b;
-    public static final int navMyProducts=0x7f0e004c;
-    public static final int navWishList=0x7f0e004d;
-    public static final int navigation_drawer_close=0x7f0e004e;
-    public static final int navigation_drawer_open=0x7f0e004f;
-    public static final int next=0x7f0e0050;
-    public static final int password_toggle_content_description=0x7f0e0051;
-    public static final int path_password_eye=0x7f0e0052;
-    public static final int path_password_eye_mask_strike_through=0x7f0e0053;
-    public static final int path_password_eye_mask_visible=0x7f0e0054;
-    public static final int path_password_strike_through=0x7f0e0055;
-    public static final int questionCaption=0x7f0e0056;
-    public static final int quila_name=0x7f0e0057;
-    public static final int quila_name2=0x7f0e0058;
-    public static final int quila_tagline=0x7f0e0059;
-    public static final int search_menu_title=0x7f0e005a;
-    public static final int securityoptions=0x7f0e005b;
-    public static final int sign_up=0x7f0e005c;
-    public static final int status_bar_notification_info_overflow=0x7f0e005d;
-    public static final int title_activity_def=0x7f0e005e;
-    public static final int title_activity_login=0x7f0e005f;
-    public static final int viewProduct_audioDescriptionText=0x7f0e0060;
-    public static final int viewProduct_callFarmer=0x7f0e0061;
-    public static final int viewProduct_currencyPrefix=0x7f0e0062;
-    public static final int viewProduct_descriptionTitle=0x7f0e0063;
-    public static final int viewProduct_imageTitle=0x7f0e0064;
-    public static final int viewProduct_mediaDescriptionTitle=0x7f0e0065;
-    public static final int viewProduct_moreDescription=0x7f0e0066;
-    public static final int viewProduct_videoDescriptionText=0x7f0e0067;
-    public static final int viewProduct_viewOnMap=0x7f0e0068;
+    public static final int Employed=0x7f0e0000;
+    public static final int Unemployed=0x7f0e0001;
+    public static final int abc_action_bar_home_description=0x7f0e0002;
+    public static final int abc_action_bar_up_description=0x7f0e0003;
+    public static final int abc_action_menu_overflow_description=0x7f0e0004;
+    public static final int abc_action_mode_done=0x7f0e0005;
+    public static final int abc_activity_chooser_view_see_all=0x7f0e0006;
+    public static final int abc_activitychooserview_choose_application=0x7f0e0007;
+    public static final int abc_capital_off=0x7f0e0008;
+    public static final int abc_capital_on=0x7f0e0009;
+    public static final int abc_font_family_body_1_material=0x7f0e000a;
+    public static final int abc_font_family_body_2_material=0x7f0e000b;
+    public static final int abc_font_family_button_material=0x7f0e000c;
+    public static final int abc_font_family_caption_material=0x7f0e000d;
+    public static final int abc_font_family_display_1_material=0x7f0e000e;
+    public static final int abc_font_family_display_2_material=0x7f0e000f;
+    public static final int abc_font_family_display_3_material=0x7f0e0010;
+    public static final int abc_font_family_display_4_material=0x7f0e0011;
+    public static final int abc_font_family_headline_material=0x7f0e0012;
+    public static final int abc_font_family_menu_material=0x7f0e0013;
+    public static final int abc_font_family_subhead_material=0x7f0e0014;
+    public static final int abc_font_family_title_material=0x7f0e0015;
+    public static final int abc_search_hint=0x7f0e0016;
+    public static final int abc_searchview_description_clear=0x7f0e0017;
+    public static final int abc_searchview_description_query=0x7f0e0018;
+    public static final int abc_searchview_description_search=0x7f0e0019;
+    public static final int abc_searchview_description_submit=0x7f0e001a;
+    public static final int abc_searchview_description_voice=0x7f0e001b;
+    public static final int abc_shareactionprovider_share_with=0x7f0e001c;
+    public static final int abc_shareactionprovider_share_with_application=0x7f0e001d;
+    public static final int abc_toolbar_collapse_description=0x7f0e001e;
+    public static final int action_settings=0x7f0e001f;
+    public static final int app_name=0x7f0e0020;
+    public static final int appbar_scrolling_view_behavior=0x7f0e0021;
+    public static final int bottom_sheet_behavior=0x7f0e0022;
+    public static final int character_counter_pattern=0x7f0e0023;
+    public static final int common_google_play_services_enable_button=0x7f0e0024;
+    public static final int common_google_play_services_enable_text=0x7f0e0025;
+    public static final int common_google_play_services_enable_title=0x7f0e0026;
+    public static final int common_google_play_services_install_button=0x7f0e0027;
+    public static final int common_google_play_services_install_text=0x7f0e0028;
+    public static final int common_google_play_services_install_title=0x7f0e0029;
+    public static final int common_google_play_services_notification_ticker=0x7f0e002a;
+    public static final int common_google_play_services_unknown_issue=0x7f0e002b;
+    public static final int common_google_play_services_unsupported_text=0x7f0e002c;
+    public static final int common_google_play_services_update_button=0x7f0e002d;
+    public static final int common_google_play_services_update_text=0x7f0e002e;
+    public static final int common_google_play_services_update_title=0x7f0e002f;
+    public static final int common_google_play_services_updating_text=0x7f0e0030;
+    public static final int common_google_play_services_wear_update_text=0x7f0e0031;
+    public static final int common_open_on_phone=0x7f0e0032;
+    public static final int common_signin_button_text=0x7f0e0033;
+    public static final int common_signin_button_text_long=0x7f0e0034;
+    public static final int createnewpassword=0x7f0e0035;
+    public static final int dummy_text_long=0x7f0e0036;
+    public static final int dummy_text_short=0x7f0e0037;
+    public static final int editText_email=0x7f0e0038;
+    public static final int editText_number=0x7f0e0039;
+    public static final int editUser_answer=0x7f0e003a;
+    public static final int editUser_confirmPassword=0x7f0e003b;
+    public static final int editUser_firstName=0x7f0e003c;
+    public static final int editUser_instructionsText=0x7f0e003d;
+    public static final int editUser_lastName=0x7f0e003e;
+    public static final int editUser_oldPassword=0x7f0e003f;
+    public static final int editUser_password=0x7f0e0040;
+    public static final int editUser_updatePassword=0x7f0e0041;
+    public static final int editUser_updateSecurityCredentials=0x7f0e0042;
+    public static final int forgotPassword_answer=0x7f0e0043;
+    public static final int forgotPassword_confirmPassword=0x7f0e0044;
+    public static final int forgotPassword_email=0x7f0e0045;
+    public static final int forgotPassword_instruction=0x7f0e0046;
+    public static final int forgotPassword_password=0x7f0e0047;
+    public static final int forgotPassword_updatePassword=0x7f0e0048;
+    public static final int forgotPassword_verify=0x7f0e0049;
+    public static final int hello_blank_fragment=0x7f0e004a;
+    public static final int homeBrowseFruit=0x7f0e004b;
+    public static final int homeBrowseNew=0x7f0e004c;
+    public static final int homeBrowseVegetable=0x7f0e004d;
+    public static final int homeFruitHeading=0x7f0e004e;
+    public static final int homeNewHeading=0x7f0e004f;
+    public static final int homeNewMore=0x7f0e0050;
+    public static final int homeVegetableHeading=0x7f0e0051;
+    public static final int image=0x7f0e0052;
+    public static final int login_btnForgotPassword=0x7f0e0053;
+    public static final int login_btnLogin=0x7f0e0054;
+    public static final int login_dividerText=0x7f0e0055;
+    public static final int login_email=0x7f0e0056;
+    public static final int login_forgotPasswordText=0x7f0e0057;
+    public static final int login_loginText=0x7f0e0058;
+    public static final int login_password=0x7f0e0059;
+    public static final int login_signUpText=0x7f0e005a;
+    public static final int login_title=0x7f0e005b;
+    public static final int login_txtEmail=0x7f0e005c;
+    public static final int login_txtPassword=0x7f0e005d;
+    public static final int lorem=0x7f0e005e;
+    public static final int lorem_ipsium=0x7f0e005f;
+    public static final int navAddProduct=0x7f0e0060;
+    public static final int navCategories=0x7f0e0061;
+    public static final int navFilter=0x7f0e0062;
+    public static final int navHome=0x7f0e0063;
+    public static final int navLogin=0x7f0e0064;
+    public static final int navLogout=0x7f0e0065;
+    public static final int navMyAccount=0x7f0e0066;
+    public static final int navMyProducts=0x7f0e0067;
+    public static final int navWishList=0x7f0e0068;
+    public static final int navigation_drawer_close=0x7f0e0069;
+    public static final int navigation_drawer_open=0x7f0e006a;
+    public static final int next=0x7f0e006b;
+    public static final int password_toggle_content_description=0x7f0e006c;
+    public static final int path_password_eye=0x7f0e006d;
+    public static final int path_password_eye_mask_strike_through=0x7f0e006e;
+    public static final int path_password_eye_mask_visible=0x7f0e006f;
+    public static final int path_password_strike_through=0x7f0e0070;
+    public static final int questionCaption=0x7f0e0071;
+    public static final int quila_name=0x7f0e0072;
+    public static final int quila_name2=0x7f0e0073;
+    public static final int quila_tagline=0x7f0e0074;
+    public static final int search_menu_title=0x7f0e0075;
+    public static final int securityoptions=0x7f0e0076;
+    public static final int signUp_answer=0x7f0e0077;
+    public static final int signUp_code=0x7f0e0078;
+    public static final int signUp_dob=0x7f0e0079;
+    public static final int signUp_email=0x7f0e007a;
+    public static final int signUp_firstName=0x7f0e007b;
+    public static final int signUp_lastName=0x7f0e007c;
+    public static final int signUp_location=0x7f0e007d;
+    public static final int signUp_number=0x7f0e007e;
+    public static final int signUp_organisation=0x7f0e007f;
+    public static final int signUp_password=0x7f0e0080;
+    public static final int signUp_profession=0x7f0e0081;
+    public static final int signUp_signUp=0x7f0e0082;
+    public static final int signUp_title=0x7f0e0083;
+    public static final int sign_up=0x7f0e0084;
+    public static final int status_bar_notification_info_overflow=0x7f0e0085;
+    public static final int title_activity_def=0x7f0e0086;
+    public static final int title_activity_login=0x7f0e0087;
+    public static final int viewProduct_audioDescriptionText=0x7f0e0088;
+    public static final int viewProduct_callFarmer=0x7f0e0089;
+    public static final int viewProduct_currencyPrefix=0x7f0e008a;
+    public static final int viewProduct_descriptionTitle=0x7f0e008b;
+    public static final int viewProduct_imageTitle=0x7f0e008c;
+    public static final int viewProduct_mediaDescriptionTitle=0x7f0e008d;
+    public static final int viewProduct_moreDescription=0x7f0e008e;
+    public static final int viewProduct_videoDescriptionText=0x7f0e008f;
+    public static final int viewProduct_viewOnMap=0x7f0e0090;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0f0000;
@@ -4492,311 +4996,303 @@ public final class R {
     public static final int Base_ThemeOverlay_AppCompat_Dialog=0x7f0f0053;
     public static final int Base_ThemeOverlay_AppCompat_Dialog_Alert=0x7f0f0054;
     public static final int Base_ThemeOverlay_AppCompat_Light=0x7f0f0055;
-    public static final int Base_V11_Theme_AppCompat_Dialog=0x7f0f0056;
-    public static final int Base_V11_Theme_AppCompat_Light_Dialog=0x7f0f0057;
-    public static final int Base_V11_ThemeOverlay_AppCompat_Dialog=0x7f0f0058;
-    public static final int Base_V12_Widget_AppCompat_AutoCompleteTextView=0x7f0f0059;
-    public static final int Base_V12_Widget_AppCompat_EditText=0x7f0f005a;
-    public static final int Base_V14_Widget_Design_AppBarLayout=0x7f0f005b;
-    public static final int Base_V21_Theme_AppCompat=0x7f0f005c;
-    public static final int Base_V21_Theme_AppCompat_Dialog=0x7f0f005d;
-    public static final int Base_V21_Theme_AppCompat_Light=0x7f0f005e;
-    public static final int Base_V21_Theme_AppCompat_Light_Dialog=0x7f0f005f;
-    public static final int Base_V21_ThemeOverlay_AppCompat_Dialog=0x7f0f0060;
-    public static final int Base_V21_Widget_Design_AppBarLayout=0x7f0f0061;
-    public static final int Base_V22_Theme_AppCompat=0x7f0f0062;
-    public static final int Base_V22_Theme_AppCompat_Light=0x7f0f0063;
-    public static final int Base_V23_Theme_AppCompat=0x7f0f0064;
-    public static final int Base_V23_Theme_AppCompat_Light=0x7f0f0065;
-    public static final int Base_V26_Theme_AppCompat=0x7f0f0066;
-    public static final int Base_V26_Theme_AppCompat_Light=0x7f0f0067;
-    public static final int Base_V26_Widget_AppCompat_Toolbar=0x7f0f0068;
-    public static final int Base_V26_Widget_Design_AppBarLayout=0x7f0f0069;
-    public static final int Base_V7_Theme_AppCompat=0x7f0f006a;
-    public static final int Base_V7_Theme_AppCompat_Dialog=0x7f0f006b;
-    public static final int Base_V7_Theme_AppCompat_Light=0x7f0f006c;
-    public static final int Base_V7_Theme_AppCompat_Light_Dialog=0x7f0f006d;
-    public static final int Base_V7_ThemeOverlay_AppCompat_Dialog=0x7f0f006e;
-    public static final int Base_V7_Widget_AppCompat_AutoCompleteTextView=0x7f0f006f;
-    public static final int Base_V7_Widget_AppCompat_EditText=0x7f0f0070;
-    public static final int Base_V7_Widget_AppCompat_Toolbar=0x7f0f0071;
-    public static final int Base_Widget_AppCompat_ActionBar=0x7f0f0072;
-    public static final int Base_Widget_AppCompat_ActionBar_Solid=0x7f0f0073;
-    public static final int Base_Widget_AppCompat_ActionBar_TabBar=0x7f0f0074;
-    public static final int Base_Widget_AppCompat_ActionBar_TabText=0x7f0f0075;
-    public static final int Base_Widget_AppCompat_ActionBar_TabView=0x7f0f0076;
-    public static final int Base_Widget_AppCompat_ActionButton=0x7f0f0077;
-    public static final int Base_Widget_AppCompat_ActionButton_CloseMode=0x7f0f0078;
-    public static final int Base_Widget_AppCompat_ActionButton_Overflow=0x7f0f0079;
-    public static final int Base_Widget_AppCompat_ActionMode=0x7f0f007a;
-    public static final int Base_Widget_AppCompat_ActivityChooserView=0x7f0f007b;
-    public static final int Base_Widget_AppCompat_AutoCompleteTextView=0x7f0f007c;
-    public static final int Base_Widget_AppCompat_Button=0x7f0f007d;
-    public static final int Base_Widget_AppCompat_Button_Borderless=0x7f0f007e;
-    public static final int Base_Widget_AppCompat_Button_Borderless_Colored=0x7f0f007f;
-    public static final int Base_Widget_AppCompat_Button_ButtonBar_AlertDialog=0x7f0f0080;
-    public static final int Base_Widget_AppCompat_Button_Colored=0x7f0f0081;
-    public static final int Base_Widget_AppCompat_Button_Small=0x7f0f0082;
-    public static final int Base_Widget_AppCompat_ButtonBar=0x7f0f0083;
-    public static final int Base_Widget_AppCompat_ButtonBar_AlertDialog=0x7f0f0084;
-    public static final int Base_Widget_AppCompat_CompoundButton_CheckBox=0x7f0f0085;
-    public static final int Base_Widget_AppCompat_CompoundButton_RadioButton=0x7f0f0086;
-    public static final int Base_Widget_AppCompat_CompoundButton_Switch=0x7f0f0087;
-    public static final int Base_Widget_AppCompat_DrawerArrowToggle=0x7f0f0088;
-    public static final int Base_Widget_AppCompat_DrawerArrowToggle_Common=0x7f0f0089;
-    public static final int Base_Widget_AppCompat_DropDownItem_Spinner=0x7f0f008a;
-    public static final int Base_Widget_AppCompat_EditText=0x7f0f008b;
-    public static final int Base_Widget_AppCompat_ImageButton=0x7f0f008c;
-    public static final int Base_Widget_AppCompat_Light_ActionBar=0x7f0f008d;
-    public static final int Base_Widget_AppCompat_Light_ActionBar_Solid=0x7f0f008e;
-    public static final int Base_Widget_AppCompat_Light_ActionBar_TabBar=0x7f0f008f;
-    public static final int Base_Widget_AppCompat_Light_ActionBar_TabText=0x7f0f0090;
-    public static final int Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0f0091;
-    public static final int Base_Widget_AppCompat_Light_ActionBar_TabView=0x7f0f0092;
-    public static final int Base_Widget_AppCompat_Light_PopupMenu=0x7f0f0093;
-    public static final int Base_Widget_AppCompat_Light_PopupMenu_Overflow=0x7f0f0094;
-    public static final int Base_Widget_AppCompat_ListMenuView=0x7f0f0095;
-    public static final int Base_Widget_AppCompat_ListPopupWindow=0x7f0f0096;
-    public static final int Base_Widget_AppCompat_ListView=0x7f0f0097;
-    public static final int Base_Widget_AppCompat_ListView_DropDown=0x7f0f0098;
-    public static final int Base_Widget_AppCompat_ListView_Menu=0x7f0f0099;
-    public static final int Base_Widget_AppCompat_PopupMenu=0x7f0f009a;
-    public static final int Base_Widget_AppCompat_PopupMenu_Overflow=0x7f0f009b;
-    public static final int Base_Widget_AppCompat_PopupWindow=0x7f0f009c;
-    public static final int Base_Widget_AppCompat_ProgressBar=0x7f0f009d;
-    public static final int Base_Widget_AppCompat_ProgressBar_Horizontal=0x7f0f009e;
-    public static final int Base_Widget_AppCompat_RatingBar=0x7f0f009f;
-    public static final int Base_Widget_AppCompat_RatingBar_Indicator=0x7f0f00a0;
-    public static final int Base_Widget_AppCompat_RatingBar_Small=0x7f0f00a1;
-    public static final int Base_Widget_AppCompat_SearchView=0x7f0f00a2;
-    public static final int Base_Widget_AppCompat_SearchView_ActionBar=0x7f0f00a3;
-    public static final int Base_Widget_AppCompat_SeekBar=0x7f0f00a4;
-    public static final int Base_Widget_AppCompat_SeekBar_Discrete=0x7f0f00a5;
-    public static final int Base_Widget_AppCompat_Spinner=0x7f0f00a6;
-    public static final int Base_Widget_AppCompat_Spinner_Underlined=0x7f0f00a7;
-    public static final int Base_Widget_AppCompat_TextView_SpinnerItem=0x7f0f00a8;
-    public static final int Base_Widget_AppCompat_Toolbar=0x7f0f00a9;
-    public static final int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f0f00aa;
-    public static final int Base_Widget_Design_AppBarLayout=0x7f0f00ab;
-    public static final int Base_Widget_Design_TabLayout=0x7f0f00ac;
-    public static final int CardView=0x7f0f00ad;
-    public static final int CardView_Dark=0x7f0f00ae;
-    public static final int CardView_Light=0x7f0f00af;
-    public static final int Platform_AppCompat=0x7f0f00b0;
-    public static final int Platform_AppCompat_Light=0x7f0f00b1;
-    public static final int Platform_ThemeOverlay_AppCompat=0x7f0f00b2;
-    public static final int Platform_ThemeOverlay_AppCompat_Dark=0x7f0f00b3;
-    public static final int Platform_ThemeOverlay_AppCompat_Light=0x7f0f00b4;
-    public static final int Platform_V11_AppCompat=0x7f0f00b5;
-    public static final int Platform_V11_AppCompat_Light=0x7f0f00b6;
-    public static final int Platform_V14_AppCompat=0x7f0f00b7;
-    public static final int Platform_V14_AppCompat_Light=0x7f0f00b8;
-    public static final int Platform_V21_AppCompat=0x7f0f00b9;
-    public static final int Platform_V21_AppCompat_Light=0x7f0f00ba;
-    public static final int Platform_V25_AppCompat=0x7f0f00bb;
-    public static final int Platform_V25_AppCompat_Light=0x7f0f00bc;
-    public static final int Platform_Widget_AppCompat_Spinner=0x7f0f00bd;
-    public static final int RtlOverlay_DialogWindowTitle_AppCompat=0x7f0f00be;
-    public static final int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem=0x7f0f00bf;
-    public static final int RtlOverlay_Widget_AppCompat_DialogTitle_Icon=0x7f0f00c0;
-    public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem=0x7f0f00c1;
-    public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup=0x7f0f00c2;
-    public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text=0x7f0f00c3;
-    public static final int RtlOverlay_Widget_AppCompat_Search_DropDown=0x7f0f00c4;
-    public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1=0x7f0f00c5;
-    public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2=0x7f0f00c6;
-    public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Query=0x7f0f00c7;
-    public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Text=0x7f0f00c8;
-    public static final int RtlOverlay_Widget_AppCompat_SearchView_MagIcon=0x7f0f00c9;
-    public static final int RtlUnderlay_Widget_AppCompat_ActionButton=0x7f0f00ca;
-    public static final int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow=0x7f0f00cb;
-    public static final int TextAppearance_AppCompat=0x7f0f00cc;
-    public static final int TextAppearance_AppCompat_Body1=0x7f0f00cd;
-    public static final int TextAppearance_AppCompat_Body2=0x7f0f00ce;
-    public static final int TextAppearance_AppCompat_Button=0x7f0f00cf;
-    public static final int TextAppearance_AppCompat_Caption=0x7f0f00d0;
-    public static final int TextAppearance_AppCompat_Display1=0x7f0f00d1;
-    public static final int TextAppearance_AppCompat_Display2=0x7f0f00d2;
-    public static final int TextAppearance_AppCompat_Display3=0x7f0f00d3;
-    public static final int TextAppearance_AppCompat_Display4=0x7f0f00d4;
-    public static final int TextAppearance_AppCompat_Headline=0x7f0f00d5;
-    public static final int TextAppearance_AppCompat_Inverse=0x7f0f00d6;
-    public static final int TextAppearance_AppCompat_Large=0x7f0f00d7;
-    public static final int TextAppearance_AppCompat_Large_Inverse=0x7f0f00d8;
-    public static final int TextAppearance_AppCompat_Light_SearchResult_Subtitle=0x7f0f00d9;
-    public static final int TextAppearance_AppCompat_Light_SearchResult_Title=0x7f0f00da;
-    public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f0f00db;
-    public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f0f00dc;
-    public static final int TextAppearance_AppCompat_Medium=0x7f0f00dd;
-    public static final int TextAppearance_AppCompat_Medium_Inverse=0x7f0f00de;
-    public static final int TextAppearance_AppCompat_Menu=0x7f0f00df;
-    public static final int TextAppearance_AppCompat_SearchResult_Subtitle=0x7f0f00e0;
-    public static final int TextAppearance_AppCompat_SearchResult_Title=0x7f0f00e1;
-    public static final int TextAppearance_AppCompat_Small=0x7f0f00e2;
-    public static final int TextAppearance_AppCompat_Small_Inverse=0x7f0f00e3;
-    public static final int TextAppearance_AppCompat_Subhead=0x7f0f00e4;
-    public static final int TextAppearance_AppCompat_Subhead_Inverse=0x7f0f00e5;
-    public static final int TextAppearance_AppCompat_Title=0x7f0f00e6;
-    public static final int TextAppearance_AppCompat_Title_Inverse=0x7f0f00e7;
-    public static final int TextAppearance_AppCompat_Tooltip=0x7f0f00e8;
-    public static final int TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f0f00e9;
-    public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f0f00ea;
-    public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f0f00eb;
-    public static final int TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f0f00ec;
-    public static final int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f0f00ed;
-    public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f0f00ee;
-    public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse=0x7f0f00ef;
-    public static final int TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f0f00f0;
-    public static final int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse=0x7f0f00f1;
-    public static final int TextAppearance_AppCompat_Widget_Button=0x7f0f00f2;
-    public static final int TextAppearance_AppCompat_Widget_Button_Borderless_Colored=0x7f0f00f3;
-    public static final int TextAppearance_AppCompat_Widget_Button_Colored=0x7f0f00f4;
-    public static final int TextAppearance_AppCompat_Widget_Button_Inverse=0x7f0f00f5;
-    public static final int TextAppearance_AppCompat_Widget_DropDownItem=0x7f0f00f6;
-    public static final int TextAppearance_AppCompat_Widget_PopupMenu_Header=0x7f0f00f7;
-    public static final int TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f0f00f8;
-    public static final int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0f00f9;
-    public static final int TextAppearance_AppCompat_Widget_Switch=0x7f0f00fa;
-    public static final int TextAppearance_AppCompat_Widget_TextView_SpinnerItem=0x7f0f00fb;
-    public static final int TextAppearance_Compat_Notification=0x7f0f00fc;
-    public static final int TextAppearance_Compat_Notification_Info=0x7f0f00fd;
-    public static final int TextAppearance_Compat_Notification_Info_Media=0x7f0f00fe;
-    public static final int TextAppearance_Compat_Notification_Line2=0x7f0f00ff;
-    public static final int TextAppearance_Compat_Notification_Line2_Media=0x7f0f0100;
-    public static final int TextAppearance_Compat_Notification_Media=0x7f0f0101;
-    public static final int TextAppearance_Compat_Notification_Time=0x7f0f0102;
-    public static final int TextAppearance_Compat_Notification_Time_Media=0x7f0f0103;
-    public static final int TextAppearance_Compat_Notification_Title=0x7f0f0104;
-    public static final int TextAppearance_Compat_Notification_Title_Media=0x7f0f0105;
-    public static final int TextAppearance_Design_CollapsingToolbar_Expanded=0x7f0f0106;
-    public static final int TextAppearance_Design_Counter=0x7f0f0107;
-    public static final int TextAppearance_Design_Counter_Overflow=0x7f0f0108;
-    public static final int TextAppearance_Design_Error=0x7f0f0109;
-    public static final int TextAppearance_Design_Hint=0x7f0f010a;
-    public static final int TextAppearance_Design_Snackbar_Message=0x7f0f010b;
-    public static final int TextAppearance_Design_Tab=0x7f0f010c;
-    public static final int TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f0f010d;
-    public static final int TextAppearance_Widget_AppCompat_Toolbar_Subtitle=0x7f0f010e;
-    public static final int TextAppearance_Widget_AppCompat_Toolbar_Title=0x7f0f010f;
-    public static final int Theme_AppCompat=0x7f0f0110;
-    public static final int Theme_AppCompat_CompactMenu=0x7f0f0111;
-    public static final int Theme_AppCompat_DayNight=0x7f0f0112;
-    public static final int Theme_AppCompat_DayNight_DarkActionBar=0x7f0f0113;
-    public static final int Theme_AppCompat_DayNight_Dialog=0x7f0f0114;
-    public static final int Theme_AppCompat_DayNight_Dialog_Alert=0x7f0f0115;
-    public static final int Theme_AppCompat_DayNight_Dialog_MinWidth=0x7f0f0116;
-    public static final int Theme_AppCompat_DayNight_DialogWhenLarge=0x7f0f0117;
-    public static final int Theme_AppCompat_DayNight_NoActionBar=0x7f0f0118;
-    public static final int Theme_AppCompat_Dialog=0x7f0f0119;
-    public static final int Theme_AppCompat_Dialog_Alert=0x7f0f011a;
-    public static final int Theme_AppCompat_Dialog_MinWidth=0x7f0f011b;
-    public static final int Theme_AppCompat_DialogWhenLarge=0x7f0f011c;
-    public static final int Theme_AppCompat_Light=0x7f0f011d;
-    public static final int Theme_AppCompat_Light_DarkActionBar=0x7f0f011e;
-    public static final int Theme_AppCompat_Light_Dialog=0x7f0f011f;
-    public static final int Theme_AppCompat_Light_Dialog_Alert=0x7f0f0120;
-    public static final int Theme_AppCompat_Light_Dialog_MinWidth=0x7f0f0121;
-    public static final int Theme_AppCompat_Light_DialogWhenLarge=0x7f0f0122;
-    public static final int Theme_AppCompat_Light_NoActionBar=0x7f0f0123;
-    public static final int Theme_AppCompat_NoActionBar=0x7f0f0124;
-    public static final int Theme_Design=0x7f0f0125;
-    public static final int Theme_Design_BottomSheetDialog=0x7f0f0126;
-    public static final int Theme_Design_Light=0x7f0f0127;
-    public static final int Theme_Design_Light_BottomSheetDialog=0x7f0f0128;
-    public static final int Theme_Design_Light_NoActionBar=0x7f0f0129;
-    public static final int Theme_Design_NoActionBar=0x7f0f012a;
-    public static final int ThemeOverlay_AppCompat=0x7f0f012b;
-    public static final int ThemeOverlay_AppCompat_ActionBar=0x7f0f012c;
-    public static final int ThemeOverlay_AppCompat_Dark=0x7f0f012d;
-    public static final int ThemeOverlay_AppCompat_Dark_ActionBar=0x7f0f012e;
-    public static final int ThemeOverlay_AppCompat_Dialog=0x7f0f012f;
-    public static final int ThemeOverlay_AppCompat_Dialog_Alert=0x7f0f0130;
-    public static final int ThemeOverlay_AppCompat_Light=0x7f0f0131;
-    public static final int Widget_AppCompat_ActionBar=0x7f0f0132;
-    public static final int Widget_AppCompat_ActionBar_Solid=0x7f0f0133;
-    public static final int Widget_AppCompat_ActionBar_TabBar=0x7f0f0134;
-    public static final int Widget_AppCompat_ActionBar_TabText=0x7f0f0135;
-    public static final int Widget_AppCompat_ActionBar_TabView=0x7f0f0136;
-    public static final int Widget_AppCompat_ActionButton=0x7f0f0137;
-    public static final int Widget_AppCompat_ActionButton_CloseMode=0x7f0f0138;
-    public static final int Widget_AppCompat_ActionButton_Overflow=0x7f0f0139;
-    public static final int Widget_AppCompat_ActionMode=0x7f0f013a;
-    public static final int Widget_AppCompat_ActivityChooserView=0x7f0f013b;
-    public static final int Widget_AppCompat_AutoCompleteTextView=0x7f0f013c;
-    public static final int Widget_AppCompat_Button=0x7f0f013d;
-    public static final int Widget_AppCompat_Button_Borderless=0x7f0f013e;
-    public static final int Widget_AppCompat_Button_Borderless_Colored=0x7f0f013f;
-    public static final int Widget_AppCompat_Button_ButtonBar_AlertDialog=0x7f0f0140;
-    public static final int Widget_AppCompat_Button_Colored=0x7f0f0141;
-    public static final int Widget_AppCompat_Button_Small=0x7f0f0142;
-    public static final int Widget_AppCompat_ButtonBar=0x7f0f0143;
-    public static final int Widget_AppCompat_ButtonBar_AlertDialog=0x7f0f0144;
-    public static final int Widget_AppCompat_CompoundButton_CheckBox=0x7f0f0145;
-    public static final int Widget_AppCompat_CompoundButton_RadioButton=0x7f0f0146;
-    public static final int Widget_AppCompat_CompoundButton_Switch=0x7f0f0147;
-    public static final int Widget_AppCompat_DrawerArrowToggle=0x7f0f0148;
-    public static final int Widget_AppCompat_DropDownItem_Spinner=0x7f0f0149;
-    public static final int Widget_AppCompat_EditText=0x7f0f014a;
-    public static final int Widget_AppCompat_ImageButton=0x7f0f014b;
-    public static final int Widget_AppCompat_Light_ActionBar=0x7f0f014c;
-    public static final int Widget_AppCompat_Light_ActionBar_Solid=0x7f0f014d;
-    public static final int Widget_AppCompat_Light_ActionBar_Solid_Inverse=0x7f0f014e;
-    public static final int Widget_AppCompat_Light_ActionBar_TabBar=0x7f0f014f;
-    public static final int Widget_AppCompat_Light_ActionBar_TabBar_Inverse=0x7f0f0150;
-    public static final int Widget_AppCompat_Light_ActionBar_TabText=0x7f0f0151;
-    public static final int Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0f0152;
-    public static final int Widget_AppCompat_Light_ActionBar_TabView=0x7f0f0153;
-    public static final int Widget_AppCompat_Light_ActionBar_TabView_Inverse=0x7f0f0154;
-    public static final int Widget_AppCompat_Light_ActionButton=0x7f0f0155;
-    public static final int Widget_AppCompat_Light_ActionButton_CloseMode=0x7f0f0156;
-    public static final int Widget_AppCompat_Light_ActionButton_Overflow=0x7f0f0157;
-    public static final int Widget_AppCompat_Light_ActionMode_Inverse=0x7f0f0158;
-    public static final int Widget_AppCompat_Light_ActivityChooserView=0x7f0f0159;
-    public static final int Widget_AppCompat_Light_AutoCompleteTextView=0x7f0f015a;
-    public static final int Widget_AppCompat_Light_DropDownItem_Spinner=0x7f0f015b;
-    public static final int Widget_AppCompat_Light_ListPopupWindow=0x7f0f015c;
-    public static final int Widget_AppCompat_Light_ListView_DropDown=0x7f0f015d;
-    public static final int Widget_AppCompat_Light_PopupMenu=0x7f0f015e;
-    public static final int Widget_AppCompat_Light_PopupMenu_Overflow=0x7f0f015f;
-    public static final int Widget_AppCompat_Light_SearchView=0x7f0f0160;
-    public static final int Widget_AppCompat_Light_Spinner_DropDown_ActionBar=0x7f0f0161;
-    public static final int Widget_AppCompat_ListMenuView=0x7f0f0162;
-    public static final int Widget_AppCompat_ListPopupWindow=0x7f0f0163;
-    public static final int Widget_AppCompat_ListView=0x7f0f0164;
-    public static final int Widget_AppCompat_ListView_DropDown=0x7f0f0165;
-    public static final int Widget_AppCompat_ListView_Menu=0x7f0f0166;
-    public static final int Widget_AppCompat_PopupMenu=0x7f0f0167;
-    public static final int Widget_AppCompat_PopupMenu_Overflow=0x7f0f0168;
-    public static final int Widget_AppCompat_PopupWindow=0x7f0f0169;
-    public static final int Widget_AppCompat_ProgressBar=0x7f0f016a;
-    public static final int Widget_AppCompat_ProgressBar_Horizontal=0x7f0f016b;
-    public static final int Widget_AppCompat_RatingBar=0x7f0f016c;
-    public static final int Widget_AppCompat_RatingBar_Indicator=0x7f0f016d;
-    public static final int Widget_AppCompat_RatingBar_Small=0x7f0f016e;
-    public static final int Widget_AppCompat_SearchView=0x7f0f016f;
-    public static final int Widget_AppCompat_SearchView_ActionBar=0x7f0f0170;
-    public static final int Widget_AppCompat_SeekBar=0x7f0f0171;
-    public static final int Widget_AppCompat_SeekBar_Discrete=0x7f0f0172;
-    public static final int Widget_AppCompat_Spinner=0x7f0f0173;
-    public static final int Widget_AppCompat_Spinner_DropDown=0x7f0f0174;
-    public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0f0175;
-    public static final int Widget_AppCompat_Spinner_Underlined=0x7f0f0176;
-    public static final int Widget_AppCompat_TextView_SpinnerItem=0x7f0f0177;
-    public static final int Widget_AppCompat_Toolbar=0x7f0f0178;
-    public static final int Widget_AppCompat_Toolbar_Button_Navigation=0x7f0f0179;
-    public static final int Widget_Compat_NotificationActionContainer=0x7f0f017a;
-    public static final int Widget_Compat_NotificationActionText=0x7f0f017b;
-    public static final int Widget_Design_AppBarLayout=0x7f0f017c;
-    public static final int Widget_Design_BottomNavigationView=0x7f0f017d;
-    public static final int Widget_Design_BottomSheet_Modal=0x7f0f017e;
-    public static final int Widget_Design_CollapsingToolbar=0x7f0f017f;
-    public static final int Widget_Design_CoordinatorLayout=0x7f0f0180;
-    public static final int Widget_Design_FloatingActionButton=0x7f0f0181;
-    public static final int Widget_Design_NavigationView=0x7f0f0182;
-    public static final int Widget_Design_ScrimInsetsFrameLayout=0x7f0f0183;
-    public static final int Widget_Design_Snackbar=0x7f0f0184;
-    public static final int Widget_Design_TabLayout=0x7f0f0185;
-    public static final int Widget_Design_TextInputLayout=0x7f0f0186;
+    public static final int Base_V14_Widget_Design_AppBarLayout=0x7f0f0056;
+    public static final int Base_V21_Theme_AppCompat=0x7f0f0057;
+    public static final int Base_V21_Theme_AppCompat_Dialog=0x7f0f0058;
+    public static final int Base_V21_Theme_AppCompat_Light=0x7f0f0059;
+    public static final int Base_V21_Theme_AppCompat_Light_Dialog=0x7f0f005a;
+    public static final int Base_V21_ThemeOverlay_AppCompat_Dialog=0x7f0f005b;
+    public static final int Base_V21_Widget_Design_AppBarLayout=0x7f0f005c;
+    public static final int Base_V22_Theme_AppCompat=0x7f0f005d;
+    public static final int Base_V22_Theme_AppCompat_Light=0x7f0f005e;
+    public static final int Base_V23_Theme_AppCompat=0x7f0f005f;
+    public static final int Base_V23_Theme_AppCompat_Light=0x7f0f0060;
+    public static final int Base_V26_Theme_AppCompat=0x7f0f0061;
+    public static final int Base_V26_Theme_AppCompat_Light=0x7f0f0062;
+    public static final int Base_V26_Widget_AppCompat_Toolbar=0x7f0f0063;
+    public static final int Base_V26_Widget_Design_AppBarLayout=0x7f0f0064;
+    public static final int Base_V7_Theme_AppCompat=0x7f0f0065;
+    public static final int Base_V7_Theme_AppCompat_Dialog=0x7f0f0066;
+    public static final int Base_V7_Theme_AppCompat_Light=0x7f0f0067;
+    public static final int Base_V7_Theme_AppCompat_Light_Dialog=0x7f0f0068;
+    public static final int Base_V7_ThemeOverlay_AppCompat_Dialog=0x7f0f0069;
+    public static final int Base_V7_Widget_AppCompat_AutoCompleteTextView=0x7f0f006a;
+    public static final int Base_V7_Widget_AppCompat_EditText=0x7f0f006b;
+    public static final int Base_V7_Widget_AppCompat_Toolbar=0x7f0f006c;
+    public static final int Base_Widget_AppCompat_ActionBar=0x7f0f006d;
+    public static final int Base_Widget_AppCompat_ActionBar_Solid=0x7f0f006e;
+    public static final int Base_Widget_AppCompat_ActionBar_TabBar=0x7f0f006f;
+    public static final int Base_Widget_AppCompat_ActionBar_TabText=0x7f0f0070;
+    public static final int Base_Widget_AppCompat_ActionBar_TabView=0x7f0f0071;
+    public static final int Base_Widget_AppCompat_ActionButton=0x7f0f0072;
+    public static final int Base_Widget_AppCompat_ActionButton_CloseMode=0x7f0f0073;
+    public static final int Base_Widget_AppCompat_ActionButton_Overflow=0x7f0f0074;
+    public static final int Base_Widget_AppCompat_ActionMode=0x7f0f0075;
+    public static final int Base_Widget_AppCompat_ActivityChooserView=0x7f0f0076;
+    public static final int Base_Widget_AppCompat_AutoCompleteTextView=0x7f0f0077;
+    public static final int Base_Widget_AppCompat_Button=0x7f0f0078;
+    public static final int Base_Widget_AppCompat_Button_Borderless=0x7f0f0079;
+    public static final int Base_Widget_AppCompat_Button_Borderless_Colored=0x7f0f007a;
+    public static final int Base_Widget_AppCompat_Button_ButtonBar_AlertDialog=0x7f0f007b;
+    public static final int Base_Widget_AppCompat_Button_Colored=0x7f0f007c;
+    public static final int Base_Widget_AppCompat_Button_Small=0x7f0f007d;
+    public static final int Base_Widget_AppCompat_ButtonBar=0x7f0f007e;
+    public static final int Base_Widget_AppCompat_ButtonBar_AlertDialog=0x7f0f007f;
+    public static final int Base_Widget_AppCompat_CompoundButton_CheckBox=0x7f0f0080;
+    public static final int Base_Widget_AppCompat_CompoundButton_RadioButton=0x7f0f0081;
+    public static final int Base_Widget_AppCompat_CompoundButton_Switch=0x7f0f0082;
+    public static final int Base_Widget_AppCompat_DrawerArrowToggle=0x7f0f0083;
+    public static final int Base_Widget_AppCompat_DrawerArrowToggle_Common=0x7f0f0084;
+    public static final int Base_Widget_AppCompat_DropDownItem_Spinner=0x7f0f0085;
+    public static final int Base_Widget_AppCompat_EditText=0x7f0f0086;
+    public static final int Base_Widget_AppCompat_ImageButton=0x7f0f0087;
+    public static final int Base_Widget_AppCompat_Light_ActionBar=0x7f0f0088;
+    public static final int Base_Widget_AppCompat_Light_ActionBar_Solid=0x7f0f0089;
+    public static final int Base_Widget_AppCompat_Light_ActionBar_TabBar=0x7f0f008a;
+    public static final int Base_Widget_AppCompat_Light_ActionBar_TabText=0x7f0f008b;
+    public static final int Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0f008c;
+    public static final int Base_Widget_AppCompat_Light_ActionBar_TabView=0x7f0f008d;
+    public static final int Base_Widget_AppCompat_Light_PopupMenu=0x7f0f008e;
+    public static final int Base_Widget_AppCompat_Light_PopupMenu_Overflow=0x7f0f008f;
+    public static final int Base_Widget_AppCompat_ListMenuView=0x7f0f0090;
+    public static final int Base_Widget_AppCompat_ListPopupWindow=0x7f0f0091;
+    public static final int Base_Widget_AppCompat_ListView=0x7f0f0092;
+    public static final int Base_Widget_AppCompat_ListView_DropDown=0x7f0f0093;
+    public static final int Base_Widget_AppCompat_ListView_Menu=0x7f0f0094;
+    public static final int Base_Widget_AppCompat_PopupMenu=0x7f0f0095;
+    public static final int Base_Widget_AppCompat_PopupMenu_Overflow=0x7f0f0096;
+    public static final int Base_Widget_AppCompat_PopupWindow=0x7f0f0097;
+    public static final int Base_Widget_AppCompat_ProgressBar=0x7f0f0098;
+    public static final int Base_Widget_AppCompat_ProgressBar_Horizontal=0x7f0f0099;
+    public static final int Base_Widget_AppCompat_RatingBar=0x7f0f009a;
+    public static final int Base_Widget_AppCompat_RatingBar_Indicator=0x7f0f009b;
+    public static final int Base_Widget_AppCompat_RatingBar_Small=0x7f0f009c;
+    public static final int Base_Widget_AppCompat_SearchView=0x7f0f009d;
+    public static final int Base_Widget_AppCompat_SearchView_ActionBar=0x7f0f009e;
+    public static final int Base_Widget_AppCompat_SeekBar=0x7f0f009f;
+    public static final int Base_Widget_AppCompat_SeekBar_Discrete=0x7f0f00a0;
+    public static final int Base_Widget_AppCompat_Spinner=0x7f0f00a1;
+    public static final int Base_Widget_AppCompat_Spinner_Underlined=0x7f0f00a2;
+    public static final int Base_Widget_AppCompat_TextView_SpinnerItem=0x7f0f00a3;
+    public static final int Base_Widget_AppCompat_Toolbar=0x7f0f00a4;
+    public static final int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f0f00a5;
+    public static final int Base_Widget_Design_AppBarLayout=0x7f0f00a6;
+    public static final int Base_Widget_Design_TabLayout=0x7f0f00a7;
+    public static final int CardView=0x7f0f00a8;
+    public static final int CardView_Dark=0x7f0f00a9;
+    public static final int CardView_Light=0x7f0f00aa;
+    public static final int Platform_AppCompat=0x7f0f00ab;
+    public static final int Platform_AppCompat_Light=0x7f0f00ac;
+    public static final int Platform_ThemeOverlay_AppCompat=0x7f0f00ad;
+    public static final int Platform_ThemeOverlay_AppCompat_Dark=0x7f0f00ae;
+    public static final int Platform_ThemeOverlay_AppCompat_Light=0x7f0f00af;
+    public static final int Platform_V21_AppCompat=0x7f0f00b0;
+    public static final int Platform_V21_AppCompat_Light=0x7f0f00b1;
+    public static final int Platform_V25_AppCompat=0x7f0f00b2;
+    public static final int Platform_V25_AppCompat_Light=0x7f0f00b3;
+    public static final int Platform_Widget_AppCompat_Spinner=0x7f0f00b4;
+    public static final int RtlOverlay_DialogWindowTitle_AppCompat=0x7f0f00b5;
+    public static final int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem=0x7f0f00b6;
+    public static final int RtlOverlay_Widget_AppCompat_DialogTitle_Icon=0x7f0f00b7;
+    public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem=0x7f0f00b8;
+    public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup=0x7f0f00b9;
+    public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text=0x7f0f00ba;
+    public static final int RtlOverlay_Widget_AppCompat_Search_DropDown=0x7f0f00bb;
+    public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1=0x7f0f00bc;
+    public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2=0x7f0f00bd;
+    public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Query=0x7f0f00be;
+    public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Text=0x7f0f00bf;
+    public static final int RtlOverlay_Widget_AppCompat_SearchView_MagIcon=0x7f0f00c0;
+    public static final int RtlUnderlay_Widget_AppCompat_ActionButton=0x7f0f00c1;
+    public static final int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow=0x7f0f00c2;
+    public static final int TextAppearance_AppCompat=0x7f0f00c3;
+    public static final int TextAppearance_AppCompat_Body1=0x7f0f00c4;
+    public static final int TextAppearance_AppCompat_Body2=0x7f0f00c5;
+    public static final int TextAppearance_AppCompat_Button=0x7f0f00c6;
+    public static final int TextAppearance_AppCompat_Caption=0x7f0f00c7;
+    public static final int TextAppearance_AppCompat_Display1=0x7f0f00c8;
+    public static final int TextAppearance_AppCompat_Display2=0x7f0f00c9;
+    public static final int TextAppearance_AppCompat_Display3=0x7f0f00ca;
+    public static final int TextAppearance_AppCompat_Display4=0x7f0f00cb;
+    public static final int TextAppearance_AppCompat_Headline=0x7f0f00cc;
+    public static final int TextAppearance_AppCompat_Inverse=0x7f0f00cd;
+    public static final int TextAppearance_AppCompat_Large=0x7f0f00ce;
+    public static final int TextAppearance_AppCompat_Large_Inverse=0x7f0f00cf;
+    public static final int TextAppearance_AppCompat_Light_SearchResult_Subtitle=0x7f0f00d0;
+    public static final int TextAppearance_AppCompat_Light_SearchResult_Title=0x7f0f00d1;
+    public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f0f00d2;
+    public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f0f00d3;
+    public static final int TextAppearance_AppCompat_Medium=0x7f0f00d4;
+    public static final int TextAppearance_AppCompat_Medium_Inverse=0x7f0f00d5;
+    public static final int TextAppearance_AppCompat_Menu=0x7f0f00d6;
+    public static final int TextAppearance_AppCompat_SearchResult_Subtitle=0x7f0f00d7;
+    public static final int TextAppearance_AppCompat_SearchResult_Title=0x7f0f00d8;
+    public static final int TextAppearance_AppCompat_Small=0x7f0f00d9;
+    public static final int TextAppearance_AppCompat_Small_Inverse=0x7f0f00da;
+    public static final int TextAppearance_AppCompat_Subhead=0x7f0f00db;
+    public static final int TextAppearance_AppCompat_Subhead_Inverse=0x7f0f00dc;
+    public static final int TextAppearance_AppCompat_Title=0x7f0f00dd;
+    public static final int TextAppearance_AppCompat_Title_Inverse=0x7f0f00de;
+    public static final int TextAppearance_AppCompat_Tooltip=0x7f0f00df;
+    public static final int TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f0f00e0;
+    public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f0f00e1;
+    public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f0f00e2;
+    public static final int TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f0f00e3;
+    public static final int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f0f00e4;
+    public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f0f00e5;
+    public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse=0x7f0f00e6;
+    public static final int TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f0f00e7;
+    public static final int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse=0x7f0f00e8;
+    public static final int TextAppearance_AppCompat_Widget_Button=0x7f0f00e9;
+    public static final int TextAppearance_AppCompat_Widget_Button_Borderless_Colored=0x7f0f00ea;
+    public static final int TextAppearance_AppCompat_Widget_Button_Colored=0x7f0f00eb;
+    public static final int TextAppearance_AppCompat_Widget_Button_Inverse=0x7f0f00ec;
+    public static final int TextAppearance_AppCompat_Widget_DropDownItem=0x7f0f00ed;
+    public static final int TextAppearance_AppCompat_Widget_PopupMenu_Header=0x7f0f00ee;
+    public static final int TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f0f00ef;
+    public static final int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0f00f0;
+    public static final int TextAppearance_AppCompat_Widget_Switch=0x7f0f00f1;
+    public static final int TextAppearance_AppCompat_Widget_TextView_SpinnerItem=0x7f0f00f2;
+    public static final int TextAppearance_Compat_Notification=0x7f0f00f3;
+    public static final int TextAppearance_Compat_Notification_Info=0x7f0f00f4;
+    public static final int TextAppearance_Compat_Notification_Info_Media=0x7f0f00f5;
+    public static final int TextAppearance_Compat_Notification_Line2=0x7f0f00f6;
+    public static final int TextAppearance_Compat_Notification_Line2_Media=0x7f0f00f7;
+    public static final int TextAppearance_Compat_Notification_Media=0x7f0f00f8;
+    public static final int TextAppearance_Compat_Notification_Time=0x7f0f00f9;
+    public static final int TextAppearance_Compat_Notification_Time_Media=0x7f0f00fa;
+    public static final int TextAppearance_Compat_Notification_Title=0x7f0f00fb;
+    public static final int TextAppearance_Compat_Notification_Title_Media=0x7f0f00fc;
+    public static final int TextAppearance_Design_CollapsingToolbar_Expanded=0x7f0f00fd;
+    public static final int TextAppearance_Design_Counter=0x7f0f00fe;
+    public static final int TextAppearance_Design_Counter_Overflow=0x7f0f00ff;
+    public static final int TextAppearance_Design_Error=0x7f0f0100;
+    public static final int TextAppearance_Design_Hint=0x7f0f0101;
+    public static final int TextAppearance_Design_Snackbar_Message=0x7f0f0102;
+    public static final int TextAppearance_Design_Tab=0x7f0f0103;
+    public static final int TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f0f0104;
+    public static final int TextAppearance_Widget_AppCompat_Toolbar_Subtitle=0x7f0f0105;
+    public static final int TextAppearance_Widget_AppCompat_Toolbar_Title=0x7f0f0106;
+    public static final int Theme_AppCompat=0x7f0f0107;
+    public static final int Theme_AppCompat_CompactMenu=0x7f0f0108;
+    public static final int Theme_AppCompat_DayNight=0x7f0f0109;
+    public static final int Theme_AppCompat_DayNight_DarkActionBar=0x7f0f010a;
+    public static final int Theme_AppCompat_DayNight_Dialog=0x7f0f010b;
+    public static final int Theme_AppCompat_DayNight_Dialog_Alert=0x7f0f010c;
+    public static final int Theme_AppCompat_DayNight_Dialog_MinWidth=0x7f0f010d;
+    public static final int Theme_AppCompat_DayNight_DialogWhenLarge=0x7f0f010e;
+    public static final int Theme_AppCompat_DayNight_NoActionBar=0x7f0f010f;
+    public static final int Theme_AppCompat_Dialog=0x7f0f0110;
+    public static final int Theme_AppCompat_Dialog_Alert=0x7f0f0111;
+    public static final int Theme_AppCompat_Dialog_MinWidth=0x7f0f0112;
+    public static final int Theme_AppCompat_DialogWhenLarge=0x7f0f0113;
+    public static final int Theme_AppCompat_Light=0x7f0f0114;
+    public static final int Theme_AppCompat_Light_DarkActionBar=0x7f0f0115;
+    public static final int Theme_AppCompat_Light_Dialog=0x7f0f0116;
+    public static final int Theme_AppCompat_Light_Dialog_Alert=0x7f0f0117;
+    public static final int Theme_AppCompat_Light_Dialog_MinWidth=0x7f0f0118;
+    public static final int Theme_AppCompat_Light_DialogWhenLarge=0x7f0f0119;
+    public static final int Theme_AppCompat_Light_NoActionBar=0x7f0f011a;
+    public static final int Theme_AppCompat_NoActionBar=0x7f0f011b;
+    public static final int Theme_Design=0x7f0f011c;
+    public static final int Theme_Design_BottomSheetDialog=0x7f0f011d;
+    public static final int Theme_Design_Light=0x7f0f011e;
+    public static final int Theme_Design_Light_BottomSheetDialog=0x7f0f011f;
+    public static final int Theme_Design_Light_NoActionBar=0x7f0f0120;
+    public static final int Theme_Design_NoActionBar=0x7f0f0121;
+    public static final int ThemeOverlay_AppCompat=0x7f0f0122;
+    public static final int ThemeOverlay_AppCompat_ActionBar=0x7f0f0123;
+    public static final int ThemeOverlay_AppCompat_Dark=0x7f0f0124;
+    public static final int ThemeOverlay_AppCompat_Dark_ActionBar=0x7f0f0125;
+    public static final int ThemeOverlay_AppCompat_Dialog=0x7f0f0126;
+    public static final int ThemeOverlay_AppCompat_Dialog_Alert=0x7f0f0127;
+    public static final int ThemeOverlay_AppCompat_Light=0x7f0f0128;
+    public static final int Widget_AppCompat_ActionBar=0x7f0f0129;
+    public static final int Widget_AppCompat_ActionBar_Solid=0x7f0f012a;
+    public static final int Widget_AppCompat_ActionBar_TabBar=0x7f0f012b;
+    public static final int Widget_AppCompat_ActionBar_TabText=0x7f0f012c;
+    public static final int Widget_AppCompat_ActionBar_TabView=0x7f0f012d;
+    public static final int Widget_AppCompat_ActionButton=0x7f0f012e;
+    public static final int Widget_AppCompat_ActionButton_CloseMode=0x7f0f012f;
+    public static final int Widget_AppCompat_ActionButton_Overflow=0x7f0f0130;
+    public static final int Widget_AppCompat_ActionMode=0x7f0f0131;
+    public static final int Widget_AppCompat_ActivityChooserView=0x7f0f0132;
+    public static final int Widget_AppCompat_AutoCompleteTextView=0x7f0f0133;
+    public static final int Widget_AppCompat_Button=0x7f0f0134;
+    public static final int Widget_AppCompat_Button_Borderless=0x7f0f0135;
+    public static final int Widget_AppCompat_Button_Borderless_Colored=0x7f0f0136;
+    public static final int Widget_AppCompat_Button_ButtonBar_AlertDialog=0x7f0f0137;
+    public static final int Widget_AppCompat_Button_Colored=0x7f0f0138;
+    public static final int Widget_AppCompat_Button_Small=0x7f0f0139;
+    public static final int Widget_AppCompat_ButtonBar=0x7f0f013a;
+    public static final int Widget_AppCompat_ButtonBar_AlertDialog=0x7f0f013b;
+    public static final int Widget_AppCompat_CompoundButton_CheckBox=0x7f0f013c;
+    public static final int Widget_AppCompat_CompoundButton_RadioButton=0x7f0f013d;
+    public static final int Widget_AppCompat_CompoundButton_Switch=0x7f0f013e;
+    public static final int Widget_AppCompat_DrawerArrowToggle=0x7f0f013f;
+    public static final int Widget_AppCompat_DropDownItem_Spinner=0x7f0f0140;
+    public static final int Widget_AppCompat_EditText=0x7f0f0141;
+    public static final int Widget_AppCompat_ImageButton=0x7f0f0142;
+    public static final int Widget_AppCompat_Light_ActionBar=0x7f0f0143;
+    public static final int Widget_AppCompat_Light_ActionBar_Solid=0x7f0f0144;
+    public static final int Widget_AppCompat_Light_ActionBar_Solid_Inverse=0x7f0f0145;
+    public static final int Widget_AppCompat_Light_ActionBar_TabBar=0x7f0f0146;
+    public static final int Widget_AppCompat_Light_ActionBar_TabBar_Inverse=0x7f0f0147;
+    public static final int Widget_AppCompat_Light_ActionBar_TabText=0x7f0f0148;
+    public static final int Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0f0149;
+    public static final int Widget_AppCompat_Light_ActionBar_TabView=0x7f0f014a;
+    public static final int Widget_AppCompat_Light_ActionBar_TabView_Inverse=0x7f0f014b;
+    public static final int Widget_AppCompat_Light_ActionButton=0x7f0f014c;
+    public static final int Widget_AppCompat_Light_ActionButton_CloseMode=0x7f0f014d;
+    public static final int Widget_AppCompat_Light_ActionButton_Overflow=0x7f0f014e;
+    public static final int Widget_AppCompat_Light_ActionMode_Inverse=0x7f0f014f;
+    public static final int Widget_AppCompat_Light_ActivityChooserView=0x7f0f0150;
+    public static final int Widget_AppCompat_Light_AutoCompleteTextView=0x7f0f0151;
+    public static final int Widget_AppCompat_Light_DropDownItem_Spinner=0x7f0f0152;
+    public static final int Widget_AppCompat_Light_ListPopupWindow=0x7f0f0153;
+    public static final int Widget_AppCompat_Light_ListView_DropDown=0x7f0f0154;
+    public static final int Widget_AppCompat_Light_PopupMenu=0x7f0f0155;
+    public static final int Widget_AppCompat_Light_PopupMenu_Overflow=0x7f0f0156;
+    public static final int Widget_AppCompat_Light_SearchView=0x7f0f0157;
+    public static final int Widget_AppCompat_Light_Spinner_DropDown_ActionBar=0x7f0f0158;
+    public static final int Widget_AppCompat_ListMenuView=0x7f0f0159;
+    public static final int Widget_AppCompat_ListPopupWindow=0x7f0f015a;
+    public static final int Widget_AppCompat_ListView=0x7f0f015b;
+    public static final int Widget_AppCompat_ListView_DropDown=0x7f0f015c;
+    public static final int Widget_AppCompat_ListView_Menu=0x7f0f015d;
+    public static final int Widget_AppCompat_PopupMenu=0x7f0f015e;
+    public static final int Widget_AppCompat_PopupMenu_Overflow=0x7f0f015f;
+    public static final int Widget_AppCompat_PopupWindow=0x7f0f0160;
+    public static final int Widget_AppCompat_ProgressBar=0x7f0f0161;
+    public static final int Widget_AppCompat_ProgressBar_Horizontal=0x7f0f0162;
+    public static final int Widget_AppCompat_RatingBar=0x7f0f0163;
+    public static final int Widget_AppCompat_RatingBar_Indicator=0x7f0f0164;
+    public static final int Widget_AppCompat_RatingBar_Small=0x7f0f0165;
+    public static final int Widget_AppCompat_SearchView=0x7f0f0166;
+    public static final int Widget_AppCompat_SearchView_ActionBar=0x7f0f0167;
+    public static final int Widget_AppCompat_SeekBar=0x7f0f0168;
+    public static final int Widget_AppCompat_SeekBar_Discrete=0x7f0f0169;
+    public static final int Widget_AppCompat_Spinner=0x7f0f016a;
+    public static final int Widget_AppCompat_Spinner_DropDown=0x7f0f016b;
+    public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0f016c;
+    public static final int Widget_AppCompat_Spinner_Underlined=0x7f0f016d;
+    public static final int Widget_AppCompat_TextView_SpinnerItem=0x7f0f016e;
+    public static final int Widget_AppCompat_Toolbar=0x7f0f016f;
+    public static final int Widget_AppCompat_Toolbar_Button_Navigation=0x7f0f0170;
+    public static final int Widget_Compat_NotificationActionContainer=0x7f0f0171;
+    public static final int Widget_Compat_NotificationActionText=0x7f0f0172;
+    public static final int Widget_Design_AppBarLayout=0x7f0f0173;
+    public static final int Widget_Design_BottomNavigationView=0x7f0f0174;
+    public static final int Widget_Design_BottomSheet_Modal=0x7f0f0175;
+    public static final int Widget_Design_CollapsingToolbar=0x7f0f0176;
+    public static final int Widget_Design_CoordinatorLayout=0x7f0f0177;
+    public static final int Widget_Design_FloatingActionButton=0x7f0f0178;
+    public static final int Widget_Design_NavigationView=0x7f0f0179;
+    public static final int Widget_Design_ScrimInsetsFrameLayout=0x7f0f017a;
+    public static final int Widget_Design_Snackbar=0x7f0f017b;
+    public static final int Widget_Design_TabLayout=0x7f0f017c;
+    public static final int Widget_Design_TextInputLayout=0x7f0f017d;
+    public static final int Widget_Support_CoordinatorLayout=0x7f0f017e;
   }
   public static final class styleable {
     /**
@@ -4806,35 +5302,35 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ActionBar_background com.buah.farmconnect:background}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_backgroundSplit com.buah.farmconnect:backgroundSplit}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_backgroundStacked com.buah.farmconnect:backgroundStacked}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetEnd com.buah.farmconnect:contentInsetEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetEndWithActions com.buah.farmconnect:contentInsetEndWithActions}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetLeft com.buah.farmconnect:contentInsetLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetRight com.buah.farmconnect:contentInsetRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetStart com.buah.farmconnect:contentInsetStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_contentInsetStartWithNavigation com.buah.farmconnect:contentInsetStartWithNavigation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_customNavigationLayout com.buah.farmconnect:customNavigationLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_displayOptions com.buah.farmconnect:displayOptions}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_divider com.buah.farmconnect:divider}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_elevation com.buah.farmconnect:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_height com.buah.farmconnect:height}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_hideOnContentScroll com.buah.farmconnect:hideOnContentScroll}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_homeAsUpIndicator com.buah.farmconnect:homeAsUpIndicator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_homeLayout com.buah.farmconnect:homeLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_icon com.buah.farmconnect:icon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_indeterminateProgressStyle com.buah.farmconnect:indeterminateProgressStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_itemPadding com.buah.farmconnect:itemPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_logo com.buah.farmconnect:logo}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_navigationMode com.buah.farmconnect:navigationMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_popupTheme com.buah.farmconnect:popupTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_progressBarPadding com.buah.farmconnect:progressBarPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_progressBarStyle com.buah.farmconnect:progressBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_subtitle com.buah.farmconnect:subtitle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_subtitleTextStyle com.buah.farmconnect:subtitleTextStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_title com.buah.farmconnect:title}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionBar_titleTextStyle com.buah.farmconnect:titleTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_background com.ellis.memberplanet:background}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_backgroundSplit com.ellis.memberplanet:backgroundSplit}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_backgroundStacked com.ellis.memberplanet:backgroundStacked}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetEnd com.ellis.memberplanet:contentInsetEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetEndWithActions com.ellis.memberplanet:contentInsetEndWithActions}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetLeft com.ellis.memberplanet:contentInsetLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetRight com.ellis.memberplanet:contentInsetRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetStart com.ellis.memberplanet:contentInsetStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_contentInsetStartWithNavigation com.ellis.memberplanet:contentInsetStartWithNavigation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_customNavigationLayout com.ellis.memberplanet:customNavigationLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_displayOptions com.ellis.memberplanet:displayOptions}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_divider com.ellis.memberplanet:divider}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_elevation com.ellis.memberplanet:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_height com.ellis.memberplanet:height}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_hideOnContentScroll com.ellis.memberplanet:hideOnContentScroll}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_homeAsUpIndicator com.ellis.memberplanet:homeAsUpIndicator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_homeLayout com.ellis.memberplanet:homeLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_icon com.ellis.memberplanet:icon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_indeterminateProgressStyle com.ellis.memberplanet:indeterminateProgressStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_itemPadding com.ellis.memberplanet:itemPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_logo com.ellis.memberplanet:logo}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_navigationMode com.ellis.memberplanet:navigationMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_popupTheme com.ellis.memberplanet:popupTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_progressBarPadding com.ellis.memberplanet:progressBarPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_progressBarStyle com.ellis.memberplanet:progressBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_subtitle com.ellis.memberplanet:subtitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_subtitleTextStyle com.ellis.memberplanet:subtitleTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_title com.ellis.memberplanet:title}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionBar_titleTextStyle com.ellis.memberplanet:titleTextStyle}</code></td><td></td></tr>
      * </table>
      * @see #ActionBar_background
      * @see #ActionBar_backgroundSplit
@@ -4867,17 +5363,17 @@ public final class R {
      * @see #ActionBar_titleTextStyle
      */
     public static final int[] ActionBar={
-        0x7f040031, 0x7f040032, 0x7f040033, 0x7f04006f, 
-        0x7f040070, 0x7f040071, 0x7f040072, 0x7f040073, 
-        0x7f040074, 0x7f040080, 0x7f040084, 0x7f040085, 
-        0x7f040090, 0x7f0400b2, 0x7f0400b3, 0x7f0400b7, 
-        0x7f0400b8, 0x7f0400b9, 0x7f0400c0, 0x7f0400c6, 
-        0x7f04010c, 0x7f040115, 0x7f040125, 0x7f040129, 
-        0x7f04012a, 0x7f040152, 0x7f040155, 0x7f040181, 
-        0x7f04018b
+        0x7f040031, 0x7f040032, 0x7f040033, 0x7f040071, 
+        0x7f040072, 0x7f040073, 0x7f040074, 0x7f040075, 
+        0x7f040076, 0x7f040083, 0x7f040087, 0x7f040088, 
+        0x7f040093, 0x7f0400ca, 0x7f0400cb, 0x7f0400cf, 
+        0x7f0400d0, 0x7f0400d1, 0x7f0400d8, 0x7f0400de, 
+        0x7f040124, 0x7f040154, 0x7f040164, 0x7f040168, 
+        0x7f040169, 0x7f040191, 0x7f040194, 0x7f0401c0, 
+        0x7f0401ca
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#background}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#background}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -4885,11 +5381,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:background
+     * @attr name com.ellis.memberplanet:background
      */
     public static final int ActionBar_background=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#backgroundSplit}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#backgroundSplit}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -4900,11 +5396,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:backgroundSplit
+     * @attr name com.ellis.memberplanet:backgroundSplit
      */
     public static final int ActionBar_backgroundSplit=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#backgroundStacked}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#backgroundStacked}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -4915,11 +5411,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:backgroundStacked
+     * @attr name com.ellis.memberplanet:backgroundStacked
      */
     public static final int ActionBar_backgroundStacked=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetEnd}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetEnd}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -4928,11 +5424,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetEnd
+     * @attr name com.ellis.memberplanet:contentInsetEnd
      */
     public static final int ActionBar_contentInsetEnd=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetEndWithActions}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetEndWithActions}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -4941,11 +5437,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetEndWithActions
+     * @attr name com.ellis.memberplanet:contentInsetEndWithActions
      */
     public static final int ActionBar_contentInsetEndWithActions=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetLeft}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetLeft}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -4954,11 +5450,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetLeft
+     * @attr name com.ellis.memberplanet:contentInsetLeft
      */
     public static final int ActionBar_contentInsetLeft=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetRight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetRight}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -4967,11 +5463,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetRight
+     * @attr name com.ellis.memberplanet:contentInsetRight
      */
     public static final int ActionBar_contentInsetRight=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetStart}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetStart}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -4980,11 +5476,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetStart
+     * @attr name com.ellis.memberplanet:contentInsetStart
      */
     public static final int ActionBar_contentInsetStart=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetStartWithNavigation}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetStartWithNavigation}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -4993,11 +5489,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetStartWithNavigation
+     * @attr name com.ellis.memberplanet:contentInsetStartWithNavigation
      */
     public static final int ActionBar_contentInsetStartWithNavigation=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#customNavigationLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#customNavigationLayout}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5005,11 +5501,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:customNavigationLayout
+     * @attr name com.ellis.memberplanet:customNavigationLayout
      */
     public static final int ActionBar_customNavigationLayout=9;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#displayOptions}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#displayOptions}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -5027,11 +5523,11 @@ public final class R {
      * <tr><td>useLogo</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:displayOptions
+     * @attr name com.ellis.memberplanet:displayOptions
      */
     public static final int ActionBar_displayOptions=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#divider}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#divider}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5039,11 +5535,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:divider
+     * @attr name com.ellis.memberplanet:divider
      */
     public static final int ActionBar_divider=11;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#elevation}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5052,11 +5548,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:elevation
+     * @attr name com.ellis.memberplanet:elevation
      */
     public static final int ActionBar_elevation=12;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#height}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#height}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5065,21 +5561,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:height
+     * @attr name com.ellis.memberplanet:height
      */
     public static final int ActionBar_height=13;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#hideOnContentScroll}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#hideOnContentScroll}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:hideOnContentScroll
+     * @attr name com.ellis.memberplanet:hideOnContentScroll
      */
     public static final int ActionBar_hideOnContentScroll=14;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#homeAsUpIndicator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#homeAsUpIndicator}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5087,11 +5583,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:homeAsUpIndicator
+     * @attr name com.ellis.memberplanet:homeAsUpIndicator
      */
     public static final int ActionBar_homeAsUpIndicator=15;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#homeLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#homeLayout}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5099,11 +5595,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:homeLayout
+     * @attr name com.ellis.memberplanet:homeLayout
      */
     public static final int ActionBar_homeLayout=16;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#icon}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#icon}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5111,11 +5607,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:icon
+     * @attr name com.ellis.memberplanet:icon
      */
     public static final int ActionBar_icon=17;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#indeterminateProgressStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#indeterminateProgressStyle}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5123,11 +5619,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:indeterminateProgressStyle
+     * @attr name com.ellis.memberplanet:indeterminateProgressStyle
      */
     public static final int ActionBar_indeterminateProgressStyle=18;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#itemPadding}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#itemPadding}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5136,11 +5632,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:itemPadding
+     * @attr name com.ellis.memberplanet:itemPadding
      */
     public static final int ActionBar_itemPadding=19;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#logo}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#logo}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5148,11 +5644,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:logo
+     * @attr name com.ellis.memberplanet:logo
      */
     public static final int ActionBar_logo=20;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#navigationMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#navigationMode}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -5166,11 +5662,11 @@ public final class R {
      * <tr><td>tabMode</td><td>2</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:navigationMode
+     * @attr name com.ellis.memberplanet:navigationMode
      */
     public static final int ActionBar_navigationMode=21;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#popupTheme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#popupTheme}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5178,11 +5674,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:popupTheme
+     * @attr name com.ellis.memberplanet:popupTheme
      */
     public static final int ActionBar_popupTheme=22;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#progressBarPadding}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#progressBarPadding}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5191,11 +5687,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:progressBarPadding
+     * @attr name com.ellis.memberplanet:progressBarPadding
      */
     public static final int ActionBar_progressBarPadding=23;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#progressBarStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#progressBarStyle}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5203,21 +5699,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:progressBarStyle
+     * @attr name com.ellis.memberplanet:progressBarStyle
      */
     public static final int ActionBar_progressBarStyle=24;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#subtitle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#subtitle}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:subtitle
+     * @attr name com.ellis.memberplanet:subtitle
      */
     public static final int ActionBar_subtitle=25;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#subtitleTextStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#subtitleTextStyle}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5225,21 +5721,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:subtitleTextStyle
+     * @attr name com.ellis.memberplanet:subtitleTextStyle
      */
     public static final int ActionBar_subtitleTextStyle=26;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#title}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#title}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:title
+     * @attr name com.ellis.memberplanet:title
      */
     public static final int ActionBar_title=27;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#titleTextStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#titleTextStyle}
      * attribute's value can be found in the {@link #ActionBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5247,7 +5743,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:titleTextStyle
+     * @attr name com.ellis.memberplanet:titleTextStyle
      */
     public static final int ActionBar_titleTextStyle=28;
     /**
@@ -5329,12 +5825,12 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ActionMode_background com.buah.farmconnect:background}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionMode_backgroundSplit com.buah.farmconnect:backgroundSplit}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionMode_closeItemLayout com.buah.farmconnect:closeItemLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionMode_height com.buah.farmconnect:height}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionMode_subtitleTextStyle com.buah.farmconnect:subtitleTextStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActionMode_titleTextStyle com.buah.farmconnect:titleTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_background com.ellis.memberplanet:background}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_backgroundSplit com.ellis.memberplanet:backgroundSplit}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_closeItemLayout com.ellis.memberplanet:closeItemLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_height com.ellis.memberplanet:height}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_subtitleTextStyle com.ellis.memberplanet:subtitleTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActionMode_titleTextStyle com.ellis.memberplanet:titleTextStyle}</code></td><td></td></tr>
      * </table>
      * @see #ActionMode_background
      * @see #ActionMode_backgroundSplit
@@ -5344,11 +5840,11 @@ public final class R {
      * @see #ActionMode_titleTextStyle
      */
     public static final int[] ActionMode={
-        0x7f040031, 0x7f040032, 0x7f04005b, 0x7f0400b2, 
-        0x7f040155, 0x7f04018b
+        0x7f040031, 0x7f040032, 0x7f04005d, 0x7f0400ca, 
+        0x7f040194, 0x7f0401ca
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#background}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#background}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5356,11 +5852,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:background
+     * @attr name com.ellis.memberplanet:background
      */
     public static final int ActionMode_background=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#backgroundSplit}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#backgroundSplit}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5371,11 +5867,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:backgroundSplit
+     * @attr name com.ellis.memberplanet:backgroundSplit
      */
     public static final int ActionMode_backgroundSplit=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#closeItemLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#closeItemLayout}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5383,11 +5879,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:closeItemLayout
+     * @attr name com.ellis.memberplanet:closeItemLayout
      */
     public static final int ActionMode_closeItemLayout=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#height}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#height}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5396,11 +5892,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:height
+     * @attr name com.ellis.memberplanet:height
      */
     public static final int ActionMode_height=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#subtitleTextStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#subtitleTextStyle}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5408,11 +5904,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:subtitleTextStyle
+     * @attr name com.ellis.memberplanet:subtitleTextStyle
      */
     public static final int ActionMode_subtitleTextStyle=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#titleTextStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#titleTextStyle}
      * attribute's value can be found in the {@link #ActionMode} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5420,7 +5916,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:titleTextStyle
+     * @attr name com.ellis.memberplanet:titleTextStyle
      */
     public static final int ActionMode_titleTextStyle=5;
     /**
@@ -5430,17 +5926,17 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable com.buah.farmconnect:expandActivityOverflowButtonDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ActivityChooserView_initialActivityCount com.buah.farmconnect:initialActivityCount}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable com.ellis.memberplanet:expandActivityOverflowButtonDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ActivityChooserView_initialActivityCount com.ellis.memberplanet:initialActivityCount}</code></td><td></td></tr>
      * </table>
      * @see #ActivityChooserView_expandActivityOverflowButtonDrawable
      * @see #ActivityChooserView_initialActivityCount
      */
     public static final int[] ActivityChooserView={
-        0x7f040093, 0x7f0400c1
+        0x7f040096, 0x7f0400d9
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#expandActivityOverflowButtonDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#expandActivityOverflowButtonDrawable}
      * attribute's value can be found in the {@link #ActivityChooserView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5448,17 +5944,17 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:expandActivityOverflowButtonDrawable
+     * @attr name com.ellis.memberplanet:expandActivityOverflowButtonDrawable
      */
     public static final int ActivityChooserView_expandActivityOverflowButtonDrawable=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#initialActivityCount}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#initialActivityCount}
      * attribute's value can be found in the {@link #ActivityChooserView} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:initialActivityCount
+     * @attr name com.ellis.memberplanet:initialActivityCount
      */
     public static final int ActivityChooserView_initialActivityCount=1;
     /**
@@ -5469,14 +5965,16 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #AlertDialog_android_layout android:layout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_buttonPanelSideLayout com.buah.farmconnect:buttonPanelSideLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_listItemLayout com.buah.farmconnect:listItemLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_listLayout com.buah.farmconnect:listLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_multiChoiceItemLayout com.buah.farmconnect:multiChoiceItemLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_showTitle com.buah.farmconnect:showTitle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AlertDialog_singleChoiceItemLayout com.buah.farmconnect:singleChoiceItemLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_buttonIconDimen com.ellis.memberplanet:buttonIconDimen}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_buttonPanelSideLayout com.ellis.memberplanet:buttonPanelSideLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_listItemLayout com.ellis.memberplanet:listItemLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_listLayout com.ellis.memberplanet:listLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_multiChoiceItemLayout com.ellis.memberplanet:multiChoiceItemLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_showTitle com.ellis.memberplanet:showTitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AlertDialog_singleChoiceItemLayout com.ellis.memberplanet:singleChoiceItemLayout}</code></td><td></td></tr>
      * </table>
      * @see #AlertDialog_android_layout
+     * @see #AlertDialog_buttonIconDimen
      * @see #AlertDialog_buttonPanelSideLayout
      * @see #AlertDialog_listItemLayout
      * @see #AlertDialog_listLayout
@@ -5485,8 +5983,8 @@ public final class R {
      * @see #AlertDialog_singleChoiceItemLayout
      */
     public static final int[] AlertDialog={
-        0x010100f2, 0x7f040046, 0x7f040103, 0x7f040104, 
-        0x7f040112, 0x7f04013f, 0x7f040140
+        0x010100f2, 0x7f040046, 0x7f040047, 0x7f04011b, 
+        0x7f04011c, 0x7f040151, 0x7f04017e, 0x7f04017f
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#layout}
@@ -5501,7 +5999,20 @@ public final class R {
      */
     public static final int AlertDialog_android_layout=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonPanelSideLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonIconDimen}
+     * attribute's value can be found in the {@link #AlertDialog} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:buttonIconDimen
+     */
+    public static final int AlertDialog_buttonIconDimen=1;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonPanelSideLayout}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5509,11 +6020,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:buttonPanelSideLayout
+     * @attr name com.ellis.memberplanet:buttonPanelSideLayout
      */
-    public static final int AlertDialog_buttonPanelSideLayout=1;
+    public static final int AlertDialog_buttonPanelSideLayout=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#listItemLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#listItemLayout}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5521,11 +6032,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:listItemLayout
+     * @attr name com.ellis.memberplanet:listItemLayout
      */
-    public static final int AlertDialog_listItemLayout=2;
+    public static final int AlertDialog_listItemLayout=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#listLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#listLayout}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5533,11 +6044,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:listLayout
+     * @attr name com.ellis.memberplanet:listLayout
      */
-    public static final int AlertDialog_listLayout=3;
+    public static final int AlertDialog_listLayout=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#multiChoiceItemLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#multiChoiceItemLayout}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5545,21 +6056,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:multiChoiceItemLayout
+     * @attr name com.ellis.memberplanet:multiChoiceItemLayout
      */
-    public static final int AlertDialog_multiChoiceItemLayout=4;
+    public static final int AlertDialog_multiChoiceItemLayout=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#showTitle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#showTitle}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:showTitle
+     * @attr name com.ellis.memberplanet:showTitle
      */
-    public static final int AlertDialog_showTitle=5;
+    public static final int AlertDialog_showTitle=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#singleChoiceItemLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#singleChoiceItemLayout}
      * attribute's value can be found in the {@link #AlertDialog} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5567,9 +6078,9 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:singleChoiceItemLayout
+     * @attr name com.ellis.memberplanet:singleChoiceItemLayout
      */
-    public static final int AlertDialog_singleChoiceItemLayout=6;
+    public static final int AlertDialog_singleChoiceItemLayout=7;
     /**
      * Attributes that can be used with a AppBarLayout.
      * <p>Includes the following attributes:</p>
@@ -5580,8 +6091,8 @@ public final class R {
      * <tr><td><code>{@link #AppBarLayout_android_background android:background}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_android_touchscreenBlocksFocus android:touchscreenBlocksFocus}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppBarLayout_android_keyboardNavigationCluster android:keyboardNavigationCluster}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayout_elevation com.buah.farmconnect:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayout_expanded com.buah.farmconnect:expanded}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayout_elevation com.ellis.memberplanet:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayout_expanded com.ellis.memberplanet:expanded}</code></td><td></td></tr>
      * </table>
      * @see #AppBarLayout_android_background
      * @see #AppBarLayout_android_touchscreenBlocksFocus
@@ -5590,8 +6101,8 @@ public final class R {
      * @see #AppBarLayout_expanded
      */
     public static final int[] AppBarLayout={
-        0x010100d4, 0x0101048f, 0x01010540, 0x7f040090, 
-        0x7f040094
+        0x010100d4, 0x0101048f, 0x01010540, 0x7f040093, 
+        0x7f040097
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#background}
@@ -5629,7 +6140,7 @@ public final class R {
      */
     public static final int AppBarLayout_android_keyboardNavigationCluster=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#elevation}
      * attribute's value can be found in the {@link #AppBarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -5638,17 +6149,17 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:elevation
+     * @attr name com.ellis.memberplanet:elevation
      */
     public static final int AppBarLayout_elevation=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#expanded}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#expanded}
      * attribute's value can be found in the {@link #AppBarLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:expanded
+     * @attr name com.ellis.memberplanet:expanded
      */
     public static final int AppBarLayout_expanded=4;
     /**
@@ -5658,33 +6169,33 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #AppBarLayoutStates_state_collapsed com.buah.farmconnect:state_collapsed}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayoutStates_state_collapsible com.buah.farmconnect:state_collapsible}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayoutStates_state_collapsed com.ellis.memberplanet:state_collapsed}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayoutStates_state_collapsible com.ellis.memberplanet:state_collapsible}</code></td><td></td></tr>
      * </table>
      * @see #AppBarLayoutStates_state_collapsed
      * @see #AppBarLayoutStates_state_collapsible
      */
     public static final int[] AppBarLayoutStates={
-        0x7f04014c, 0x7f04014d
+        0x7f04018b, 0x7f04018c
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#state_collapsed}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#state_collapsed}
      * attribute's value can be found in the {@link #AppBarLayoutStates} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:state_collapsed
+     * @attr name com.ellis.memberplanet:state_collapsed
      */
     public static final int AppBarLayoutStates_state_collapsed=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#state_collapsible}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#state_collapsible}
      * attribute's value can be found in the {@link #AppBarLayoutStates} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:state_collapsible
+     * @attr name com.ellis.memberplanet:state_collapsible
      */
     public static final int AppBarLayoutStates_state_collapsible=1;
     /**
@@ -5694,17 +6205,17 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollFlags com.buah.farmconnect:layout_scrollFlags}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollInterpolator com.buah.farmconnect:layout_scrollInterpolator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollFlags com.ellis.memberplanet:layout_scrollFlags}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppBarLayout_Layout_layout_scrollInterpolator com.ellis.memberplanet:layout_scrollInterpolator}</code></td><td></td></tr>
      * </table>
      * @see #AppBarLayout_Layout_layout_scrollFlags
      * @see #AppBarLayout_Layout_layout_scrollInterpolator
      */
     public static final int[] AppBarLayout_Layout={
-        0x7f0400ff, 0x7f040100
+        0x7f040117, 0x7f040118
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_scrollFlags}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_scrollFlags}
      * attribute's value can be found in the {@link #AppBarLayout_Layout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -5720,11 +6231,11 @@ public final class R {
      * <tr><td>snap</td><td>10</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_scrollFlags
+     * @attr name com.ellis.memberplanet:layout_scrollFlags
      */
     public static final int AppBarLayout_Layout_layout_scrollFlags=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_scrollInterpolator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_scrollInterpolator}
      * attribute's value can be found in the {@link #AppBarLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5732,7 +6243,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:layout_scrollInterpolator
+     * @attr name com.ellis.memberplanet:layout_scrollInterpolator
      */
     public static final int AppBarLayout_Layout_layout_scrollInterpolator=1;
     /**
@@ -5743,9 +6254,9 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #AppCompatImageView_android_src android:src}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatImageView_srcCompat com.buah.farmconnect:srcCompat}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatImageView_tint com.buah.farmconnect:tint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatImageView_tintMode com.buah.farmconnect:tintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatImageView_srcCompat com.ellis.memberplanet:srcCompat}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatImageView_tint com.ellis.memberplanet:tint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatImageView_tintMode com.ellis.memberplanet:tintMode}</code></td><td></td></tr>
      * </table>
      * @see #AppCompatImageView_android_src
      * @see #AppCompatImageView_srcCompat
@@ -5753,7 +6264,7 @@ public final class R {
      * @see #AppCompatImageView_tintMode
      */
     public static final int[] AppCompatImageView={
-        0x01010119, 0x7f040146, 0x7f04017f, 0x7f040180
+        0x01010119, 0x7f040185, 0x7f0401be, 0x7f0401bf
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#src}
@@ -5771,7 +6282,7 @@ public final class R {
      */
     public static final int AppCompatImageView_android_src=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#srcCompat}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#srcCompat}
      * attribute's value can be found in the {@link #AppCompatImageView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5779,22 +6290,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:srcCompat
+     * @attr name com.ellis.memberplanet:srcCompat
      */
     public static final int AppCompatImageView_srcCompat=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tint}
      * attribute's value can be found in the {@link #AppCompatImageView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:tint
+     * @attr name com.ellis.memberplanet:tint
      */
     public static final int AppCompatImageView_tint=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tintMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tintMode}
      * attribute's value can be found in the {@link #AppCompatImageView} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -5811,7 +6322,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:tintMode
+     * @attr name com.ellis.memberplanet:tintMode
      */
     public static final int AppCompatImageView_tintMode=3;
     /**
@@ -5822,9 +6333,9 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #AppCompatSeekBar_android_thumb android:thumb}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatSeekBar_tickMark com.buah.farmconnect:tickMark}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatSeekBar_tickMarkTint com.buah.farmconnect:tickMarkTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatSeekBar_tickMarkTintMode com.buah.farmconnect:tickMarkTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatSeekBar_tickMark com.ellis.memberplanet:tickMark}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatSeekBar_tickMarkTint com.ellis.memberplanet:tickMarkTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatSeekBar_tickMarkTintMode com.ellis.memberplanet:tickMarkTintMode}</code></td><td></td></tr>
      * </table>
      * @see #AppCompatSeekBar_android_thumb
      * @see #AppCompatSeekBar_tickMark
@@ -5832,7 +6343,7 @@ public final class R {
      * @see #AppCompatSeekBar_tickMarkTintMode
      */
     public static final int[] AppCompatSeekBar={
-        0x01010142, 0x7f04017c, 0x7f04017d, 0x7f04017e
+        0x01010142, 0x7f0401bb, 0x7f0401bc, 0x7f0401bd
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#thumb}
@@ -5847,7 +6358,7 @@ public final class R {
      */
     public static final int AppCompatSeekBar_android_thumb=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tickMark}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tickMark}
      * attribute's value can be found in the {@link #AppCompatSeekBar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -5855,22 +6366,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:tickMark
+     * @attr name com.ellis.memberplanet:tickMark
      */
     public static final int AppCompatSeekBar_tickMark=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tickMarkTint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tickMarkTint}
      * attribute's value can be found in the {@link #AppCompatSeekBar} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:tickMarkTint
+     * @attr name com.ellis.memberplanet:tickMarkTint
      */
     public static final int AppCompatSeekBar_tickMarkTint=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tickMarkTintMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tickMarkTintMode}
      * attribute's value can be found in the {@link #AppCompatSeekBar} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -5887,7 +6398,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:tickMarkTintMode
+     * @attr name com.ellis.memberplanet:tickMarkTintMode
      */
     public static final int AppCompatSeekBar_tickMarkTintMode=3;
     /**
@@ -6027,13 +6538,13 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #AppCompatTextView_android_textAppearance android:textAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_autoSizeMaxTextSize com.buah.farmconnect:autoSizeMaxTextSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_autoSizeMinTextSize com.buah.farmconnect:autoSizeMinTextSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_autoSizePresetSizes com.buah.farmconnect:autoSizePresetSizes}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_autoSizeStepGranularity com.buah.farmconnect:autoSizeStepGranularity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_autoSizeTextType com.buah.farmconnect:autoSizeTextType}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_fontFamily com.buah.farmconnect:fontFamily}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTextView_textAllCaps com.buah.farmconnect:textAllCaps}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_autoSizeMaxTextSize com.ellis.memberplanet:autoSizeMaxTextSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_autoSizeMinTextSize com.ellis.memberplanet:autoSizeMinTextSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_autoSizePresetSizes com.ellis.memberplanet:autoSizePresetSizes}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_autoSizeStepGranularity com.ellis.memberplanet:autoSizeStepGranularity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_autoSizeTextType com.ellis.memberplanet:autoSizeTextType}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_fontFamily com.ellis.memberplanet:fontFamily}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTextView_textAllCaps com.ellis.memberplanet:textAllCaps}</code></td><td></td></tr>
      * </table>
      * @see #AppCompatTextView_android_textAppearance
      * @see #AppCompatTextView_autoSizeMaxTextSize
@@ -6046,7 +6557,7 @@ public final class R {
      */
     public static final int[] AppCompatTextView={
         0x01010034, 0x7f04002c, 0x7f04002d, 0x7f04002e, 
-        0x7f04002f, 0x7f040030, 0x7f0400a5, 0x7f04016b
+        0x7f04002f, 0x7f040030, 0x7f0400bd, 0x7f0401aa
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#textAppearance}
@@ -6061,7 +6572,7 @@ public final class R {
      */
     public static final int AppCompatTextView_android_textAppearance=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#autoSizeMaxTextSize}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#autoSizeMaxTextSize}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -6070,11 +6581,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:autoSizeMaxTextSize
+     * @attr name com.ellis.memberplanet:autoSizeMaxTextSize
      */
     public static final int AppCompatTextView_autoSizeMaxTextSize=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#autoSizeMinTextSize}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#autoSizeMinTextSize}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -6083,11 +6594,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:autoSizeMinTextSize
+     * @attr name com.ellis.memberplanet:autoSizeMinTextSize
      */
     public static final int AppCompatTextView_autoSizeMinTextSize=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#autoSizePresetSizes}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#autoSizePresetSizes}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6095,11 +6606,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:autoSizePresetSizes
+     * @attr name com.ellis.memberplanet:autoSizePresetSizes
      */
     public static final int AppCompatTextView_autoSizePresetSizes=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#autoSizeStepGranularity}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#autoSizeStepGranularity}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -6108,11 +6619,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:autoSizeStepGranularity
+     * @attr name com.ellis.memberplanet:autoSizeStepGranularity
      */
     public static final int AppCompatTextView_autoSizeStepGranularity=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#autoSizeTextType}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#autoSizeTextType}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -6125,21 +6636,21 @@ public final class R {
      * <tr><td>uniform</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:autoSizeTextType
+     * @attr name com.ellis.memberplanet:autoSizeTextType
      */
     public static final int AppCompatTextView_autoSizeTextType=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fontFamily}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fontFamily}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:fontFamily
+     * @attr name com.ellis.memberplanet:fontFamily
      */
     public static final int AppCompatTextView_fontFamily=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textAllCaps}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textAllCaps}
      * attribute's value can be found in the {@link #AppCompatTextView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6149,7 +6660,7 @@ public final class R {
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:textAllCaps
+     * @attr name com.ellis.memberplanet:textAllCaps
      */
     public static final int AppCompatTextView_textAllCaps=7;
     /**
@@ -6161,123 +6672,124 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #AppCompatTheme_android_windowIsFloating android:windowIsFloating}</code></td><td></td></tr>
      * <tr><td><code>{@link #AppCompatTheme_android_windowAnimationStyle android:windowAnimationStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarDivider com.buah.farmconnect:actionBarDivider}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarItemBackground com.buah.farmconnect:actionBarItemBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarPopupTheme com.buah.farmconnect:actionBarPopupTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarSize com.buah.farmconnect:actionBarSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarSplitStyle com.buah.farmconnect:actionBarSplitStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarStyle com.buah.farmconnect:actionBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarTabBarStyle com.buah.farmconnect:actionBarTabBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarTabStyle com.buah.farmconnect:actionBarTabStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarTabTextStyle com.buah.farmconnect:actionBarTabTextStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarTheme com.buah.farmconnect:actionBarTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionBarWidgetTheme com.buah.farmconnect:actionBarWidgetTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionButtonStyle com.buah.farmconnect:actionButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionDropDownStyle com.buah.farmconnect:actionDropDownStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionMenuTextAppearance com.buah.farmconnect:actionMenuTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionMenuTextColor com.buah.farmconnect:actionMenuTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeBackground com.buah.farmconnect:actionModeBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeCloseButtonStyle com.buah.farmconnect:actionModeCloseButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeCloseDrawable com.buah.farmconnect:actionModeCloseDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeCopyDrawable com.buah.farmconnect:actionModeCopyDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeCutDrawable com.buah.farmconnect:actionModeCutDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeFindDrawable com.buah.farmconnect:actionModeFindDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModePasteDrawable com.buah.farmconnect:actionModePasteDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModePopupWindowStyle com.buah.farmconnect:actionModePopupWindowStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeSelectAllDrawable com.buah.farmconnect:actionModeSelectAllDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeShareDrawable com.buah.farmconnect:actionModeShareDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeSplitBackground com.buah.farmconnect:actionModeSplitBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeStyle com.buah.farmconnect:actionModeStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionModeWebSearchDrawable com.buah.farmconnect:actionModeWebSearchDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionOverflowButtonStyle com.buah.farmconnect:actionOverflowButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_actionOverflowMenuStyle com.buah.farmconnect:actionOverflowMenuStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_activityChooserViewStyle com.buah.farmconnect:activityChooserViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_alertDialogButtonGroupStyle com.buah.farmconnect:alertDialogButtonGroupStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_alertDialogCenterButtons com.buah.farmconnect:alertDialogCenterButtons}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_alertDialogStyle com.buah.farmconnect:alertDialogStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_alertDialogTheme com.buah.farmconnect:alertDialogTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_autoCompleteTextViewStyle com.buah.farmconnect:autoCompleteTextViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_borderlessButtonStyle com.buah.farmconnect:borderlessButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonBarButtonStyle com.buah.farmconnect:buttonBarButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonBarNegativeButtonStyle com.buah.farmconnect:buttonBarNegativeButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonBarNeutralButtonStyle com.buah.farmconnect:buttonBarNeutralButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonBarPositiveButtonStyle com.buah.farmconnect:buttonBarPositiveButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonBarStyle com.buah.farmconnect:buttonBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonStyle com.buah.farmconnect:buttonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_buttonStyleSmall com.buah.farmconnect:buttonStyleSmall}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_checkboxStyle com.buah.farmconnect:checkboxStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_checkedTextViewStyle com.buah.farmconnect:checkedTextViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorAccent com.buah.farmconnect:colorAccent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating com.buah.farmconnect:colorBackgroundFloating}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorButtonNormal com.buah.farmconnect:colorButtonNormal}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorControlActivated com.buah.farmconnect:colorControlActivated}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorControlHighlight com.buah.farmconnect:colorControlHighlight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorControlNormal com.buah.farmconnect:colorControlNormal}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorError com.buah.farmconnect:colorError}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorPrimary com.buah.farmconnect:colorPrimary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark com.buah.farmconnect:colorPrimaryDark}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_colorSwitchThumbNormal com.buah.farmconnect:colorSwitchThumbNormal}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_controlBackground com.buah.farmconnect:controlBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dialogPreferredPadding com.buah.farmconnect:dialogPreferredPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dialogTheme com.buah.farmconnect:dialogTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dividerHorizontal com.buah.farmconnect:dividerHorizontal}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dividerVertical com.buah.farmconnect:dividerVertical}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dropDownListViewStyle com.buah.farmconnect:dropDownListViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_dropdownListPreferredItemHeight com.buah.farmconnect:dropdownListPreferredItemHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_editTextBackground com.buah.farmconnect:editTextBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_editTextColor com.buah.farmconnect:editTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_editTextStyle com.buah.farmconnect:editTextStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_homeAsUpIndicator com.buah.farmconnect:homeAsUpIndicator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_imageButtonStyle com.buah.farmconnect:imageButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listChoiceBackgroundIndicator com.buah.farmconnect:listChoiceBackgroundIndicator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listDividerAlertDialog com.buah.farmconnect:listDividerAlertDialog}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listMenuViewStyle com.buah.farmconnect:listMenuViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPopupWindowStyle com.buah.farmconnect:listPopupWindowStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeight com.buah.farmconnect:listPreferredItemHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightLarge com.buah.farmconnect:listPreferredItemHeightLarge}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightSmall com.buah.farmconnect:listPreferredItemHeightSmall}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingLeft com.buah.farmconnect:listPreferredItemPaddingLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingRight com.buah.farmconnect:listPreferredItemPaddingRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_panelBackground com.buah.farmconnect:panelBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_panelMenuListTheme com.buah.farmconnect:panelMenuListTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_panelMenuListWidth com.buah.farmconnect:panelMenuListWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_popupMenuStyle com.buah.farmconnect:popupMenuStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_popupWindowStyle com.buah.farmconnect:popupWindowStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_radioButtonStyle com.buah.farmconnect:radioButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyle com.buah.farmconnect:ratingBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyleIndicator com.buah.farmconnect:ratingBarStyleIndicator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyleSmall com.buah.farmconnect:ratingBarStyleSmall}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_searchViewStyle com.buah.farmconnect:searchViewStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_seekBarStyle com.buah.farmconnect:seekBarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_selectableItemBackground com.buah.farmconnect:selectableItemBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_selectableItemBackgroundBorderless com.buah.farmconnect:selectableItemBackgroundBorderless}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_spinnerDropDownItemStyle com.buah.farmconnect:spinnerDropDownItemStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_spinnerStyle com.buah.farmconnect:spinnerStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_switchStyle com.buah.farmconnect:switchStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceLargePopupMenu com.buah.farmconnect:textAppearanceLargePopupMenu}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItem com.buah.farmconnect:textAppearanceListItem}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItemSecondary com.buah.farmconnect:textAppearanceListItemSecondary}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItemSmall com.buah.farmconnect:textAppearanceListItemSmall}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearancePopupMenuHeader com.buah.farmconnect:textAppearancePopupMenuHeader}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultSubtitle com.buah.farmconnect:textAppearanceSearchResultSubtitle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultTitle com.buah.farmconnect:textAppearanceSearchResultTitle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSmallPopupMenu com.buah.farmconnect:textAppearanceSmallPopupMenu}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textColorAlertDialogListItem com.buah.farmconnect:textColorAlertDialogListItem}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_textColorSearchUrl com.buah.farmconnect:textColorSearchUrl}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_toolbarNavigationButtonStyle com.buah.farmconnect:toolbarNavigationButtonStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_toolbarStyle com.buah.farmconnect:toolbarStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_tooltipForegroundColor com.buah.farmconnect:tooltipForegroundColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_tooltipFrameBackground com.buah.farmconnect:tooltipFrameBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowActionBar com.buah.farmconnect:windowActionBar}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowActionBarOverlay com.buah.farmconnect:windowActionBarOverlay}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowActionModeOverlay com.buah.farmconnect:windowActionModeOverlay}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMajor com.buah.farmconnect:windowFixedHeightMajor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMinor com.buah.farmconnect:windowFixedHeightMinor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMajor com.buah.farmconnect:windowFixedWidthMajor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMinor com.buah.farmconnect:windowFixedWidthMinor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowMinWidthMajor com.buah.farmconnect:windowMinWidthMajor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowMinWidthMinor com.buah.farmconnect:windowMinWidthMinor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AppCompatTheme_windowNoTitle com.buah.farmconnect:windowNoTitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarDivider com.ellis.memberplanet:actionBarDivider}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarItemBackground com.ellis.memberplanet:actionBarItemBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarPopupTheme com.ellis.memberplanet:actionBarPopupTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarSize com.ellis.memberplanet:actionBarSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarSplitStyle com.ellis.memberplanet:actionBarSplitStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarStyle com.ellis.memberplanet:actionBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarTabBarStyle com.ellis.memberplanet:actionBarTabBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarTabStyle com.ellis.memberplanet:actionBarTabStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarTabTextStyle com.ellis.memberplanet:actionBarTabTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarTheme com.ellis.memberplanet:actionBarTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionBarWidgetTheme com.ellis.memberplanet:actionBarWidgetTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionButtonStyle com.ellis.memberplanet:actionButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionDropDownStyle com.ellis.memberplanet:actionDropDownStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionMenuTextAppearance com.ellis.memberplanet:actionMenuTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionMenuTextColor com.ellis.memberplanet:actionMenuTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeBackground com.ellis.memberplanet:actionModeBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeCloseButtonStyle com.ellis.memberplanet:actionModeCloseButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeCloseDrawable com.ellis.memberplanet:actionModeCloseDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeCopyDrawable com.ellis.memberplanet:actionModeCopyDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeCutDrawable com.ellis.memberplanet:actionModeCutDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeFindDrawable com.ellis.memberplanet:actionModeFindDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModePasteDrawable com.ellis.memberplanet:actionModePasteDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModePopupWindowStyle com.ellis.memberplanet:actionModePopupWindowStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeSelectAllDrawable com.ellis.memberplanet:actionModeSelectAllDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeShareDrawable com.ellis.memberplanet:actionModeShareDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeSplitBackground com.ellis.memberplanet:actionModeSplitBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeStyle com.ellis.memberplanet:actionModeStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionModeWebSearchDrawable com.ellis.memberplanet:actionModeWebSearchDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionOverflowButtonStyle com.ellis.memberplanet:actionOverflowButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_actionOverflowMenuStyle com.ellis.memberplanet:actionOverflowMenuStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_activityChooserViewStyle com.ellis.memberplanet:activityChooserViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_alertDialogButtonGroupStyle com.ellis.memberplanet:alertDialogButtonGroupStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_alertDialogCenterButtons com.ellis.memberplanet:alertDialogCenterButtons}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_alertDialogStyle com.ellis.memberplanet:alertDialogStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_alertDialogTheme com.ellis.memberplanet:alertDialogTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_autoCompleteTextViewStyle com.ellis.memberplanet:autoCompleteTextViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_borderlessButtonStyle com.ellis.memberplanet:borderlessButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonBarButtonStyle com.ellis.memberplanet:buttonBarButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonBarNegativeButtonStyle com.ellis.memberplanet:buttonBarNegativeButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonBarNeutralButtonStyle com.ellis.memberplanet:buttonBarNeutralButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonBarPositiveButtonStyle com.ellis.memberplanet:buttonBarPositiveButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonBarStyle com.ellis.memberplanet:buttonBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonStyle com.ellis.memberplanet:buttonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_buttonStyleSmall com.ellis.memberplanet:buttonStyleSmall}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_checkboxStyle com.ellis.memberplanet:checkboxStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_checkedTextViewStyle com.ellis.memberplanet:checkedTextViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorAccent com.ellis.memberplanet:colorAccent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorBackgroundFloating com.ellis.memberplanet:colorBackgroundFloating}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorButtonNormal com.ellis.memberplanet:colorButtonNormal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorControlActivated com.ellis.memberplanet:colorControlActivated}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorControlHighlight com.ellis.memberplanet:colorControlHighlight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorControlNormal com.ellis.memberplanet:colorControlNormal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorError com.ellis.memberplanet:colorError}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorPrimary com.ellis.memberplanet:colorPrimary}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorPrimaryDark com.ellis.memberplanet:colorPrimaryDark}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_colorSwitchThumbNormal com.ellis.memberplanet:colorSwitchThumbNormal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_controlBackground com.ellis.memberplanet:controlBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dialogPreferredPadding com.ellis.memberplanet:dialogPreferredPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dialogTheme com.ellis.memberplanet:dialogTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dividerHorizontal com.ellis.memberplanet:dividerHorizontal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dividerVertical com.ellis.memberplanet:dividerVertical}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dropDownListViewStyle com.ellis.memberplanet:dropDownListViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_dropdownListPreferredItemHeight com.ellis.memberplanet:dropdownListPreferredItemHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_editTextBackground com.ellis.memberplanet:editTextBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_editTextColor com.ellis.memberplanet:editTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_editTextStyle com.ellis.memberplanet:editTextStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_homeAsUpIndicator com.ellis.memberplanet:homeAsUpIndicator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_imageButtonStyle com.ellis.memberplanet:imageButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listChoiceBackgroundIndicator com.ellis.memberplanet:listChoiceBackgroundIndicator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listDividerAlertDialog com.ellis.memberplanet:listDividerAlertDialog}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listMenuViewStyle com.ellis.memberplanet:listMenuViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPopupWindowStyle com.ellis.memberplanet:listPopupWindowStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeight com.ellis.memberplanet:listPreferredItemHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightLarge com.ellis.memberplanet:listPreferredItemHeightLarge}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemHeightSmall com.ellis.memberplanet:listPreferredItemHeightSmall}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingLeft com.ellis.memberplanet:listPreferredItemPaddingLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_listPreferredItemPaddingRight com.ellis.memberplanet:listPreferredItemPaddingRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_panelBackground com.ellis.memberplanet:panelBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_panelMenuListTheme com.ellis.memberplanet:panelMenuListTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_panelMenuListWidth com.ellis.memberplanet:panelMenuListWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_popupMenuStyle com.ellis.memberplanet:popupMenuStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_popupWindowStyle com.ellis.memberplanet:popupWindowStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_radioButtonStyle com.ellis.memberplanet:radioButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyle com.ellis.memberplanet:ratingBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyleIndicator com.ellis.memberplanet:ratingBarStyleIndicator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_ratingBarStyleSmall com.ellis.memberplanet:ratingBarStyleSmall}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_searchViewStyle com.ellis.memberplanet:searchViewStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_seekBarStyle com.ellis.memberplanet:seekBarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_selectableItemBackground com.ellis.memberplanet:selectableItemBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_selectableItemBackgroundBorderless com.ellis.memberplanet:selectableItemBackgroundBorderless}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_spinnerDropDownItemStyle com.ellis.memberplanet:spinnerDropDownItemStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_spinnerStyle com.ellis.memberplanet:spinnerStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_switchStyle com.ellis.memberplanet:switchStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceLargePopupMenu com.ellis.memberplanet:textAppearanceLargePopupMenu}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItem com.ellis.memberplanet:textAppearanceListItem}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItemSecondary com.ellis.memberplanet:textAppearanceListItemSecondary}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceListItemSmall com.ellis.memberplanet:textAppearanceListItemSmall}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearancePopupMenuHeader com.ellis.memberplanet:textAppearancePopupMenuHeader}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultSubtitle com.ellis.memberplanet:textAppearanceSearchResultSubtitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSearchResultTitle com.ellis.memberplanet:textAppearanceSearchResultTitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textAppearanceSmallPopupMenu com.ellis.memberplanet:textAppearanceSmallPopupMenu}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textColorAlertDialogListItem com.ellis.memberplanet:textColorAlertDialogListItem}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_textColorSearchUrl com.ellis.memberplanet:textColorSearchUrl}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_toolbarNavigationButtonStyle com.ellis.memberplanet:toolbarNavigationButtonStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_toolbarStyle com.ellis.memberplanet:toolbarStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_tooltipForegroundColor com.ellis.memberplanet:tooltipForegroundColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_tooltipFrameBackground com.ellis.memberplanet:tooltipFrameBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_viewInflaterClass com.ellis.memberplanet:viewInflaterClass}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowActionBar com.ellis.memberplanet:windowActionBar}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowActionBarOverlay com.ellis.memberplanet:windowActionBarOverlay}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowActionModeOverlay com.ellis.memberplanet:windowActionModeOverlay}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMajor com.ellis.memberplanet:windowFixedHeightMajor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowFixedHeightMinor com.ellis.memberplanet:windowFixedHeightMinor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMajor com.ellis.memberplanet:windowFixedWidthMajor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowFixedWidthMinor com.ellis.memberplanet:windowFixedWidthMinor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowMinWidthMajor com.ellis.memberplanet:windowMinWidthMajor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowMinWidthMinor com.ellis.memberplanet:windowMinWidthMinor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AppCompatTheme_windowNoTitle com.ellis.memberplanet:windowNoTitle}</code></td><td></td></tr>
      * </table>
      * @see #AppCompatTheme_android_windowIsFloating
      * @see #AppCompatTheme_android_windowAnimationStyle
@@ -6388,6 +6900,7 @@ public final class R {
      * @see #AppCompatTheme_toolbarStyle
      * @see #AppCompatTheme_tooltipForegroundColor
      * @see #AppCompatTheme_tooltipFrameBackground
+     * @see #AppCompatTheme_viewInflaterClass
      * @see #AppCompatTheme_windowActionBar
      * @see #AppCompatTheme_windowActionBarOverlay
      * @see #AppCompatTheme_windowActionModeOverlay
@@ -6411,25 +6924,25 @@ public final class R {
         0x7f040021, 0x7f040022, 0x7f040023, 0x7f040024, 
         0x7f040025, 0x7f04002b, 0x7f04003d, 0x7f040040, 
         0x7f040041, 0x7f040042, 0x7f040043, 0x7f040044, 
-        0x7f040048, 0x7f040049, 0x7f040052, 0x7f040053, 
-        0x7f040061, 0x7f040062, 0x7f040063, 0x7f040064, 
-        0x7f040065, 0x7f040066, 0x7f040067, 0x7f040068, 
-        0x7f040069, 0x7f04006b, 0x7f04007b, 0x7f040082, 
-        0x7f040083, 0x7f040086, 0x7f040088, 0x7f04008b, 
-        0x7f04008c, 0x7f04008d, 0x7f04008e, 0x7f04008f, 
-        0x7f0400b7, 0x7f0400bf, 0x7f040101, 0x7f040102, 
-        0x7f040105, 0x7f040106, 0x7f040107, 0x7f040108, 
-        0x7f040109, 0x7f04010a, 0x7f04010b, 0x7f04011c, 
-        0x7f04011d, 0x7f04011e, 0x7f040124, 0x7f040126, 
-        0x7f04012d, 0x7f04012e, 0x7f04012f, 0x7f040130, 
-        0x7f040138, 0x7f040139, 0x7f04013a, 0x7f04013b, 
-        0x7f040143, 0x7f040144, 0x7f040159, 0x7f04016c, 
-        0x7f04016d, 0x7f04016e, 0x7f04016f, 0x7f040170, 
-        0x7f040171, 0x7f040172, 0x7f040173, 0x7f040174, 
-        0x7f040176, 0x7f04018d, 0x7f04018e, 0x7f04018f, 
-        0x7f040190, 0x7f040197, 0x7f040198, 0x7f040199, 
-        0x7f04019a, 0x7f04019b, 0x7f04019c, 0x7f04019d, 
-        0x7f04019e, 0x7f04019f, 0x7f0401a0
+        0x7f040049, 0x7f04004a, 0x7f040054, 0x7f040055, 
+        0x7f040063, 0x7f040064, 0x7f040065, 0x7f040066, 
+        0x7f040067, 0x7f040068, 0x7f040069, 0x7f04006a, 
+        0x7f04006b, 0x7f04006d, 0x7f04007d, 0x7f040085, 
+        0x7f040086, 0x7f040089, 0x7f04008b, 0x7f04008e, 
+        0x7f04008f, 0x7f040090, 0x7f040091, 0x7f040092, 
+        0x7f0400cf, 0x7f0400d7, 0x7f040119, 0x7f04011a, 
+        0x7f04011d, 0x7f04011e, 0x7f04011f, 0x7f040120, 
+        0x7f040121, 0x7f040122, 0x7f040123, 0x7f04015b, 
+        0x7f04015c, 0x7f04015d, 0x7f040163, 0x7f040165, 
+        0x7f04016c, 0x7f04016d, 0x7f04016e, 0x7f04016f, 
+        0x7f040177, 0x7f040178, 0x7f040179, 0x7f04017a, 
+        0x7f040182, 0x7f040183, 0x7f040198, 0x7f0401ab, 
+        0x7f0401ac, 0x7f0401ad, 0x7f0401ae, 0x7f0401af, 
+        0x7f0401b0, 0x7f0401b1, 0x7f0401b2, 0x7f0401b3, 
+        0x7f0401b5, 0x7f0401cc, 0x7f0401cd, 0x7f0401ce, 
+        0x7f0401cf, 0x7f0401d5, 0x7f0401d7, 0x7f0401d8, 
+        0x7f0401d9, 0x7f0401da, 0x7f0401db, 0x7f0401dc, 
+        0x7f0401dd, 0x7f0401de, 0x7f0401df, 0x7f0401e0
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#windowIsFloating}
@@ -6454,7 +6967,7 @@ public final class R {
      */
     public static final int AppCompatTheme_android_windowAnimationStyle=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionBarDivider}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionBarDivider}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6462,11 +6975,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionBarDivider
+     * @attr name com.ellis.memberplanet:actionBarDivider
      */
     public static final int AppCompatTheme_actionBarDivider=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionBarItemBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionBarItemBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6474,11 +6987,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionBarItemBackground
+     * @attr name com.ellis.memberplanet:actionBarItemBackground
      */
     public static final int AppCompatTheme_actionBarItemBackground=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionBarPopupTheme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionBarPopupTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6486,11 +6999,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionBarPopupTheme
+     * @attr name com.ellis.memberplanet:actionBarPopupTheme
      */
     public static final int AppCompatTheme_actionBarPopupTheme=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionBarSize}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionBarSize}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -6507,11 +7020,11 @@ public final class R {
      * <tr><td>wrap_content</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:actionBarSize
+     * @attr name com.ellis.memberplanet:actionBarSize
      */
     public static final int AppCompatTheme_actionBarSize=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionBarSplitStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionBarSplitStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6519,11 +7032,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionBarSplitStyle
+     * @attr name com.ellis.memberplanet:actionBarSplitStyle
      */
     public static final int AppCompatTheme_actionBarSplitStyle=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionBarStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionBarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6531,11 +7044,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionBarStyle
+     * @attr name com.ellis.memberplanet:actionBarStyle
      */
     public static final int AppCompatTheme_actionBarStyle=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionBarTabBarStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionBarTabBarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6543,11 +7056,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionBarTabBarStyle
+     * @attr name com.ellis.memberplanet:actionBarTabBarStyle
      */
     public static final int AppCompatTheme_actionBarTabBarStyle=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionBarTabStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionBarTabStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6555,11 +7068,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionBarTabStyle
+     * @attr name com.ellis.memberplanet:actionBarTabStyle
      */
     public static final int AppCompatTheme_actionBarTabStyle=9;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionBarTabTextStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionBarTabTextStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6567,11 +7080,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionBarTabTextStyle
+     * @attr name com.ellis.memberplanet:actionBarTabTextStyle
      */
     public static final int AppCompatTheme_actionBarTabTextStyle=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionBarTheme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionBarTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6579,11 +7092,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionBarTheme
+     * @attr name com.ellis.memberplanet:actionBarTheme
      */
     public static final int AppCompatTheme_actionBarTheme=11;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionBarWidgetTheme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionBarWidgetTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6591,11 +7104,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionBarWidgetTheme
+     * @attr name com.ellis.memberplanet:actionBarWidgetTheme
      */
     public static final int AppCompatTheme_actionBarWidgetTheme=12;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionButtonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6603,11 +7116,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionButtonStyle
+     * @attr name com.ellis.memberplanet:actionButtonStyle
      */
     public static final int AppCompatTheme_actionButtonStyle=13;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionDropDownStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionDropDownStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6615,11 +7128,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionDropDownStyle
+     * @attr name com.ellis.memberplanet:actionDropDownStyle
      */
     public static final int AppCompatTheme_actionDropDownStyle=14;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionMenuTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionMenuTextAppearance}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6627,11 +7140,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionMenuTextAppearance
+     * @attr name com.ellis.memberplanet:actionMenuTextAppearance
      */
     public static final int AppCompatTheme_actionMenuTextAppearance=15;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionMenuTextColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionMenuTextColor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6642,11 +7155,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionMenuTextColor
+     * @attr name com.ellis.memberplanet:actionMenuTextColor
      */
     public static final int AppCompatTheme_actionMenuTextColor=16;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModeBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModeBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6654,11 +7167,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModeBackground
+     * @attr name com.ellis.memberplanet:actionModeBackground
      */
     public static final int AppCompatTheme_actionModeBackground=17;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModeCloseButtonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModeCloseButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6666,11 +7179,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModeCloseButtonStyle
+     * @attr name com.ellis.memberplanet:actionModeCloseButtonStyle
      */
     public static final int AppCompatTheme_actionModeCloseButtonStyle=18;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModeCloseDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModeCloseDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6678,11 +7191,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModeCloseDrawable
+     * @attr name com.ellis.memberplanet:actionModeCloseDrawable
      */
     public static final int AppCompatTheme_actionModeCloseDrawable=19;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModeCopyDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModeCopyDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6690,11 +7203,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModeCopyDrawable
+     * @attr name com.ellis.memberplanet:actionModeCopyDrawable
      */
     public static final int AppCompatTheme_actionModeCopyDrawable=20;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModeCutDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModeCutDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6702,11 +7215,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModeCutDrawable
+     * @attr name com.ellis.memberplanet:actionModeCutDrawable
      */
     public static final int AppCompatTheme_actionModeCutDrawable=21;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModeFindDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModeFindDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6714,11 +7227,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModeFindDrawable
+     * @attr name com.ellis.memberplanet:actionModeFindDrawable
      */
     public static final int AppCompatTheme_actionModeFindDrawable=22;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModePasteDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModePasteDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6726,11 +7239,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModePasteDrawable
+     * @attr name com.ellis.memberplanet:actionModePasteDrawable
      */
     public static final int AppCompatTheme_actionModePasteDrawable=23;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModePopupWindowStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModePopupWindowStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6738,11 +7251,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModePopupWindowStyle
+     * @attr name com.ellis.memberplanet:actionModePopupWindowStyle
      */
     public static final int AppCompatTheme_actionModePopupWindowStyle=24;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModeSelectAllDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModeSelectAllDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6750,11 +7263,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModeSelectAllDrawable
+     * @attr name com.ellis.memberplanet:actionModeSelectAllDrawable
      */
     public static final int AppCompatTheme_actionModeSelectAllDrawable=25;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModeShareDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModeShareDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6762,11 +7275,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModeShareDrawable
+     * @attr name com.ellis.memberplanet:actionModeShareDrawable
      */
     public static final int AppCompatTheme_actionModeShareDrawable=26;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModeSplitBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModeSplitBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6774,11 +7287,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModeSplitBackground
+     * @attr name com.ellis.memberplanet:actionModeSplitBackground
      */
     public static final int AppCompatTheme_actionModeSplitBackground=27;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModeStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModeStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6786,11 +7299,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModeStyle
+     * @attr name com.ellis.memberplanet:actionModeStyle
      */
     public static final int AppCompatTheme_actionModeStyle=28;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionModeWebSearchDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionModeWebSearchDrawable}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6798,11 +7311,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionModeWebSearchDrawable
+     * @attr name com.ellis.memberplanet:actionModeWebSearchDrawable
      */
     public static final int AppCompatTheme_actionModeWebSearchDrawable=29;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionOverflowButtonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionOverflowButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6810,11 +7323,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionOverflowButtonStyle
+     * @attr name com.ellis.memberplanet:actionOverflowButtonStyle
      */
     public static final int AppCompatTheme_actionOverflowButtonStyle=30;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionOverflowMenuStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionOverflowMenuStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6822,11 +7335,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionOverflowMenuStyle
+     * @attr name com.ellis.memberplanet:actionOverflowMenuStyle
      */
     public static final int AppCompatTheme_actionOverflowMenuStyle=31;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#activityChooserViewStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#activityChooserViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6834,11 +7347,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:activityChooserViewStyle
+     * @attr name com.ellis.memberplanet:activityChooserViewStyle
      */
     public static final int AppCompatTheme_activityChooserViewStyle=32;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#alertDialogButtonGroupStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#alertDialogButtonGroupStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6846,21 +7359,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:alertDialogButtonGroupStyle
+     * @attr name com.ellis.memberplanet:alertDialogButtonGroupStyle
      */
     public static final int AppCompatTheme_alertDialogButtonGroupStyle=33;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#alertDialogCenterButtons}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#alertDialogCenterButtons}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:alertDialogCenterButtons
+     * @attr name com.ellis.memberplanet:alertDialogCenterButtons
      */
     public static final int AppCompatTheme_alertDialogCenterButtons=34;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#alertDialogStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#alertDialogStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6868,11 +7381,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:alertDialogStyle
+     * @attr name com.ellis.memberplanet:alertDialogStyle
      */
     public static final int AppCompatTheme_alertDialogStyle=35;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#alertDialogTheme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#alertDialogTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6880,11 +7393,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:alertDialogTheme
+     * @attr name com.ellis.memberplanet:alertDialogTheme
      */
     public static final int AppCompatTheme_alertDialogTheme=36;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#autoCompleteTextViewStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#autoCompleteTextViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6892,11 +7405,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:autoCompleteTextViewStyle
+     * @attr name com.ellis.memberplanet:autoCompleteTextViewStyle
      */
     public static final int AppCompatTheme_autoCompleteTextViewStyle=37;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#borderlessButtonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#borderlessButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6904,11 +7417,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:borderlessButtonStyle
+     * @attr name com.ellis.memberplanet:borderlessButtonStyle
      */
     public static final int AppCompatTheme_borderlessButtonStyle=38;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonBarButtonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonBarButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6916,11 +7429,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:buttonBarButtonStyle
+     * @attr name com.ellis.memberplanet:buttonBarButtonStyle
      */
     public static final int AppCompatTheme_buttonBarButtonStyle=39;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonBarNegativeButtonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonBarNegativeButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6928,11 +7441,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:buttonBarNegativeButtonStyle
+     * @attr name com.ellis.memberplanet:buttonBarNegativeButtonStyle
      */
     public static final int AppCompatTheme_buttonBarNegativeButtonStyle=40;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonBarNeutralButtonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonBarNeutralButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6940,11 +7453,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:buttonBarNeutralButtonStyle
+     * @attr name com.ellis.memberplanet:buttonBarNeutralButtonStyle
      */
     public static final int AppCompatTheme_buttonBarNeutralButtonStyle=41;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonBarPositiveButtonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonBarPositiveButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6952,11 +7465,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:buttonBarPositiveButtonStyle
+     * @attr name com.ellis.memberplanet:buttonBarPositiveButtonStyle
      */
     public static final int AppCompatTheme_buttonBarPositiveButtonStyle=42;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonBarStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonBarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6964,11 +7477,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:buttonBarStyle
+     * @attr name com.ellis.memberplanet:buttonBarStyle
      */
     public static final int AppCompatTheme_buttonBarStyle=43;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6976,11 +7489,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:buttonStyle
+     * @attr name com.ellis.memberplanet:buttonStyle
      */
     public static final int AppCompatTheme_buttonStyle=44;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonStyleSmall}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonStyleSmall}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -6988,11 +7501,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:buttonStyleSmall
+     * @attr name com.ellis.memberplanet:buttonStyleSmall
      */
     public static final int AppCompatTheme_buttonStyleSmall=45;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#checkboxStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#checkboxStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7000,11 +7513,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:checkboxStyle
+     * @attr name com.ellis.memberplanet:checkboxStyle
      */
     public static final int AppCompatTheme_checkboxStyle=46;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#checkedTextViewStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#checkedTextViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7012,77 +7525,77 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:checkedTextViewStyle
+     * @attr name com.ellis.memberplanet:checkedTextViewStyle
      */
     public static final int AppCompatTheme_checkedTextViewStyle=47;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#colorAccent}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#colorAccent}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:colorAccent
+     * @attr name com.ellis.memberplanet:colorAccent
      */
     public static final int AppCompatTheme_colorAccent=48;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#colorBackgroundFloating}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#colorBackgroundFloating}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:colorBackgroundFloating
+     * @attr name com.ellis.memberplanet:colorBackgroundFloating
      */
     public static final int AppCompatTheme_colorBackgroundFloating=49;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#colorButtonNormal}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#colorButtonNormal}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:colorButtonNormal
+     * @attr name com.ellis.memberplanet:colorButtonNormal
      */
     public static final int AppCompatTheme_colorButtonNormal=50;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#colorControlActivated}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#colorControlActivated}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:colorControlActivated
+     * @attr name com.ellis.memberplanet:colorControlActivated
      */
     public static final int AppCompatTheme_colorControlActivated=51;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#colorControlHighlight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#colorControlHighlight}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:colorControlHighlight
+     * @attr name com.ellis.memberplanet:colorControlHighlight
      */
     public static final int AppCompatTheme_colorControlHighlight=52;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#colorControlNormal}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#colorControlNormal}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:colorControlNormal
+     * @attr name com.ellis.memberplanet:colorControlNormal
      */
     public static final int AppCompatTheme_colorControlNormal=53;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#colorError}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#colorError}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7093,44 +7606,44 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:colorError
+     * @attr name com.ellis.memberplanet:colorError
      */
     public static final int AppCompatTheme_colorError=54;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#colorPrimary}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#colorPrimary}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:colorPrimary
+     * @attr name com.ellis.memberplanet:colorPrimary
      */
     public static final int AppCompatTheme_colorPrimary=55;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#colorPrimaryDark}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#colorPrimaryDark}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:colorPrimaryDark
+     * @attr name com.ellis.memberplanet:colorPrimaryDark
      */
     public static final int AppCompatTheme_colorPrimaryDark=56;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#colorSwitchThumbNormal}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#colorSwitchThumbNormal}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:colorSwitchThumbNormal
+     * @attr name com.ellis.memberplanet:colorSwitchThumbNormal
      */
     public static final int AppCompatTheme_colorSwitchThumbNormal=57;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#controlBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#controlBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7138,11 +7651,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:controlBackground
+     * @attr name com.ellis.memberplanet:controlBackground
      */
     public static final int AppCompatTheme_controlBackground=58;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#dialogPreferredPadding}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#dialogPreferredPadding}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7151,11 +7664,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:dialogPreferredPadding
+     * @attr name com.ellis.memberplanet:dialogPreferredPadding
      */
     public static final int AppCompatTheme_dialogPreferredPadding=59;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#dialogTheme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#dialogTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7163,11 +7676,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:dialogTheme
+     * @attr name com.ellis.memberplanet:dialogTheme
      */
     public static final int AppCompatTheme_dialogTheme=60;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#dividerHorizontal}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#dividerHorizontal}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7175,11 +7688,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:dividerHorizontal
+     * @attr name com.ellis.memberplanet:dividerHorizontal
      */
     public static final int AppCompatTheme_dividerHorizontal=61;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#dividerVertical}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#dividerVertical}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7187,11 +7700,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:dividerVertical
+     * @attr name com.ellis.memberplanet:dividerVertical
      */
     public static final int AppCompatTheme_dividerVertical=62;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#dropDownListViewStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#dropDownListViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7199,11 +7712,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:dropDownListViewStyle
+     * @attr name com.ellis.memberplanet:dropDownListViewStyle
      */
     public static final int AppCompatTheme_dropDownListViewStyle=63;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#dropdownListPreferredItemHeight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#dropdownListPreferredItemHeight}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7212,11 +7725,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:dropdownListPreferredItemHeight
+     * @attr name com.ellis.memberplanet:dropdownListPreferredItemHeight
      */
     public static final int AppCompatTheme_dropdownListPreferredItemHeight=64;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#editTextBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#editTextBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7224,11 +7737,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:editTextBackground
+     * @attr name com.ellis.memberplanet:editTextBackground
      */
     public static final int AppCompatTheme_editTextBackground=65;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#editTextColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#editTextColor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7239,11 +7752,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:editTextColor
+     * @attr name com.ellis.memberplanet:editTextColor
      */
     public static final int AppCompatTheme_editTextColor=66;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#editTextStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#editTextStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7251,11 +7764,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:editTextStyle
+     * @attr name com.ellis.memberplanet:editTextStyle
      */
     public static final int AppCompatTheme_editTextStyle=67;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#homeAsUpIndicator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#homeAsUpIndicator}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7263,11 +7776,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:homeAsUpIndicator
+     * @attr name com.ellis.memberplanet:homeAsUpIndicator
      */
     public static final int AppCompatTheme_homeAsUpIndicator=68;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#imageButtonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#imageButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7275,11 +7788,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:imageButtonStyle
+     * @attr name com.ellis.memberplanet:imageButtonStyle
      */
     public static final int AppCompatTheme_imageButtonStyle=69;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#listChoiceBackgroundIndicator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#listChoiceBackgroundIndicator}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7287,11 +7800,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:listChoiceBackgroundIndicator
+     * @attr name com.ellis.memberplanet:listChoiceBackgroundIndicator
      */
     public static final int AppCompatTheme_listChoiceBackgroundIndicator=70;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#listDividerAlertDialog}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#listDividerAlertDialog}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7299,11 +7812,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:listDividerAlertDialog
+     * @attr name com.ellis.memberplanet:listDividerAlertDialog
      */
     public static final int AppCompatTheme_listDividerAlertDialog=71;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#listMenuViewStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#listMenuViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7311,11 +7824,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:listMenuViewStyle
+     * @attr name com.ellis.memberplanet:listMenuViewStyle
      */
     public static final int AppCompatTheme_listMenuViewStyle=72;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#listPopupWindowStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#listPopupWindowStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7323,11 +7836,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:listPopupWindowStyle
+     * @attr name com.ellis.memberplanet:listPopupWindowStyle
      */
     public static final int AppCompatTheme_listPopupWindowStyle=73;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#listPreferredItemHeight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#listPreferredItemHeight}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7336,11 +7849,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:listPreferredItemHeight
+     * @attr name com.ellis.memberplanet:listPreferredItemHeight
      */
     public static final int AppCompatTheme_listPreferredItemHeight=74;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#listPreferredItemHeightLarge}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#listPreferredItemHeightLarge}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7349,11 +7862,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:listPreferredItemHeightLarge
+     * @attr name com.ellis.memberplanet:listPreferredItemHeightLarge
      */
     public static final int AppCompatTheme_listPreferredItemHeightLarge=75;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#listPreferredItemHeightSmall}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#listPreferredItemHeightSmall}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7362,11 +7875,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:listPreferredItemHeightSmall
+     * @attr name com.ellis.memberplanet:listPreferredItemHeightSmall
      */
     public static final int AppCompatTheme_listPreferredItemHeightSmall=76;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#listPreferredItemPaddingLeft}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#listPreferredItemPaddingLeft}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7375,11 +7888,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:listPreferredItemPaddingLeft
+     * @attr name com.ellis.memberplanet:listPreferredItemPaddingLeft
      */
     public static final int AppCompatTheme_listPreferredItemPaddingLeft=77;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#listPreferredItemPaddingRight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#listPreferredItemPaddingRight}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7388,11 +7901,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:listPreferredItemPaddingRight
+     * @attr name com.ellis.memberplanet:listPreferredItemPaddingRight
      */
     public static final int AppCompatTheme_listPreferredItemPaddingRight=78;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#panelBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#panelBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7400,11 +7913,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:panelBackground
+     * @attr name com.ellis.memberplanet:panelBackground
      */
     public static final int AppCompatTheme_panelBackground=79;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#panelMenuListTheme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#panelMenuListTheme}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7412,11 +7925,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:panelMenuListTheme
+     * @attr name com.ellis.memberplanet:panelMenuListTheme
      */
     public static final int AppCompatTheme_panelMenuListTheme=80;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#panelMenuListWidth}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#panelMenuListWidth}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7425,11 +7938,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:panelMenuListWidth
+     * @attr name com.ellis.memberplanet:panelMenuListWidth
      */
     public static final int AppCompatTheme_panelMenuListWidth=81;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#popupMenuStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#popupMenuStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7437,11 +7950,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:popupMenuStyle
+     * @attr name com.ellis.memberplanet:popupMenuStyle
      */
     public static final int AppCompatTheme_popupMenuStyle=82;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#popupWindowStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#popupWindowStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7449,11 +7962,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:popupWindowStyle
+     * @attr name com.ellis.memberplanet:popupWindowStyle
      */
     public static final int AppCompatTheme_popupWindowStyle=83;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#radioButtonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#radioButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7461,11 +7974,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:radioButtonStyle
+     * @attr name com.ellis.memberplanet:radioButtonStyle
      */
     public static final int AppCompatTheme_radioButtonStyle=84;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#ratingBarStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#ratingBarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7473,11 +7986,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:ratingBarStyle
+     * @attr name com.ellis.memberplanet:ratingBarStyle
      */
     public static final int AppCompatTheme_ratingBarStyle=85;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#ratingBarStyleIndicator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#ratingBarStyleIndicator}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7485,11 +7998,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:ratingBarStyleIndicator
+     * @attr name com.ellis.memberplanet:ratingBarStyleIndicator
      */
     public static final int AppCompatTheme_ratingBarStyleIndicator=86;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#ratingBarStyleSmall}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#ratingBarStyleSmall}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7497,11 +8010,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:ratingBarStyleSmall
+     * @attr name com.ellis.memberplanet:ratingBarStyleSmall
      */
     public static final int AppCompatTheme_ratingBarStyleSmall=87;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#searchViewStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#searchViewStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7509,11 +8022,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:searchViewStyle
+     * @attr name com.ellis.memberplanet:searchViewStyle
      */
     public static final int AppCompatTheme_searchViewStyle=88;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#seekBarStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#seekBarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7521,11 +8034,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:seekBarStyle
+     * @attr name com.ellis.memberplanet:seekBarStyle
      */
     public static final int AppCompatTheme_seekBarStyle=89;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#selectableItemBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#selectableItemBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7533,11 +8046,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:selectableItemBackground
+     * @attr name com.ellis.memberplanet:selectableItemBackground
      */
     public static final int AppCompatTheme_selectableItemBackground=90;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#selectableItemBackgroundBorderless}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#selectableItemBackgroundBorderless}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7545,11 +8058,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:selectableItemBackgroundBorderless
+     * @attr name com.ellis.memberplanet:selectableItemBackgroundBorderless
      */
     public static final int AppCompatTheme_selectableItemBackgroundBorderless=91;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#spinnerDropDownItemStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#spinnerDropDownItemStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7557,11 +8070,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:spinnerDropDownItemStyle
+     * @attr name com.ellis.memberplanet:spinnerDropDownItemStyle
      */
     public static final int AppCompatTheme_spinnerDropDownItemStyle=92;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#spinnerStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#spinnerStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7569,11 +8082,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:spinnerStyle
+     * @attr name com.ellis.memberplanet:spinnerStyle
      */
     public static final int AppCompatTheme_spinnerStyle=93;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#switchStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#switchStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7581,11 +8094,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:switchStyle
+     * @attr name com.ellis.memberplanet:switchStyle
      */
     public static final int AppCompatTheme_switchStyle=94;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textAppearanceLargePopupMenu}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textAppearanceLargePopupMenu}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7593,11 +8106,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:textAppearanceLargePopupMenu
+     * @attr name com.ellis.memberplanet:textAppearanceLargePopupMenu
      */
     public static final int AppCompatTheme_textAppearanceLargePopupMenu=95;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textAppearanceListItem}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textAppearanceListItem}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7605,11 +8118,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:textAppearanceListItem
+     * @attr name com.ellis.memberplanet:textAppearanceListItem
      */
     public static final int AppCompatTheme_textAppearanceListItem=96;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textAppearanceListItemSecondary}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textAppearanceListItemSecondary}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7617,11 +8130,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:textAppearanceListItemSecondary
+     * @attr name com.ellis.memberplanet:textAppearanceListItemSecondary
      */
     public static final int AppCompatTheme_textAppearanceListItemSecondary=97;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textAppearanceListItemSmall}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textAppearanceListItemSmall}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7629,11 +8142,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:textAppearanceListItemSmall
+     * @attr name com.ellis.memberplanet:textAppearanceListItemSmall
      */
     public static final int AppCompatTheme_textAppearanceListItemSmall=98;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textAppearancePopupMenuHeader}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textAppearancePopupMenuHeader}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7641,11 +8154,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:textAppearancePopupMenuHeader
+     * @attr name com.ellis.memberplanet:textAppearancePopupMenuHeader
      */
     public static final int AppCompatTheme_textAppearancePopupMenuHeader=99;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textAppearanceSearchResultSubtitle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textAppearanceSearchResultSubtitle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7653,11 +8166,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:textAppearanceSearchResultSubtitle
+     * @attr name com.ellis.memberplanet:textAppearanceSearchResultSubtitle
      */
     public static final int AppCompatTheme_textAppearanceSearchResultSubtitle=100;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textAppearanceSearchResultTitle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textAppearanceSearchResultTitle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7665,11 +8178,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:textAppearanceSearchResultTitle
+     * @attr name com.ellis.memberplanet:textAppearanceSearchResultTitle
      */
     public static final int AppCompatTheme_textAppearanceSearchResultTitle=101;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textAppearanceSmallPopupMenu}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textAppearanceSmallPopupMenu}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7677,11 +8190,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:textAppearanceSmallPopupMenu
+     * @attr name com.ellis.memberplanet:textAppearanceSmallPopupMenu
      */
     public static final int AppCompatTheme_textAppearanceSmallPopupMenu=102;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textColorAlertDialogListItem}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textColorAlertDialogListItem}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7692,11 +8205,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:textColorAlertDialogListItem
+     * @attr name com.ellis.memberplanet:textColorAlertDialogListItem
      */
     public static final int AppCompatTheme_textColorAlertDialogListItem=103;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textColorSearchUrl}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textColorSearchUrl}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7707,11 +8220,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:textColorSearchUrl
+     * @attr name com.ellis.memberplanet:textColorSearchUrl
      */
     public static final int AppCompatTheme_textColorSearchUrl=104;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#toolbarNavigationButtonStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#toolbarNavigationButtonStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7719,11 +8232,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:toolbarNavigationButtonStyle
+     * @attr name com.ellis.memberplanet:toolbarNavigationButtonStyle
      */
     public static final int AppCompatTheme_toolbarNavigationButtonStyle=105;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#toolbarStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#toolbarStyle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7731,11 +8244,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:toolbarStyle
+     * @attr name com.ellis.memberplanet:toolbarStyle
      */
     public static final int AppCompatTheme_toolbarStyle=106;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tooltipForegroundColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tooltipForegroundColor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7746,11 +8259,11 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:tooltipForegroundColor
+     * @attr name com.ellis.memberplanet:tooltipForegroundColor
      */
     public static final int AppCompatTheme_tooltipForegroundColor=107;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tooltipFrameBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tooltipFrameBackground}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -7758,41 +8271,51 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:tooltipFrameBackground
+     * @attr name com.ellis.memberplanet:tooltipFrameBackground
      */
     public static final int AppCompatTheme_tooltipFrameBackground=108;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#windowActionBar}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#viewInflaterClass}
+     * attribute's value can be found in the {@link #AppCompatTheme} array.
+     *
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     *
+     * @attr name com.ellis.memberplanet:viewInflaterClass
+     */
+    public static final int AppCompatTheme_viewInflaterClass=109;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#windowActionBar}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:windowActionBar
+     * @attr name com.ellis.memberplanet:windowActionBar
      */
-    public static final int AppCompatTheme_windowActionBar=109;
+    public static final int AppCompatTheme_windowActionBar=110;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#windowActionBarOverlay}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#windowActionBarOverlay}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:windowActionBarOverlay
+     * @attr name com.ellis.memberplanet:windowActionBarOverlay
      */
-    public static final int AppCompatTheme_windowActionBarOverlay=110;
+    public static final int AppCompatTheme_windowActionBarOverlay=111;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#windowActionModeOverlay}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#windowActionModeOverlay}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:windowActionModeOverlay
+     * @attr name com.ellis.memberplanet:windowActionModeOverlay
      */
-    public static final int AppCompatTheme_windowActionModeOverlay=111;
+    public static final int AppCompatTheme_windowActionModeOverlay=112;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#windowFixedHeightMajor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#windowFixedHeightMajor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7805,11 +8328,11 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name com.buah.farmconnect:windowFixedHeightMajor
+     * @attr name com.ellis.memberplanet:windowFixedHeightMajor
      */
-    public static final int AppCompatTheme_windowFixedHeightMajor=112;
+    public static final int AppCompatTheme_windowFixedHeightMajor=113;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#windowFixedHeightMinor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#windowFixedHeightMinor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7822,11 +8345,11 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name com.buah.farmconnect:windowFixedHeightMinor
+     * @attr name com.ellis.memberplanet:windowFixedHeightMinor
      */
-    public static final int AppCompatTheme_windowFixedHeightMinor=113;
+    public static final int AppCompatTheme_windowFixedHeightMinor=114;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#windowFixedWidthMajor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#windowFixedWidthMajor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7839,11 +8362,11 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name com.buah.farmconnect:windowFixedWidthMajor
+     * @attr name com.ellis.memberplanet:windowFixedWidthMajor
      */
-    public static final int AppCompatTheme_windowFixedWidthMajor=114;
+    public static final int AppCompatTheme_windowFixedWidthMajor=115;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#windowFixedWidthMinor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#windowFixedWidthMinor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7856,11 +8379,11 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name com.buah.farmconnect:windowFixedWidthMinor
+     * @attr name com.ellis.memberplanet:windowFixedWidthMinor
      */
-    public static final int AppCompatTheme_windowFixedWidthMinor=115;
+    public static final int AppCompatTheme_windowFixedWidthMinor=116;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#windowMinWidthMajor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#windowMinWidthMajor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7873,11 +8396,11 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name com.buah.farmconnect:windowMinWidthMajor
+     * @attr name com.ellis.memberplanet:windowMinWidthMajor
      */
-    public static final int AppCompatTheme_windowMinWidthMajor=116;
+    public static final int AppCompatTheme_windowMinWidthMajor=117;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#windowMinWidthMinor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#windowMinWidthMinor}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7890,19 +8413,19 @@ public final class R {
      * The % suffix always means a percentage of the base size;
      * the optional %p suffix provides a size relative to some parent container.
      *
-     * @attr name com.buah.farmconnect:windowMinWidthMinor
+     * @attr name com.ellis.memberplanet:windowMinWidthMinor
      */
-    public static final int AppCompatTheme_windowMinWidthMinor=117;
+    public static final int AppCompatTheme_windowMinWidthMinor=118;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#windowNoTitle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#windowNoTitle}
      * attribute's value can be found in the {@link #AppCompatTheme} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:windowNoTitle
+     * @attr name com.ellis.memberplanet:windowNoTitle
      */
-    public static final int AppCompatTheme_windowNoTitle=118;
+    public static final int AppCompatTheme_windowNoTitle=119;
     /**
      * Attributes that can be used with a AvatarImageBehavior.
      * <p>Includes the following attributes:</p>
@@ -7910,11 +8433,11 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #AvatarImageBehavior_finalHeight com.buah.farmconnect:finalHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AvatarImageBehavior_finalYPosition com.buah.farmconnect:finalYPosition}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AvatarImageBehavior_startHeight com.buah.farmconnect:startHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AvatarImageBehavior_startToolbarPosition com.buah.farmconnect:startToolbarPosition}</code></td><td></td></tr>
-     * <tr><td><code>{@link #AvatarImageBehavior_startXPosition com.buah.farmconnect:startXPosition}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AvatarImageBehavior_finalHeight com.ellis.memberplanet:finalHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AvatarImageBehavior_finalYPosition com.ellis.memberplanet:finalYPosition}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AvatarImageBehavior_startHeight com.ellis.memberplanet:startHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AvatarImageBehavior_startToolbarPosition com.ellis.memberplanet:startToolbarPosition}</code></td><td></td></tr>
+     * <tr><td><code>{@link #AvatarImageBehavior_startXPosition com.ellis.memberplanet:startXPosition}</code></td><td></td></tr>
      * </table>
      * @see #AvatarImageBehavior_finalHeight
      * @see #AvatarImageBehavior_finalYPosition
@@ -7923,11 +8446,11 @@ public final class R {
      * @see #AvatarImageBehavior_startXPosition
      */
     public static final int[] AvatarImageBehavior={
-        0x7f0400a2, 0x7f0400a3, 0x7f040148, 0x7f040149, 
-        0x7f04014a
+        0x7f0400ba, 0x7f0400bb, 0x7f040187, 0x7f040188, 
+        0x7f040189
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#finalHeight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#finalHeight}
      * attribute's value can be found in the {@link #AvatarImageBehavior} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7936,11 +8459,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:finalHeight
+     * @attr name com.ellis.memberplanet:finalHeight
      */
     public static final int AvatarImageBehavior_finalHeight=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#finalYPosition}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#finalYPosition}
      * attribute's value can be found in the {@link #AvatarImageBehavior} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7949,11 +8472,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:finalYPosition
+     * @attr name com.ellis.memberplanet:finalYPosition
      */
     public static final int AvatarImageBehavior_finalYPosition=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#startHeight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#startHeight}
      * attribute's value can be found in the {@link #AvatarImageBehavior} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7962,11 +8485,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:startHeight
+     * @attr name com.ellis.memberplanet:startHeight
      */
     public static final int AvatarImageBehavior_startHeight=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#startToolbarPosition}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#startToolbarPosition}
      * attribute's value can be found in the {@link #AvatarImageBehavior} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7975,11 +8498,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:startToolbarPosition
+     * @attr name com.ellis.memberplanet:startToolbarPosition
      */
     public static final int AvatarImageBehavior_startToolbarPosition=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#startXPosition}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#startXPosition}
      * attribute's value can be found in the {@link #AvatarImageBehavior} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7988,7 +8511,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:startXPosition
+     * @attr name com.ellis.memberplanet:startXPosition
      */
     public static final int AvatarImageBehavior_startXPosition=4;
     /**
@@ -7998,11 +8521,11 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #BottomNavigationView_elevation com.buah.farmconnect:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_itemBackground com.buah.farmconnect:itemBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_itemIconTint com.buah.farmconnect:itemIconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_itemTextColor com.buah.farmconnect:itemTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomNavigationView_menu com.buah.farmconnect:menu}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_elevation com.ellis.memberplanet:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_itemBackground com.ellis.memberplanet:itemBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_itemIconTint com.ellis.memberplanet:itemIconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_itemTextColor com.ellis.memberplanet:itemTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomNavigationView_menu com.ellis.memberplanet:menu}</code></td><td></td></tr>
      * </table>
      * @see #BottomNavigationView_elevation
      * @see #BottomNavigationView_itemBackground
@@ -8011,11 +8534,11 @@ public final class R {
      * @see #BottomNavigationView_menu
      */
     public static final int[] BottomNavigationView={
-        0x7f040090, 0x7f0400c4, 0x7f0400c5, 0x7f0400c8, 
-        0x7f040111
+        0x7f040093, 0x7f0400dc, 0x7f0400dd, 0x7f0400e0, 
+        0x7f040129
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#elevation}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8024,11 +8547,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:elevation
+     * @attr name com.ellis.memberplanet:elevation
      */
     public static final int BottomNavigationView_elevation=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#itemBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#itemBackground}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8036,33 +8559,33 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:itemBackground
+     * @attr name com.ellis.memberplanet:itemBackground
      */
     public static final int BottomNavigationView_itemBackground=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#itemIconTint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#itemIconTint}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:itemIconTint
+     * @attr name com.ellis.memberplanet:itemIconTint
      */
     public static final int BottomNavigationView_itemIconTint=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#itemTextColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#itemTextColor}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:itemTextColor
+     * @attr name com.ellis.memberplanet:itemTextColor
      */
     public static final int BottomNavigationView_itemTextColor=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#menu}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu}
      * attribute's value can be found in the {@link #BottomNavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8070,7 +8593,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:menu
+     * @attr name com.ellis.memberplanet:menu
      */
     public static final int BottomNavigationView_menu=4;
     /**
@@ -8080,9 +8603,9 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_hideable com.buah.farmconnect:behavior_hideable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_peekHeight com.buah.farmconnect:behavior_peekHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_skipCollapsed com.buah.farmconnect:behavior_skipCollapsed}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_hideable com.ellis.memberplanet:behavior_hideable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_peekHeight com.ellis.memberplanet:behavior_peekHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #BottomSheetBehavior_Layout_behavior_skipCollapsed com.ellis.memberplanet:behavior_skipCollapsed}</code></td><td></td></tr>
      * </table>
      * @see #BottomSheetBehavior_Layout_behavior_hideable
      * @see #BottomSheetBehavior_Layout_behavior_peekHeight
@@ -8092,17 +8615,17 @@ public final class R {
         0x7f040038, 0x7f04003a, 0x7f04003b
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#behavior_hideable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#behavior_hideable}
      * attribute's value can be found in the {@link #BottomSheetBehavior_Layout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:behavior_hideable
+     * @attr name com.ellis.memberplanet:behavior_hideable
      */
     public static final int BottomSheetBehavior_Layout_behavior_hideable=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#behavior_peekHeight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#behavior_peekHeight}
      * attribute's value can be found in the {@link #BottomSheetBehavior_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8119,17 +8642,17 @@ public final class R {
      * <tr><td>auto</td><td>ffffffff</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:behavior_peekHeight
+     * @attr name com.ellis.memberplanet:behavior_peekHeight
      */
     public static final int BottomSheetBehavior_Layout_behavior_peekHeight=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#behavior_skipCollapsed}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#behavior_skipCollapsed}
      * attribute's value can be found in the {@link #BottomSheetBehavior_Layout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:behavior_skipCollapsed
+     * @attr name com.ellis.memberplanet:behavior_skipCollapsed
      */
     public static final int BottomSheetBehavior_Layout_behavior_skipCollapsed=2;
     /**
@@ -8139,7 +8662,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ButtonBarLayout_allowStacking com.buah.farmconnect:allowStacking}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ButtonBarLayout_allowStacking com.ellis.memberplanet:allowStacking}</code></td><td></td></tr>
      * </table>
      * @see #ButtonBarLayout_allowStacking
      */
@@ -8147,13 +8670,13 @@ public final class R {
         0x7f040026
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#allowStacking}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#allowStacking}
      * attribute's value can be found in the {@link #ButtonBarLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:allowStacking
+     * @attr name com.ellis.memberplanet:allowStacking
      */
     public static final int ButtonBarLayout_allowStacking=0;
     /**
@@ -8165,17 +8688,17 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #CardView_android_minWidth android:minWidth}</code></td><td></td></tr>
      * <tr><td><code>{@link #CardView_android_minHeight android:minHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardBackgroundColor com.buah.farmconnect:cardBackgroundColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardCornerRadius com.buah.farmconnect:cardCornerRadius}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardElevation com.buah.farmconnect:cardElevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardMaxElevation com.buah.farmconnect:cardMaxElevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardPreventCornerOverlap com.buah.farmconnect:cardPreventCornerOverlap}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardUseCompatPadding com.buah.farmconnect:cardUseCompatPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_contentPadding com.buah.farmconnect:contentPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingBottom com.buah.farmconnect:contentPaddingBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingLeft com.buah.farmconnect:contentPaddingLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingRight com.buah.farmconnect:contentPaddingRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingTop com.buah.farmconnect:contentPaddingTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardBackgroundColor com.ellis.memberplanet:cardBackgroundColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardCornerRadius com.ellis.memberplanet:cardCornerRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardElevation com.ellis.memberplanet:cardElevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardMaxElevation com.ellis.memberplanet:cardMaxElevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardPreventCornerOverlap com.ellis.memberplanet:cardPreventCornerOverlap}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardUseCompatPadding com.ellis.memberplanet:cardUseCompatPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPadding com.ellis.memberplanet:contentPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingBottom com.ellis.memberplanet:contentPaddingBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingLeft com.ellis.memberplanet:contentPaddingLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingRight com.ellis.memberplanet:contentPaddingRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingTop com.ellis.memberplanet:contentPaddingTop}</code></td><td></td></tr>
      * </table>
      * @see #CardView_android_minWidth
      * @see #CardView_android_minHeight
@@ -8192,10 +8715,10 @@ public final class R {
      * @see #CardView_contentPaddingTop
      */
     public static final int[] CardView={
-        0x0101013f, 0x01010140, 0x7f04004c, 0x7f04004d, 
-        0x7f04004e, 0x7f04004f, 0x7f040050, 0x7f040051, 
-        0x7f040075, 0x7f040076, 0x7f040077, 0x7f040078, 
-        0x7f040079
+        0x0101013f, 0x01010140, 0x7f04004d, 0x7f04004e, 
+        0x7f04004f, 0x7f040050, 0x7f040051, 0x7f040052, 
+        0x7f040077, 0x7f040078, 0x7f040079, 0x7f04007a, 
+        0x7f04007b
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#minWidth}
@@ -8224,18 +8747,18 @@ public final class R {
      */
     public static final int CardView_android_minHeight=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#cardBackgroundColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#cardBackgroundColor}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:cardBackgroundColor
+     * @attr name com.ellis.memberplanet:cardBackgroundColor
      */
     public static final int CardView_cardBackgroundColor=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#cardCornerRadius}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#cardCornerRadius}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8244,11 +8767,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:cardCornerRadius
+     * @attr name com.ellis.memberplanet:cardCornerRadius
      */
     public static final int CardView_cardCornerRadius=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#cardElevation}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#cardElevation}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8257,11 +8780,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:cardElevation
+     * @attr name com.ellis.memberplanet:cardElevation
      */
     public static final int CardView_cardElevation=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#cardMaxElevation}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#cardMaxElevation}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8270,31 +8793,31 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:cardMaxElevation
+     * @attr name com.ellis.memberplanet:cardMaxElevation
      */
     public static final int CardView_cardMaxElevation=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#cardPreventCornerOverlap}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#cardPreventCornerOverlap}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:cardPreventCornerOverlap
+     * @attr name com.ellis.memberplanet:cardPreventCornerOverlap
      */
     public static final int CardView_cardPreventCornerOverlap=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#cardUseCompatPadding}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#cardUseCompatPadding}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:cardUseCompatPadding
+     * @attr name com.ellis.memberplanet:cardUseCompatPadding
      */
     public static final int CardView_cardUseCompatPadding=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentPadding}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentPadding}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8303,11 +8826,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentPadding
+     * @attr name com.ellis.memberplanet:contentPadding
      */
     public static final int CardView_contentPadding=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentPaddingBottom}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentPaddingBottom}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8316,11 +8839,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentPaddingBottom
+     * @attr name com.ellis.memberplanet:contentPaddingBottom
      */
     public static final int CardView_contentPaddingBottom=9;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentPaddingLeft}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentPaddingLeft}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8329,11 +8852,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentPaddingLeft
+     * @attr name com.ellis.memberplanet:contentPaddingLeft
      */
     public static final int CardView_contentPaddingLeft=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentPaddingRight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentPaddingRight}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8342,11 +8865,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentPaddingRight
+     * @attr name com.ellis.memberplanet:contentPaddingRight
      */
     public static final int CardView_contentPaddingRight=11;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentPaddingTop}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentPaddingTop}
      * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8355,7 +8878,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentPaddingTop
+     * @attr name com.ellis.memberplanet:contentPaddingTop
      */
     public static final int CardView_contentPaddingTop=12;
     /**
@@ -8365,11 +8888,11 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CircleImageView_civ_border_color com.buah.farmconnect:civ_border_color}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CircleImageView_civ_border_overlay com.buah.farmconnect:civ_border_overlay}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CircleImageView_civ_border_width com.buah.farmconnect:civ_border_width}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CircleImageView_civ_circle_background_color com.buah.farmconnect:civ_circle_background_color}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CircleImageView_civ_fill_color com.buah.farmconnect:civ_fill_color}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CircleImageView_civ_border_color com.ellis.memberplanet:civ_border_color}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CircleImageView_civ_border_overlay com.ellis.memberplanet:civ_border_overlay}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CircleImageView_civ_border_width com.ellis.memberplanet:civ_border_width}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CircleImageView_civ_circle_background_color com.ellis.memberplanet:civ_circle_background_color}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CircleImageView_civ_fill_color com.ellis.memberplanet:civ_fill_color}</code></td><td></td></tr>
      * </table>
      * @see #CircleImageView_civ_border_color
      * @see #CircleImageView_civ_border_overlay
@@ -8378,32 +8901,32 @@ public final class R {
      * @see #CircleImageView_civ_fill_color
      */
     public static final int[] CircleImageView={
-        0x7f040055, 0x7f040056, 0x7f040057, 0x7f040058, 
-        0x7f040059
+        0x7f040057, 0x7f040058, 0x7f040059, 0x7f04005a, 
+        0x7f04005b
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#civ_border_color}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#civ_border_color}
      * attribute's value can be found in the {@link #CircleImageView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:civ_border_color
+     * @attr name com.ellis.memberplanet:civ_border_color
      */
     public static final int CircleImageView_civ_border_color=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#civ_border_overlay}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#civ_border_overlay}
      * attribute's value can be found in the {@link #CircleImageView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:civ_border_overlay
+     * @attr name com.ellis.memberplanet:civ_border_overlay
      */
     public static final int CircleImageView_civ_border_overlay=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#civ_border_width}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#civ_border_width}
      * attribute's value can be found in the {@link #CircleImageView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8412,29 +8935,29 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:civ_border_width
+     * @attr name com.ellis.memberplanet:civ_border_width
      */
     public static final int CircleImageView_civ_border_width=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#civ_circle_background_color}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#civ_circle_background_color}
      * attribute's value can be found in the {@link #CircleImageView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:civ_circle_background_color
+     * @attr name com.ellis.memberplanet:civ_circle_background_color
      */
     public static final int CircleImageView_civ_circle_background_color=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#civ_fill_color}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#civ_fill_color}
      * attribute's value can be found in the {@link #CircleImageView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:civ_fill_color
+     * @attr name com.ellis.memberplanet:civ_fill_color
      */
     public static final int CircleImageView_civ_fill_color=4;
     /**
@@ -8444,22 +8967,22 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleGravity com.buah.farmconnect:collapsedTitleGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleTextAppearance com.buah.farmconnect:collapsedTitleTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_contentScrim com.buah.farmconnect:contentScrim}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleGravity com.buah.farmconnect:expandedTitleGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMargin com.buah.farmconnect:expandedTitleMargin}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginBottom com.buah.farmconnect:expandedTitleMarginBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginEnd com.buah.farmconnect:expandedTitleMarginEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginStart com.buah.farmconnect:expandedTitleMarginStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginTop com.buah.farmconnect:expandedTitleMarginTop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleTextAppearance com.buah.farmconnect:expandedTitleTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_scrimAnimationDuration com.buah.farmconnect:scrimAnimationDuration}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_scrimVisibleHeightTrigger com.buah.farmconnect:scrimVisibleHeightTrigger}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_statusBarScrim com.buah.farmconnect:statusBarScrim}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_title com.buah.farmconnect:title}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_titleEnabled com.buah.farmconnect:titleEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_toolbarId com.buah.farmconnect:toolbarId}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleGravity com.ellis.memberplanet:collapsedTitleGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_collapsedTitleTextAppearance com.ellis.memberplanet:collapsedTitleTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_contentScrim com.ellis.memberplanet:contentScrim}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleGravity com.ellis.memberplanet:expandedTitleGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMargin com.ellis.memberplanet:expandedTitleMargin}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginBottom com.ellis.memberplanet:expandedTitleMarginBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginEnd com.ellis.memberplanet:expandedTitleMarginEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginStart com.ellis.memberplanet:expandedTitleMarginStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleMarginTop com.ellis.memberplanet:expandedTitleMarginTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_expandedTitleTextAppearance com.ellis.memberplanet:expandedTitleTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_scrimAnimationDuration com.ellis.memberplanet:scrimAnimationDuration}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_scrimVisibleHeightTrigger com.ellis.memberplanet:scrimVisibleHeightTrigger}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_statusBarScrim com.ellis.memberplanet:statusBarScrim}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_title com.ellis.memberplanet:title}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_titleEnabled com.ellis.memberplanet:titleEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_toolbarId com.ellis.memberplanet:toolbarId}</code></td><td></td></tr>
      * </table>
      * @see #CollapsingToolbarLayout_collapsedTitleGravity
      * @see #CollapsingToolbarLayout_collapsedTitleTextAppearance
@@ -8479,13 +9002,13 @@ public final class R {
      * @see #CollapsingToolbarLayout_toolbarId
      */
     public static final int[] CollapsingToolbarLayout={
-        0x7f04005e, 0x7f04005f, 0x7f04007a, 0x7f040095, 
-        0x7f040096, 0x7f040097, 0x7f040098, 0x7f040099, 
-        0x7f04009a, 0x7f04009b, 0x7f040134, 0x7f040135, 
-        0x7f04014f, 0x7f040181, 0x7f040182, 0x7f04018c
+        0x7f040060, 0x7f040061, 0x7f04007c, 0x7f040098, 
+        0x7f040099, 0x7f04009a, 0x7f04009b, 0x7f04009c, 
+        0x7f04009d, 0x7f04009e, 0x7f040173, 0x7f040174, 
+        0x7f04018e, 0x7f0401c0, 0x7f0401c1, 0x7f0401cb
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#collapsedTitleGravity}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#collapsedTitleGravity}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -8506,11 +9029,11 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:collapsedTitleGravity
+     * @attr name com.ellis.memberplanet:collapsedTitleGravity
      */
     public static final int CollapsingToolbarLayout_collapsedTitleGravity=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#collapsedTitleTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#collapsedTitleTextAppearance}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8518,22 +9041,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:collapsedTitleTextAppearance
+     * @attr name com.ellis.memberplanet:collapsedTitleTextAppearance
      */
     public static final int CollapsingToolbarLayout_collapsedTitleTextAppearance=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentScrim}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentScrim}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:contentScrim
+     * @attr name com.ellis.memberplanet:contentScrim
      */
     public static final int CollapsingToolbarLayout_contentScrim=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#expandedTitleGravity}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#expandedTitleGravity}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -8554,11 +9077,11 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:expandedTitleGravity
+     * @attr name com.ellis.memberplanet:expandedTitleGravity
      */
     public static final int CollapsingToolbarLayout_expandedTitleGravity=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#expandedTitleMargin}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#expandedTitleMargin}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8567,11 +9090,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:expandedTitleMargin
+     * @attr name com.ellis.memberplanet:expandedTitleMargin
      */
     public static final int CollapsingToolbarLayout_expandedTitleMargin=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#expandedTitleMarginBottom}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#expandedTitleMarginBottom}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8580,11 +9103,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:expandedTitleMarginBottom
+     * @attr name com.ellis.memberplanet:expandedTitleMarginBottom
      */
     public static final int CollapsingToolbarLayout_expandedTitleMarginBottom=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#expandedTitleMarginEnd}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#expandedTitleMarginEnd}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8593,11 +9116,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:expandedTitleMarginEnd
+     * @attr name com.ellis.memberplanet:expandedTitleMarginEnd
      */
     public static final int CollapsingToolbarLayout_expandedTitleMarginEnd=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#expandedTitleMarginStart}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#expandedTitleMarginStart}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8606,11 +9129,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:expandedTitleMarginStart
+     * @attr name com.ellis.memberplanet:expandedTitleMarginStart
      */
     public static final int CollapsingToolbarLayout_expandedTitleMarginStart=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#expandedTitleMarginTop}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#expandedTitleMarginTop}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8619,11 +9142,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:expandedTitleMarginTop
+     * @attr name com.ellis.memberplanet:expandedTitleMarginTop
      */
     public static final int CollapsingToolbarLayout_expandedTitleMarginTop=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#expandedTitleTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#expandedTitleTextAppearance}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8631,20 +9154,20 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:expandedTitleTextAppearance
+     * @attr name com.ellis.memberplanet:expandedTitleTextAppearance
      */
     public static final int CollapsingToolbarLayout_expandedTitleTextAppearance=9;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#scrimAnimationDuration}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#scrimAnimationDuration}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:scrimAnimationDuration
+     * @attr name com.ellis.memberplanet:scrimAnimationDuration
      */
     public static final int CollapsingToolbarLayout_scrimAnimationDuration=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#scrimVisibleHeightTrigger}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#scrimVisibleHeightTrigger}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -8653,42 +9176,42 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:scrimVisibleHeightTrigger
+     * @attr name com.ellis.memberplanet:scrimVisibleHeightTrigger
      */
     public static final int CollapsingToolbarLayout_scrimVisibleHeightTrigger=11;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#statusBarScrim}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#statusBarScrim}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:statusBarScrim
+     * @attr name com.ellis.memberplanet:statusBarScrim
      */
     public static final int CollapsingToolbarLayout_statusBarScrim=12;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#title}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#title}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:title
+     * @attr name com.ellis.memberplanet:title
      */
     public static final int CollapsingToolbarLayout_title=13;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#titleEnabled}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#titleEnabled}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:titleEnabled
+     * @attr name com.ellis.memberplanet:titleEnabled
      */
     public static final int CollapsingToolbarLayout_titleEnabled=14;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#toolbarId}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#toolbarId}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -8696,7 +9219,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:toolbarId
+     * @attr name com.ellis.memberplanet:toolbarId
      */
     public static final int CollapsingToolbarLayout_toolbarId=15;
     /**
@@ -8706,17 +9229,17 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseMode com.buah.farmconnect:layout_collapseMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier com.buah.farmconnect:layout_collapseParallaxMultiplier}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseMode com.ellis.memberplanet:layout_collapseMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier com.ellis.memberplanet:layout_collapseParallaxMultiplier}</code></td><td></td></tr>
      * </table>
      * @see #CollapsingToolbarLayout_Layout_layout_collapseMode
      * @see #CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier
      */
     public static final int[] CollapsingToolbarLayout_Layout={
-        0x7f0400cf, 0x7f0400d0
+        0x7f0400e7, 0x7f0400e8
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_collapseMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_collapseMode}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -8730,16 +9253,16 @@ public final class R {
      * <tr><td>pin</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_collapseMode
+     * @attr name com.ellis.memberplanet:layout_collapseMode
      */
     public static final int CollapsingToolbarLayout_Layout_layout_collapseMode=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_collapseParallaxMultiplier}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_collapseParallaxMultiplier}
      * attribute's value can be found in the {@link #CollapsingToolbarLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:layout_collapseParallaxMultiplier
+     * @attr name com.ellis.memberplanet:layout_collapseParallaxMultiplier
      */
     public static final int CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier=1;
     /**
@@ -8751,7 +9274,7 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ColorStateListItem_android_color android:color}</code></td><td></td></tr>
      * <tr><td><code>{@link #ColorStateListItem_android_alpha android:alpha}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ColorStateListItem_alpha com.buah.farmconnect:alpha}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ColorStateListItem_alpha com.ellis.memberplanet:alpha}</code></td><td></td></tr>
      * </table>
      * @see #ColorStateListItem_android_color
      * @see #ColorStateListItem_android_alpha
@@ -8781,12 +9304,12 @@ public final class R {
      */
     public static final int ColorStateListItem_android_alpha=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#alpha}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#alpha}
      * attribute's value can be found in the {@link #ColorStateListItem} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:alpha
+     * @attr name com.ellis.memberplanet:alpha
      */
     public static final int ColorStateListItem_alpha=2;
     /**
@@ -8797,15 +9320,15 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #CompoundButton_android_button android:button}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CompoundButton_buttonTint com.buah.farmconnect:buttonTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CompoundButton_buttonTintMode com.buah.farmconnect:buttonTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CompoundButton_buttonTint com.ellis.memberplanet:buttonTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CompoundButton_buttonTintMode com.ellis.memberplanet:buttonTintMode}</code></td><td></td></tr>
      * </table>
      * @see #CompoundButton_android_button
      * @see #CompoundButton_buttonTint
      * @see #CompoundButton_buttonTintMode
      */
     public static final int[] CompoundButton={
-        0x01010107, 0x7f04004a, 0x7f04004b
+        0x01010107, 0x7f04004b, 0x7f04004c
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#button}
@@ -8820,18 +9343,18 @@ public final class R {
      */
     public static final int CompoundButton_android_button=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonTint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonTint}
      * attribute's value can be found in the {@link #CompoundButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:buttonTint
+     * @attr name com.ellis.memberplanet:buttonTint
      */
     public static final int CompoundButton_buttonTint=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonTintMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonTintMode}
      * attribute's value can be found in the {@link #CompoundButton} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -8848,7 +9371,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:buttonTintMode
+     * @attr name com.ellis.memberplanet:buttonTintMode
      */
     public static final int CompoundButton_buttonTintMode=2;
     /**
@@ -8863,50 +9386,50 @@ public final class R {
      * <tr><td><code>{@link #ConstraintLayout_Layout_android_maxHeight android:maxHeight}</code></td><td></td></tr>
      * <tr><td><code>{@link #ConstraintLayout_Layout_android_minWidth android:minWidth}</code></td><td></td></tr>
      * <tr><td><code>{@link #ConstraintLayout_Layout_android_minHeight android:minHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_constraintSet com.buah.farmconnect:constraintSet}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_creator com.buah.farmconnect:layout_constraintBaseline_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf com.buah.farmconnect:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_creator com.buah.farmconnect:layout_constraintBottom_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toBottomOf com.buah.farmconnect:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toTopOf com.buah.farmconnect:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintDimensionRatio com.buah.farmconnect:layout_constraintDimensionRatio}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toEndOf com.buah.farmconnect:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toStartOf com.buah.farmconnect:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_begin com.buah.farmconnect:layout_constraintGuide_begin}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_end com.buah.farmconnect:layout_constraintGuide_end}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_percent com.buah.farmconnect:layout_constraintGuide_percent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_default com.buah.farmconnect:layout_constraintHeight_default}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_max com.buah.farmconnect:layout_constraintHeight_max}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_min com.buah.farmconnect:layout_constraintHeight_min}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_bias com.buah.farmconnect:layout_constraintHorizontal_bias}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle com.buah.farmconnect:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_weight com.buah.farmconnect:layout_constraintHorizontal_weight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_creator com.buah.farmconnect:layout_constraintLeft_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toLeftOf com.buah.farmconnect:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toRightOf com.buah.farmconnect:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_creator com.buah.farmconnect:layout_constraintRight_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toLeftOf com.buah.farmconnect:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toRightOf com.buah.farmconnect:layout_constraintRight_toRightOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toEndOf com.buah.farmconnect:layout_constraintStart_toEndOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toStartOf com.buah.farmconnect:layout_constraintStart_toStartOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_creator com.buah.farmconnect:layout_constraintTop_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toBottomOf com.buah.farmconnect:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toTopOf com.buah.farmconnect:layout_constraintTop_toTopOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_bias com.buah.farmconnect:layout_constraintVertical_bias}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_chainStyle com.buah.farmconnect:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_weight com.buah.farmconnect:layout_constraintVertical_weight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_default com.buah.farmconnect:layout_constraintWidth_default}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_max com.buah.farmconnect:layout_constraintWidth_max}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_min com.buah.farmconnect:layout_constraintWidth_min}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteX com.buah.farmconnect:layout_editor_absoluteX}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteY com.buah.farmconnect:layout_editor_absoluteY}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginBottom com.buah.farmconnect:layout_goneMarginBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginEnd com.buah.farmconnect:layout_goneMarginEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginLeft com.buah.farmconnect:layout_goneMarginLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginRight com.buah.farmconnect:layout_goneMarginRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginStart com.buah.farmconnect:layout_goneMarginStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginTop com.buah.farmconnect:layout_goneMarginTop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_optimizationLevel com.buah.farmconnect:layout_optimizationLevel}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_constraintSet com.ellis.memberplanet:constraintSet}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_creator com.ellis.memberplanet:layout_constraintBaseline_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf com.ellis.memberplanet:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_creator com.ellis.memberplanet:layout_constraintBottom_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toBottomOf com.ellis.memberplanet:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintBottom_toTopOf com.ellis.memberplanet:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintDimensionRatio com.ellis.memberplanet:layout_constraintDimensionRatio}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toEndOf com.ellis.memberplanet:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintEnd_toStartOf com.ellis.memberplanet:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_begin com.ellis.memberplanet:layout_constraintGuide_begin}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_end com.ellis.memberplanet:layout_constraintGuide_end}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintGuide_percent com.ellis.memberplanet:layout_constraintGuide_percent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_default com.ellis.memberplanet:layout_constraintHeight_default}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_max com.ellis.memberplanet:layout_constraintHeight_max}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHeight_min com.ellis.memberplanet:layout_constraintHeight_min}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_bias com.ellis.memberplanet:layout_constraintHorizontal_bias}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle com.ellis.memberplanet:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintHorizontal_weight com.ellis.memberplanet:layout_constraintHorizontal_weight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_creator com.ellis.memberplanet:layout_constraintLeft_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toLeftOf com.ellis.memberplanet:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintLeft_toRightOf com.ellis.memberplanet:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_creator com.ellis.memberplanet:layout_constraintRight_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toLeftOf com.ellis.memberplanet:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintRight_toRightOf com.ellis.memberplanet:layout_constraintRight_toRightOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toEndOf com.ellis.memberplanet:layout_constraintStart_toEndOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintStart_toStartOf com.ellis.memberplanet:layout_constraintStart_toStartOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_creator com.ellis.memberplanet:layout_constraintTop_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toBottomOf com.ellis.memberplanet:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintTop_toTopOf com.ellis.memberplanet:layout_constraintTop_toTopOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_bias com.ellis.memberplanet:layout_constraintVertical_bias}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_chainStyle com.ellis.memberplanet:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintVertical_weight com.ellis.memberplanet:layout_constraintVertical_weight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_default com.ellis.memberplanet:layout_constraintWidth_default}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_max com.ellis.memberplanet:layout_constraintWidth_max}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_constraintWidth_min com.ellis.memberplanet:layout_constraintWidth_min}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteX com.ellis.memberplanet:layout_editor_absoluteX}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_editor_absoluteY com.ellis.memberplanet:layout_editor_absoluteY}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginBottom com.ellis.memberplanet:layout_goneMarginBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginEnd com.ellis.memberplanet:layout_goneMarginEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginLeft com.ellis.memberplanet:layout_goneMarginLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginRight com.ellis.memberplanet:layout_goneMarginRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginStart com.ellis.memberplanet:layout_goneMarginStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_goneMarginTop com.ellis.memberplanet:layout_goneMarginTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintLayout_Layout_layout_optimizationLevel com.ellis.memberplanet:layout_optimizationLevel}</code></td><td></td></tr>
      * </table>
      * @see #ConstraintLayout_Layout_android_orientation
      * @see #ConstraintLayout_Layout_android_maxWidth
@@ -8960,18 +9483,18 @@ public final class R {
      */
     public static final int[] ConstraintLayout_Layout={
         0x010100c4, 0x0101011f, 0x01010120, 0x0101013f, 
-        0x01010140, 0x7f04006d, 0x7f0400d1, 0x7f0400d2, 
-        0x7f0400d3, 0x7f0400d4, 0x7f0400d5, 0x7f0400d6, 
-        0x7f0400d7, 0x7f0400d8, 0x7f0400d9, 0x7f0400da, 
-        0x7f0400db, 0x7f0400dc, 0x7f0400dd, 0x7f0400de, 
-        0x7f0400df, 0x7f0400e0, 0x7f0400e1, 0x7f0400e2, 
-        0x7f0400e3, 0x7f0400e4, 0x7f0400e5, 0x7f0400e6, 
-        0x7f0400e7, 0x7f0400e8, 0x7f0400e9, 0x7f0400ea, 
+        0x01010140, 0x7f04006f, 0x7f0400e9, 0x7f0400ea, 
         0x7f0400eb, 0x7f0400ec, 0x7f0400ed, 0x7f0400ee, 
         0x7f0400ef, 0x7f0400f0, 0x7f0400f1, 0x7f0400f2, 
-        0x7f0400f4, 0x7f0400f5, 0x7f0400f6, 0x7f0400f7, 
-        0x7f0400f8, 0x7f0400f9, 0x7f0400fa, 0x7f0400fb, 
-        0x7f0400fe
+        0x7f0400f3, 0x7f0400f4, 0x7f0400f5, 0x7f0400f6, 
+        0x7f0400f7, 0x7f0400f8, 0x7f0400f9, 0x7f0400fa, 
+        0x7f0400fb, 0x7f0400fc, 0x7f0400fd, 0x7f0400fe, 
+        0x7f0400ff, 0x7f040100, 0x7f040101, 0x7f040102, 
+        0x7f040103, 0x7f040104, 0x7f040105, 0x7f040106, 
+        0x7f040107, 0x7f040108, 0x7f040109, 0x7f04010a, 
+        0x7f04010c, 0x7f04010d, 0x7f04010e, 0x7f04010f, 
+        0x7f040110, 0x7f040111, 0x7f040112, 0x7f040113, 
+        0x7f040116
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#orientation}
@@ -9043,7 +9566,7 @@ public final class R {
      */
     public static final int ConstraintLayout_Layout_android_minHeight=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#constraintSet}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#constraintSet}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9051,20 +9574,20 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:constraintSet
+     * @attr name com.ellis.memberplanet:constraintSet
      */
     public static final int ConstraintLayout_Layout_constraintSet=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintBaseline_creator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintBaseline_creator}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintBaseline_creator
+     * @attr name com.ellis.memberplanet:layout_constraintBaseline_creator
      */
     public static final int ConstraintLayout_Layout_layout_constraintBaseline_creator=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintBaseline_toBaselineOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintBaseline_toBaselineOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9080,20 +9603,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintBaseline_toBaselineOf
+     * @attr name com.ellis.memberplanet:layout_constraintBaseline_toBaselineOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintBaseline_toBaselineOf=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintBottom_creator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintBottom_creator}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintBottom_creator
+     * @attr name com.ellis.memberplanet:layout_constraintBottom_creator
      */
     public static final int ConstraintLayout_Layout_layout_constraintBottom_creator=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintBottom_toBottomOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintBottom_toBottomOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9109,11 +9632,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintBottom_toBottomOf
+     * @attr name com.ellis.memberplanet:layout_constraintBottom_toBottomOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintBottom_toBottomOf=9;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintBottom_toTopOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintBottom_toTopOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9129,21 +9652,21 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintBottom_toTopOf
+     * @attr name com.ellis.memberplanet:layout_constraintBottom_toTopOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintBottom_toTopOf=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintDimensionRatio}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintDimensionRatio}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:layout_constraintDimensionRatio
+     * @attr name com.ellis.memberplanet:layout_constraintDimensionRatio
      */
     public static final int ConstraintLayout_Layout_layout_constraintDimensionRatio=11;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintEnd_toEndOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintEnd_toEndOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9159,11 +9682,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintEnd_toEndOf
+     * @attr name com.ellis.memberplanet:layout_constraintEnd_toEndOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintEnd_toEndOf=12;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintEnd_toStartOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintEnd_toStartOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9179,11 +9702,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintEnd_toStartOf
+     * @attr name com.ellis.memberplanet:layout_constraintEnd_toStartOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintEnd_toStartOf=13;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintGuide_begin}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintGuide_begin}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9192,11 +9715,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintGuide_begin
+     * @attr name com.ellis.memberplanet:layout_constraintGuide_begin
      */
     public static final int ConstraintLayout_Layout_layout_constraintGuide_begin=14;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintGuide_end}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintGuide_end}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9205,20 +9728,20 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintGuide_end
+     * @attr name com.ellis.memberplanet:layout_constraintGuide_end
      */
     public static final int ConstraintLayout_Layout_layout_constraintGuide_end=15;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintGuide_percent}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintGuide_percent}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintGuide_percent
+     * @attr name com.ellis.memberplanet:layout_constraintGuide_percent
      */
     public static final int ConstraintLayout_Layout_layout_constraintGuide_percent=16;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHeight_default}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHeight_default}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -9231,11 +9754,11 @@ public final class R {
      * <tr><td>wrap</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintHeight_default
+     * @attr name com.ellis.memberplanet:layout_constraintHeight_default
      */
     public static final int ConstraintLayout_Layout_layout_constraintHeight_default=17;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHeight_max}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHeight_max}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9244,11 +9767,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintHeight_max
+     * @attr name com.ellis.memberplanet:layout_constraintHeight_max
      */
     public static final int ConstraintLayout_Layout_layout_constraintHeight_max=18;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHeight_min}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHeight_min}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9257,20 +9780,20 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintHeight_min
+     * @attr name com.ellis.memberplanet:layout_constraintHeight_min
      */
     public static final int ConstraintLayout_Layout_layout_constraintHeight_min=19;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHorizontal_bias}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHorizontal_bias}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintHorizontal_bias
+     * @attr name com.ellis.memberplanet:layout_constraintHorizontal_bias
      */
     public static final int ConstraintLayout_Layout_layout_constraintHorizontal_bias=20;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHorizontal_chainStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHorizontal_chainStyle}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -9284,29 +9807,29 @@ public final class R {
      * <tr><td>spread_inside</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintHorizontal_chainStyle
+     * @attr name com.ellis.memberplanet:layout_constraintHorizontal_chainStyle
      */
     public static final int ConstraintLayout_Layout_layout_constraintHorizontal_chainStyle=21;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHorizontal_weight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHorizontal_weight}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintHorizontal_weight
+     * @attr name com.ellis.memberplanet:layout_constraintHorizontal_weight
      */
     public static final int ConstraintLayout_Layout_layout_constraintHorizontal_weight=22;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintLeft_creator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintLeft_creator}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintLeft_creator
+     * @attr name com.ellis.memberplanet:layout_constraintLeft_creator
      */
     public static final int ConstraintLayout_Layout_layout_constraintLeft_creator=23;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintLeft_toLeftOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintLeft_toLeftOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9322,11 +9845,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintLeft_toLeftOf
+     * @attr name com.ellis.memberplanet:layout_constraintLeft_toLeftOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintLeft_toLeftOf=24;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintLeft_toRightOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintLeft_toRightOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9342,20 +9865,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintLeft_toRightOf
+     * @attr name com.ellis.memberplanet:layout_constraintLeft_toRightOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintLeft_toRightOf=25;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintRight_creator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintRight_creator}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintRight_creator
+     * @attr name com.ellis.memberplanet:layout_constraintRight_creator
      */
     public static final int ConstraintLayout_Layout_layout_constraintRight_creator=26;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintRight_toLeftOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintRight_toLeftOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9371,11 +9894,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintRight_toLeftOf
+     * @attr name com.ellis.memberplanet:layout_constraintRight_toLeftOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintRight_toLeftOf=27;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintRight_toRightOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintRight_toRightOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9391,11 +9914,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintRight_toRightOf
+     * @attr name com.ellis.memberplanet:layout_constraintRight_toRightOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintRight_toRightOf=28;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintStart_toEndOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintStart_toEndOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9411,11 +9934,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintStart_toEndOf
+     * @attr name com.ellis.memberplanet:layout_constraintStart_toEndOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintStart_toEndOf=29;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintStart_toStartOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintStart_toStartOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9431,20 +9954,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintStart_toStartOf
+     * @attr name com.ellis.memberplanet:layout_constraintStart_toStartOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintStart_toStartOf=30;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintTop_creator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintTop_creator}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintTop_creator
+     * @attr name com.ellis.memberplanet:layout_constraintTop_creator
      */
     public static final int ConstraintLayout_Layout_layout_constraintTop_creator=31;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintTop_toBottomOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintTop_toBottomOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9460,11 +9983,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintTop_toBottomOf
+     * @attr name com.ellis.memberplanet:layout_constraintTop_toBottomOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintTop_toBottomOf=32;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintTop_toTopOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintTop_toTopOf}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -9480,20 +10003,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintTop_toTopOf
+     * @attr name com.ellis.memberplanet:layout_constraintTop_toTopOf
      */
     public static final int ConstraintLayout_Layout_layout_constraintTop_toTopOf=33;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintVertical_bias}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintVertical_bias}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintVertical_bias
+     * @attr name com.ellis.memberplanet:layout_constraintVertical_bias
      */
     public static final int ConstraintLayout_Layout_layout_constraintVertical_bias=34;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintVertical_chainStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintVertical_chainStyle}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -9507,20 +10030,20 @@ public final class R {
      * <tr><td>spread_inside</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintVertical_chainStyle
+     * @attr name com.ellis.memberplanet:layout_constraintVertical_chainStyle
      */
     public static final int ConstraintLayout_Layout_layout_constraintVertical_chainStyle=35;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintVertical_weight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintVertical_weight}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintVertical_weight
+     * @attr name com.ellis.memberplanet:layout_constraintVertical_weight
      */
     public static final int ConstraintLayout_Layout_layout_constraintVertical_weight=36;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintWidth_default}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintWidth_default}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -9533,11 +10056,11 @@ public final class R {
      * <tr><td>wrap</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintWidth_default
+     * @attr name com.ellis.memberplanet:layout_constraintWidth_default
      */
     public static final int ConstraintLayout_Layout_layout_constraintWidth_default=37;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintWidth_max}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintWidth_max}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9546,11 +10069,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintWidth_max
+     * @attr name com.ellis.memberplanet:layout_constraintWidth_max
      */
     public static final int ConstraintLayout_Layout_layout_constraintWidth_max=38;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintWidth_min}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintWidth_min}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9559,11 +10082,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintWidth_min
+     * @attr name com.ellis.memberplanet:layout_constraintWidth_min
      */
     public static final int ConstraintLayout_Layout_layout_constraintWidth_min=39;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_editor_absoluteX}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_editor_absoluteX}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9572,11 +10095,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_editor_absoluteX
+     * @attr name com.ellis.memberplanet:layout_editor_absoluteX
      */
     public static final int ConstraintLayout_Layout_layout_editor_absoluteX=40;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_editor_absoluteY}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_editor_absoluteY}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9585,11 +10108,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_editor_absoluteY
+     * @attr name com.ellis.memberplanet:layout_editor_absoluteY
      */
     public static final int ConstraintLayout_Layout_layout_editor_absoluteY=41;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginBottom}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginBottom}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9598,11 +10121,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginBottom
+     * @attr name com.ellis.memberplanet:layout_goneMarginBottom
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginBottom=42;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginEnd}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginEnd}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9611,11 +10134,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginEnd
+     * @attr name com.ellis.memberplanet:layout_goneMarginEnd
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginEnd=43;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginLeft}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginLeft}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9624,11 +10147,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginLeft
+     * @attr name com.ellis.memberplanet:layout_goneMarginLeft
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginLeft=44;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginRight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginRight}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9637,11 +10160,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginRight
+     * @attr name com.ellis.memberplanet:layout_goneMarginRight
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginRight=45;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginStart}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginStart}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9650,11 +10173,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginStart
+     * @attr name com.ellis.memberplanet:layout_goneMarginStart
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginStart=46;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginTop}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginTop}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -9663,11 +10186,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginTop
+     * @attr name com.ellis.memberplanet:layout_goneMarginTop
      */
     public static final int ConstraintLayout_Layout_layout_goneMarginTop=47;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_optimizationLevel}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_optimizationLevel}
      * attribute's value can be found in the {@link #ConstraintLayout_Layout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -9682,7 +10205,7 @@ public final class R {
      * <tr><td>none</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_optimizationLevel
+     * @attr name com.ellis.memberplanet:layout_optimizationLevel
      */
     public static final int ConstraintLayout_Layout_layout_optimizationLevel=48;
     /**
@@ -9714,48 +10237,48 @@ public final class R {
      * <tr><td><code>{@link #ConstraintSet_android_layout_marginEnd android:layout_marginEnd}</code></td><td></td></tr>
      * <tr><td><code>{@link #ConstraintSet_android_translationZ android:translationZ}</code></td><td></td></tr>
      * <tr><td><code>{@link #ConstraintSet_android_elevation android:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_creator com.buah.farmconnect:layout_constraintBaseline_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_toBaselineOf com.buah.farmconnect:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_creator com.buah.farmconnect:layout_constraintBottom_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toBottomOf com.buah.farmconnect:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toTopOf com.buah.farmconnect:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintDimensionRatio com.buah.farmconnect:layout_constraintDimensionRatio}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toEndOf com.buah.farmconnect:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toStartOf com.buah.farmconnect:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_begin com.buah.farmconnect:layout_constraintGuide_begin}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_end com.buah.farmconnect:layout_constraintGuide_end}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_percent com.buah.farmconnect:layout_constraintGuide_percent}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_default com.buah.farmconnect:layout_constraintHeight_default}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_max com.buah.farmconnect:layout_constraintHeight_max}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_min com.buah.farmconnect:layout_constraintHeight_min}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_bias com.buah.farmconnect:layout_constraintHorizontal_bias}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_chainStyle com.buah.farmconnect:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_weight com.buah.farmconnect:layout_constraintHorizontal_weight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_creator com.buah.farmconnect:layout_constraintLeft_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toLeftOf com.buah.farmconnect:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toRightOf com.buah.farmconnect:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_creator com.buah.farmconnect:layout_constraintRight_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toLeftOf com.buah.farmconnect:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toRightOf com.buah.farmconnect:layout_constraintRight_toRightOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toEndOf com.buah.farmconnect:layout_constraintStart_toEndOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toStartOf com.buah.farmconnect:layout_constraintStart_toStartOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_creator com.buah.farmconnect:layout_constraintTop_creator}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toBottomOf com.buah.farmconnect:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toTopOf com.buah.farmconnect:layout_constraintTop_toTopOf}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_bias com.buah.farmconnect:layout_constraintVertical_bias}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_chainStyle com.buah.farmconnect:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_weight com.buah.farmconnect:layout_constraintVertical_weight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_default com.buah.farmconnect:layout_constraintWidth_default}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_max com.buah.farmconnect:layout_constraintWidth_max}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_min com.buah.farmconnect:layout_constraintWidth_min}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteX com.buah.farmconnect:layout_editor_absoluteX}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteY com.buah.farmconnect:layout_editor_absoluteY}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginBottom com.buah.farmconnect:layout_goneMarginBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginEnd com.buah.farmconnect:layout_goneMarginEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginLeft com.buah.farmconnect:layout_goneMarginLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginRight com.buah.farmconnect:layout_goneMarginRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginStart com.buah.farmconnect:layout_goneMarginStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginTop com.buah.farmconnect:layout_goneMarginTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_creator com.ellis.memberplanet:layout_constraintBaseline_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintBaseline_toBaselineOf com.ellis.memberplanet:layout_constraintBaseline_toBaselineOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_creator com.ellis.memberplanet:layout_constraintBottom_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toBottomOf com.ellis.memberplanet:layout_constraintBottom_toBottomOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintBottom_toTopOf com.ellis.memberplanet:layout_constraintBottom_toTopOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintDimensionRatio com.ellis.memberplanet:layout_constraintDimensionRatio}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toEndOf com.ellis.memberplanet:layout_constraintEnd_toEndOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintEnd_toStartOf com.ellis.memberplanet:layout_constraintEnd_toStartOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_begin com.ellis.memberplanet:layout_constraintGuide_begin}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_end com.ellis.memberplanet:layout_constraintGuide_end}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintGuide_percent com.ellis.memberplanet:layout_constraintGuide_percent}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_default com.ellis.memberplanet:layout_constraintHeight_default}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_max com.ellis.memberplanet:layout_constraintHeight_max}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHeight_min com.ellis.memberplanet:layout_constraintHeight_min}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_bias com.ellis.memberplanet:layout_constraintHorizontal_bias}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_chainStyle com.ellis.memberplanet:layout_constraintHorizontal_chainStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintHorizontal_weight com.ellis.memberplanet:layout_constraintHorizontal_weight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_creator com.ellis.memberplanet:layout_constraintLeft_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toLeftOf com.ellis.memberplanet:layout_constraintLeft_toLeftOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintLeft_toRightOf com.ellis.memberplanet:layout_constraintLeft_toRightOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_creator com.ellis.memberplanet:layout_constraintRight_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toLeftOf com.ellis.memberplanet:layout_constraintRight_toLeftOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintRight_toRightOf com.ellis.memberplanet:layout_constraintRight_toRightOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toEndOf com.ellis.memberplanet:layout_constraintStart_toEndOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintStart_toStartOf com.ellis.memberplanet:layout_constraintStart_toStartOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_creator com.ellis.memberplanet:layout_constraintTop_creator}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toBottomOf com.ellis.memberplanet:layout_constraintTop_toBottomOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintTop_toTopOf com.ellis.memberplanet:layout_constraintTop_toTopOf}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_bias com.ellis.memberplanet:layout_constraintVertical_bias}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_chainStyle com.ellis.memberplanet:layout_constraintVertical_chainStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintVertical_weight com.ellis.memberplanet:layout_constraintVertical_weight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_default com.ellis.memberplanet:layout_constraintWidth_default}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_max com.ellis.memberplanet:layout_constraintWidth_max}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_constraintWidth_min com.ellis.memberplanet:layout_constraintWidth_min}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteX com.ellis.memberplanet:layout_editor_absoluteX}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_editor_absoluteY com.ellis.memberplanet:layout_editor_absoluteY}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginBottom com.ellis.memberplanet:layout_goneMarginBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginEnd com.ellis.memberplanet:layout_goneMarginEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginLeft com.ellis.memberplanet:layout_goneMarginLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginRight com.ellis.memberplanet:layout_goneMarginRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginStart com.ellis.memberplanet:layout_goneMarginStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ConstraintSet_layout_goneMarginTop com.ellis.memberplanet:layout_goneMarginTop}</code></td><td></td></tr>
      * </table>
      * @see #ConstraintSet_android_orientation
      * @see #ConstraintSet_android_id
@@ -9828,17 +10351,17 @@ public final class R {
         0x010100fa, 0x0101031f, 0x01010320, 0x01010321, 
         0x01010322, 0x01010323, 0x01010324, 0x01010325, 
         0x01010327, 0x01010328, 0x010103b5, 0x010103b6, 
-        0x010103fa, 0x01010440, 0x7f0400d1, 0x7f0400d2, 
-        0x7f0400d3, 0x7f0400d4, 0x7f0400d5, 0x7f0400d6, 
-        0x7f0400d7, 0x7f0400d8, 0x7f0400d9, 0x7f0400da, 
-        0x7f0400db, 0x7f0400dc, 0x7f0400dd, 0x7f0400de, 
-        0x7f0400df, 0x7f0400e0, 0x7f0400e1, 0x7f0400e2, 
-        0x7f0400e3, 0x7f0400e4, 0x7f0400e5, 0x7f0400e6, 
-        0x7f0400e7, 0x7f0400e8, 0x7f0400e9, 0x7f0400ea, 
+        0x010103fa, 0x01010440, 0x7f0400e9, 0x7f0400ea, 
         0x7f0400eb, 0x7f0400ec, 0x7f0400ed, 0x7f0400ee, 
         0x7f0400ef, 0x7f0400f0, 0x7f0400f1, 0x7f0400f2, 
-        0x7f0400f4, 0x7f0400f5, 0x7f0400f6, 0x7f0400f7, 
-        0x7f0400f8, 0x7f0400f9, 0x7f0400fa, 0x7f0400fb
+        0x7f0400f3, 0x7f0400f4, 0x7f0400f5, 0x7f0400f6, 
+        0x7f0400f7, 0x7f0400f8, 0x7f0400f9, 0x7f0400fa, 
+        0x7f0400fb, 0x7f0400fc, 0x7f0400fd, 0x7f0400fe, 
+        0x7f0400ff, 0x7f040100, 0x7f040101, 0x7f040102, 
+        0x7f040103, 0x7f040104, 0x7f040105, 0x7f040106, 
+        0x7f040107, 0x7f040108, 0x7f040109, 0x7f04010a, 
+        0x7f04010c, 0x7f04010d, 0x7f04010e, 0x7f04010f, 
+        0x7f040110, 0x7f040111, 0x7f040112, 0x7f040113
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#orientation}
@@ -10135,16 +10658,16 @@ public final class R {
      */
     public static final int ConstraintSet_android_elevation=21;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintBaseline_creator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintBaseline_creator}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintBaseline_creator
+     * @attr name com.ellis.memberplanet:layout_constraintBaseline_creator
      */
     public static final int ConstraintSet_layout_constraintBaseline_creator=22;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintBaseline_toBaselineOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintBaseline_toBaselineOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10160,20 +10683,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintBaseline_toBaselineOf
+     * @attr name com.ellis.memberplanet:layout_constraintBaseline_toBaselineOf
      */
     public static final int ConstraintSet_layout_constraintBaseline_toBaselineOf=23;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintBottom_creator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintBottom_creator}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintBottom_creator
+     * @attr name com.ellis.memberplanet:layout_constraintBottom_creator
      */
     public static final int ConstraintSet_layout_constraintBottom_creator=24;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintBottom_toBottomOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintBottom_toBottomOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10189,11 +10712,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintBottom_toBottomOf
+     * @attr name com.ellis.memberplanet:layout_constraintBottom_toBottomOf
      */
     public static final int ConstraintSet_layout_constraintBottom_toBottomOf=25;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintBottom_toTopOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintBottom_toTopOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10209,21 +10732,21 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintBottom_toTopOf
+     * @attr name com.ellis.memberplanet:layout_constraintBottom_toTopOf
      */
     public static final int ConstraintSet_layout_constraintBottom_toTopOf=26;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintDimensionRatio}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintDimensionRatio}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:layout_constraintDimensionRatio
+     * @attr name com.ellis.memberplanet:layout_constraintDimensionRatio
      */
     public static final int ConstraintSet_layout_constraintDimensionRatio=27;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintEnd_toEndOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintEnd_toEndOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10239,11 +10762,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintEnd_toEndOf
+     * @attr name com.ellis.memberplanet:layout_constraintEnd_toEndOf
      */
     public static final int ConstraintSet_layout_constraintEnd_toEndOf=28;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintEnd_toStartOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintEnd_toStartOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10259,11 +10782,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintEnd_toStartOf
+     * @attr name com.ellis.memberplanet:layout_constraintEnd_toStartOf
      */
     public static final int ConstraintSet_layout_constraintEnd_toStartOf=29;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintGuide_begin}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintGuide_begin}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10272,11 +10795,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintGuide_begin
+     * @attr name com.ellis.memberplanet:layout_constraintGuide_begin
      */
     public static final int ConstraintSet_layout_constraintGuide_begin=30;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintGuide_end}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintGuide_end}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10285,20 +10808,20 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintGuide_end
+     * @attr name com.ellis.memberplanet:layout_constraintGuide_end
      */
     public static final int ConstraintSet_layout_constraintGuide_end=31;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintGuide_percent}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintGuide_percent}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintGuide_percent
+     * @attr name com.ellis.memberplanet:layout_constraintGuide_percent
      */
     public static final int ConstraintSet_layout_constraintGuide_percent=32;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHeight_default}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHeight_default}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -10311,11 +10834,11 @@ public final class R {
      * <tr><td>wrap</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintHeight_default
+     * @attr name com.ellis.memberplanet:layout_constraintHeight_default
      */
     public static final int ConstraintSet_layout_constraintHeight_default=33;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHeight_max}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHeight_max}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10324,11 +10847,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintHeight_max
+     * @attr name com.ellis.memberplanet:layout_constraintHeight_max
      */
     public static final int ConstraintSet_layout_constraintHeight_max=34;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHeight_min}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHeight_min}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10337,20 +10860,20 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintHeight_min
+     * @attr name com.ellis.memberplanet:layout_constraintHeight_min
      */
     public static final int ConstraintSet_layout_constraintHeight_min=35;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHorizontal_bias}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHorizontal_bias}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintHorizontal_bias
+     * @attr name com.ellis.memberplanet:layout_constraintHorizontal_bias
      */
     public static final int ConstraintSet_layout_constraintHorizontal_bias=36;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHorizontal_chainStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHorizontal_chainStyle}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -10364,29 +10887,29 @@ public final class R {
      * <tr><td>spread_inside</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintHorizontal_chainStyle
+     * @attr name com.ellis.memberplanet:layout_constraintHorizontal_chainStyle
      */
     public static final int ConstraintSet_layout_constraintHorizontal_chainStyle=37;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintHorizontal_weight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintHorizontal_weight}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintHorizontal_weight
+     * @attr name com.ellis.memberplanet:layout_constraintHorizontal_weight
      */
     public static final int ConstraintSet_layout_constraintHorizontal_weight=38;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintLeft_creator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintLeft_creator}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintLeft_creator
+     * @attr name com.ellis.memberplanet:layout_constraintLeft_creator
      */
     public static final int ConstraintSet_layout_constraintLeft_creator=39;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintLeft_toLeftOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintLeft_toLeftOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10402,11 +10925,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintLeft_toLeftOf
+     * @attr name com.ellis.memberplanet:layout_constraintLeft_toLeftOf
      */
     public static final int ConstraintSet_layout_constraintLeft_toLeftOf=40;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintLeft_toRightOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintLeft_toRightOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10422,20 +10945,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintLeft_toRightOf
+     * @attr name com.ellis.memberplanet:layout_constraintLeft_toRightOf
      */
     public static final int ConstraintSet_layout_constraintLeft_toRightOf=41;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintRight_creator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintRight_creator}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintRight_creator
+     * @attr name com.ellis.memberplanet:layout_constraintRight_creator
      */
     public static final int ConstraintSet_layout_constraintRight_creator=42;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintRight_toLeftOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintRight_toLeftOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10451,11 +10974,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintRight_toLeftOf
+     * @attr name com.ellis.memberplanet:layout_constraintRight_toLeftOf
      */
     public static final int ConstraintSet_layout_constraintRight_toLeftOf=43;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintRight_toRightOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintRight_toRightOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10471,11 +10994,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintRight_toRightOf
+     * @attr name com.ellis.memberplanet:layout_constraintRight_toRightOf
      */
     public static final int ConstraintSet_layout_constraintRight_toRightOf=44;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintStart_toEndOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintStart_toEndOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10491,11 +11014,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintStart_toEndOf
+     * @attr name com.ellis.memberplanet:layout_constraintStart_toEndOf
      */
     public static final int ConstraintSet_layout_constraintStart_toEndOf=45;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintStart_toStartOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintStart_toStartOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10511,20 +11034,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintStart_toStartOf
+     * @attr name com.ellis.memberplanet:layout_constraintStart_toStartOf
      */
     public static final int ConstraintSet_layout_constraintStart_toStartOf=46;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintTop_creator}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintTop_creator}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintTop_creator
+     * @attr name com.ellis.memberplanet:layout_constraintTop_creator
      */
     public static final int ConstraintSet_layout_constraintTop_creator=47;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintTop_toBottomOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintTop_toBottomOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10540,11 +11063,11 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintTop_toBottomOf
+     * @attr name com.ellis.memberplanet:layout_constraintTop_toBottomOf
      */
     public static final int ConstraintSet_layout_constraintTop_toBottomOf=48;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintTop_toTopOf}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintTop_toTopOf}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10560,20 +11083,20 @@ public final class R {
      * <tr><td>parent</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintTop_toTopOf
+     * @attr name com.ellis.memberplanet:layout_constraintTop_toTopOf
      */
     public static final int ConstraintSet_layout_constraintTop_toTopOf=49;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintVertical_bias}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintVertical_bias}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintVertical_bias
+     * @attr name com.ellis.memberplanet:layout_constraintVertical_bias
      */
     public static final int ConstraintSet_layout_constraintVertical_bias=50;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintVertical_chainStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintVertical_chainStyle}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -10587,20 +11110,20 @@ public final class R {
      * <tr><td>spread_inside</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintVertical_chainStyle
+     * @attr name com.ellis.memberplanet:layout_constraintVertical_chainStyle
      */
     public static final int ConstraintSet_layout_constraintVertical_chainStyle=51;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintVertical_weight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintVertical_weight}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:layout_constraintVertical_weight
+     * @attr name com.ellis.memberplanet:layout_constraintVertical_weight
      */
     public static final int ConstraintSet_layout_constraintVertical_weight=52;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintWidth_default}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintWidth_default}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -10613,11 +11136,11 @@ public final class R {
      * <tr><td>wrap</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_constraintWidth_default
+     * @attr name com.ellis.memberplanet:layout_constraintWidth_default
      */
     public static final int ConstraintSet_layout_constraintWidth_default=53;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintWidth_max}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintWidth_max}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10626,11 +11149,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintWidth_max
+     * @attr name com.ellis.memberplanet:layout_constraintWidth_max
      */
     public static final int ConstraintSet_layout_constraintWidth_max=54;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_constraintWidth_min}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_constraintWidth_min}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10639,11 +11162,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_constraintWidth_min
+     * @attr name com.ellis.memberplanet:layout_constraintWidth_min
      */
     public static final int ConstraintSet_layout_constraintWidth_min=55;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_editor_absoluteX}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_editor_absoluteX}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10652,11 +11175,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_editor_absoluteX
+     * @attr name com.ellis.memberplanet:layout_editor_absoluteX
      */
     public static final int ConstraintSet_layout_editor_absoluteX=56;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_editor_absoluteY}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_editor_absoluteY}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10665,11 +11188,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_editor_absoluteY
+     * @attr name com.ellis.memberplanet:layout_editor_absoluteY
      */
     public static final int ConstraintSet_layout_editor_absoluteY=57;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginBottom}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginBottom}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10678,11 +11201,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginBottom
+     * @attr name com.ellis.memberplanet:layout_goneMarginBottom
      */
     public static final int ConstraintSet_layout_goneMarginBottom=58;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginEnd}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginEnd}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10691,11 +11214,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginEnd
+     * @attr name com.ellis.memberplanet:layout_goneMarginEnd
      */
     public static final int ConstraintSet_layout_goneMarginEnd=59;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginLeft}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginLeft}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10704,11 +11227,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginLeft
+     * @attr name com.ellis.memberplanet:layout_goneMarginLeft
      */
     public static final int ConstraintSet_layout_goneMarginLeft=60;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginRight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginRight}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10717,11 +11240,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginRight
+     * @attr name com.ellis.memberplanet:layout_goneMarginRight
      */
     public static final int ConstraintSet_layout_goneMarginRight=61;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginStart}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginStart}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10730,11 +11253,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginStart
+     * @attr name com.ellis.memberplanet:layout_goneMarginStart
      */
     public static final int ConstraintSet_layout_goneMarginStart=62;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_goneMarginTop}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_goneMarginTop}
      * attribute's value can be found in the {@link #ConstraintSet} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -10743,7 +11266,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:layout_goneMarginTop
+     * @attr name com.ellis.memberplanet:layout_goneMarginTop
      */
     public static final int ConstraintSet_layout_goneMarginTop=63;
     /**
@@ -10753,17 +11276,17 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_keylines com.buah.farmconnect:keylines}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_statusBarBackground com.buah.farmconnect:statusBarBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_keylines com.ellis.memberplanet:keylines}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_statusBarBackground com.ellis.memberplanet:statusBarBackground}</code></td><td></td></tr>
      * </table>
      * @see #CoordinatorLayout_keylines
      * @see #CoordinatorLayout_statusBarBackground
      */
     public static final int[] CoordinatorLayout={
-        0x7f0400c9, 0x7f04014e
+        0x7f0400e1, 0x7f04018d
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#keylines}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#keylines}
      * attribute's value can be found in the {@link #CoordinatorLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10771,19 +11294,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:keylines
+     * @attr name com.ellis.memberplanet:keylines
      */
     public static final int CoordinatorLayout_keylines=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#statusBarBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#statusBarBackground}
      * attribute's value can be found in the {@link #CoordinatorLayout} array.
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:statusBarBackground
+     * @attr name com.ellis.memberplanet:statusBarBackground
      */
     public static final int CoordinatorLayout_statusBarBackground=1;
     /**
@@ -10794,12 +11320,12 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #CoordinatorLayout_Layout_android_layout_gravity android:layout_gravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchor com.buah.farmconnect:layout_anchor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchorGravity com.buah.farmconnect:layout_anchorGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_behavior com.buah.farmconnect:layout_behavior}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_dodgeInsetEdges com.buah.farmconnect:layout_dodgeInsetEdges}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_insetEdge com.buah.farmconnect:layout_insetEdge}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_keyline com.buah.farmconnect:layout_keyline}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchor com.ellis.memberplanet:layout_anchor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchorGravity com.ellis.memberplanet:layout_anchorGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_behavior com.ellis.memberplanet:layout_behavior}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_dodgeInsetEdges com.ellis.memberplanet:layout_dodgeInsetEdges}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_insetEdge com.ellis.memberplanet:layout_insetEdge}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_keyline com.ellis.memberplanet:layout_keyline}</code></td><td></td></tr>
      * </table>
      * @see #CoordinatorLayout_Layout_android_layout_gravity
      * @see #CoordinatorLayout_Layout_layout_anchor
@@ -10810,8 +11336,8 @@ public final class R {
      * @see #CoordinatorLayout_Layout_layout_keyline
      */
     public static final int[] CoordinatorLayout_Layout={
-        0x010100b3, 0x7f0400cc, 0x7f0400cd, 0x7f0400ce, 
-        0x7f0400f3, 0x7f0400fc, 0x7f0400fd
+        0x010100b3, 0x7f0400e4, 0x7f0400e5, 0x7f0400e6, 
+        0x7f04010b, 0x7f040114, 0x7f040115
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#layout_gravity}
@@ -10843,7 +11369,7 @@ public final class R {
      */
     public static final int CoordinatorLayout_Layout_android_layout_gravity=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_anchor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_anchor}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10851,11 +11377,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:layout_anchor
+     * @attr name com.ellis.memberplanet:layout_anchor
      */
     public static final int CoordinatorLayout_Layout_layout_anchor=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_anchorGravity}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_anchorGravity}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -10880,21 +11406,21 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_anchorGravity
+     * @attr name com.ellis.memberplanet:layout_anchorGravity
      */
     public static final int CoordinatorLayout_Layout_layout_anchorGravity=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_behavior}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_behavior}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:layout_behavior
+     * @attr name com.ellis.memberplanet:layout_behavior
      */
     public static final int CoordinatorLayout_Layout_layout_behavior=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_dodgeInsetEdges}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_dodgeInsetEdges}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -10908,16 +11434,16 @@ public final class R {
      * <tr><td>end</td><td>800005</td><td></td></tr>
      * <tr><td>left</td><td>3</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
-     * <tr><td>right</td><td>3</td><td></td></tr>
+     * <tr><td>right</td><td>5</td><td></td></tr>
      * <tr><td>start</td><td>800003</td><td></td></tr>
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_dodgeInsetEdges
+     * @attr name com.ellis.memberplanet:layout_dodgeInsetEdges
      */
     public static final int CoordinatorLayout_Layout_layout_dodgeInsetEdges=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_insetEdge}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_insetEdge}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -10930,21 +11456,21 @@ public final class R {
      * <tr><td>end</td><td>800005</td><td></td></tr>
      * <tr><td>left</td><td>3</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
-     * <tr><td>right</td><td>3</td><td></td></tr>
+     * <tr><td>right</td><td>5</td><td></td></tr>
      * <tr><td>start</td><td>800003</td><td></td></tr>
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:layout_insetEdge
+     * @attr name com.ellis.memberplanet:layout_insetEdge
      */
     public static final int CoordinatorLayout_Layout_layout_insetEdge=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout_keyline}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout_keyline}
      * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:layout_keyline
+     * @attr name com.ellis.memberplanet:layout_keyline
      */
     public static final int CoordinatorLayout_Layout_layout_keyline=6;
     /**
@@ -10954,19 +11480,19 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #DesignTheme_bottomSheetDialogTheme com.buah.farmconnect:bottomSheetDialogTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DesignTheme_bottomSheetStyle com.buah.farmconnect:bottomSheetStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DesignTheme_textColorError com.buah.farmconnect:textColorError}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DesignTheme_bottomSheetDialogTheme com.ellis.memberplanet:bottomSheetDialogTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DesignTheme_bottomSheetStyle com.ellis.memberplanet:bottomSheetStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DesignTheme_textColorError com.ellis.memberplanet:textColorError}</code></td><td></td></tr>
      * </table>
      * @see #DesignTheme_bottomSheetDialogTheme
      * @see #DesignTheme_bottomSheetStyle
      * @see #DesignTheme_textColorError
      */
     public static final int[] DesignTheme={
-        0x7f04003e, 0x7f04003f, 0x7f040175
+        0x7f04003e, 0x7f04003f, 0x7f0401b4
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#bottomSheetDialogTheme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#bottomSheetDialogTheme}
      * attribute's value can be found in the {@link #DesignTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10974,11 +11500,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:bottomSheetDialogTheme
+     * @attr name com.ellis.memberplanet:bottomSheetDialogTheme
      */
     public static final int DesignTheme_bottomSheetDialogTheme=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#bottomSheetStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#bottomSheetStyle}
      * attribute's value can be found in the {@link #DesignTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -10986,11 +11512,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:bottomSheetStyle
+     * @attr name com.ellis.memberplanet:bottomSheetStyle
      */
     public static final int DesignTheme_bottomSheetStyle=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textColorError}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textColorError}
      * attribute's value can be found in the {@link #DesignTheme} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11001,7 +11527,7 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:textColorError
+     * @attr name com.ellis.memberplanet:textColorError
      */
     public static final int DesignTheme_textColorError=2;
     /**
@@ -11011,14 +11537,14 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_arrowHeadLength com.buah.farmconnect:arrowHeadLength}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_arrowShaftLength com.buah.farmconnect:arrowShaftLength}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_barLength com.buah.farmconnect:barLength}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_color com.buah.farmconnect:color}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_drawableSize com.buah.farmconnect:drawableSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_gapBetweenBars com.buah.farmconnect:gapBetweenBars}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_spinBars com.buah.farmconnect:spinBars}</code></td><td></td></tr>
-     * <tr><td><code>{@link #DrawerArrowToggle_thickness com.buah.farmconnect:thickness}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_arrowHeadLength com.ellis.memberplanet:arrowHeadLength}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_arrowShaftLength com.ellis.memberplanet:arrowShaftLength}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_barLength com.ellis.memberplanet:barLength}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_color com.ellis.memberplanet:color}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_drawableSize com.ellis.memberplanet:drawableSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_gapBetweenBars com.ellis.memberplanet:gapBetweenBars}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_spinBars com.ellis.memberplanet:spinBars}</code></td><td></td></tr>
+     * <tr><td><code>{@link #DrawerArrowToggle_thickness com.ellis.memberplanet:thickness}</code></td><td></td></tr>
      * </table>
      * @see #DrawerArrowToggle_arrowHeadLength
      * @see #DrawerArrowToggle_arrowShaftLength
@@ -11030,11 +11556,11 @@ public final class R {
      * @see #DrawerArrowToggle_thickness
      */
     public static final int[] DrawerArrowToggle={
-        0x7f040029, 0x7f04002a, 0x7f040036, 0x7f040060, 
-        0x7f040089, 0x7f0400af, 0x7f040142, 0x7f040178
+        0x7f040029, 0x7f04002a, 0x7f040036, 0x7f040062, 
+        0x7f04008c, 0x7f0400c7, 0x7f040181, 0x7f0401b7
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#arrowHeadLength}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#arrowHeadLength}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11043,11 +11569,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:arrowHeadLength
+     * @attr name com.ellis.memberplanet:arrowHeadLength
      */
     public static final int DrawerArrowToggle_arrowHeadLength=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#arrowShaftLength}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#arrowShaftLength}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11056,11 +11582,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:arrowShaftLength
+     * @attr name com.ellis.memberplanet:arrowShaftLength
      */
     public static final int DrawerArrowToggle_arrowShaftLength=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#barLength}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#barLength}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11069,22 +11595,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:barLength
+     * @attr name com.ellis.memberplanet:barLength
      */
     public static final int DrawerArrowToggle_barLength=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#color}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#color}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:color
+     * @attr name com.ellis.memberplanet:color
      */
     public static final int DrawerArrowToggle_color=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#drawableSize}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#drawableSize}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11093,11 +11619,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:drawableSize
+     * @attr name com.ellis.memberplanet:drawableSize
      */
     public static final int DrawerArrowToggle_drawableSize=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#gapBetweenBars}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#gapBetweenBars}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11106,21 +11632,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:gapBetweenBars
+     * @attr name com.ellis.memberplanet:gapBetweenBars
      */
     public static final int DrawerArrowToggle_gapBetweenBars=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#spinBars}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#spinBars}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:spinBars
+     * @attr name com.ellis.memberplanet:spinBars
      */
     public static final int DrawerArrowToggle_spinBars=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#thickness}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#thickness}
      * attribute's value can be found in the {@link #DrawerArrowToggle} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11129,7 +11655,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:thickness
+     * @attr name com.ellis.memberplanet:thickness
      */
     public static final int DrawerArrowToggle_thickness=7;
     /**
@@ -11139,41 +11665,89 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FloatingActionButton_backgroundTint com.buah.farmconnect:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_backgroundTintMode com.buah.farmconnect:backgroundTintMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_borderWidth com.buah.farmconnect:borderWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_elevation com.buah.farmconnect:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_fabSize com.buah.farmconnect:fabSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_pressedTranslationZ com.buah.farmconnect:pressedTranslationZ}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_rippleColor com.buah.farmconnect:rippleColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FloatingActionButton_useCompatPadding com.buah.farmconnect:useCompatPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_backgroundTint com.ellis.memberplanet:backgroundTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_backgroundTintMode com.ellis.memberplanet:backgroundTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_borderWidth com.ellis.memberplanet:borderWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_elevation com.ellis.memberplanet:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fabCustomSize com.ellis.memberplanet:fabCustomSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fabSize com.ellis.memberplanet:fabSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_colorDisabled com.ellis.memberplanet:fab_colorDisabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_colorNormal com.ellis.memberplanet:fab_colorNormal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_colorPressed com.ellis.memberplanet:fab_colorPressed}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_colorRipple com.ellis.memberplanet:fab_colorRipple}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_elevationCompat com.ellis.memberplanet:fab_elevationCompat}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_hideAnimation com.ellis.memberplanet:fab_hideAnimation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_label com.ellis.memberplanet:fab_label}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_progress com.ellis.memberplanet:fab_progress}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_progress_backgroundColor com.ellis.memberplanet:fab_progress_backgroundColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_progress_color com.ellis.memberplanet:fab_progress_color}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_progress_indeterminate com.ellis.memberplanet:fab_progress_indeterminate}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_progress_max com.ellis.memberplanet:fab_progress_max}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_progress_showBackground com.ellis.memberplanet:fab_progress_showBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_shadowColor com.ellis.memberplanet:fab_shadowColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_shadowRadius com.ellis.memberplanet:fab_shadowRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_shadowXOffset com.ellis.memberplanet:fab_shadowXOffset}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_shadowYOffset com.ellis.memberplanet:fab_shadowYOffset}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_showAnimation com.ellis.memberplanet:fab_showAnimation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_showShadow com.ellis.memberplanet:fab_showShadow}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_fab_size com.ellis.memberplanet:fab_size}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_pressedTranslationZ com.ellis.memberplanet:pressedTranslationZ}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_rippleColor com.ellis.memberplanet:rippleColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_useCompatPadding com.ellis.memberplanet:useCompatPadding}</code></td><td></td></tr>
      * </table>
      * @see #FloatingActionButton_backgroundTint
      * @see #FloatingActionButton_backgroundTintMode
      * @see #FloatingActionButton_borderWidth
      * @see #FloatingActionButton_elevation
+     * @see #FloatingActionButton_fabCustomSize
      * @see #FloatingActionButton_fabSize
+     * @see #FloatingActionButton_fab_colorDisabled
+     * @see #FloatingActionButton_fab_colorNormal
+     * @see #FloatingActionButton_fab_colorPressed
+     * @see #FloatingActionButton_fab_colorRipple
+     * @see #FloatingActionButton_fab_elevationCompat
+     * @see #FloatingActionButton_fab_hideAnimation
+     * @see #FloatingActionButton_fab_label
+     * @see #FloatingActionButton_fab_progress
+     * @see #FloatingActionButton_fab_progress_backgroundColor
+     * @see #FloatingActionButton_fab_progress_color
+     * @see #FloatingActionButton_fab_progress_indeterminate
+     * @see #FloatingActionButton_fab_progress_max
+     * @see #FloatingActionButton_fab_progress_showBackground
+     * @see #FloatingActionButton_fab_shadowColor
+     * @see #FloatingActionButton_fab_shadowRadius
+     * @see #FloatingActionButton_fab_shadowXOffset
+     * @see #FloatingActionButton_fab_shadowYOffset
+     * @see #FloatingActionButton_fab_showAnimation
+     * @see #FloatingActionButton_fab_showShadow
+     * @see #FloatingActionButton_fab_size
      * @see #FloatingActionButton_pressedTranslationZ
      * @see #FloatingActionButton_rippleColor
      * @see #FloatingActionButton_useCompatPadding
      */
     public static final int[] FloatingActionButton={
-        0x7f040034, 0x7f040035, 0x7f04003c, 0x7f040090, 
-        0x7f04009c, 0x7f040128, 0x7f040132, 0x7f040195
+        0x7f040034, 0x7f040035, 0x7f04003c, 0x7f040093, 
+        0x7f04009f, 0x7f0400a0, 0x7f0400a1, 0x7f0400a2, 
+        0x7f0400a3, 0x7f0400a4, 0x7f0400a5, 0x7f0400a6, 
+        0x7f0400a7, 0x7f0400a8, 0x7f0400a9, 0x7f0400aa, 
+        0x7f0400ab, 0x7f0400ac, 0x7f0400ad, 0x7f0400ae, 
+        0x7f0400af, 0x7f0400b0, 0x7f0400b1, 0x7f0400b2, 
+        0x7f0400b3, 0x7f0400b4, 0x7f040167, 0x7f040171, 
+        0x7f0401d4
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#backgroundTint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#backgroundTint}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:backgroundTint
+     * @attr name com.ellis.memberplanet:backgroundTint
      */
     public static final int FloatingActionButton_backgroundTint=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#backgroundTintMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#backgroundTintMode}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -11190,11 +11764,11 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:backgroundTintMode
+     * @attr name com.ellis.memberplanet:backgroundTintMode
      */
     public static final int FloatingActionButton_backgroundTintMode=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#borderWidth}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#borderWidth}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11203,11 +11777,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:borderWidth
+     * @attr name com.ellis.memberplanet:borderWidth
      */
     public static final int FloatingActionButton_borderWidth=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#elevation}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11216,11 +11790,24 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:elevation
+     * @attr name com.ellis.memberplanet:elevation
      */
     public static final int FloatingActionButton_elevation=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fabSize}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fabCustomSize}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:fabCustomSize
+     */
+    public static final int FloatingActionButton_fabCustomSize=4;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fabSize}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -11234,11 +11821,55 @@ public final class R {
      * <tr><td>normal</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:fabSize
+     * @attr name com.ellis.memberplanet:fabSize
      */
-    public static final int FloatingActionButton_fabSize=4;
+    public static final int FloatingActionButton_fabSize=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#pressedTranslationZ}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_colorDisabled}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_colorDisabled
+     */
+    public static final int FloatingActionButton_fab_colorDisabled=6;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_colorNormal}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_colorNormal
+     */
+    public static final int FloatingActionButton_fab_colorNormal=7;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_colorPressed}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_colorPressed
+     */
+    public static final int FloatingActionButton_fab_colorPressed=8;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_colorRipple}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_colorRipple
+     */
+    public static final int FloatingActionButton_fab_colorRipple=9;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_elevationCompat}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11247,30 +11878,214 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:pressedTranslationZ
+     * @attr name com.ellis.memberplanet:fab_elevationCompat
      */
-    public static final int FloatingActionButton_pressedTranslationZ=5;
+    public static final int FloatingActionButton_fab_elevationCompat=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#rippleColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_hideAnimation}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_hideAnimation
+     */
+    public static final int FloatingActionButton_fab_hideAnimation=11;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_label}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     *
+     * @attr name com.ellis.memberplanet:fab_label
+     */
+    public static final int FloatingActionButton_fab_label=12;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_progress}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be an integer value, such as "<code>100</code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_progress
+     */
+    public static final int FloatingActionButton_fab_progress=13;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_progress_backgroundColor}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:rippleColor
+     * @attr name com.ellis.memberplanet:fab_progress_backgroundColor
      */
-    public static final int FloatingActionButton_rippleColor=6;
+    public static final int FloatingActionButton_fab_progress_backgroundColor=14;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#useCompatPadding}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_progress_color}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_progress_color
+     */
+    public static final int FloatingActionButton_fab_progress_color=15;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_progress_indeterminate}
      * attribute's value can be found in the {@link #FloatingActionButton} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:useCompatPadding
+     * @attr name com.ellis.memberplanet:fab_progress_indeterminate
      */
-    public static final int FloatingActionButton_useCompatPadding=7;
+    public static final int FloatingActionButton_fab_progress_indeterminate=16;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_progress_max}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be an integer value, such as "<code>100</code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_progress_max
+     */
+    public static final int FloatingActionButton_fab_progress_max=17;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_progress_showBackground}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_progress_showBackground
+     */
+    public static final int FloatingActionButton_fab_progress_showBackground=18;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_shadowColor}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_shadowColor
+     */
+    public static final int FloatingActionButton_fab_shadowColor=19;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_shadowRadius}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:fab_shadowRadius
+     */
+    public static final int FloatingActionButton_fab_shadowRadius=20;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_shadowXOffset}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:fab_shadowXOffset
+     */
+    public static final int FloatingActionButton_fab_shadowXOffset=21;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_shadowYOffset}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:fab_shadowYOffset
+     */
+    public static final int FloatingActionButton_fab_shadowYOffset=22;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_showAnimation}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_showAnimation
+     */
+    public static final int FloatingActionButton_fab_showAnimation=23;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_showShadow}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
+     *
+     * @attr name com.ellis.memberplanet:fab_showShadow
+     */
+    public static final int FloatingActionButton_fab_showShadow=24;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fab_size}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>Must be one of the following constant values.</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+     * <tr><td>mini</td><td>1</td><td></td></tr>
+     * <tr><td>normal</td><td>0</td><td></td></tr>
+     * </table>
+     *
+     * @attr name com.ellis.memberplanet:fab_size
+     */
+    public static final int FloatingActionButton_fab_size=25;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#pressedTranslationZ}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:pressedTranslationZ
+     */
+    public static final int FloatingActionButton_pressedTranslationZ=26;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#rippleColor}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:rippleColor
+     */
+    public static final int FloatingActionButton_rippleColor=27;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#useCompatPadding}
+     * attribute's value can be found in the {@link #FloatingActionButton} array.
+     *
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
+     *
+     * @attr name com.ellis.memberplanet:useCompatPadding
+     */
+    public static final int FloatingActionButton_useCompatPadding=28;
     /**
      * Attributes that can be used with a FloatingActionButton_Behavior_Layout.
      * <p>Includes the following attributes:</p>
@@ -11278,7 +12093,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FloatingActionButton_Behavior_Layout_behavior_autoHide com.buah.farmconnect:behavior_autoHide}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionButton_Behavior_Layout_behavior_autoHide com.ellis.memberplanet:behavior_autoHide}</code></td><td></td></tr>
      * </table>
      * @see #FloatingActionButton_Behavior_Layout_behavior_autoHide
      */
@@ -11286,15 +12101,596 @@ public final class R {
         0x7f040037
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#behavior_autoHide}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#behavior_autoHide}
      * attribute's value can be found in the {@link #FloatingActionButton_Behavior_Layout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:behavior_autoHide
+     * @attr name com.ellis.memberplanet:behavior_autoHide
      */
     public static final int FloatingActionButton_Behavior_Layout_behavior_autoHide=0;
+    /**
+     * Attributes that can be used with a FloatingActionMenu.
+     * <p>Includes the following attributes:</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Attribute</th><th>Description</th></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_animationDelayPerItem com.ellis.memberplanet:menu_animationDelayPerItem}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_backgroundColor com.ellis.memberplanet:menu_backgroundColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_buttonSpacing com.ellis.memberplanet:menu_buttonSpacing}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_buttonToggleAnimation com.ellis.memberplanet:menu_buttonToggleAnimation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_colorNormal com.ellis.memberplanet:menu_colorNormal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_colorPressed com.ellis.memberplanet:menu_colorPressed}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_colorRipple com.ellis.memberplanet:menu_colorRipple}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_fab_hide_animation com.ellis.memberplanet:menu_fab_hide_animation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_fab_label com.ellis.memberplanet:menu_fab_label}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_fab_show_animation com.ellis.memberplanet:menu_fab_show_animation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_fab_size com.ellis.memberplanet:menu_fab_size}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_icon com.ellis.memberplanet:menu_icon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_colorNormal com.ellis.memberplanet:menu_labels_colorNormal}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_colorPressed com.ellis.memberplanet:menu_labels_colorPressed}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_colorRipple com.ellis.memberplanet:menu_labels_colorRipple}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_cornerRadius com.ellis.memberplanet:menu_labels_cornerRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_customFont com.ellis.memberplanet:menu_labels_customFont}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_ellipsize com.ellis.memberplanet:menu_labels_ellipsize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_hideAnimation com.ellis.memberplanet:menu_labels_hideAnimation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_margin com.ellis.memberplanet:menu_labels_margin}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_maxLines com.ellis.memberplanet:menu_labels_maxLines}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_padding com.ellis.memberplanet:menu_labels_padding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_paddingBottom com.ellis.memberplanet:menu_labels_paddingBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_paddingLeft com.ellis.memberplanet:menu_labels_paddingLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_paddingRight com.ellis.memberplanet:menu_labels_paddingRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_paddingTop com.ellis.memberplanet:menu_labels_paddingTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_position com.ellis.memberplanet:menu_labels_position}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_showAnimation com.ellis.memberplanet:menu_labels_showAnimation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_showShadow com.ellis.memberplanet:menu_labels_showShadow}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_singleLine com.ellis.memberplanet:menu_labels_singleLine}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_style com.ellis.memberplanet:menu_labels_style}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_textColor com.ellis.memberplanet:menu_labels_textColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_labels_textSize com.ellis.memberplanet:menu_labels_textSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_openDirection com.ellis.memberplanet:menu_openDirection}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_shadowColor com.ellis.memberplanet:menu_shadowColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_shadowRadius com.ellis.memberplanet:menu_shadowRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_shadowXOffset com.ellis.memberplanet:menu_shadowXOffset}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_shadowYOffset com.ellis.memberplanet:menu_shadowYOffset}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FloatingActionMenu_menu_showShadow com.ellis.memberplanet:menu_showShadow}</code></td><td></td></tr>
+     * </table>
+     * @see #FloatingActionMenu_menu_animationDelayPerItem
+     * @see #FloatingActionMenu_menu_backgroundColor
+     * @see #FloatingActionMenu_menu_buttonSpacing
+     * @see #FloatingActionMenu_menu_buttonToggleAnimation
+     * @see #FloatingActionMenu_menu_colorNormal
+     * @see #FloatingActionMenu_menu_colorPressed
+     * @see #FloatingActionMenu_menu_colorRipple
+     * @see #FloatingActionMenu_menu_fab_hide_animation
+     * @see #FloatingActionMenu_menu_fab_label
+     * @see #FloatingActionMenu_menu_fab_show_animation
+     * @see #FloatingActionMenu_menu_fab_size
+     * @see #FloatingActionMenu_menu_icon
+     * @see #FloatingActionMenu_menu_labels_colorNormal
+     * @see #FloatingActionMenu_menu_labels_colorPressed
+     * @see #FloatingActionMenu_menu_labels_colorRipple
+     * @see #FloatingActionMenu_menu_labels_cornerRadius
+     * @see #FloatingActionMenu_menu_labels_customFont
+     * @see #FloatingActionMenu_menu_labels_ellipsize
+     * @see #FloatingActionMenu_menu_labels_hideAnimation
+     * @see #FloatingActionMenu_menu_labels_margin
+     * @see #FloatingActionMenu_menu_labels_maxLines
+     * @see #FloatingActionMenu_menu_labels_padding
+     * @see #FloatingActionMenu_menu_labels_paddingBottom
+     * @see #FloatingActionMenu_menu_labels_paddingLeft
+     * @see #FloatingActionMenu_menu_labels_paddingRight
+     * @see #FloatingActionMenu_menu_labels_paddingTop
+     * @see #FloatingActionMenu_menu_labels_position
+     * @see #FloatingActionMenu_menu_labels_showAnimation
+     * @see #FloatingActionMenu_menu_labels_showShadow
+     * @see #FloatingActionMenu_menu_labels_singleLine
+     * @see #FloatingActionMenu_menu_labels_style
+     * @see #FloatingActionMenu_menu_labels_textColor
+     * @see #FloatingActionMenu_menu_labels_textSize
+     * @see #FloatingActionMenu_menu_openDirection
+     * @see #FloatingActionMenu_menu_shadowColor
+     * @see #FloatingActionMenu_menu_shadowRadius
+     * @see #FloatingActionMenu_menu_shadowXOffset
+     * @see #FloatingActionMenu_menu_shadowYOffset
+     * @see #FloatingActionMenu_menu_showShadow
+     */
+    public static final int[] FloatingActionMenu={
+        0x7f04012a, 0x7f04012b, 0x7f04012c, 0x7f04012d, 
+        0x7f04012e, 0x7f04012f, 0x7f040130, 0x7f040131, 
+        0x7f040132, 0x7f040133, 0x7f040134, 0x7f040135, 
+        0x7f040136, 0x7f040137, 0x7f040138, 0x7f040139, 
+        0x7f04013a, 0x7f04013b, 0x7f04013c, 0x7f04013d, 
+        0x7f04013e, 0x7f04013f, 0x7f040140, 0x7f040141, 
+        0x7f040142, 0x7f040143, 0x7f040144, 0x7f040145, 
+        0x7f040146, 0x7f040147, 0x7f040148, 0x7f040149, 
+        0x7f04014a, 0x7f04014b, 0x7f04014c, 0x7f04014d, 
+        0x7f04014e, 0x7f04014f, 0x7f040150
+      };
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_animationDelayPerItem}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be an integer value, such as "<code>100</code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_animationDelayPerItem
+     */
+    public static final int FloatingActionMenu_menu_animationDelayPerItem=0;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_backgroundColor}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_backgroundColor
+     */
+    public static final int FloatingActionMenu_menu_backgroundColor=1;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_buttonSpacing}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_buttonSpacing
+     */
+    public static final int FloatingActionMenu_menu_buttonSpacing=2;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_buttonToggleAnimation}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_buttonToggleAnimation
+     */
+    public static final int FloatingActionMenu_menu_buttonToggleAnimation=3;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_colorNormal}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_colorNormal
+     */
+    public static final int FloatingActionMenu_menu_colorNormal=4;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_colorPressed}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_colorPressed
+     */
+    public static final int FloatingActionMenu_menu_colorPressed=5;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_colorRipple}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_colorRipple
+     */
+    public static final int FloatingActionMenu_menu_colorRipple=6;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_fab_hide_animation}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_fab_hide_animation
+     */
+    public static final int FloatingActionMenu_menu_fab_hide_animation=7;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_fab_label}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     *
+     * @attr name com.ellis.memberplanet:menu_fab_label
+     */
+    public static final int FloatingActionMenu_menu_fab_label=8;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_fab_show_animation}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_fab_show_animation
+     */
+    public static final int FloatingActionMenu_menu_fab_show_animation=9;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_fab_size}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>Must be one of the following constant values.</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+     * <tr><td>mini</td><td>1</td><td></td></tr>
+     * <tr><td>normal</td><td>0</td><td></td></tr>
+     * </table>
+     *
+     * @attr name com.ellis.memberplanet:menu_fab_size
+     */
+    public static final int FloatingActionMenu_menu_fab_size=10;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_icon}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_icon
+     */
+    public static final int FloatingActionMenu_menu_icon=11;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_colorNormal}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_colorNormal
+     */
+    public static final int FloatingActionMenu_menu_labels_colorNormal=12;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_colorPressed}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_colorPressed
+     */
+    public static final int FloatingActionMenu_menu_labels_colorPressed=13;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_colorRipple}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_colorRipple
+     */
+    public static final int FloatingActionMenu_menu_labels_colorRipple=14;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_cornerRadius}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_cornerRadius
+     */
+    public static final int FloatingActionMenu_menu_labels_cornerRadius=15;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_customFont}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_customFont
+     */
+    public static final int FloatingActionMenu_menu_labels_customFont=16;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_ellipsize}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>Must be one of the following constant values.</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+     * <tr><td>end</td><td>3</td><td></td></tr>
+     * <tr><td>marquee</td><td>4</td><td></td></tr>
+     * <tr><td>middle</td><td>2</td><td></td></tr>
+     * <tr><td>none</td><td>0</td><td></td></tr>
+     * <tr><td>start</td><td>1</td><td></td></tr>
+     * </table>
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_ellipsize
+     */
+    public static final int FloatingActionMenu_menu_labels_ellipsize=17;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_hideAnimation}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_hideAnimation
+     */
+    public static final int FloatingActionMenu_menu_labels_hideAnimation=18;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_margin}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_margin
+     */
+    public static final int FloatingActionMenu_menu_labels_margin=19;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_maxLines}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be an integer value, such as "<code>100</code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_maxLines
+     */
+    public static final int FloatingActionMenu_menu_labels_maxLines=20;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_padding}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_padding
+     */
+    public static final int FloatingActionMenu_menu_labels_padding=21;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_paddingBottom}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_paddingBottom
+     */
+    public static final int FloatingActionMenu_menu_labels_paddingBottom=22;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_paddingLeft}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_paddingLeft
+     */
+    public static final int FloatingActionMenu_menu_labels_paddingLeft=23;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_paddingRight}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_paddingRight
+     */
+    public static final int FloatingActionMenu_menu_labels_paddingRight=24;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_paddingTop}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_paddingTop
+     */
+    public static final int FloatingActionMenu_menu_labels_paddingTop=25;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_position}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>Must be one of the following constant values.</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+     * <tr><td>left</td><td>0</td><td></td></tr>
+     * <tr><td>right</td><td>1</td><td></td></tr>
+     * </table>
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_position
+     */
+    public static final int FloatingActionMenu_menu_labels_position=26;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_showAnimation}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_showAnimation
+     */
+    public static final int FloatingActionMenu_menu_labels_showAnimation=27;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_showShadow}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_showShadow
+     */
+    public static final int FloatingActionMenu_menu_labels_showShadow=28;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_singleLine}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_singleLine
+     */
+    public static final int FloatingActionMenu_menu_labels_singleLine=29;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_style}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_style
+     */
+    public static final int FloatingActionMenu_menu_labels_style=30;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_textColor}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_textColor
+     */
+    public static final int FloatingActionMenu_menu_labels_textColor=31;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_labels_textSize}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_labels_textSize
+     */
+    public static final int FloatingActionMenu_menu_labels_textSize=32;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_openDirection}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>Must be one of the following constant values.</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+     * <tr><td>down</td><td>1</td><td></td></tr>
+     * <tr><td>up</td><td>0</td><td></td></tr>
+     * </table>
+     *
+     * @attr name com.ellis.memberplanet:menu_openDirection
+     */
+    public static final int FloatingActionMenu_menu_openDirection=33;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_shadowColor}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
+     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
+     * "<code>#<i>aarrggbb</i></code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_shadowColor
+     */
+    public static final int FloatingActionMenu_menu_shadowColor=34;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_shadowRadius}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_shadowRadius
+     */
+    public static final int FloatingActionMenu_menu_shadowRadius=35;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_shadowXOffset}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_shadowXOffset
+     */
+    public static final int FloatingActionMenu_menu_shadowXOffset=36;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_shadowYOffset}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a dimension value, which is a floating point number appended with a
+     * unit such as "<code>14.5sp</code>".
+     * Available units are: px (pixels), dp (density-independent pixels),
+     * sp (scaled pixels based on preferred font size), in (inches), and
+     * mm (millimeters).
+     *
+     * @attr name com.ellis.memberplanet:menu_shadowYOffset
+     */
+    public static final int FloatingActionMenu_menu_shadowYOffset=37;
+    /**
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu_showShadow}
+     * attribute's value can be found in the {@link #FloatingActionMenu} array.
+     *
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
+     *
+     * @attr name com.ellis.memberplanet:menu_showShadow
+     */
+    public static final int FloatingActionMenu_menu_showShadow=38;
     /**
      * Attributes that can be used with a FontFamily.
      * <p>Includes the following attributes:</p>
@@ -11302,12 +12698,12 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderAuthority com.buah.farmconnect:fontProviderAuthority}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderCerts com.buah.farmconnect:fontProviderCerts}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy com.buah.farmconnect:fontProviderFetchStrategy}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout com.buah.farmconnect:fontProviderFetchTimeout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderPackage com.buah.farmconnect:fontProviderPackage}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderQuery com.buah.farmconnect:fontProviderQuery}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderAuthority com.ellis.memberplanet:fontProviderAuthority}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderCerts com.ellis.memberplanet:fontProviderCerts}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy com.ellis.memberplanet:fontProviderFetchStrategy}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout com.ellis.memberplanet:fontProviderFetchTimeout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderPackage com.ellis.memberplanet:fontProviderPackage}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderQuery com.ellis.memberplanet:fontProviderQuery}</code></td><td></td></tr>
      * </table>
      * @see #FontFamily_fontProviderAuthority
      * @see #FontFamily_fontProviderCerts
@@ -11317,21 +12713,21 @@ public final class R {
      * @see #FontFamily_fontProviderQuery
      */
     public static final int[] FontFamily={
-        0x7f0400a6, 0x7f0400a7, 0x7f0400a8, 0x7f0400a9, 
-        0x7f0400aa, 0x7f0400ab
+        0x7f0400be, 0x7f0400bf, 0x7f0400c0, 0x7f0400c1, 
+        0x7f0400c2, 0x7f0400c3
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fontProviderAuthority}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fontProviderAuthority}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:fontProviderAuthority
+     * @attr name com.ellis.memberplanet:fontProviderAuthority
      */
     public static final int FontFamily_fontProviderAuthority=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fontProviderCerts}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fontProviderCerts}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11339,11 +12735,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:fontProviderCerts
+     * @attr name com.ellis.memberplanet:fontProviderCerts
      */
     public static final int FontFamily_fontProviderCerts=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fontProviderFetchStrategy}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fontProviderFetchStrategy}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -11356,11 +12752,11 @@ public final class R {
      * <tr><td>blocking</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:fontProviderFetchStrategy
+     * @attr name com.ellis.memberplanet:fontProviderFetchStrategy
      */
     public static final int FontFamily_fontProviderFetchStrategy=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fontProviderFetchTimeout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fontProviderFetchTimeout}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
@@ -11373,27 +12769,27 @@ public final class R {
      * <tr><td>forever</td><td>ffffffff</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:fontProviderFetchTimeout
+     * @attr name com.ellis.memberplanet:fontProviderFetchTimeout
      */
     public static final int FontFamily_fontProviderFetchTimeout=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fontProviderPackage}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fontProviderPackage}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:fontProviderPackage
+     * @attr name com.ellis.memberplanet:fontProviderPackage
      */
     public static final int FontFamily_fontProviderPackage=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fontProviderQuery}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fontProviderQuery}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:fontProviderQuery
+     * @attr name com.ellis.memberplanet:fontProviderQuery
      */
     public static final int FontFamily_fontProviderQuery=5;
     /**
@@ -11406,9 +12802,9 @@ public final class R {
      * <tr><td><code>{@link #FontFamilyFont_android_font android:font}</code></td><td></td></tr>
      * <tr><td><code>{@link #FontFamilyFont_android_fontWeight android:fontWeight}</code></td><td></td></tr>
      * <tr><td><code>{@link #FontFamilyFont_android_fontStyle android:fontStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_font com.buah.farmconnect:font}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontStyle com.buah.farmconnect:fontStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontWeight com.buah.farmconnect:fontWeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_font com.ellis.memberplanet:font}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontStyle com.ellis.memberplanet:fontStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontWeight com.ellis.memberplanet:fontWeight}</code></td><td></td></tr>
      * </table>
      * @see #FontFamilyFont_android_font
      * @see #FontFamilyFont_android_fontWeight
@@ -11418,8 +12814,8 @@ public final class R {
      * @see #FontFamilyFont_fontWeight
      */
     public static final int[] FontFamilyFont={
-        0x01010532, 0x01010533, 0x0101053f, 0x7f0400a4, 
-        0x7f0400ac, 0x7f0400ad
+        0x01010532, 0x01010533, 0x0101053f, 0x7f0400bc, 
+        0x7f0400c4, 0x7f0400c5
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#font}
@@ -11460,7 +12856,7 @@ public final class R {
      */
     public static final int FontFamilyFont_android_fontStyle=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#font}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#font}
      * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11468,11 +12864,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:font
+     * @attr name com.ellis.memberplanet:font
      */
     public static final int FontFamilyFont_font=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fontStyle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fontStyle}
      * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -11485,16 +12881,16 @@ public final class R {
      * <tr><td>normal</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:fontStyle
+     * @attr name com.ellis.memberplanet:fontStyle
      */
     public static final int FontFamilyFont_fontStyle=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fontWeight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fontWeight}
      * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:fontWeight
+     * @attr name com.ellis.memberplanet:fontWeight
      */
     public static final int FontFamilyFont_fontWeight=5;
     /**
@@ -11506,14 +12902,14 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ForegroundLinearLayout_android_foreground android:foreground}</code></td><td></td></tr>
      * <tr><td><code>{@link #ForegroundLinearLayout_android_foregroundGravity android:foregroundGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ForegroundLinearLayout_foregroundInsidePadding com.buah.farmconnect:foregroundInsidePadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ForegroundLinearLayout_foregroundInsidePadding com.ellis.memberplanet:foregroundInsidePadding}</code></td><td></td></tr>
      * </table>
      * @see #ForegroundLinearLayout_android_foreground
      * @see #ForegroundLinearLayout_android_foregroundGravity
      * @see #ForegroundLinearLayout_foregroundInsidePadding
      */
     public static final int[] ForegroundLinearLayout={
-        0x01010109, 0x01010200, 0x7f0400ae
+        0x01010109, 0x01010200, 0x7f0400c6
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#foreground}
@@ -11558,13 +12954,13 @@ public final class R {
      */
     public static final int ForegroundLinearLayout_android_foregroundGravity=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#foregroundInsidePadding}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#foregroundInsidePadding}
      * attribute's value can be found in the {@link #ForegroundLinearLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:foregroundInsidePadding
+     * @attr name com.ellis.memberplanet:foregroundInsidePadding
      */
     public static final int ForegroundLinearLayout_foregroundInsidePadding=2;
     /**
@@ -11610,10 +13006,10 @@ public final class R {
      * <tr><td><code>{@link #LinearLayoutCompat_android_baselineAligned android:baselineAligned}</code></td><td></td></tr>
      * <tr><td><code>{@link #LinearLayoutCompat_android_baselineAlignedChildIndex android:baselineAlignedChildIndex}</code></td><td></td></tr>
      * <tr><td><code>{@link #LinearLayoutCompat_android_weightSum android:weightSum}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LinearLayoutCompat_divider com.buah.farmconnect:divider}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LinearLayoutCompat_dividerPadding com.buah.farmconnect:dividerPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LinearLayoutCompat_measureWithLargestChild com.buah.farmconnect:measureWithLargestChild}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LinearLayoutCompat_showDividers com.buah.farmconnect:showDividers}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LinearLayoutCompat_divider com.ellis.memberplanet:divider}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LinearLayoutCompat_dividerPadding com.ellis.memberplanet:dividerPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LinearLayoutCompat_measureWithLargestChild com.ellis.memberplanet:measureWithLargestChild}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LinearLayoutCompat_showDividers com.ellis.memberplanet:showDividers}</code></td><td></td></tr>
      * </table>
      * @see #LinearLayoutCompat_android_gravity
      * @see #LinearLayoutCompat_android_orientation
@@ -11627,8 +13023,8 @@ public final class R {
      */
     public static final int[] LinearLayoutCompat={
         0x010100af, 0x010100c4, 0x01010126, 0x01010127, 
-        0x01010128, 0x7f040085, 0x7f040087, 0x7f040110, 
-        0x7f04013d
+        0x01010128, 0x7f040088, 0x7f04008a, 0x7f040128, 
+        0x7f04017c
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#gravity}
@@ -11705,7 +13101,7 @@ public final class R {
      */
     public static final int LinearLayoutCompat_android_weightSum=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#divider}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#divider}
      * attribute's value can be found in the {@link #LinearLayoutCompat} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -11713,11 +13109,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:divider
+     * @attr name com.ellis.memberplanet:divider
      */
     public static final int LinearLayoutCompat_divider=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#dividerPadding}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#dividerPadding}
      * attribute's value can be found in the {@link #LinearLayoutCompat} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -11726,21 +13122,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:dividerPadding
+     * @attr name com.ellis.memberplanet:dividerPadding
      */
     public static final int LinearLayoutCompat_dividerPadding=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#measureWithLargestChild}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#measureWithLargestChild}
      * attribute's value can be found in the {@link #LinearLayoutCompat} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:measureWithLargestChild
+     * @attr name com.ellis.memberplanet:measureWithLargestChild
      */
     public static final int LinearLayoutCompat_measureWithLargestChild=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#showDividers}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#showDividers}
      * attribute's value can be found in the {@link #LinearLayoutCompat} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -11755,7 +13151,7 @@ public final class R {
      * <tr><td>none</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:showDividers
+     * @attr name com.ellis.memberplanet:showDividers
      */
     public static final int LinearLayoutCompat_showDividers=8;
     /**
@@ -11911,38 +13307,38 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #LoadingImageView_circleCrop com.buah.farmconnect:circleCrop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LoadingImageView_imageAspectRatio com.buah.farmconnect:imageAspectRatio}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust com.buah.farmconnect:imageAspectRatioAdjust}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LoadingImageView_circleCrop com.ellis.memberplanet:circleCrop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LoadingImageView_imageAspectRatio com.ellis.memberplanet:imageAspectRatio}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust com.ellis.memberplanet:imageAspectRatioAdjust}</code></td><td></td></tr>
      * </table>
      * @see #LoadingImageView_circleCrop
      * @see #LoadingImageView_imageAspectRatio
      * @see #LoadingImageView_imageAspectRatioAdjust
      */
     public static final int[] LoadingImageView={
-        0x7f040054, 0x7f0400bd, 0x7f0400be
+        0x7f040056, 0x7f0400d5, 0x7f0400d6
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#circleCrop}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#circleCrop}
      * attribute's value can be found in the {@link #LoadingImageView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:circleCrop
+     * @attr name com.ellis.memberplanet:circleCrop
      */
     public static final int LoadingImageView_circleCrop=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#imageAspectRatio}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#imageAspectRatio}
      * attribute's value can be found in the {@link #LoadingImageView} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.buah.farmconnect:imageAspectRatio
+     * @attr name com.ellis.memberplanet:imageAspectRatio
      */
     public static final int LoadingImageView_imageAspectRatio=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#imageAspectRatioAdjust}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#imageAspectRatioAdjust}
      * attribute's value can be found in the {@link #LoadingImageView} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -11956,7 +13352,7 @@ public final class R {
      * <tr><td>none</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:imageAspectRatioAdjust
+     * @attr name com.ellis.memberplanet:imageAspectRatioAdjust
      */
     public static final int LoadingImageView_imageAspectRatioAdjust=2;
     /**
@@ -12082,16 +13478,16 @@ public final class R {
      * <tr><td><code>{@link #MenuItem_android_numericShortcut android:numericShortcut}</code></td><td></td></tr>
      * <tr><td><code>{@link #MenuItem_android_checkable android:checkable}</code></td><td></td></tr>
      * <tr><td><code>{@link #MenuItem_android_onClick android:onClick}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_actionLayout com.buah.farmconnect:actionLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_actionProviderClass com.buah.farmconnect:actionProviderClass}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_actionViewClass com.buah.farmconnect:actionViewClass}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_alphabeticModifiers com.buah.farmconnect:alphabeticModifiers}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_contentDescription com.buah.farmconnect:contentDescription}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_iconTint com.buah.farmconnect:iconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_iconTintMode com.buah.farmconnect:iconTintMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_numericModifiers com.buah.farmconnect:numericModifiers}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_showAsAction com.buah.farmconnect:showAsAction}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuItem_tooltipText com.buah.farmconnect:tooltipText}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_actionLayout com.ellis.memberplanet:actionLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_actionProviderClass com.ellis.memberplanet:actionProviderClass}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_actionViewClass com.ellis.memberplanet:actionViewClass}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_alphabeticModifiers com.ellis.memberplanet:alphabeticModifiers}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_contentDescription com.ellis.memberplanet:contentDescription}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_iconTint com.ellis.memberplanet:iconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_iconTintMode com.ellis.memberplanet:iconTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_numericModifiers com.ellis.memberplanet:numericModifiers}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_showAsAction com.ellis.memberplanet:showAsAction}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuItem_tooltipText com.ellis.memberplanet:tooltipText}</code></td><td></td></tr>
      * </table>
      * @see #MenuItem_android_icon
      * @see #MenuItem_android_enabled
@@ -12122,8 +13518,8 @@ public final class R {
         0x01010194, 0x010101de, 0x010101df, 0x010101e1, 
         0x010101e2, 0x010101e3, 0x010101e4, 0x010101e5, 
         0x0101026f, 0x7f04000d, 0x7f04001f, 0x7f040020, 
-        0x7f040028, 0x7f04006e, 0x7f0400ba, 0x7f0400bb, 
-        0x7f040116, 0x7f04013c, 0x7f040191
+        0x7f040028, 0x7f040070, 0x7f0400d2, 0x7f0400d3, 
+        0x7f040155, 0x7f04017b, 0x7f0401d0
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#icon}
@@ -12268,7 +13664,7 @@ public final class R {
      */
     public static final int MenuItem_android_onClick=12;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionLayout}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12276,31 +13672,31 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:actionLayout
+     * @attr name com.ellis.memberplanet:actionLayout
      */
     public static final int MenuItem_actionLayout=13;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionProviderClass}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionProviderClass}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:actionProviderClass
+     * @attr name com.ellis.memberplanet:actionProviderClass
      */
     public static final int MenuItem_actionProviderClass=14;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#actionViewClass}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#actionViewClass}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:actionViewClass
+     * @attr name com.ellis.memberplanet:actionViewClass
      */
     public static final int MenuItem_actionViewClass=15;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#alphabeticModifiers}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#alphabeticModifiers}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -12317,32 +13713,32 @@ public final class R {
      * <tr><td>SYM</td><td>4</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:alphabeticModifiers
+     * @attr name com.ellis.memberplanet:alphabeticModifiers
      */
     public static final int MenuItem_alphabeticModifiers=16;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentDescription}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentDescription}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:contentDescription
+     * @attr name com.ellis.memberplanet:contentDescription
      */
     public static final int MenuItem_contentDescription=17;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#iconTint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#iconTint}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:iconTint
+     * @attr name com.ellis.memberplanet:iconTint
      */
     public static final int MenuItem_iconTint=18;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#iconTintMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#iconTintMode}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -12359,11 +13755,11 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:iconTintMode
+     * @attr name com.ellis.memberplanet:iconTintMode
      */
     public static final int MenuItem_iconTintMode=19;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#numericModifiers}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#numericModifiers}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -12380,11 +13776,11 @@ public final class R {
      * <tr><td>SYM</td><td>4</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:numericModifiers
+     * @attr name com.ellis.memberplanet:numericModifiers
      */
     public static final int MenuItem_numericModifiers=20;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#showAsAction}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#showAsAction}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -12400,17 +13796,17 @@ public final class R {
      * <tr><td>withText</td><td>4</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:showAsAction
+     * @attr name com.ellis.memberplanet:showAsAction
      */
     public static final int MenuItem_showAsAction=21;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tooltipText}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tooltipText}
      * attribute's value can be found in the {@link #MenuItem} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:tooltipText
+     * @attr name com.ellis.memberplanet:tooltipText
      */
     public static final int MenuItem_tooltipText=22;
     /**
@@ -12427,8 +13823,8 @@ public final class R {
      * <tr><td><code>{@link #MenuView_android_headerBackground android:headerBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #MenuView_android_itemBackground android:itemBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #MenuView_android_itemIconDisabledAlpha android:itemIconDisabledAlpha}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuView_preserveIconSpacing com.buah.farmconnect:preserveIconSpacing}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MenuView_subMenuArrow com.buah.farmconnect:subMenuArrow}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuView_preserveIconSpacing com.ellis.memberplanet:preserveIconSpacing}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MenuView_subMenuArrow com.ellis.memberplanet:subMenuArrow}</code></td><td></td></tr>
      * </table>
      * @see #MenuView_android_windowAnimationStyle
      * @see #MenuView_android_itemTextAppearance
@@ -12442,8 +13838,8 @@ public final class R {
      */
     public static final int[] MenuView={
         0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e, 
-        0x0101012f, 0x01010130, 0x01010131, 0x7f040127, 
-        0x7f040150
+        0x0101012f, 0x01010130, 0x01010131, 0x7f040166, 
+        0x7f04018f
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#windowAnimationStyle}
@@ -12533,17 +13929,17 @@ public final class R {
      */
     public static final int MenuView_android_itemIconDisabledAlpha=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#preserveIconSpacing}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#preserveIconSpacing}
      * attribute's value can be found in the {@link #MenuView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:preserveIconSpacing
+     * @attr name com.ellis.memberplanet:preserveIconSpacing
      */
     public static final int MenuView_preserveIconSpacing=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#subMenuArrow}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#subMenuArrow}
      * attribute's value can be found in the {@link #MenuView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12551,7 +13947,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:subMenuArrow
+     * @attr name com.ellis.memberplanet:subMenuArrow
      */
     public static final int MenuView_subMenuArrow=8;
     /**
@@ -12564,13 +13960,13 @@ public final class R {
      * <tr><td><code>{@link #NavigationView_android_background android:background}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_android_fitsSystemWindows android:fitsSystemWindows}</code></td><td></td></tr>
      * <tr><td><code>{@link #NavigationView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_elevation com.buah.farmconnect:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_headerLayout com.buah.farmconnect:headerLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_itemBackground com.buah.farmconnect:itemBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_itemIconTint com.buah.farmconnect:itemIconTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_itemTextAppearance com.buah.farmconnect:itemTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_itemTextColor com.buah.farmconnect:itemTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #NavigationView_menu com.buah.farmconnect:menu}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_elevation com.ellis.memberplanet:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_headerLayout com.ellis.memberplanet:headerLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_itemBackground com.ellis.memberplanet:itemBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_itemIconTint com.ellis.memberplanet:itemIconTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_itemTextAppearance com.ellis.memberplanet:itemTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_itemTextColor com.ellis.memberplanet:itemTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #NavigationView_menu com.ellis.memberplanet:menu}</code></td><td></td></tr>
      * </table>
      * @see #NavigationView_android_background
      * @see #NavigationView_android_fitsSystemWindows
@@ -12584,9 +13980,9 @@ public final class R {
      * @see #NavigationView_menu
      */
     public static final int[] NavigationView={
-        0x010100d4, 0x010100dd, 0x0101011f, 0x7f040090, 
-        0x7f0400b1, 0x7f0400c4, 0x7f0400c5, 0x7f0400c7, 
-        0x7f0400c8, 0x7f040111
+        0x010100d4, 0x010100dd, 0x0101011f, 0x7f040093, 
+        0x7f0400c9, 0x7f0400dc, 0x7f0400dd, 0x7f0400df, 
+        0x7f0400e0, 0x7f040129
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#background}
@@ -12627,7 +14023,7 @@ public final class R {
      */
     public static final int NavigationView_android_maxWidth=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#elevation}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12636,11 +14032,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:elevation
+     * @attr name com.ellis.memberplanet:elevation
      */
     public static final int NavigationView_elevation=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#headerLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#headerLayout}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12648,11 +14044,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:headerLayout
+     * @attr name com.ellis.memberplanet:headerLayout
      */
     public static final int NavigationView_headerLayout=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#itemBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#itemBackground}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12660,22 +14056,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:itemBackground
+     * @attr name com.ellis.memberplanet:itemBackground
      */
     public static final int NavigationView_itemBackground=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#itemIconTint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#itemIconTint}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:itemIconTint
+     * @attr name com.ellis.memberplanet:itemIconTint
      */
     public static final int NavigationView_itemIconTint=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#itemTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#itemTextAppearance}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12683,22 +14079,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:itemTextAppearance
+     * @attr name com.ellis.memberplanet:itemTextAppearance
      */
     public static final int NavigationView_itemTextAppearance=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#itemTextColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#itemTextColor}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:itemTextColor
+     * @attr name com.ellis.memberplanet:itemTextColor
      */
     public static final int NavigationView_itemTextColor=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#menu}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#menu}
      * attribute's value can be found in the {@link #NavigationView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12706,7 +14102,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:menu
+     * @attr name com.ellis.memberplanet:menu
      */
     public static final int NavigationView_menu=9;
     /**
@@ -12718,14 +14114,14 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #PopupWindow_android_popupBackground android:popupBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #PopupWindow_android_popupAnimationStyle android:popupAnimationStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #PopupWindow_overlapAnchor com.buah.farmconnect:overlapAnchor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #PopupWindow_overlapAnchor com.ellis.memberplanet:overlapAnchor}</code></td><td></td></tr>
      * </table>
      * @see #PopupWindow_android_popupBackground
      * @see #PopupWindow_android_popupAnimationStyle
      * @see #PopupWindow_overlapAnchor
      */
     public static final int[] PopupWindow={
-        0x01010176, 0x010102c9, 0x7f040117
+        0x01010176, 0x010102c9, 0x7f040156
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#popupBackground}
@@ -12755,13 +14151,13 @@ public final class R {
      */
     public static final int PopupWindow_android_popupAnimationStyle=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#overlapAnchor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#overlapAnchor}
      * attribute's value can be found in the {@link #PopupWindow} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:overlapAnchor
+     * @attr name com.ellis.memberplanet:overlapAnchor
      */
     public static final int PopupWindow_overlapAnchor=2;
     /**
@@ -12771,21 +14167,21 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #PopupWindowBackgroundState_state_above_anchor com.buah.farmconnect:state_above_anchor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #PopupWindowBackgroundState_state_above_anchor com.ellis.memberplanet:state_above_anchor}</code></td><td></td></tr>
      * </table>
      * @see #PopupWindowBackgroundState_state_above_anchor
      */
     public static final int[] PopupWindowBackgroundState={
-        0x7f04014b
+        0x7f04018a
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#state_above_anchor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#state_above_anchor}
      * attribute's value can be found in the {@link #PopupWindowBackgroundState} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:state_above_anchor
+     * @attr name com.ellis.memberplanet:state_above_anchor
      */
     public static final int PopupWindowBackgroundState_state_above_anchor=0;
     /**
@@ -12795,17 +14191,17 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #RecycleListView_paddingBottomNoButtons com.buah.farmconnect:paddingBottomNoButtons}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecycleListView_paddingTopNoTitle com.buah.farmconnect:paddingTopNoTitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecycleListView_paddingBottomNoButtons com.ellis.memberplanet:paddingBottomNoButtons}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecycleListView_paddingTopNoTitle com.ellis.memberplanet:paddingTopNoTitle}</code></td><td></td></tr>
      * </table>
      * @see #RecycleListView_paddingBottomNoButtons
      * @see #RecycleListView_paddingTopNoTitle
      */
     public static final int[] RecycleListView={
-        0x7f040118, 0x7f04011b
+        0x7f040157, 0x7f04015a
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#paddingBottomNoButtons}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#paddingBottomNoButtons}
      * attribute's value can be found in the {@link #RecycleListView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12814,11 +14210,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:paddingBottomNoButtons
+     * @attr name com.ellis.memberplanet:paddingBottomNoButtons
      */
     public static final int RecycleListView_paddingBottomNoButtons=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#paddingTopNoTitle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#paddingTopNoTitle}
      * attribute's value can be found in the {@link #RecycleListView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -12827,7 +14223,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:paddingTopNoTitle
+     * @attr name com.ellis.memberplanet:paddingTopNoTitle
      */
     public static final int RecycleListView_paddingTopNoTitle=1;
     /**
@@ -12839,15 +14235,15 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #RecyclerView_android_orientation android:orientation}</code></td><td></td></tr>
      * <tr><td><code>{@link #RecyclerView_android_descendantFocusability android:descendantFocusability}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_fastScrollEnabled com.buah.farmconnect:fastScrollEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_fastScrollHorizontalThumbDrawable com.buah.farmconnect:fastScrollHorizontalThumbDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_fastScrollHorizontalTrackDrawable com.buah.farmconnect:fastScrollHorizontalTrackDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_fastScrollVerticalThumbDrawable com.buah.farmconnect:fastScrollVerticalThumbDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_fastScrollVerticalTrackDrawable com.buah.farmconnect:fastScrollVerticalTrackDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_layoutManager com.buah.farmconnect:layoutManager}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_reverseLayout com.buah.farmconnect:reverseLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_spanCount com.buah.farmconnect:spanCount}</code></td><td></td></tr>
-     * <tr><td><code>{@link #RecyclerView_stackFromEnd com.buah.farmconnect:stackFromEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_fastScrollEnabled com.ellis.memberplanet:fastScrollEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_fastScrollHorizontalThumbDrawable com.ellis.memberplanet:fastScrollHorizontalThumbDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_fastScrollHorizontalTrackDrawable com.ellis.memberplanet:fastScrollHorizontalTrackDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_fastScrollVerticalThumbDrawable com.ellis.memberplanet:fastScrollVerticalThumbDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_fastScrollVerticalTrackDrawable com.ellis.memberplanet:fastScrollVerticalTrackDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_layoutManager com.ellis.memberplanet:layoutManager}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_reverseLayout com.ellis.memberplanet:reverseLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_spanCount com.ellis.memberplanet:spanCount}</code></td><td></td></tr>
+     * <tr><td><code>{@link #RecyclerView_stackFromEnd com.ellis.memberplanet:stackFromEnd}</code></td><td></td></tr>
      * </table>
      * @see #RecyclerView_android_orientation
      * @see #RecyclerView_android_descendantFocusability
@@ -12862,9 +14258,9 @@ public final class R {
      * @see #RecyclerView_stackFromEnd
      */
     public static final int[] RecyclerView={
-        0x010100c4, 0x010100f1, 0x7f04009d, 0x7f04009e, 
-        0x7f04009f, 0x7f0400a0, 0x7f0400a1, 0x7f0400cb, 
-        0x7f040131, 0x7f040141, 0x7f040147
+        0x010100c4, 0x010100f1, 0x7f0400b5, 0x7f0400b6, 
+        0x7f0400b7, 0x7f0400b8, 0x7f0400b9, 0x7f0400e3, 
+        0x7f040170, 0x7f040180, 0x7f040186
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#orientation}
@@ -12902,17 +14298,17 @@ public final class R {
      */
     public static final int RecyclerView_android_descendantFocusability=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fastScrollEnabled}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fastScrollEnabled}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:fastScrollEnabled
+     * @attr name com.ellis.memberplanet:fastScrollEnabled
      */
     public static final int RecyclerView_fastScrollEnabled=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fastScrollHorizontalThumbDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fastScrollHorizontalThumbDrawable}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12920,11 +14316,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:fastScrollHorizontalThumbDrawable
+     * @attr name com.ellis.memberplanet:fastScrollHorizontalThumbDrawable
      */
     public static final int RecyclerView_fastScrollHorizontalThumbDrawable=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fastScrollHorizontalTrackDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fastScrollHorizontalTrackDrawable}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12932,11 +14328,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:fastScrollHorizontalTrackDrawable
+     * @attr name com.ellis.memberplanet:fastScrollHorizontalTrackDrawable
      */
     public static final int RecyclerView_fastScrollHorizontalTrackDrawable=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fastScrollVerticalThumbDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fastScrollVerticalThumbDrawable}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12944,11 +14340,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:fastScrollVerticalThumbDrawable
+     * @attr name com.ellis.memberplanet:fastScrollVerticalThumbDrawable
      */
     public static final int RecyclerView_fastScrollVerticalThumbDrawable=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fastScrollVerticalTrackDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fastScrollVerticalTrackDrawable}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -12956,46 +14352,46 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:fastScrollVerticalTrackDrawable
+     * @attr name com.ellis.memberplanet:fastScrollVerticalTrackDrawable
      */
     public static final int RecyclerView_fastScrollVerticalTrackDrawable=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layoutManager}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layoutManager}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:layoutManager
+     * @attr name com.ellis.memberplanet:layoutManager
      */
     public static final int RecyclerView_layoutManager=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#reverseLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#reverseLayout}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:reverseLayout
+     * @attr name com.ellis.memberplanet:reverseLayout
      */
     public static final int RecyclerView_reverseLayout=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#spanCount}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#spanCount}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:spanCount
+     * @attr name com.ellis.memberplanet:spanCount
      */
     public static final int RecyclerView_spanCount=9;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#stackFromEnd}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#stackFromEnd}
      * attribute's value can be found in the {@link #RecyclerView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:stackFromEnd
+     * @attr name com.ellis.memberplanet:stackFromEnd
      */
     public static final int RecyclerView_stackFromEnd=10;
     /**
@@ -13005,15 +14401,15 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ScrimInsetsFrameLayout_insetForeground com.buah.farmconnect:insetForeground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ScrimInsetsFrameLayout_insetForeground com.ellis.memberplanet:insetForeground}</code></td><td></td></tr>
      * </table>
      * @see #ScrimInsetsFrameLayout_insetForeground
      */
     public static final int[] ScrimInsetsFrameLayout={
-        0x7f0400c2
+        0x7f0400da
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#insetForeground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#insetForeground}
      * attribute's value can be found in the {@link #ScrimInsetsFrameLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13024,7 +14420,7 @@ public final class R {
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:insetForeground
+     * @attr name com.ellis.memberplanet:insetForeground
      */
     public static final int ScrimInsetsFrameLayout_insetForeground=0;
     /**
@@ -13034,7 +14430,7 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #ScrollingViewBehavior_Layout_behavior_overlapTop com.buah.farmconnect:behavior_overlapTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ScrollingViewBehavior_Layout_behavior_overlapTop com.ellis.memberplanet:behavior_overlapTop}</code></td><td></td></tr>
      * </table>
      * @see #ScrollingViewBehavior_Layout_behavior_overlapTop
      */
@@ -13042,7 +14438,7 @@ public final class R {
         0x7f040039
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#behavior_overlapTop}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#behavior_overlapTop}
      * attribute's value can be found in the {@link #ScrollingViewBehavior_Layout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13051,7 +14447,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:behavior_overlapTop
+     * @attr name com.ellis.memberplanet:behavior_overlapTop
      */
     public static final int ScrollingViewBehavior_Layout_behavior_overlapTop=0;
     /**
@@ -13065,19 +14461,19 @@ public final class R {
      * <tr><td><code>{@link #SearchView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
      * <tr><td><code>{@link #SearchView_android_inputType android:inputType}</code></td><td></td></tr>
      * <tr><td><code>{@link #SearchView_android_imeOptions android:imeOptions}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_closeIcon com.buah.farmconnect:closeIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_commitIcon com.buah.farmconnect:commitIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_defaultQueryHint com.buah.farmconnect:defaultQueryHint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_goIcon com.buah.farmconnect:goIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_iconifiedByDefault com.buah.farmconnect:iconifiedByDefault}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_layout com.buah.farmconnect:layout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_queryBackground com.buah.farmconnect:queryBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_queryHint com.buah.farmconnect:queryHint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_searchHintIcon com.buah.farmconnect:searchHintIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_searchIcon com.buah.farmconnect:searchIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_submitBackground com.buah.farmconnect:submitBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_suggestionRowLayout com.buah.farmconnect:suggestionRowLayout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SearchView_voiceIcon com.buah.farmconnect:voiceIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_closeIcon com.ellis.memberplanet:closeIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_commitIcon com.ellis.memberplanet:commitIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_defaultQueryHint com.ellis.memberplanet:defaultQueryHint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_goIcon com.ellis.memberplanet:goIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_iconifiedByDefault com.ellis.memberplanet:iconifiedByDefault}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_layout com.ellis.memberplanet:layout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_queryBackground com.ellis.memberplanet:queryBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_queryHint com.ellis.memberplanet:queryHint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_searchHintIcon com.ellis.memberplanet:searchHintIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_searchIcon com.ellis.memberplanet:searchIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_submitBackground com.ellis.memberplanet:submitBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_suggestionRowLayout com.ellis.memberplanet:suggestionRowLayout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SearchView_voiceIcon com.ellis.memberplanet:voiceIcon}</code></td><td></td></tr>
      * </table>
      * @see #SearchView_android_focusable
      * @see #SearchView_android_maxWidth
@@ -13099,10 +14495,10 @@ public final class R {
      */
     public static final int[] SearchView={
         0x010100da, 0x0101011f, 0x01010220, 0x01010264, 
-        0x7f04005a, 0x7f04006c, 0x7f040081, 0x7f0400b0, 
-        0x7f0400bc, 0x7f0400ca, 0x7f04012b, 0x7f04012c, 
-        0x7f040136, 0x7f040137, 0x7f040151, 0x7f040156, 
-        0x7f040196
+        0x7f04005c, 0x7f04006e, 0x7f040084, 0x7f0400c8, 
+        0x7f0400d4, 0x7f0400e2, 0x7f04016a, 0x7f04016b, 
+        0x7f040175, 0x7f040176, 0x7f040190, 0x7f040195, 
+        0x7f0401d6
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#focusable}
@@ -13215,7 +14611,7 @@ public final class R {
      */
     public static final int SearchView_android_imeOptions=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#closeIcon}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#closeIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13223,11 +14619,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:closeIcon
+     * @attr name com.ellis.memberplanet:closeIcon
      */
     public static final int SearchView_closeIcon=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#commitIcon}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#commitIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13235,21 +14631,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:commitIcon
+     * @attr name com.ellis.memberplanet:commitIcon
      */
     public static final int SearchView_commitIcon=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#defaultQueryHint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#defaultQueryHint}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:defaultQueryHint
+     * @attr name com.ellis.memberplanet:defaultQueryHint
      */
     public static final int SearchView_defaultQueryHint=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#goIcon}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#goIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13257,21 +14653,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:goIcon
+     * @attr name com.ellis.memberplanet:goIcon
      */
     public static final int SearchView_goIcon=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#iconifiedByDefault}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#iconifiedByDefault}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:iconifiedByDefault
+     * @attr name com.ellis.memberplanet:iconifiedByDefault
      */
     public static final int SearchView_iconifiedByDefault=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#layout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#layout}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13279,11 +14675,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:layout
+     * @attr name com.ellis.memberplanet:layout
      */
     public static final int SearchView_layout=9;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#queryBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#queryBackground}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13291,21 +14687,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:queryBackground
+     * @attr name com.ellis.memberplanet:queryBackground
      */
     public static final int SearchView_queryBackground=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#queryHint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#queryHint}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:queryHint
+     * @attr name com.ellis.memberplanet:queryHint
      */
     public static final int SearchView_queryHint=11;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#searchHintIcon}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#searchHintIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13313,11 +14709,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:searchHintIcon
+     * @attr name com.ellis.memberplanet:searchHintIcon
      */
     public static final int SearchView_searchHintIcon=12;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#searchIcon}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#searchIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13325,11 +14721,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:searchIcon
+     * @attr name com.ellis.memberplanet:searchIcon
      */
     public static final int SearchView_searchIcon=13;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#submitBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#submitBackground}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13337,11 +14733,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:submitBackground
+     * @attr name com.ellis.memberplanet:submitBackground
      */
     public static final int SearchView_submitBackground=14;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#suggestionRowLayout}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#suggestionRowLayout}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13349,11 +14745,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:suggestionRowLayout
+     * @attr name com.ellis.memberplanet:suggestionRowLayout
      */
     public static final int SearchView_suggestionRowLayout=15;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#voiceIcon}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#voiceIcon}
      * attribute's value can be found in the {@link #SearchView} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13361,7 +14757,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:voiceIcon
+     * @attr name com.ellis.memberplanet:voiceIcon
      */
     public static final int SearchView_voiceIcon=16;
     /**
@@ -13371,19 +14767,19 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #SignInButton_buttonSize com.buah.farmconnect:buttonSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SignInButton_colorScheme com.buah.farmconnect:colorScheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SignInButton_scopeUris com.buah.farmconnect:scopeUris}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SignInButton_buttonSize com.ellis.memberplanet:buttonSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SignInButton_colorScheme com.ellis.memberplanet:colorScheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SignInButton_scopeUris com.ellis.memberplanet:scopeUris}</code></td><td></td></tr>
      * </table>
      * @see #SignInButton_buttonSize
      * @see #SignInButton_colorScheme
      * @see #SignInButton_scopeUris
      */
     public static final int[] SignInButton={
-        0x7f040047, 0x7f04006a, 0x7f040133
+        0x7f040048, 0x7f04006c, 0x7f040172
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonSize}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonSize}
      * attribute's value can be found in the {@link #SignInButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13401,11 +14797,11 @@ public final class R {
      * <tr><td>wide</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:buttonSize
+     * @attr name com.ellis.memberplanet:buttonSize
      */
     public static final int SignInButton_buttonSize=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#colorScheme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#colorScheme}
      * attribute's value can be found in the {@link #SignInButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13423,11 +14819,11 @@ public final class R {
      * <tr><td>light</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:colorScheme
+     * @attr name com.ellis.memberplanet:colorScheme
      */
     public static final int SignInButton_colorScheme=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#scopeUris}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#scopeUris}
      * attribute's value can be found in the {@link #SignInButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13437,7 +14833,7 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:scopeUris
+     * @attr name com.ellis.memberplanet:scopeUris
      */
     public static final int SignInButton_scopeUris=2;
     /**
@@ -13448,15 +14844,15 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #SnackbarLayout_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SnackbarLayout_elevation com.buah.farmconnect:elevation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SnackbarLayout_maxActionInlineWidth com.buah.farmconnect:maxActionInlineWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SnackbarLayout_elevation com.ellis.memberplanet:elevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SnackbarLayout_maxActionInlineWidth com.ellis.memberplanet:maxActionInlineWidth}</code></td><td></td></tr>
      * </table>
      * @see #SnackbarLayout_android_maxWidth
      * @see #SnackbarLayout_elevation
      * @see #SnackbarLayout_maxActionInlineWidth
      */
     public static final int[] SnackbarLayout={
-        0x0101011f, 0x7f040090, 0x7f04010e
+        0x0101011f, 0x7f040093, 0x7f040126
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#maxWidth}
@@ -13472,7 +14868,7 @@ public final class R {
      */
     public static final int SnackbarLayout_android_maxWidth=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#elevation}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#elevation}
      * attribute's value can be found in the {@link #SnackbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13481,11 +14877,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:elevation
+     * @attr name com.ellis.memberplanet:elevation
      */
     public static final int SnackbarLayout_elevation=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#maxActionInlineWidth}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#maxActionInlineWidth}
      * attribute's value can be found in the {@link #SnackbarLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13494,7 +14890,7 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:maxActionInlineWidth
+     * @attr name com.ellis.memberplanet:maxActionInlineWidth
      */
     public static final int SnackbarLayout_maxActionInlineWidth=2;
     /**
@@ -13508,7 +14904,7 @@ public final class R {
      * <tr><td><code>{@link #Spinner_android_popupBackground android:popupBackground}</code></td><td></td></tr>
      * <tr><td><code>{@link #Spinner_android_prompt android:prompt}</code></td><td></td></tr>
      * <tr><td><code>{@link #Spinner_android_dropDownWidth android:dropDownWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Spinner_popupTheme com.buah.farmconnect:popupTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Spinner_popupTheme com.ellis.memberplanet:popupTheme}</code></td><td></td></tr>
      * </table>
      * @see #Spinner_android_entries
      * @see #Spinner_android_popupBackground
@@ -13518,7 +14914,7 @@ public final class R {
      */
     public static final int[] Spinner={
         0x010100b2, 0x01010176, 0x0101017b, 0x01010262, 
-        0x7f040125
+        0x7f040164
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#entries}
@@ -13583,7 +14979,7 @@ public final class R {
      */
     public static final int Spinner_android_dropDownWidth=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#popupTheme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#popupTheme}
      * attribute's value can be found in the {@link #Spinner} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13591,7 +14987,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:popupTheme
+     * @attr name com.ellis.memberplanet:popupTheme
      */
     public static final int Spinner_popupTheme=4;
     /**
@@ -13604,17 +15000,17 @@ public final class R {
      * <tr><td><code>{@link #SwitchCompat_android_textOn android:textOn}</code></td><td></td></tr>
      * <tr><td><code>{@link #SwitchCompat_android_textOff android:textOff}</code></td><td></td></tr>
      * <tr><td><code>{@link #SwitchCompat_android_thumb android:thumb}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_showText com.buah.farmconnect:showText}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_splitTrack com.buah.farmconnect:splitTrack}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_switchMinWidth com.buah.farmconnect:switchMinWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_switchPadding com.buah.farmconnect:switchPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_switchTextAppearance com.buah.farmconnect:switchTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_thumbTextPadding com.buah.farmconnect:thumbTextPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_thumbTint com.buah.farmconnect:thumbTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_thumbTintMode com.buah.farmconnect:thumbTintMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_track com.buah.farmconnect:track}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_trackTint com.buah.farmconnect:trackTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SwitchCompat_trackTintMode com.buah.farmconnect:trackTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_showText com.ellis.memberplanet:showText}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_splitTrack com.ellis.memberplanet:splitTrack}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_switchMinWidth com.ellis.memberplanet:switchMinWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_switchPadding com.ellis.memberplanet:switchPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_switchTextAppearance com.ellis.memberplanet:switchTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_thumbTextPadding com.ellis.memberplanet:thumbTextPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_thumbTint com.ellis.memberplanet:thumbTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_thumbTintMode com.ellis.memberplanet:thumbTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_track com.ellis.memberplanet:track}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_trackTint com.ellis.memberplanet:trackTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SwitchCompat_trackTintMode com.ellis.memberplanet:trackTintMode}</code></td><td></td></tr>
      * </table>
      * @see #SwitchCompat_android_textOn
      * @see #SwitchCompat_android_textOff
@@ -13632,10 +15028,10 @@ public final class R {
      * @see #SwitchCompat_trackTintMode
      */
     public static final int[] SwitchCompat={
-        0x01010124, 0x01010125, 0x01010142, 0x7f04013e, 
-        0x7f040145, 0x7f040157, 0x7f040158, 0x7f04015a, 
-        0x7f040179, 0x7f04017a, 0x7f04017b, 0x7f040192, 
-        0x7f040193, 0x7f040194
+        0x01010124, 0x01010125, 0x01010142, 0x7f04017d, 
+        0x7f040184, 0x7f040196, 0x7f040197, 0x7f040199, 
+        0x7f0401b8, 0x7f0401b9, 0x7f0401ba, 0x7f0401d1, 
+        0x7f0401d2, 0x7f0401d3
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#textOn}
@@ -13670,27 +15066,27 @@ public final class R {
      */
     public static final int SwitchCompat_android_thumb=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#showText}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#showText}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:showText
+     * @attr name com.ellis.memberplanet:showText
      */
     public static final int SwitchCompat_showText=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#splitTrack}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#splitTrack}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:splitTrack
+     * @attr name com.ellis.memberplanet:splitTrack
      */
     public static final int SwitchCompat_splitTrack=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#switchMinWidth}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#switchMinWidth}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13699,11 +15095,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:switchMinWidth
+     * @attr name com.ellis.memberplanet:switchMinWidth
      */
     public static final int SwitchCompat_switchMinWidth=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#switchPadding}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#switchPadding}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13712,11 +15108,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:switchPadding
+     * @attr name com.ellis.memberplanet:switchPadding
      */
     public static final int SwitchCompat_switchPadding=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#switchTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#switchTextAppearance}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13724,11 +15120,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:switchTextAppearance
+     * @attr name com.ellis.memberplanet:switchTextAppearance
      */
     public static final int SwitchCompat_switchTextAppearance=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#thumbTextPadding}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#thumbTextPadding}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13737,22 +15133,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:thumbTextPadding
+     * @attr name com.ellis.memberplanet:thumbTextPadding
      */
     public static final int SwitchCompat_thumbTextPadding=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#thumbTint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#thumbTint}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:thumbTint
+     * @attr name com.ellis.memberplanet:thumbTint
      */
     public static final int SwitchCompat_thumbTint=9;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#thumbTintMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#thumbTintMode}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -13769,11 +15165,11 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:thumbTintMode
+     * @attr name com.ellis.memberplanet:thumbTintMode
      */
     public static final int SwitchCompat_thumbTintMode=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#track}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#track}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13781,22 +15177,22 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:track
+     * @attr name com.ellis.memberplanet:track
      */
     public static final int SwitchCompat_track=11;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#trackTint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#trackTint}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:trackTint
+     * @attr name com.ellis.memberplanet:trackTint
      */
     public static final int SwitchCompat_trackTint=12;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#trackTintMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#trackTintMode}
      * attribute's value can be found in the {@link #SwitchCompat} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -13813,7 +15209,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:trackTintMode
+     * @attr name com.ellis.memberplanet:trackTintMode
      */
     public static final int SwitchCompat_trackTintMode=13;
     /**
@@ -13875,22 +15271,22 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #TabLayout_tabBackground com.buah.farmconnect:tabBackground}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabContentStart com.buah.farmconnect:tabContentStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabGravity com.buah.farmconnect:tabGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabIndicatorColor com.buah.farmconnect:tabIndicatorColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabIndicatorHeight com.buah.farmconnect:tabIndicatorHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabMaxWidth com.buah.farmconnect:tabMaxWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabMinWidth com.buah.farmconnect:tabMinWidth}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabMode com.buah.farmconnect:tabMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabPadding com.buah.farmconnect:tabPadding}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabPaddingBottom com.buah.farmconnect:tabPaddingBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabPaddingEnd com.buah.farmconnect:tabPaddingEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabPaddingStart com.buah.farmconnect:tabPaddingStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabPaddingTop com.buah.farmconnect:tabPaddingTop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabSelectedTextColor com.buah.farmconnect:tabSelectedTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabTextAppearance com.buah.farmconnect:tabTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TabLayout_tabTextColor com.buah.farmconnect:tabTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabBackground com.ellis.memberplanet:tabBackground}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabContentStart com.ellis.memberplanet:tabContentStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabGravity com.ellis.memberplanet:tabGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabIndicatorColor com.ellis.memberplanet:tabIndicatorColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabIndicatorHeight com.ellis.memberplanet:tabIndicatorHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabMaxWidth com.ellis.memberplanet:tabMaxWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabMinWidth com.ellis.memberplanet:tabMinWidth}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabMode com.ellis.memberplanet:tabMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabPadding com.ellis.memberplanet:tabPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabPaddingBottom com.ellis.memberplanet:tabPaddingBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabPaddingEnd com.ellis.memberplanet:tabPaddingEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabPaddingStart com.ellis.memberplanet:tabPaddingStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabPaddingTop com.ellis.memberplanet:tabPaddingTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabSelectedTextColor com.ellis.memberplanet:tabSelectedTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabTextAppearance com.ellis.memberplanet:tabTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TabLayout_tabTextColor com.ellis.memberplanet:tabTextColor}</code></td><td></td></tr>
      * </table>
      * @see #TabLayout_tabBackground
      * @see #TabLayout_tabContentStart
@@ -13910,13 +15306,13 @@ public final class R {
      * @see #TabLayout_tabTextColor
      */
     public static final int[] TabLayout={
-        0x7f04015b, 0x7f04015c, 0x7f04015d, 0x7f04015e, 
-        0x7f04015f, 0x7f040160, 0x7f040161, 0x7f040162, 
-        0x7f040163, 0x7f040164, 0x7f040165, 0x7f040166, 
-        0x7f040167, 0x7f040168, 0x7f040169, 0x7f04016a
+        0x7f04019a, 0x7f04019b, 0x7f04019c, 0x7f04019d, 
+        0x7f04019e, 0x7f04019f, 0x7f0401a0, 0x7f0401a1, 
+        0x7f0401a2, 0x7f0401a3, 0x7f0401a4, 0x7f0401a5, 
+        0x7f0401a6, 0x7f0401a7, 0x7f0401a8, 0x7f0401a9
       };
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabBackground}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabBackground}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -13924,11 +15320,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:tabBackground
+     * @attr name com.ellis.memberplanet:tabBackground
      */
     public static final int TabLayout_tabBackground=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabContentStart}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabContentStart}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13937,11 +15333,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:tabContentStart
+     * @attr name com.ellis.memberplanet:tabContentStart
      */
     public static final int TabLayout_tabContentStart=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabGravity}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabGravity}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -13954,22 +15350,22 @@ public final class R {
      * <tr><td>fill</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:tabGravity
+     * @attr name com.ellis.memberplanet:tabGravity
      */
     public static final int TabLayout_tabGravity=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabIndicatorColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabIndicatorColor}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:tabIndicatorColor
+     * @attr name com.ellis.memberplanet:tabIndicatorColor
      */
     public static final int TabLayout_tabIndicatorColor=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabIndicatorHeight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabIndicatorHeight}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13978,11 +15374,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:tabIndicatorHeight
+     * @attr name com.ellis.memberplanet:tabIndicatorHeight
      */
     public static final int TabLayout_tabIndicatorHeight=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabMaxWidth}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabMaxWidth}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -13991,11 +15387,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:tabMaxWidth
+     * @attr name com.ellis.memberplanet:tabMaxWidth
      */
     public static final int TabLayout_tabMaxWidth=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabMinWidth}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabMinWidth}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14004,11 +15400,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:tabMinWidth
+     * @attr name com.ellis.memberplanet:tabMinWidth
      */
     public static final int TabLayout_tabMinWidth=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabMode}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -14021,11 +15417,11 @@ public final class R {
      * <tr><td>scrollable</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:tabMode
+     * @attr name com.ellis.memberplanet:tabMode
      */
     public static final int TabLayout_tabMode=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabPadding}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabPadding}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14034,11 +15430,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:tabPadding
+     * @attr name com.ellis.memberplanet:tabPadding
      */
     public static final int TabLayout_tabPadding=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabPaddingBottom}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabPaddingBottom}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14047,11 +15443,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:tabPaddingBottom
+     * @attr name com.ellis.memberplanet:tabPaddingBottom
      */
     public static final int TabLayout_tabPaddingBottom=9;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabPaddingEnd}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabPaddingEnd}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14060,11 +15456,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:tabPaddingEnd
+     * @attr name com.ellis.memberplanet:tabPaddingEnd
      */
     public static final int TabLayout_tabPaddingEnd=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabPaddingStart}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabPaddingStart}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14073,11 +15469,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:tabPaddingStart
+     * @attr name com.ellis.memberplanet:tabPaddingStart
      */
     public static final int TabLayout_tabPaddingStart=11;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabPaddingTop}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabPaddingTop}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14086,22 +15482,22 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:tabPaddingTop
+     * @attr name com.ellis.memberplanet:tabPaddingTop
      */
     public static final int TabLayout_tabPaddingTop=12;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabSelectedTextColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabSelectedTextColor}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:tabSelectedTextColor
+     * @attr name com.ellis.memberplanet:tabSelectedTextColor
      */
     public static final int TabLayout_tabSelectedTextColor=13;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabTextAppearance}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14109,18 +15505,18 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:tabTextAppearance
+     * @attr name com.ellis.memberplanet:tabTextAppearance
      */
     public static final int TabLayout_tabTextAppearance=14;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#tabTextColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#tabTextColor}
      * attribute's value can be found in the {@link #TabLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:tabTextColor
+     * @attr name com.ellis.memberplanet:tabTextColor
      */
     public static final int TabLayout_tabTextColor=15;
     /**
@@ -14141,8 +15537,8 @@ public final class R {
      * <tr><td><code>{@link #TextAppearance_android_shadowDy android:shadowDy}</code></td><td></td></tr>
      * <tr><td><code>{@link #TextAppearance_android_shadowRadius android:shadowRadius}</code></td><td></td></tr>
      * <tr><td><code>{@link #TextAppearance_android_fontFamily android:fontFamily}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextAppearance_fontFamily com.buah.farmconnect:fontFamily}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextAppearance_textAllCaps com.buah.farmconnect:textAllCaps}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextAppearance_fontFamily com.ellis.memberplanet:fontFamily}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextAppearance_textAllCaps com.ellis.memberplanet:textAllCaps}</code></td><td></td></tr>
      * </table>
      * @see #TextAppearance_android_textSize
      * @see #TextAppearance_android_typeface
@@ -14161,8 +15557,8 @@ public final class R {
     public static final int[] TextAppearance={
         0x01010095, 0x01010096, 0x01010097, 0x01010098, 
         0x0101009a, 0x0101009b, 0x01010161, 0x01010162, 
-        0x01010163, 0x01010164, 0x010103ac, 0x7f0400a5, 
-        0x7f04016b
+        0x01010163, 0x01010164, 0x010103ac, 0x7f0400bd, 
+        0x7f0401aa
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#textSize}
@@ -14308,17 +15704,17 @@ public final class R {
      */
     public static final int TextAppearance_android_fontFamily=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#fontFamily}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#fontFamily}
      * attribute's value can be found in the {@link #TextAppearance} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:fontFamily
+     * @attr name com.ellis.memberplanet:fontFamily
      */
     public static final int TextAppearance_fontFamily=11;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#textAllCaps}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#textAllCaps}
      * attribute's value can be found in the {@link #TextAppearance} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14328,7 +15724,7 @@ public final class R {
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:textAllCaps
+     * @attr name com.ellis.memberplanet:textAllCaps
      */
     public static final int TextAppearance_textAllCaps=12;
     /**
@@ -14340,20 +15736,20 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #TextInputLayout_android_textColorHint android:textColorHint}</code></td><td></td></tr>
      * <tr><td><code>{@link #TextInputLayout_android_hint android:hint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_counterEnabled com.buah.farmconnect:counterEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_counterMaxLength com.buah.farmconnect:counterMaxLength}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_counterOverflowTextAppearance com.buah.farmconnect:counterOverflowTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_counterTextAppearance com.buah.farmconnect:counterTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_errorEnabled com.buah.farmconnect:errorEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_errorTextAppearance com.buah.farmconnect:errorTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_hintAnimationEnabled com.buah.farmconnect:hintAnimationEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_hintEnabled com.buah.farmconnect:hintEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_hintTextAppearance com.buah.farmconnect:hintTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_passwordToggleContentDescription com.buah.farmconnect:passwordToggleContentDescription}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_passwordToggleDrawable com.buah.farmconnect:passwordToggleDrawable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_passwordToggleEnabled com.buah.farmconnect:passwordToggleEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_passwordToggleTint com.buah.farmconnect:passwordToggleTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #TextInputLayout_passwordToggleTintMode com.buah.farmconnect:passwordToggleTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_counterEnabled com.ellis.memberplanet:counterEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_counterMaxLength com.ellis.memberplanet:counterMaxLength}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_counterOverflowTextAppearance com.ellis.memberplanet:counterOverflowTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_counterTextAppearance com.ellis.memberplanet:counterTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_errorEnabled com.ellis.memberplanet:errorEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_errorTextAppearance com.ellis.memberplanet:errorTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_hintAnimationEnabled com.ellis.memberplanet:hintAnimationEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_hintEnabled com.ellis.memberplanet:hintEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_hintTextAppearance com.ellis.memberplanet:hintTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_passwordToggleContentDescription com.ellis.memberplanet:passwordToggleContentDescription}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_passwordToggleDrawable com.ellis.memberplanet:passwordToggleDrawable}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_passwordToggleEnabled com.ellis.memberplanet:passwordToggleEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_passwordToggleTint com.ellis.memberplanet:passwordToggleTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #TextInputLayout_passwordToggleTintMode com.ellis.memberplanet:passwordToggleTintMode}</code></td><td></td></tr>
      * </table>
      * @see #TextInputLayout_android_textColorHint
      * @see #TextInputLayout_android_hint
@@ -14373,10 +15769,10 @@ public final class R {
      * @see #TextInputLayout_passwordToggleTintMode
      */
     public static final int[] TextInputLayout={
-        0x0101009a, 0x01010150, 0x7f04007c, 0x7f04007d, 
-        0x7f04007e, 0x7f04007f, 0x7f040091, 0x7f040092, 
-        0x7f0400b4, 0x7f0400b5, 0x7f0400b6, 0x7f04011f, 
-        0x7f040120, 0x7f040121, 0x7f040122, 0x7f040123
+        0x0101009a, 0x01010150, 0x7f04007f, 0x7f040080, 
+        0x7f040081, 0x7f040082, 0x7f040094, 0x7f040095, 
+        0x7f0400cc, 0x7f0400cd, 0x7f0400ce, 0x7f04015e, 
+        0x7f04015f, 0x7f040160, 0x7f040161, 0x7f040162
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#textColorHint}
@@ -14404,26 +15800,26 @@ public final class R {
      */
     public static final int TextInputLayout_android_hint=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#counterEnabled}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#counterEnabled}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:counterEnabled
+     * @attr name com.ellis.memberplanet:counterEnabled
      */
     public static final int TextInputLayout_counterEnabled=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#counterMaxLength}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#counterMaxLength}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.buah.farmconnect:counterMaxLength
+     * @attr name com.ellis.memberplanet:counterMaxLength
      */
     public static final int TextInputLayout_counterMaxLength=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#counterOverflowTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#counterOverflowTextAppearance}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14431,11 +15827,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:counterOverflowTextAppearance
+     * @attr name com.ellis.memberplanet:counterOverflowTextAppearance
      */
     public static final int TextInputLayout_counterOverflowTextAppearance=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#counterTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#counterTextAppearance}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14443,21 +15839,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:counterTextAppearance
+     * @attr name com.ellis.memberplanet:counterTextAppearance
      */
     public static final int TextInputLayout_counterTextAppearance=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#errorEnabled}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#errorEnabled}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:errorEnabled
+     * @attr name com.ellis.memberplanet:errorEnabled
      */
     public static final int TextInputLayout_errorEnabled=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#errorTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#errorTextAppearance}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14465,31 +15861,31 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:errorTextAppearance
+     * @attr name com.ellis.memberplanet:errorTextAppearance
      */
     public static final int TextInputLayout_errorTextAppearance=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#hintAnimationEnabled}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#hintAnimationEnabled}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:hintAnimationEnabled
+     * @attr name com.ellis.memberplanet:hintAnimationEnabled
      */
     public static final int TextInputLayout_hintAnimationEnabled=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#hintEnabled}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#hintEnabled}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:hintEnabled
+     * @attr name com.ellis.memberplanet:hintEnabled
      */
     public static final int TextInputLayout_hintEnabled=9;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#hintTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#hintTextAppearance}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14497,21 +15893,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:hintTextAppearance
+     * @attr name com.ellis.memberplanet:hintTextAppearance
      */
     public static final int TextInputLayout_hintTextAppearance=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#passwordToggleContentDescription}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#passwordToggleContentDescription}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:passwordToggleContentDescription
+     * @attr name com.ellis.memberplanet:passwordToggleContentDescription
      */
     public static final int TextInputLayout_passwordToggleContentDescription=11;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#passwordToggleDrawable}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#passwordToggleDrawable}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14519,32 +15915,32 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:passwordToggleDrawable
+     * @attr name com.ellis.memberplanet:passwordToggleDrawable
      */
     public static final int TextInputLayout_passwordToggleDrawable=12;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#passwordToggleEnabled}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#passwordToggleEnabled}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.buah.farmconnect:passwordToggleEnabled
+     * @attr name com.ellis.memberplanet:passwordToggleEnabled
      */
     public static final int TextInputLayout_passwordToggleEnabled=13;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#passwordToggleTint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#passwordToggleTint}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:passwordToggleTint
+     * @attr name com.ellis.memberplanet:passwordToggleTint
      */
     public static final int TextInputLayout_passwordToggleTint=14;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#passwordToggleTintMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#passwordToggleTintMode}
      * attribute's value can be found in the {@link #TextInputLayout} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -14560,7 +15956,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:passwordToggleTintMode
+     * @attr name com.ellis.memberplanet:passwordToggleTintMode
      */
     public static final int TextInputLayout_passwordToggleTintMode=15;
     /**
@@ -14572,33 +15968,33 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #Toolbar_android_gravity android:gravity}</code></td><td></td></tr>
      * <tr><td><code>{@link #Toolbar_android_minHeight android:minHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_buttonGravity com.buah.farmconnect:buttonGravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_collapseContentDescription com.buah.farmconnect:collapseContentDescription}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_collapseIcon com.buah.farmconnect:collapseIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetEnd com.buah.farmconnect:contentInsetEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetEndWithActions com.buah.farmconnect:contentInsetEndWithActions}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetLeft com.buah.farmconnect:contentInsetLeft}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetRight com.buah.farmconnect:contentInsetRight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetStart com.buah.farmconnect:contentInsetStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_contentInsetStartWithNavigation com.buah.farmconnect:contentInsetStartWithNavigation}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_logo com.buah.farmconnect:logo}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_logoDescription com.buah.farmconnect:logoDescription}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_maxButtonHeight com.buah.farmconnect:maxButtonHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_navigationContentDescription com.buah.farmconnect:navigationContentDescription}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_navigationIcon com.buah.farmconnect:navigationIcon}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_popupTheme com.buah.farmconnect:popupTheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_subtitle com.buah.farmconnect:subtitle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_subtitleTextAppearance com.buah.farmconnect:subtitleTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_subtitleTextColor com.buah.farmconnect:subtitleTextColor}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_title com.buah.farmconnect:title}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMargin com.buah.farmconnect:titleMargin}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMarginBottom com.buah.farmconnect:titleMarginBottom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMarginEnd com.buah.farmconnect:titleMarginEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMarginStart com.buah.farmconnect:titleMarginStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMarginTop com.buah.farmconnect:titleMarginTop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleMargins com.buah.farmconnect:titleMargins}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleTextAppearance com.buah.farmconnect:titleTextAppearance}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Toolbar_titleTextColor com.buah.farmconnect:titleTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_buttonGravity com.ellis.memberplanet:buttonGravity}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_collapseContentDescription com.ellis.memberplanet:collapseContentDescription}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_collapseIcon com.ellis.memberplanet:collapseIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetEnd com.ellis.memberplanet:contentInsetEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetEndWithActions com.ellis.memberplanet:contentInsetEndWithActions}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetLeft com.ellis.memberplanet:contentInsetLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetRight com.ellis.memberplanet:contentInsetRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetStart com.ellis.memberplanet:contentInsetStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_contentInsetStartWithNavigation com.ellis.memberplanet:contentInsetStartWithNavigation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_logo com.ellis.memberplanet:logo}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_logoDescription com.ellis.memberplanet:logoDescription}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_maxButtonHeight com.ellis.memberplanet:maxButtonHeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_navigationContentDescription com.ellis.memberplanet:navigationContentDescription}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_navigationIcon com.ellis.memberplanet:navigationIcon}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_popupTheme com.ellis.memberplanet:popupTheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_subtitle com.ellis.memberplanet:subtitle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_subtitleTextAppearance com.ellis.memberplanet:subtitleTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_subtitleTextColor com.ellis.memberplanet:subtitleTextColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_title com.ellis.memberplanet:title}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMargin com.ellis.memberplanet:titleMargin}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMarginBottom com.ellis.memberplanet:titleMarginBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMarginEnd com.ellis.memberplanet:titleMarginEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMarginStart com.ellis.memberplanet:titleMarginStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMarginTop com.ellis.memberplanet:titleMarginTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleMargins com.ellis.memberplanet:titleMargins}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleTextAppearance com.ellis.memberplanet:titleTextAppearance}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Toolbar_titleTextColor com.ellis.memberplanet:titleTextColor}</code></td><td></td></tr>
      * </table>
      * @see #Toolbar_android_gravity
      * @see #Toolbar_android_minHeight
@@ -14631,14 +16027,14 @@ public final class R {
      * @see #Toolbar_titleTextColor
      */
     public static final int[] Toolbar={
-        0x010100af, 0x01010140, 0x7f040045, 0x7f04005c, 
-        0x7f04005d, 0x7f04006f, 0x7f040070, 0x7f040071, 
-        0x7f040072, 0x7f040073, 0x7f040074, 0x7f04010c, 
-        0x7f04010d, 0x7f04010f, 0x7f040113, 0x7f040114, 
-        0x7f040125, 0x7f040152, 0x7f040153, 0x7f040154, 
-        0x7f040181, 0x7f040183, 0x7f040184, 0x7f040185, 
-        0x7f040186, 0x7f040187, 0x7f040188, 0x7f040189, 
-        0x7f04018a
+        0x010100af, 0x01010140, 0x7f040045, 0x7f04005e, 
+        0x7f04005f, 0x7f040071, 0x7f040072, 0x7f040073, 
+        0x7f040074, 0x7f040075, 0x7f040076, 0x7f040124, 
+        0x7f040125, 0x7f040127, 0x7f040152, 0x7f040153, 
+        0x7f040164, 0x7f040191, 0x7f040192, 0x7f040193, 
+        0x7f0401c0, 0x7f0401c2, 0x7f0401c3, 0x7f0401c4, 
+        0x7f0401c5, 0x7f0401c6, 0x7f0401c7, 0x7f0401c8, 
+        0x7f0401c9
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#gravity}
@@ -14683,7 +16079,7 @@ public final class R {
      */
     public static final int Toolbar_android_minHeight=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#buttonGravity}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#buttonGravity}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -14696,21 +16092,21 @@ public final class R {
      * <tr><td>top</td><td>30</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:buttonGravity
+     * @attr name com.ellis.memberplanet:buttonGravity
      */
     public static final int Toolbar_buttonGravity=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#collapseContentDescription}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#collapseContentDescription}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:collapseContentDescription
+     * @attr name com.ellis.memberplanet:collapseContentDescription
      */
     public static final int Toolbar_collapseContentDescription=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#collapseIcon}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#collapseIcon}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14718,11 +16114,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:collapseIcon
+     * @attr name com.ellis.memberplanet:collapseIcon
      */
     public static final int Toolbar_collapseIcon=4;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetEnd}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetEnd}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14731,11 +16127,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetEnd
+     * @attr name com.ellis.memberplanet:contentInsetEnd
      */
     public static final int Toolbar_contentInsetEnd=5;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetEndWithActions}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetEndWithActions}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14744,11 +16140,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetEndWithActions
+     * @attr name com.ellis.memberplanet:contentInsetEndWithActions
      */
     public static final int Toolbar_contentInsetEndWithActions=6;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetLeft}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetLeft}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14757,11 +16153,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetLeft
+     * @attr name com.ellis.memberplanet:contentInsetLeft
      */
     public static final int Toolbar_contentInsetLeft=7;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetRight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetRight}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14770,11 +16166,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetRight
+     * @attr name com.ellis.memberplanet:contentInsetRight
      */
     public static final int Toolbar_contentInsetRight=8;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetStart}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetStart}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14783,11 +16179,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetStart
+     * @attr name com.ellis.memberplanet:contentInsetStart
      */
     public static final int Toolbar_contentInsetStart=9;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#contentInsetStartWithNavigation}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#contentInsetStartWithNavigation}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14796,11 +16192,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:contentInsetStartWithNavigation
+     * @attr name com.ellis.memberplanet:contentInsetStartWithNavigation
      */
     public static final int Toolbar_contentInsetStartWithNavigation=10;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#logo}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#logo}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14808,21 +16204,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:logo
+     * @attr name com.ellis.memberplanet:logo
      */
     public static final int Toolbar_logo=11;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#logoDescription}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#logoDescription}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:logoDescription
+     * @attr name com.ellis.memberplanet:logoDescription
      */
     public static final int Toolbar_logoDescription=12;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#maxButtonHeight}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#maxButtonHeight}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14831,21 +16227,21 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:maxButtonHeight
+     * @attr name com.ellis.memberplanet:maxButtonHeight
      */
     public static final int Toolbar_maxButtonHeight=13;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#navigationContentDescription}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#navigationContentDescription}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:navigationContentDescription
+     * @attr name com.ellis.memberplanet:navigationContentDescription
      */
     public static final int Toolbar_navigationContentDescription=14;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#navigationIcon}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#navigationIcon}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14853,11 +16249,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:navigationIcon
+     * @attr name com.ellis.memberplanet:navigationIcon
      */
     public static final int Toolbar_navigationIcon=15;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#popupTheme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#popupTheme}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14865,21 +16261,21 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:popupTheme
+     * @attr name com.ellis.memberplanet:popupTheme
      */
     public static final int Toolbar_popupTheme=16;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#subtitle}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#subtitle}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:subtitle
+     * @attr name com.ellis.memberplanet:subtitle
      */
     public static final int Toolbar_subtitle=17;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#subtitleTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#subtitleTextAppearance}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14887,32 +16283,32 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:subtitleTextAppearance
+     * @attr name com.ellis.memberplanet:subtitleTextAppearance
      */
     public static final int Toolbar_subtitleTextAppearance=18;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#subtitleTextColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#subtitleTextColor}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:subtitleTextColor
+     * @attr name com.ellis.memberplanet:subtitleTextColor
      */
     public static final int Toolbar_subtitleTextColor=19;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#title}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#title}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.buah.farmconnect:title
+     * @attr name com.ellis.memberplanet:title
      */
     public static final int Toolbar_title=20;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#titleMargin}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#titleMargin}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14921,11 +16317,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:titleMargin
+     * @attr name com.ellis.memberplanet:titleMargin
      */
     public static final int Toolbar_titleMargin=21;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#titleMarginBottom}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#titleMarginBottom}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14934,11 +16330,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:titleMarginBottom
+     * @attr name com.ellis.memberplanet:titleMarginBottom
      */
     public static final int Toolbar_titleMarginBottom=22;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#titleMarginEnd}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#titleMarginEnd}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14947,11 +16343,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:titleMarginEnd
+     * @attr name com.ellis.memberplanet:titleMarginEnd
      */
     public static final int Toolbar_titleMarginEnd=23;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#titleMarginStart}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#titleMarginStart}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14960,11 +16356,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:titleMarginStart
+     * @attr name com.ellis.memberplanet:titleMarginStart
      */
     public static final int Toolbar_titleMarginStart=24;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#titleMarginTop}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#titleMarginTop}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14973,11 +16369,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:titleMarginTop
+     * @attr name com.ellis.memberplanet:titleMarginTop
      */
     public static final int Toolbar_titleMarginTop=25;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#titleMargins}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#titleMargins}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -14986,11 +16382,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:titleMargins
+     * @attr name com.ellis.memberplanet:titleMargins
      */
     public static final int Toolbar_titleMargins=26;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#titleTextAppearance}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#titleTextAppearance}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -14998,18 +16394,18 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:titleTextAppearance
+     * @attr name com.ellis.memberplanet:titleTextAppearance
      */
     public static final int Toolbar_titleTextAppearance=27;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#titleTextColor}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#titleTextColor}
      * attribute's value can be found in the {@link #Toolbar} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:titleTextColor
+     * @attr name com.ellis.memberplanet:titleTextColor
      */
     public static final int Toolbar_titleTextColor=28;
     /**
@@ -15021,9 +16417,9 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #View_android_theme android:theme}</code></td><td></td></tr>
      * <tr><td><code>{@link #View_android_focusable android:focusable}</code></td><td></td></tr>
-     * <tr><td><code>{@link #View_paddingEnd com.buah.farmconnect:paddingEnd}</code></td><td></td></tr>
-     * <tr><td><code>{@link #View_paddingStart com.buah.farmconnect:paddingStart}</code></td><td></td></tr>
-     * <tr><td><code>{@link #View_theme com.buah.farmconnect:theme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #View_paddingEnd com.ellis.memberplanet:paddingEnd}</code></td><td></td></tr>
+     * <tr><td><code>{@link #View_paddingStart com.ellis.memberplanet:paddingStart}</code></td><td></td></tr>
+     * <tr><td><code>{@link #View_theme com.ellis.memberplanet:theme}</code></td><td></td></tr>
      * </table>
      * @see #View_android_theme
      * @see #View_android_focusable
@@ -15032,8 +16428,8 @@ public final class R {
      * @see #View_theme
      */
     public static final int[] View={
-        0x01010000, 0x010100da, 0x7f040119, 0x7f04011a, 
-        0x7f040177
+        0x01010000, 0x010100da, 0x7f040158, 0x7f040159, 
+        0x7f0401b6
       };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#theme}
@@ -15066,7 +16462,7 @@ public final class R {
      */
     public static final int View_android_focusable=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#paddingEnd}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#paddingEnd}
      * attribute's value can be found in the {@link #View} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -15075,11 +16471,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:paddingEnd
+     * @attr name com.ellis.memberplanet:paddingEnd
      */
     public static final int View_paddingEnd=2;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#paddingStart}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#paddingStart}
      * attribute's value can be found in the {@link #View} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -15088,11 +16484,11 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      *
-     * @attr name com.buah.farmconnect:paddingStart
+     * @attr name com.ellis.memberplanet:paddingStart
      */
     public static final int View_paddingStart=3;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#theme}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#theme}
      * attribute's value can be found in the {@link #View} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -15100,7 +16496,7 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.buah.farmconnect:theme
+     * @attr name com.ellis.memberplanet:theme
      */
     public static final int View_theme=4;
     /**
@@ -15111,8 +16507,8 @@ public final class R {
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ViewBackgroundHelper_android_background android:background}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint com.buah.farmconnect:backgroundTint}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode com.buah.farmconnect:backgroundTintMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTint com.ellis.memberplanet:backgroundTint}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ViewBackgroundHelper_backgroundTintMode com.ellis.memberplanet:backgroundTintMode}</code></td><td></td></tr>
      * </table>
      * @see #ViewBackgroundHelper_android_background
      * @see #ViewBackgroundHelper_backgroundTint
@@ -15137,18 +16533,18 @@ public final class R {
      */
     public static final int ViewBackgroundHelper_android_background=0;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#backgroundTint}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#backgroundTint}
      * attribute's value can be found in the {@link #ViewBackgroundHelper} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      *
-     * @attr name com.buah.farmconnect:backgroundTint
+     * @attr name com.ellis.memberplanet:backgroundTint
      */
     public static final int ViewBackgroundHelper_backgroundTint=1;
     /**
-     * <p>This symbol is the offset where the {@link com.buah.farmconnect.R.attr#backgroundTintMode}
+     * <p>This symbol is the offset where the {@link com.ellis.memberplanet.R.attr#backgroundTintMode}
      * attribute's value can be found in the {@link #ViewBackgroundHelper} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -15165,7 +16561,7 @@ public final class R {
      * <tr><td>src_over</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name com.buah.farmconnect:backgroundTintMode
+     * @attr name com.ellis.memberplanet:backgroundTintMode
      */
     public static final int ViewBackgroundHelper_backgroundTintMode=2;
     /**
